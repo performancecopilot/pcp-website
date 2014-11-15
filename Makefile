@@ -10,7 +10,7 @@ DSTLOCAL := /srv/pcp.acksyn.org/
 DSTREMOTE := webmichele2:/srv/pcp.acksyn.org/
 URL := http://pcp.acksyn.org
 
-all: clean import books man docs prep local check
+all: clean import books man docs prep local
 
 local: 
 	find . -type f -exec chmod 644 "{}" \;
