@@ -1,0 +1,65 @@
+!!! html
+%html
+  %head
+    = Haml::Engine.new(File.read("assets/haml-includes/head.haml")).render
+
+  %body
+    = Haml::Engine.new(File.read("assets/haml-includes/navigation.haml")).render
+
+    %div{:class => 'site-content'}
+      %div{:class => 'how-to is-typeset'}
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-8 push12-2 colspan8-8 colspan6-6 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h2 Glider
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-4 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %img{:src => '/snaps/win2k8.png'}
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'features_left col__module--img'}
+                  %p
+                    PCP Glider is a binary distribution of PCP for the Windows
+                    operating system.  It includes a bundled compiler, Perl
+                    runtime (and pre-installed modules that offer the ability
+                    to install XS CPAN modules directly from CPAN), a POSIX
+                    shell environment and the Performance Co-Pilot toolkit.
+                  %p
+                    The purpose of the Glider package is to provide a practical
+                    Win32 environment for performance engineers experienced
+                    with either the POSIX platform or the Win32 environment to
+                    run the Performance Co-Pilot toolkit on Windows.  It
+                    provides both the PCP monitor and collector components.
+                  %p
+                    Installation is as simple as:
+                    %pre
+                      :preserve
+                        C:> msiexec /i pcp-glider-*.msi
+                        C:> cd \Glider\scripts
+                        C:> .\postinst.bat
+                  %p PCP Glider includes:
+                  %ul
+                    %li
+                      %a{:href => 'http://www.mingw.org'} Mingw
+                      GCC C/C++ compiler
+                    %li
+                      %a{:href => 'http://www.mingw.org/wiki/msys'} MSYS
+                      Core System
+                    %li
+                      GNU Win32
+                      %a{:href => "http://www.mingw.org/wiki/gdb"} debugger
+                    %li
+                      %a{:href => "http://www.strawberryperl.com"} Perl and CPAN
+                      support
+                    %li
+                      %a{:href => "http://www.qtsoftware.com"} Qt4
+                      toolkit runtime
+                    %li
+                      Performance Co-Pilot with GUI
+
+    = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render

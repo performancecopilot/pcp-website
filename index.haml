@@ -1,0 +1,76 @@
+!!! html
+%html
+  %head
+    = Haml::Engine.new(File.read("assets/haml-includes/head.haml")).render
+
+  %body
+    = Haml::Engine.new(File.read("assets/haml-includes/navigation.haml")).render
+
+    %div{:class => 'site-content'}
+      %div{:class => 'how-to is-typeset'}
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'logo colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-8 push12-2 colspan8-8 colspan6-6 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h2 Performance Co-Pilot
+                %p Performance Co-Pilot is a system performance and analysis collection framework.
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-4 colspan8-3 colspan6-2 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %img{:src => 'images/collect.png'}
+                  %h3 Collect
+                  %ul
+                    %li
+                      %strong System Collection
+                      \: 
+                      %a{:href => '/features.html#collect'} Collect
+                      performance metrics from your system.
+                    %li
+                      %strong Distributed
+                      \:
+                      %a{:href => '/features.html#distributed'} distributed
+                      and can collect data from a multitude of hosts and operating systems.
+                    %li
+                      %strong Included
+                      \: PCP is already included in most distributions: Fedora, RHEL, Debian, Suse, Ubuntu, Gentoo
+
+              %div{:class => 'colspan12-4 colspan8-3 colspan6-2 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %img{:src => 'images/analyze.png'}
+                  %h3 Analyze
+                  %p
+                    %a{:href => '/features.html#analyze'} Analyze
+                    systems' performance metrics in real-time or using historical data.
+                  %p 
+                    Compare performance metrics between different hosts and different intervals.
+                    Observe trends and identify abnormal patterns.
+
+              %div{:class => 'colspan12-4 colspan8-3 colspan6-2 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %img{:src => 'images/extend.png'}
+                  %h3 Extend
+                  %p
+                    %a{:href => '/features.html#extend'}Extend
+                    the collected performance metrics in a simple way.
+                  %p
+                    PCP offers a multitude of APIs and libraries to make use of
+                    the performance metrics in your own application.
+
+    %div{:class => 'hero'}
+      %div{:class => 'colspan12-8 push12-2 colspan8-6 push8-1 colspan6-4 push6-1 colspan2-2'}
+        %div{:class => 'col__module col__module--cta'}
+          %h1 Use Performance Co-Pilot Now
+          %div{:class => 'button-one'}
+            %a{:href => '/docs/guide.html'} Quickstart
+          %div{:class => 'button-two'}
+            %a{:href => 'ftp://ftp.pcp.io/projects/pcp/download/'} Download
+          %div{:class => 'button-four'}
+            %a{:href => '/documentation.html'} Learn More
+
+    = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render

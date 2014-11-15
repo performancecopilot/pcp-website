@@ -1,0 +1,323 @@
+!!! html
+%html
+  %head
+    = Haml::Engine.new(File.read("assets/haml-includes/head.haml")).render
+
+  %body
+    = Haml::Engine.new(File.read("assets/haml-includes/navigation.haml")).render
+
+    %div{:class => 'site-content'}
+      %div{:class => 'how-to is-typeset'}
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-8 push12-2 colspan8-8 colspan6-6 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h2 News
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-8 push12-2 colspan8-8 colspan6-6 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h3 2014
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p 2014, October 31
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    %a{:href => 'https://github.com/performancecopilot/pcp/blob/058060540f880496d6bb89c96c7deac13545f793/CHANGELOG'}PCP 3.10.0
+                    released. Python v3 modules, Web service and front-end
+                    updates to support Graphite/Grafana, DS 389 PMDAs. 
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p 2014, September 5
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    PCP 3.9.10 released. Nanosecond resolution event
+                    timestamps, PAPI PMDA, systemd unit files, bug fixes. 
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p 2014, August 13
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    PCP 3.9.9 released. Python API updates, iostat and dm-cache
+                    tools, dm-cache PMDA, sar2pcp updates, new derived metrics
+                    rate() syntax. 
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p 2014, July 16
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    PCP 3.9.7 released. Nvidia GPU PMDA, pmie language
+                    extensions, more cgroup metrics, bug fixes. 
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p 2014, June 18
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    PCP 3.9.5 released. Active service probing, Python API
+                    extensions, bug fixes. 
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p 2014, May 15
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    PCP 3.9.4 released. PCP and PCP GUI source trees merged,
+                    pmlogger I/O improvements, long option shell scripts. 
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p 2014, April 15
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    PCP 3.9.2 released. Python API extensions, pmdarpm
+                    updates, further long option work. 
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p 2014, March 19
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    PCP 3.9.1 released. NFS client and compressed swap (zswap)
+                    PMDAs, initial long option support, extended time/date
+                    syntax.
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p 2014, March 6
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    PCP GUI 1.5.13 released. Several pmchart usability
+                    improvements, particularly around simultaneous use of
+                    multiple hosts.
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p 2014, February 19
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    PCP 3.9.0 and PCP GUI 1.5.12 released. Packaging split
+                    (pcp-conf, pcp-manager, pcp-webapi), multilib support,
+                    python documentation, bug fixes. 
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p 2014, January 29
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    PCP 3.8.12 released. Bugfix release - pmlogger
+                    optimizations, fix namespace error on new installs. 
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p 2014, January 15
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    PCP 3.8.10 released. Discovery work (pmfind tool and PMAPI
+                    extension), new management tool (pmmgr), and the usual
+                    improvements and fixes across the board. 
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-8 push12-2 colspan8-8 colspan6-6 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h3 2013
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p 2013, December 12
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    PCP 3.8.9 released. Bugfix release. Initial RPM Package
+                    Manager PMDA.
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p 2013, November 26
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p 
+                    Red Hat Developer blog post and video (2/2):
+                    %a{:href => 'http://developerblog.redhat.com/2013/11/26/performance-regression-pcp/'} Performance Regression Analysis
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p 2013, November 19
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    Red Hat Developer blog post and video (1/2):
+                    %a{:href => 'http://developerblog.redhat.com/2013/11/19/exploratory-performance-pcp/'} Exploratory Performance Analysis
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p 2013, November 1
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    PCP 3.8.6 and PCP GUI 1.5.11 released. Minor bugfix
+                    releases. 
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p 2013, October 18
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    PCP 3.8.5 released. Bugfix release. 
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p 2013, September 10
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    PCP 3.8.3 and PCP GUI 1.5.10 released. New versions of the
+                    PCP books, Unix domain sockets the default for local
+                    connections, static probe support in pmcd. 
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p 2013, July 31
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    PCP 3.8.2 and PCP GUI 1.5.9 released. Unix domain socket
+                    transport, pmlogger and pmie default enablement, gluster
+                    PMDA, SASL updates, user and group based access control. 
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p 2013, June 19
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    PCP 3.8.1 released. Initial support for Python PMDAs. 
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p 2013, May 14
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    PCP 3.8.0 released. Web API daemon, optional user
+                    authentication support, nginx metrics, revamped python APIs
+                    and pmatop tool. 
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p 2013, April 19
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    PCP 3.7.2 and PCP GUI 1.5.8 released. Bugfix releases. 
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p 2013, March 11
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    PCP 3.7.0 released. IPv6 and optional protocol encryption,
+                    NetBSD port, new gfs2 and systemd PMDAs, MySQL, named and
+                    Linux kernel PMDA updates.
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-8 push12-2 colspan8-8 colspan6-6 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h3
+                    %a{:href => '/old_news.html'} Older News
+
+    = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render

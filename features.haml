@@ -1,0 +1,130 @@
+!!! html
+%html
+  %head
+    = Haml::Engine.new(File.read("assets/haml-includes/head.haml")).render
+
+  %body
+    = Haml::Engine.new(File.read("assets/haml-includes/navigation.haml")).render
+
+    %div{:class => 'site-content'}
+      %div{:class => 'how-to is-typeset'}
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-8 push12-2 colspan8-8 colspan6-6 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h2 Features
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'features_title row'}
+            %h2{:id => 'collect'} Collect
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %img{:src => 'images/collect.png'}
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'features_left col__module--img'}
+                  %p
+                    %strong Kernel agents
+                    for each supported platform. The Linux agent
+                    exports a broad range of performance data from kernels
+                    since 2.0.36 or later. This includes coverage of activity
+                    in the areas of: CPU, disk, memory, swapping, network, NFS,
+                    RPC, filesystems, and per-process statistics. 
+                  %p
+                    %strong Other agents
+                    export performance data from:
+                    Databases, Log files, Web servers, Mail systems,
+                    Cisco routers, Search engines, Cluster infrastructure,
+                    Application instrumentation (including the JVM)
+                    and the PCP infrastructure itself.
+                  %p
+                    Assorted simple
+                    %strong monitoring tools
+                    that use the PCP APIs to
+                    retrieve and display either arbitrary performance metrics, or
+                    specific groups of metrics (as in pmstat, a cluster-aware
+                    vmstat lookalike). 
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'features_title row'}
+            %h2{:id => 'analyze'} Analyze
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'features_right col__module--img'}
+                  %p 
+                    A single 
+                    %strong API
+                    for accessing the performance data that hides
+                    details of where the data comes from and how it was
+                    captured and imported into the PCP framework.
+                  %p
+                    Integrated archive logging and replay so a client
+                    application can use the same API to process real-time data
+                    from a host or historical data from an archive. 
+                  %p
+                    The framework supports APIs and configuration file formats
+                    that enable the scope of performance monitoring to be
+                    extended at all levels. 
+                  %p
+                    The PCP inference engine supports automated monitoring
+                    through a rule-based language and interpreter that performs
+                    user-defined actions when rule predicates are found to be
+                    true. 
+                  %p
+                    Access the graph data through a webinterface or a GUI
+                    %img{:src => 'images/pcp-grafana.jpg'}
+              %div{:class => 'colspan12-4 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %img{:src => 'images/analyze.png'}
+                  %img{:src => 'images/pmchart_cpu_disk_load.png'}
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'features_title row'}
+            %h2{:id => 'collect'} Distributed
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %img{:src => 'images/dashboard.png'}
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'features_left col__module--img'}
+                  %p
+                    A client-server architecture allows multiple clients to
+                    monitor the same host, and a single client to monitor
+                    multiple hosts (e.g. in a cluster). This enables centralized
+                    monitoring of distributed processing. 
+                  %p
+                    An endian-safe transport layer for moving performance
+                    metrics between the collector and the monitoring
+                    applications over TCP/IP. This means a desktop with PCP can
+                    monitor remote server systems with different architectures
+                    and operating systems. 
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'features_title row'}
+            %h2{:id => 'analyze'} Extend
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'features_right col__module--img'}
+                  %p
+                    A "plugin" framework (libraries, APIs, agents and daemon)
+                    to collect performance data from multiple sources on a
+                    single host, e.g. from the hardware, the kernel, the
+                    service layers, the application libraries, and the
+                    applications themselves.
+                  %p
+                    Libraries and sample implementations encourage the
+                    development of new "plugins" (or agents) to capture and
+                    export the performance data that matters in your
+                    application environment, along side the other generic
+                    performance data. 
+
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %img{:src => 'images/extend.png'}
+
+    = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render

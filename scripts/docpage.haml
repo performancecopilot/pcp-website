@@ -1,0 +1,16 @@
+!!! html
+%html
+  %head
+    = Haml::Engine.new(File.read("assets/haml-includes/head.haml")).render
+
+  %body
+    = Haml::Engine.new(File.read("assets/haml-includes/navigation.haml")).render
+
+    %div{:class => 'site-content'}
+      %div{:class => 'how-to is-typeset'}
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %div{:class => 'docpage'}
+              = File.read("__DOCPAGE__")
+
+    = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render

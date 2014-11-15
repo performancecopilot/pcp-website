@@ -1,0 +1,472 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,300);
+@import "libs/required";
+@import "libs/settings";
+@import "libs/mixins";
+@import "libs/placeholders";
+
+
+// ------------------------------------------------------------
+// Demo styles
+// ------------------------------------------------------------
+
+// The demo styles are all in one place to enable you to delete and move on with your project quickly.
+// We would recommend chunking your styles up into BEM/SMACSS modules and inclduing with Sass Globbing.
+// See line 9 of screen.scss.
+
+img {
+	@extend %max-width;
+	display: block;
+	@include trailer(4);
+}
+
+h1, h2, h3, h4, h5, h6 	{
+	color: $heading-color;
+}
+
+strong, b {
+	color: $heading-color;
+}
+
+pre {
+	font-family: Courier;
+	background: $terminal-background;
+	color: $terminal-color;
+	border-color: $jack-black;
+	border-width: 2px;
+	border-radius: 0.4em;
+	padding-left: $internal-spacing;
+	padding-right: $internal-spacing;
+	@include padding-trailer(6);
+	@include padding-leader(6);
+}
+
+table {
+	border: solid $jack-black 1px;
+	tr {
+		border: solid $jack-black 1px;
+		td {
+			padding: 5px;
+			border: solid $jack-black 1;
+		}
+	}
+}
+
+.global-header {
+	overflow: hidden;
+	background: $one;
+	@include padding-trailer(6);
+	@include padding-leader(6);
+	text-align: center;
+	@include respond-to($b-vp) {
+		text-align: left;
+	}
+}
+
+.global-logo {
+	font-weight: 700;
+	@include adjust-font-size-to($eta);
+	@include respond-to($d-vp) {
+		@include adjust-font-size-to($delta);
+		float: left;
+	}
+	a {
+		color: #fff;
+		text-decoration: none;
+		@include link-active-styles {
+			color: $action-respond;
+		}
+	}
+}
+
+.global-header__navigation {
+	position: relative;
+	z-index: 3;
+	li {
+		display: inline-block;
+		@include respond-to($c-vp) {
+			margin-left: 1.5em;
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+	}
+	ul {
+		position: relative;
+		z-index: 4;
+		font-size: $iota;
+		@include leader(4);
+		@include respond-to($b-vp) {
+			@include leader(1);
+			float: right;
+		}
+		@include respond-to($c-vp) {
+			@include leader(1);
+		}
+	}
+	a {
+		@include adjust-font-size-to($iota);
+		@include respond-to($d-vp) {
+			@include adjust-font-size-to($epsilon);
+		}
+		&.download {
+			border-radius: 0.4em;
+			padding: 0.5em 1em;
+			border: 1px solid;
+			display: none;
+			@include respond-to($c-vp) {
+				display: inline;
+			}
+		}
+	}
+}
+.logo {
+	background-image: url(/images/pcp-logo.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	@include padding-leader(25);
+	@include padding-trailer(20);
+}
+
+.community-logo {
+	position: relative;
+	background-color: $macy-grey;
+	background-position: center bottom;
+	background-size: cover;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	background-image: url(/images/community.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	@include padding-leader(20);
+	@include padding-trailer(20);
+}
+
+.hero {
+	position: relative;
+	//background-image: url(../../images/jetfighter2.jpg);
+	background-color: $macy-grey;
+	background-position: center bottom;
+	//background-size: cover;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	//@include trailer(6);
+	@include padding-leader(8);
+	@include padding-trailer(18);
+
+	h1 {
+		text-align: center;
+		font-weight: 300;
+		letter-spacing: 1px;
+		color: #fff;
+		text-transform: uppercase;
+		padding-left: $internal-spacing;
+		padding-right: $internal-spacing;
+		@include padding-trailer(2);
+		@include padding-leader(1);
+		@include adjust-font-size-to($beta);
+		@include respond-to($c-vp) {
+			@include adjust-font-size-to($alpha);
+		}
+	}
+}
+
+.hero2 {
+	@extend .hero;
+	background-color: $jack-black;
+}
+
+.casestudies {
+	h3 {
+		@include adjust-font-size-to($zeta);
+		@include trailer(3);
+		@include leader(3);
+	}
+}
+
+.docpage {
+	table {
+		border: none;
+		tbody {
+			border: none;
+			tr {
+				border: none;
+				td {
+					border: none;
+				}
+			}
+		}
+	}
+	ul {
+		li {
+			a {
+				@include adjust-font-size-to($zeta);
+			}
+			ul {
+				@include padding-leader(1);
+				li {
+					list-style-type: disc;
+					list-style-position: inside;
+					a {
+						@include adjust-font-size-to($theta);
+						margin-left: 10px;
+					}
+				}
+			}
+		}
+	}
+	h1, h2, h3 {
+		@include padding-leader(1);
+	}
+}
+
+.how-to {
+	@include padding-leader(2);
+	@include trailer(8);
+	overflow: hidden;
+	h3 {
+		border-bottom: 1px solid $base-color;
+		padding-bottom: rhythm(1, $para);
+		margin-bottom: rhythm(3, $para);
+		@include respond-to($c-vp) {
+			padding-bottom: rhythm(2, $para);
+		}
+	}
+	ul {
+		list-style: none;
+		margin-left: 0;
+	}
+	.row,
+	.row__colspaced {
+		@include respond-to($b-vp) {
+			@include trailer(5);
+			@include leader(5);
+		}
+	}
+}
+
+.manpage {
+	h2 {
+		@include trailer(5);
+		@include leader(5);
+	}
+}
+
+.team {
+	h3 {
+		border-bottom: 0px;
+		text-align: center;
+	}
+}
+
+.features_title {
+	h2 {
+		text-align: center;
+		@include adjust-font-size-to($alpha);
+		border-bottom: solid $jack-black 1px;
+		padding-bottom: 9px;
+	}
+}
+.features_left {
+	h2 {
+		text-align: center;
+		@include adjust-font-size-to($alpha);
+	}
+	p {
+		@include adjust-font-size-to($epsilon);
+        }
+}
+.features_right {
+	h2 {
+		text-align: right;
+		@include adjust-font-size-to($alpha);
+	}
+	p {
+		@include adjust-font-size-to($epsilon);
+        }
+}
+
+.features_right {
+	h2 {
+		text-align: right;
+		@include adjust-font-size-to($alpha);
+	}
+	p {
+		@include adjust-font-size-to($epsilon);
+        }
+}
+
+.col__module {
+	@include trailer(6);
+	@include respond-to($c-vp) {
+		margin-bottom: 0;
+	}
+	p, li {
+		width: 95%;
+	}
+}
+
+// Center images
+.col__module--img {
+	@extend .col__module;
+	img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+// Use circles in li
+.col__module--doc {
+	@extend .col__module--img;
+	ul {
+		list-style-type: disc;
+		list-style-position: inside;
+		@include padding-leader(2);
+		@include padding-trailer(2);
+		margin-left: 5;
+	}
+}
+
+
+.col__module--cta {
+	@include padding-leader(8);
+	@include respond-to($c-vp) {
+		text-align: center;
+	}
+	p, li {
+		width: 100%;
+	}
+	h2 {
+		@include adjust-font-size-to($alpha);
+		font-weight: 700;
+	}
+}
+
+.dark {
+	background-color: $jack-black;
+}
+
+.button {
+	border-radius: 0.4em;
+	background-color: $action;
+	color: #fff;
+	padding: 0.75em 1.5em;
+	display: block;
+	margin: 1em 0 1em 0;
+	text-align: center;
+	@include adjust-font-size-to($zeta);
+	@include link-active-styles {
+		background-color: #448;
+		color: #fff;
+	}
+	@include respond-to($c-vp) {
+		margin: 2em 1em 0 0;
+		display: inline-block;
+		text-align: left;
+	}
+}
+
+.button-one {
+	@extend .button;
+	background-color: $one;
+	a { color: $three; }
+}
+.button-two {
+	@extend .button;
+	background-color: $two;
+	a { color: $three; }
+}
+.button-three {
+	@extend .button;
+	background-color: $jack-black;
+	a { color: $three; }
+}
+.button-four {
+	@extend .button;
+	background-color: $four;
+	a { color: $three; }
+}
+.button-five {
+	@extend .button;
+	background-color: $five;
+	a { color: $three; }
+}
+
+.global-footer {
+	overflow: hidden;
+	background: $one;
+	@include padding-trailer(2);
+	@include padding-leader(10);
+	//@include leader(10);
+	@include respond-to($c-vp) {
+		@include padding-leader(18);
+		//@include leader(16);
+	}
+	@include respond-to($f-vp) {
+		@include padding-trailer(10);
+		@include padding-leader(28);
+		//@include leader(20);
+	}
+	h3, h4, p {
+		color: #fff;
+	}
+	h3 {
+		font-weight: 700;
+		@include adjust-font-size-to($gamma);
+	}
+	h4 {
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-weight: 700;
+		@include adjust-font-size-to($eta);
+	}
+	p {
+		line-height: 1.6;
+		width: 95%;
+	}
+	ul {
+		list-style: none;
+		margin-left: 0;
+		display: block;
+		li .twitter {
+			position:relative;
+			background-image: url(/images/twitter-16.png);
+			background-repeat: no-repeat;
+			background-position: left;
+			padding-left: 23px;
+		}  
+		li .github {
+			position:relative;
+			background-image: url(/images/github-16.png);
+			background-repeat: no-repeat;
+			background-position: left;
+			padding-left: 23px;
+		}  
+	}
+	
+	a {
+		color: $three;
+		@include link-active-styles {
+			color: $two;
+		}
+	}
+	.row {
+		@include trailer(6);
+		@include respond-to($c-vp) {
+			@include trailer(20);
+		}
+	}
+}
+
+.legal {
+	color: #CECECE;
+}
+
+
+// ------------------------------------------------------------
+// Index styles
+// ------------------------------------------------------------
+
+.intro {
+	@include leader(6);
+}

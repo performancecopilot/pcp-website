@@ -1,0 +1,205 @@
+!!! html
+%html
+  %head
+    = Haml::Engine.new(File.read("assets/haml-includes/head.haml")).render
+
+  %body
+    = Haml::Engine.new(File.read("assets/haml-includes/navigation.haml")).render
+
+    %div{:class => 'site-content'}
+      %div{:class => 'how-to is-typeset'}
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-8 push12-2 colspan8-8 colspan6-6 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h2 Presentations
+                %p 
+                  Several presentations from conferences and user groups
+                  follow, providing more details of the PCP architecture and
+                  features, and showing how PCP has been deployed in different
+                  production environments, e.g. a web application or HPC
+                  cluster - to concurrently monitor platform, network,
+                  message-passing and application performance.
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-6 colspan8-4 colspan6-3 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %h3 2014
+                  %ul
+                    %li
+                      %strong Ubiquitous System Analysis
+                      %br
+                      %i October 2014, Free Software and Open Source Symposium, Toronto
+                      %br
+                      Presentation - 
+                      %a{:href => 'http://www.pcp.io/papers/fsoss-2014.pdf'} PDF
+                      (2.2M),
+                      %a{:href => 'http://www.pcp.io/papers/fsoss-2014.odp'} ODP
+                      (1.4M)
+
+                    %li 
+                      %strong Programming the Performance Co-Pilot Toolkit
+                      %br
+                      %i September 2014, PyCon Japan, Tokyo
+                      %br
+                      %i August 2014, PyCon Australia, Brisbane
+                      %br
+                      Presentation -
+                      %a{:href => '/papers/pcp-py-dmcache.pdf'} PDF
+                      (1.1M),
+                      %a{:href => '/papers/pcp-py-dmcache.odp'} ODP
+                      (914K)
+
+              %div{:class => 'colspan12-6 colspan8-4 colspan6-3 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %h3 2013-2012
+                  %ul
+                    %li 
+                      %strong PCP and Systemtap
+                      %br
+                      %i October 2013, Free Software and Open Source Symposium, Toronto
+                      %br
+                      Presentation -
+                      %a{:href => "/papers/fsoss-2013.pdf"} PDF
+                      (1.3M),
+                      %a{:href => "/papers/fsoss-2013.odp"} ODP
+                      (1.6M)
+                    %li 
+                      %strong Unifying Event Trace and Sampled Performance Data
+                      %br
+                      %i October 2012, Monash University, Melbourne
+                      %br
+                      Honours thesis -
+                      %a{:href => '/papers/unifying-thesis.pdf'} PDF
+                      (1.4M),
+                      %a{:href => '/papers/unifying-thesis.odt'} ODP
+                      (1.3M)
+                      %br
+                      Presentation -
+                      %a{:href => '/papers/unifying-tracing-and-sampling.pdf'} PDF
+                      (862K),
+                      %a{:href => '/papers/unifying-tracing-and-sampling.odp'} ODP
+                      (845K)
+                      %br
+                      Demo -
+                      %a{:href => "/papers/unifying-tracing-and-sampling.swf"} SWF
+                      (5M)
+                      %a{:href => "http://screencast.com/t/Xa5wmEq7"} Screencast
+                      (streamed)
+                    %li
+                      %strong Performance Co-Pilot (PCP)
+                      %br
+                      %i July 2012, REA Group, Melbourne
+                      %br
+                      Presentation -
+                      %a{:href => "/papers/pcp-rea-group.pdf"} PDF
+                      (290K),
+                      %a{:href => "/papers/pcp-rea-group.odp"} ODP
+                      (680K)
+                    %li
+                      %strong Using PCP to monitor SNMP devices
+                      %br
+                      %i January 2012, Linux.Conf.Au, Ballarat
+                      %br
+                      Presentation -
+                      %a{:href => '/papers/snmp2pcp.pdf'} PDF
+                      (263K)
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+
+              %div{:class => 'colspan12-6 colspan8-4 colspan6-3 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %h3 2011-2009
+                  %ul
+                    %li 
+                      %strong Sample OpenGL Application Instrumentation
+                      %br
+                      %i October 2011, Monash University, Melbourne
+                      %br
+                      Demo -
+                      %a{:href => '/papers/landscape.swf'} SWF
+                      (360M),
+                      %a{:href => 'http://screencast.com/t/qb0qRX2lXZTF'} screencast
+                      (streamed)
+                    %li
+                      %strong Monitoring with Performance Co-Pilot
+                      %br
+                      %i September 2011, openSUSE Conference, Germany
+                      %br
+                      Presentation -
+                      %a{:href => "/papers/pcp_osc_2011.pdf"} PDF
+                      (251K),
+                      %a{:href => "/papers/pcp_osc_2011.odp"} ODP
+                      (189K)
+                    %li
+                      %strong Parfait Update - how it works, futures
+                      %br
+                      %i October 2010, Aconex, Melbourne
+                      %br
+                      Presentation -
+                      %a{:href => "/papers/parfait-update.pdf"} PDF
+                      (523K),
+                      %a{:href => "/papers/parfait-update.odp"} ODP
+                      (1243K)
+                    %li
+                      %strong An Introduction to Parfait
+                      %br
+                      %i July 2009, MXUG Meeting, Melbourne
+                      %br
+                      Presentation -
+                      %a{:href => "/papers/parfait.pdf"} PDF
+                      (620K),
+                      %a{:href => "/papers/parfait.odp"} ODP
+                      (1157K)
+                    %li
+                      %strong System Level Performance Management with PCP
+                      %br
+                      %i January 2009, Linux.Conf.Au, Hobart
+                      %br
+                      Presentation -
+                      %a{:href => "/papers/performance-management.pdf"} PDF
+                      (1435K),
+                      %a{:href => "/papers/performance-management.odp"} ODP
+                      (1119K)
+
+              %div{:class => 'colspan12-6 colspan8-4 colspan6-3 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %h3 2008-
+                  %ul
+                    %li 
+                      %strong System Level Performance Analysis with PCP
+                      %br
+                      %i December 2008, Victoria Java Users Group Meeting, Melbourne
+                      %br
+                      Presentation -
+                      %a{:href => "/papers/pcp-vjug.pdf"} PDF
+                      (3065K),
+                      %a{:href => "/papers/pcp-vjug.odp"} ODP
+                      (2721K)
+                    %li
+                      %strong Herding Penguins with PCP
+                      %br
+                      %i August 1999, Linux Open Source Expo and Conference, Melbourne and Singapore
+                      %br
+                      Presentation -
+                      %a{:href => "/papers/herding-penguins.pdf"} PDF
+                      (519K),
+                      %a{:href => "/papers/herding-penguins.odp"} ODP
+                      (277K)
+                    %li
+                      %strong System Level Performance Management
+                      %br
+                      %i July 1999, Conference of Australian Linux Users, Melbourne
+                      %br
+                      Presentation -
+                      %a{:href => "/papers/calu99.pdf"} PDF
+                      (488K),
+                      %a{:href => "/papers/calu99.odp"} ODP
+                      (317K)
+
+    = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render

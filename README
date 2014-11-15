@@ -1,0 +1,31 @@
+*** Website environment installation/configuration ***
+
+Instructions tested on an uptodate F20 installed with the minimal profile:
+1) Install the following packages:
+yum install -y git ruby rubygem-compass rubygam-haml lynx python rsync publican autoconf \
+  avahi-devel bison cairo-devel cyrus-sasl-devel desktop-file-utils flex libibmad-devel \
+  libibumad-devel libmicrohttpd-devel ncurses-devel nss-devel papi-devel perl-ExtUtils-MakeMaker \
+  python-devel python3-devel qt-devel readline-devel rpm-devel systemd-devel systemtap-sdt-devel \
+  glibc-devel gcc gcc-c++ man2html vim linkchecker python-beautifulsoup4 rubygems
+
+1.a) Install the following rubygem:
+  gem install sass-globbing
+  
+
+2) Clone the following repos (the pcp git repo has to be mine on github until we figure out all the
+right publican fixes):
+  git clone https://github.com/mbaldessari/pcpwebng.git
+  git clone git://oss.sgi.com/pcp/pcpweb.git
+  git clone git://oss.sgi.com/pcp/pcp.git
+
+3) Compile the pcp git tree with:
+  ./configure --with-books
+
+This will have created all the books in all the needed formats
+
+4) Create the website. Adjust the DSTLOCAL and DSTREMOTE in pcpwebng/Makefile
+  cd pcpwebng; make
+
+This will create the website in /srv/$DSTLOCAL
+
+3) Go to pcpwebng and edit the makefile and set the paths to the pcp and pcpweb git repositories

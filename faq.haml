@@ -1,0 +1,942 @@
+!!! html
+%html
+  %head
+    = Haml::Engine.new(File.read("assets/haml-includes/head.haml")).render
+
+  %body
+    = Haml::Engine.new(File.read("assets/haml-includes/navigation.haml")).render
+
+    %div{:class => 'site-content'}
+      %div{:class => 'how-to is-typeset'}
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-8 push12-2 colspan8-8 colspan6-6 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h2 FAQ
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-6 colspan8-4 colspan6-3 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %h3 General Questions
+                  %ul
+                    %li
+                      %a{:href => '#Q1'} What is Performance Co-Pilot?
+                    %li
+                      %a{:href => '#Q1a'} What is the overall PCP architecture?
+                    %li
+                      %a{:href => '#Q1b'} What licensing scheme does PCP use?
+                    %li
+                      %a{:href => '#Q2'} How is PCP different from tools like vmstat, ps, top, etc.?
+                    %li
+                      %a{:href => '#Q2a'} Metrics, names, instances and values, ... eh?
+                    %li
+                      %a{:href => '#Q3'} Where is Performance Metrics Application Programming Interface (PMAPI) documented?
+                    %li
+                      %a{:href => '#Q4'} Which application development languages are supported?
+                    %li
+                      %a{:href => '#Q5'} Are there any sample screenshots of tools in action?
+                    %li
+                      %a{:href => '#Q6'} Are there any papers or presentations about PCP?
+
+              %div{:class => 'colspan12-6 colspan8-4 colspan6-3 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %h3 Philosophical Questions
+                  %ul
+                    %li
+                      %a{:href => '#Q7'} Why the name "Co-Pilot"?
+                    %li
+                      %a{:href => '#Q8'} Why the name "Glider"?
+
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-6 colspan8-4 colspan6-3 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %h3 Technical Questions
+                  %ul
+                    %li
+                      %a{:href => '#Q10'} Why the name "Co-Pilot"?
+                    %li
+                      %a{:href => '#Q11'} What is involved in fetching metrics from PMCD?
+                    %li
+                      %a{:href => '#Q11a'} Data aggregation and averaging in a PMDA?
+                    %li
+                      %a{:href => '#Q13'} Can a monitor ask for qualitative events (e.g. threshold passing), instead of regular samples?
+                    %li
+                      %a{:href => '#Q13a'} How are triggers and alarms integrated to provide external notification?
+                    %li
+                      %a{:href => '#Q14'} Synchronous versus asynchronous notification?
+                    %li
+                      %a{:href => '#Q15'} Do you try to synchronize clocks?
+                    %li
+                      %a{:href => '#Q16'} Is there an optimized mechanism for local monitoring?
+                    %li
+                      %a{:href => '#Q20'} What about security?
+
+              %div{:class => 'colspan12-6 colspan8-4 colspan6-3 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %h3 Trouble-shooting
+                  %ul
+                    %li
+                      %a{:href => '#T10'} PMNS appears to be empty
+                    %li
+                      %a{:href => '#T11'} Resource utilization greater than 100%?
+  
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h2 Answers
+
+              %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--doc'}
+                  %p
+                    %a{:name => "Q1"}
+                    %h3 What is Performance Co-Pilot?
+                  %p
+                    Performance Co-Pilot (PCP) is a framework and services to support
+                    system-level performance monitoring and performance management.
+                  %p
+                    The architecture and services are most attractive for those
+                    seeking centralized monitoring of distributed processing
+                    (e.g. in a cluster or webserver farm environment), or on
+                    large systems with lots of moving parts.  However some of
+                    the features of PCP are also useful for hard performance
+                    problems on smaller system configurations.
+                  %p
+                    More details are avaliable on the main 
+                    %a{:href => '/index.html'} project page
+                    \.
+
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--doc'}
+                  %p
+                    %a{:name => "Q1a"}
+                    %h3 What is the overall PCP Architecture?
+                  %p
+                    As shown below, performance data is exported from a host by
+                    the PMCD (Performance Metrics Co-ordinating Daemon).  PMCD
+                    sits between monitoring clients and PMDAs (Performance
+                    Metric Domain Agents).  The PMDAs know how to collect
+                    performance data.  PMCD knows how to multiplex messages
+                    between the monitoring clients and the PMDAs.
+                  %p
+                    %img{:src => "/images/architecture.png", :alt => "Architecture Diagram"}
+
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--doc'}
+                  %p
+                    %a{:name => "Q1b"}
+                    %h3 What licensing scheme does PCP use?
+                  %p 
+                    All of the libraries in the Performance Co-Pilot (PCP)
+                    toolkit are licensed under Version 2.1 of the
+                    %a{:href => "http://www.gnu.org/copyleft/lesser.html"} GNU Lesser General Public License
+                  %p
+                    All other PCP components are licensed under Version 2 or later of the
+                    %a{:href => "http://www.gnu.org/copyleft/gpl.html"} GNU General Public License
+  
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--doc'}
+                  %p
+                    %a{:name => "Q2"}
+                    %h3 How is PCP different from tools like vmstat, ps, top, etc?
+                  %p 
+                    Each of these standard tools:
+                    %ul
+                      %li collects a predefined mix of metrics
+                      %li understands the syntax and semantics of the various &quot;stat&quot; files below &#47;proc
+                      %li involves no IPC or context switches associated with synchronous IPC
+                      %li only monitors the local host and cannot monitor a remote host
+                      %li cannot replay historical data
+                  %p
+                    Each of these standard tools could also be re-implemented
+                    over the PCP protocols, in which case they would each:
+                    %ul
+                      %li collect a predefined mix of metrics
+                      %li be insulated from how the data is extracted, and have access to the explicit data semantics over the PCP APIs
+                      %li optionally (and typically) involve IPC and context switches associated with synchronous IPC
+                      %li monitor the local host or a remote host with equal ease and no application program changes
+                      %li process real-time or historical data with equal ease and no application program changes
+                  %p
+                    As examples,
+                    %strong pmstat
+                    is a re-implementation of vmstat using the PCP APIs, and similarly
+                    %strong pmcollectl
+                    and
+                    %strong pmatop
+                    are python versions of the originals.
+                  %p
+                    Other new PCP clients could be written to embrace and
+                    extend functionality from existing tools, e.g. 
+                    %ul
+                      %li
+                        monitor multiple hosts concurrently, e.g. think of top or
+                        vmstat working across all nodes in a cluster; in fact pmstat
+                        can monitor an arbitrary number of hosts concurrently
+                      %li
+                        be more general and support display, plotting,
+                        visualization for arbitrary collections of performance
+                        metrics, including those from the service, library and
+                        application layers that are outside any procfs
+                        or other system call export mechanism discover and
+                        exploit extensible collections of performance metrics
+                        as you develop new agents or &quot;plugins&quot;
+  
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--doc'}
+                  %p
+                    %a{:name => "Q2a"}
+                    %h3 Metrics, names, instances and values, ... eh?
+                  %p
+                    Performance Co-Pilot uses a single, comprehensive, data
+                    model to describe all available performance data.
+                  %dl
+                    %dt
+                      %strong Metric
+                      %dd
+                        Information about some activity or resource utilization
+                        or quality of service or tuning parameter or
+                        configuration.
+                    %dt
+                      %strong Metric Value(s)
+                      %dd
+                        Each metric may have one value (e.g. the number of CPUs
+                        in the system), or a set of values (e.g. the number of
+                        system calls for each CPU in the system).  The former
+                        are called singular metrics, the latter have an
+                        associated instance domain to describe the set
+                        for which values exist.
+                    %dt
+                      %strong Metric Names
+                      %dd
+                        Each metric has an associated name.  The names are
+                        maintained as a hierarchy in a Performance Metrics Name
+                        Space (PMNS) and a &quot;dot&quot; notation is used to
+                        describe a path through the PMNS.  Metrics are
+                        associated with leaf nodes in the PMNS.  For example:
+                        hinv.ncpu, kernel.percpu.syscall, kernel.percpu.cpu.sys
+                        and kernel.all.load.
+                    %dt
+                      %strong Metric Descriptors
+                      %dd
+                        Each metric has an associated descriptor that provides
+                        information that may be used to decode and interpret
+                        the values of the metric over time.  The descriptor
+                        provides the following information:
+                        %ul
+                          %li
+                            A unique internal Performance Metric Identifier (PMID)
+                          %li
+                            The data type for the value(s), being one of 32,
+                            U32, 64, U64, FLOAT, DOUBLE, STRING, AGGREGATE.
+                          %li
+                            The identifier for the associated instance domain
+                            for set-valued metrics, else PM_INDOM_NULL for
+                            singular metrics.
+                          %li
+                            The semantics of the value(s), i.e. counter,
+                            instantaneous, discrete.
+                          %li
+                            The units of the value(s), expressed as a dimension
+                            and scale in the axes time, space and events.
+                    %dt
+                      %strong Instance Domain
+                      %dd
+                        When a metric has a set of associated values, each
+                        value belongs to an instance of an instance domain.
+                        For example the metric kernel.percpu.syscall has one
+                        value for each CPU (or instance) and the instance
+                        domain describes how many CPUs there are and how they
+                        are distinguished from one anoter (i.e. their names).
+                        Each instance domain is described by the following
+                        information:
+                        %ul
+                          %li
+                            A unique internal instance domain number (used in
+                            the metric descriptors to associate one or more
+                            metrics with each instance domain).
+                          %li
+                            A list of unique external names for each instance.
+                          %li
+                            A list of unique internal identifiers for each
+                            instance (the protocols prefer to move 32-bit
+                            instance numbers rather than ASCII instance names).
+                  %p
+                    Putting this altogether we can use pminfo to explore
+                    the available information.
+                    %pre
+                      :preserve
+                        $ pminfo filesys
+                        filesys.capacity
+                        filesys.used
+                        filesys.free
+                        filesys.maxfiles
+                        filesys.usedfiles
+                        filesys.freefiles
+                        filesys.mountdir
+                        filesys.full
+
+                        $ pminfo -md filesys.free
+                        filesys.free PMID: 60.5.3
+                          Data Type: 64-bit unsigned int  InDom: 60.5 0xf000005
+                          Semantics: instant  Units: Kbyte
+
+                        $ pminfo -f filesys.free
+                        filesys.free
+                          inst [0 or "/dev/root"] value 3498272
+                          inst [1 or "/dev/hda3"] value 20106
+                          inst [2 or "/dev/hda5"] value 7747420
+                          inst [3 or "/dev/hda2"] value 368432
+
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--doc'}
+                  %p
+                    %a{:name => "Q3"}
+                    %h3 Where is the Performance Metrics Application Programming Interface (PMAPI) documented?
+                  %p
+                    The PMAPI defines the interface between a client
+                    application requesting performance data and the collection
+                    infrastructure that delivers the performance data.
+                  %p
+                    There are &quot;man&quot; pages for every routine defined
+                    at the PMAPI. Start with &quot;man 3 pmapi&quot; for an
+                    overview. See also Chapter 3 of the:
+                    %a{:href => '/books/PCP_PG/pdf/PCP-3-pcp-programmers-guide-en-US.pdf'} Performance Co-Pilot Programmer's Guide
+
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--doc'}
+                  %p
+                    %a{:name => "Q4"}
+                    %h3 Which application development languages are supported?
+                  %p
+                    Most agents and clients are written in C.  Some clients are
+                    C++, and others are written in Python.  There are several
+                    Perl and Python agents, but C remains the most common at
+                    this stage.  Application instrumentation is supported using
+                    the PCP MMV (memory-mapped-value) API.  This is a C library
+                    with Perl and Python bindings.  A pure-Java implementation
+                    exists as well - refer to the separate &quot;Parfait&quot;
+                    project.
+
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--doc'}
+                  %p
+                    %a{:name => "Q5"}
+                    %h3 Are there any sample screenshots of tools in action?
+                  %p
+                    Why yes, yes there are - in addition to the examples in the
+                    books about PCP, you might also enjoy this local
+                    %a{:href => "/screenshots.html"} collection
+                    \.
+
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--doc'}
+                  %p
+                    %a{:name => "Q6"}
+                    %h3 Are there any papers or presentations about PCP?
+                  %p
+                    Indeed - a reference list of all those we have permission
+                    to reproduce can be found
+                    %a{:href => "/presentations.html"} here
+                    \.
+
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--doc'}
+                  %p
+                    %a{:name => "Q7"}
+                    %h3 Why the name "Co-Pilot"?
+                  %p
+                    PCP was designed to assist in reducing difficult
+                    performance problems into something that can be managed by
+                    a human.  In the same way that modern aircraft have tightly
+                    integrated computer control systems that a pilot cannot fly
+                    without, PCP assists in managing and understanding
+                    otherwise impossibly complex performance scenarios.
+
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--doc'}
+                  %p
+                    %a{:name => "Q8"}
+                    %h3 Why the name "Glider"?
+                  %p
+                    PCP 
+                    %a{:href => "glider.html"} Glider
+                    contains the native Windows version of PCP. The rationale
+                    for the name is along these lines:
+                    %ul
+                      %li
+                        It's not "just" PCP, so its not just called "Windows
+                        PCP".  It includes a relatively complete,
+                        cross-platform performance management environment for
+                        Windows - PCP and PCP GUI are components, but there are
+                        many other pieces (including C compiler, and Qt4
+                        runtime)
+                      %li
+                        "Glider" continues the "Co-Pilot" aeronautical theme,
+                        and is meant to represent "making something difficult
+                        appear effortless".
+
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--doc'}
+                  %p
+                    %a{:name => "Q10"}
+                    %h3 What is the nature of the communication between processes?
+                  %p
+                    The TCP/IP communication between PMCD and a monitoring
+                    client is connection-oriented for the most part.
+                  %p
+                    The when a connection is lost, the client library will
+                    automatically attempt reconnection to the PMCD with a
+                    controlled maximal rate of trying (uses a variant of
+                    exponential back-off).  The error-handling regime for the
+                    clients already supports &quot;no data currently
+                    available&quot; for lots of reasons (like a PMDA is not
+                    installed or PMCD was restarted or lost the connection to
+                    PMCD), so there is typically very little that the client
+                    developer needs to do to handle this gracefully.
+                  %p
+                    For monitor clients, once the initial metadata exchanges
+                    with PMCD are complete, there is typically one message to
+                    PMCD and one message back from PMCD for each sample,
+                    independent of the number of metrics requested and the
+                    number of instances (or values) to be returned.
+                  %p
+                    %strong pmlogger
+                    is a monitor client, so the same applies to communication
+                    between PMCD and
+                    %strong pmlogger
+                  %p
+                    At PMCD, each message from a monitor client is forwarded to
+                    one or more PMDAs, PMCD then collates the messages back
+                    from each PMDA that was asked to help and returns a single
+                    message to the client.  It is an important part of the
+                    design that:
+                    %ul
+                      %li
+                        clients are ignorant of the de-multiplexing and
+                        multiplexing by PMCD
+                      %li
+                        PMDAs are ignorant of each other
+                      %li
+                        PMCD knows nothing, except how to act as a message switcher
+                  %p      
+                    The communication between PMCD and the PMDAs uses TCP/IP or
+                    pipes or direct procedure calls (for DSO PMDAs).
+
+
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--doc'}
+                  %p
+                    %a{:name => "Q11"}
+                    %h3 What is involved in fetching metrics from PMCD?
+                  %p
+                    The following high-level description follows the
+                    interactions between a monitoring client and PMCD to fetch
+                    metrics periodically.
+                    %ol
+                      %li
+                        The monitoring client connects to PMCD and explores the
+                        Performance Metrics Name Space using
+                        %a{:href => '/man/man3/pmgetchildren.3.html'} pmGetChildren(3)
+                        or pmTraversePMNS(3) for
+                        either one-level at a time expansion or recursive
+                        expansion.
+                      %li
+                        Once the client has the name(s) of the metrics of
+                        interest,
+                        %a{:href => '/man/man3/pmlookupname.3.html'} pmLookupName(3)
+                        returns PMIDs and then
+                        %a{:href => '/man/man3/pmlookupdesc.3.html'} pmLookupDesc(3)
+                        will return the descriptor for a metric.
+                      %li
+                        For set-valued metrics, use the instance domain number
+                        from the metric descriptor, and the routines
+                        %a{:href => '/man/man3/pmlookupindom.3.html'} pmLookupInDom(3)
+                        %a{:href => '/man/man3/pmgetindom.3.html'} pmGetInDom(3)
+                        and
+                        %a{:href => '/man/man3/pmnameindom.3.html'} pmNameInDom(3)
+                        to browse the instance domain.
+                        Alternatively, ignore the instance domain and all
+                        instances will be returned.
+                      %li
+                        See also 
+                        %a{:href => '/man/man3/pmlookuptext.3.html'} pmLookupText(3)
+                        and
+                        %a{:href => '/man/man3/pmlookupindomtext.3.html'} pmLookupIndomText(3)
+                        for help text about metrics and instances (better
+                        suited for human consumption than interpretation by
+                        monitoring clients).
+                      %li
+                        Repeat until bored:
+                        %a{:href => '/man/man3/pmfetch.3.html'} pmFetch(3)
+                        ; report; sleep;
+                  %p
+                    To see all of the gory details, turn on PDU tracing and run
+                    simple pminfo commands:
+                    %pre
+                      :preserve
+                        $ pminfo -D PDU kernel.all.cpu
+                        $ pminfo -D PDU -fdT kernel.all.load
+
+                    See also
+                    %a{:href =>"#Q2a"}Metrics, names, instances and values, ... eh?
+
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--doc'}
+                  %p
+                    %a{:name => "Q11a"}
+                    %h3 Data aggregation and averaging in a PMDA?
+                  %p
+                    Mark D. Anderson asks: obviously a monitor can compute
+                    anything it likes, but can a monitor request that a agent
+                    do some server-side computation before sending the
+                    resulting data back, either across measurements (say,
+                    changing units or adding together), or across time (running
+                    average, etc.)?
+                  %p
+                    This is certainly possible, but we've tended to discourage
+                    it.  Philosophically we believe any interval-based
+                    aggregation belongs in the monitoring clients.  The PMDA
+                    cannot see the client state, so the PMDA does not know
+                    which client it is responding to at the moment, so you'd
+                    need to add some additional state using the
+                    %a{:href => '/man/man3/pmstore.3.html'} pmStore(3)
+                    interface to selectively modify state in the PMDA from a
+                    client (this is typically used to toggle debug flags or
+                    enable optional instrumentation and changing units would be
+                    in this category).
+
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--doc'}
+                  %p
+                    %a{:name => "Q13"}
+                    %h3 Can a monitor ask for qualitative events (e.g. threshold passing), instead of regular samples?
+                  %p
+                    Not directly.  Use the Performance Metrics API (PMAPI)
+                    directly for periodic sampling (most of the PCP monitoring
+                    tools are like this).  Use
+                    %strong pmie
+                    for filtering and events. See also 
+                    %a{:href => "#Q14"} Synchronous versus asynchronous notification
+                    \.
+
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--doc'}
+                  %p
+                    %a{:name => "Q13a"}
+                    %h3 How are triggers and alarms integrated to provide external notification?
+                  %p
+                    External notification usually means some combination of
+                    e-mail, paging, phone-home or posting to an event
+                    clearinghouse.
+                  %p
+                    %strong pmie
+                    is the PCP tool for automated monitoring and taking
+                    predicated actions. pmie's actions are arbitrary;
+                    there are some canned ones, but then there is a general
+                    &quot;execute this command&quot; action.  The latter has
+                    been used to do pager events, and integrate events into
+                    larger system management frameworks like Nagios, OpenView,
+                    and so on.
+
+
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--doc'}
+                  %p
+                    %a{:name => "Q14"}
+                    %h3 Synchronous versus asynchronous notification?
+                  %p
+                    The model for shipping values of the performance metrics
+                    from PMCD to the monitoring clients is &quot;synchronous
+                    pull&quot; where the clients explicitly ask for data when
+                    they want it.  There is no push, broadcast, callback or
+                    other asynchronous notification for the values of
+                    performance metrics, although 
+                    %strong pmie
+                    can be used to perform period sampling and raise
+                    asynchronous alarms (of any flavour) when something
+                    interesting happens.
+                  %p
+                    For more details refer to the
+                    %a{:href => '/books/PCP_PG/pdf/PCP-3-pcp-programmers-guide-en-US.pdf'} Performance Co-Pilot Programmer's Guide
+
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--doc'}
+                  %p
+                    %a{:name => "Q15"}
+                    %h3 Do you try to synchronize clocks?
+                  %p
+                    No.  The clients receive one timestamp from PMCD with each
+                    group of values returned, so the only issue is skew when a
+                    monitoring client is processing performance data from more
+                    than one host or more than one archive.
+                  %p
+                    This is not a real problem in most cases because PCP is
+                    aiming at system-level performance monitoring, with a bias
+                    for large systems, so sampling rates are typically of the
+                    order of a few seconds up to tens of minutes.  We do not
+                    try to tackle event traces requiring sub-microsecond
+                    accuracy in the timestamps.
+
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--doc'}
+                  %p
+                    %a{:name => "Q16"}
+                    %h3 Is there an optimized mechanism for local monitoring?
+                  %p
+                    Yes.  Applications wishing to avoid the overhead of
+                    connection to PMCD and communication over TCP/IP may
+                    extract operating system performance data directly using
+                    the DSO implementation of the PMDA.  The same application
+                    can decide at run-time to use either the regular or the
+                    express access path.
+                  %p
+                    See PM_CONTEXT_LOCAL in 
+                    %a{:href => '/man/man3/pmnewcontext.3.html'} pmNewContext(3).
+
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--doc'}
+                  %p
+                    %a{:name => "Q20"}
+                    %h3 What about security?
+                  %p
+                    Originally, there was no client or server authentication
+                    and no encryption.  In recent releases, this has been
+                    extended with optional secure connections, which are
+                    encrypted and can also provide user authentication.
+                  %p
+                    A simple access control model was used in the past - the
+                    PMCD daemon and the pmlogger processes support an
+                    IP-based allow/disallow mechanism for client connections on
+                    some or all network interfaces.
+                  %p
+                    This too has since been extended, allowing for a user based
+                    access control mechanism such that access to the collector
+                    daemons can be restricted based on host(s), user(s) and/or
+                    group(s).
+
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--doc'}
+                  %p
+                    %a{:name => "T10"}
+                    %h3 PMNS appears to be empty!
+                  %p
+                    If you re-build PCP from the source and use &quot;make
+                    install&quot; to do the installation (as opposed to a
+                    package-based installation), some manual post-installation
+                    steps will be required.
+                  %p
+                    In particular the &quot;PMNS appears to be empty!&quot;
+                    message from any PCP monitoring tool means the Performance
+                    Metrics Name Space (PMNS) has not been correctly set up.
+                    To fix this:
+                    %pre
+                      :preserve
+                        # source /etc/pcp.conf
+                        # touch $PCP_VAR_DIR/pmns/.NeedRebuild
+                        # $PCP_RC_DIR/pcp start
+
+                    else if you are not starting pmcd this way, the
+                    brute-force method is,
+                    %pre
+                      :preserve
+                        # cd $PCP_VAR_DIR/pmns
+                        # ./Rebuild -du
+
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--doc'}
+                  %p
+                    %a{:name => "T11"}
+                    %h3 Resource utilization greater than 100%?
+                  %p
+                    Mail received from Nicholas Guillier on Wed, 30 Jun 2004.
+                    %br
+                    %i
+                      I use PCP-2.2.2-132 to remotly monitor a linux system.  I
+                      sometimes face a strange problem: between two
+                      acquisitions, the consumed cpu time is higher than the
+                      real time!  Once turned into a percentage, the resulting
+                      value can reach up to 250% of cpu load!  This case occurs
+                      for kernel.cpu.* metrics and with disk.all.avactive
+                      metric as well (both from linux pmda).
+                  %p
+                    First cpu time and disk active time are both really
+                    counters in units of time in the kernel, so the
+                    reported value for the metric 
+                    %i v
+                    requires observations at times 
+                    %i t
+                    %sub 1
+                    and
+                    %i t
+                    %sub 2
+                    then reporting the rate (actually time/time, so a utilization)
+                    as 
+                    %i (v(t
+                    %sub 2
+                    %i ) - v(t
+                    %sub 1
+                    %i )) / (t
+                    %sub 2
+                    %i - t
+                    %sub 1
+                    %i )
+                  %p
+                    The sort of perturbation you report occurs when the
+                    collector system (PMCD and PMDAs) is heavily loaded.
+                  %p
+                    The collection architecture assigns one timestamp per
+                    fetch, and if the collection system is heavily loaded then
+                    there is some (non-trivial in the extreme case) time window
+                    between when the first value in the fetch is retrieved from
+                    the kernel and when the last is retried from the kernel.
+                  %p
+                    Let me try to explain with an example with two counter
+                    metrics, x and y with correct values as shown below:
+
+                  %table
+                    %tr
+                      %th
+                        Time (t)
+                      %th
+                        x
+                      %th
+                        y
+                    %tr
+                      %td
+                        0
+                      %td
+                        0
+                      %td
+                        0
+                    %tr
+                      %td
+                        1
+                      %td
+                        1
+                      %td
+                        10
+                    %tr
+                      %td
+                        2
+                      %td
+                        2
+                      %td
+                        20
+                    %tr
+                      %td
+                        3
+                      %td
+                        3
+                      %td
+                        30
+                    %tr
+                      %td
+                        4
+                      %td
+                        4
+                      %td
+                        40
+                    %tr
+                      %td
+                        5
+                      %td
+                        5
+                      %td
+                        50
+                    %tr
+                      %td
+                        6
+                      %td
+                        6
+                      %td
+                        60
+                    %tr
+                      %td
+                        7
+                      %td
+                        7
+                      %td
+                        70
+                    %tr
+                      %td
+                        8
+                      %td
+                        8
+                      %td
+                        80
+
+                  %p
+                    Now on a lightly loaded system, if we consider 3 samples at
+                    t=1, t=4 and t=7, and [x] is the timestamp associated with
+                    the returned values:
+                    %table
+                      %tr
+                        %th
+                          Time
+                        %th
+                          Action
+                      %tr
+                        %td
+                          1
+                        %td
+                          pmcd retrieves x=1 and y=10
+                          %br
+                          pcp client receives {[1] x=1 y=10}
+                      %tr
+                        %td
+                          4
+                        %td
+                          pmcd retrieves x=4 and y=40
+                          %br
+                          pcp client receives {[4] x=4 y=40}
+                      %tr
+                        %td
+                          7
+                        %td
+                          pmcd retrieves x=7 and y=70
+                          %br
+                          pcp client receives {[7] x=7 y=70}
+                  %p
+                    And the reported rates would be correct, namely:
+                    %table
+                      %tr
+                        %th
+                          Time (t)
+                        %th
+                          x
+                        %th
+                          y
+                      %tr
+                        %td
+                          1
+                        %td
+                          no values available
+                        %td
+                          no values available
+                      %tr
+                        %td
+                          4
+                        %td
+                          (4-1)/3=1.00
+                        %td
+                          (40-10)/3=10.00
+                      %tr
+                        %td
+                          7
+                        %td
+                          (7-4)/3=1.00
+                        %td
+                          (70-40)/3=10.00
+                  %p
+                    Now on a heavily loaded system this could happen ...
+                    %table
+                      %tr
+                        %th
+                          Time
+                        %th
+                          Action
+                      %tr
+                        %td
+                          1
+                        %td
+                          pmcd retrieves x=1 and y=10
+                          %br
+                          pcp client receives {[1] x=1 y=10}
+                      %tr
+                        %td
+                          4
+                        %td
+                          pmcd retrieves x=4
+                          %br
+                          \..delay..
+                          %br
+                      %tr
+                        %td
+                          5
+                        %td
+                          pmcd retrieves y=50
+                          %br
+                          pcp client receives {[5]x=4 y=50}
+                      %tr
+                        %td
+                          7
+                        %td
+                          pmcd retrieves x=7 and y=70
+                          %br
+                          pcp client receives {[7] x=7 y=70}
+                  %p
+                    And the reported rates would be ...
+                    %table
+                      %tr
+                        %th
+                          Time (t)
+                        %th
+                          x
+                        %th
+                          y
+                      %tr
+                        %td
+                          1
+                        %td
+                          no values available
+                        %td
+                          no values available
+                      %tr
+                        %td
+                          4
+                        %td
+                          (4-1)/4=0.75
+                        %td
+                          (50-10)/4=10.00
+                      %tr
+                        %td
+                          7
+                        %td
+                          (7-4)/2=1.50
+                        %td
+                          (70-50)/2=10.00
+
+
+                  %p
+                    So, the delayed fetch at time 4 (which does not return
+                    values until time 5) produces:
+                    %ul
+                      %li
+                        x is too small at t=5
+                      %li
+                        x is too big at t=7
+                  %p
+                    You're noticing the second case.
+                  %p
+                    Note that because these are counters, the effects are
+                    self-cancelling and diminish over longer sampling
+                    intervals.  There is nothing inherently wrong here.
+
+
+    = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render

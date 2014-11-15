@@ -1,0 +1,75 @@
+!!! html
+%html
+  %head
+    = Haml::Engine.new(File.read("assets/haml-includes/head.haml")).render
+
+  %body
+    = Haml::Engine.new(File.read("assets/haml-includes/navigation.haml")).render
+
+    %div{:class => 'site-content'}
+      %div{:class => 'how-to is-typeset'}
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-8 push12-2 colspan8-8 colspan6-6 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h2 Screenshots
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-4 colspan8-3 colspan6-2 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %h3 
+                  %ul
+                    %li
+                      %a{:href => '/snaps/dkvis.png'}
+                        %img{:src => '/snaps/dkvis.png'}
+                    %li
+                      %a{:href => '/snaps/dxbapp.png'}
+                        %img{:src => '/snaps/dxbapp.png'}
+                    %li
+                      %a{:href => '/snaps/kvm.png'}
+                        %img{:src => '/snaps/kvm.png'}
+                    %li
+                      %a{:href => '/snaps/macosxlive.png'}
+                        %img{:src => '/snaps/macosxlive.png'}
+                    %li
+                      %a{:href => '/snaps/mpvis.png'}
+                        %img{:src => '/snaps/mpvis.png'}
+
+              %div{:class => 'colspan12-4 colspan8-3 colspan6-2 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %h3 
+                  %ul 
+                    %li
+                      %a{:href => '/snaps/newchart0.png'}
+                        %img{:src => '/snaps/newchart0.png'}
+                    %li
+                      %a{:href => '/snaps/newchart1.png'}
+                        %img{:src => '/snaps/newchart1.png'}
+                    %li
+                      %a{:href => '/snaps/newchart2.png'}
+                        %img{:src => '/snaps/newchart2.png'}
+                    %li
+                      %a{:href => '/snaps/oview512p.png'}
+                        %img{:src => '/snaps/oview512p.png'}
+
+              %div{:class => 'colspan12-4 colspan8-3 colspan6-2 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %h3 
+                  %ul
+                    %li
+                      %a{:href => '/snaps/pmstat.png'}
+                        %img{:src => '/snaps/pmstat.png'}
+                    %li
+                      %a{:href => '/snaps/pmval.png'}
+                        %img{:src => '/snaps/pmval.png'}
+                    %li
+                      %a{:href => '/snaps/win2k8.png'}
+                        %img{:src => '/snaps/win2k8.png'}
+                    %li
+                      %a{:href => '/snaps/nasmel.png'}
+                        %img{:src => '/snaps/nasmel.png'}
+
+    = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
