@@ -1,3 +1,9 @@
 body {
 	max-width: 100%;
 }
+
+a:link, a:visited {
+	text-decoration: none;
+	border-bottom: none ;
+	color:#e74c3c;
+}

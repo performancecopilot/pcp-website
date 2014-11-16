@@ -27,8 +27,17 @@
       Paths to document() are relative to the xml build directory under $book/tmp
       Not the location of this xslt
   -->
-   <xsl:variable name="codefile" select="document('/usr/share/publican/Common_Content/pcp-brand/xsl/header.html',/)"/>
-   <xsl:copy-of select="$codefile/htmlcode/node()"/>
+   <xsl:variable name="codefile1" select="document('/usr/share/publican/Common_Content/pcp-brand/xsl/header.html',/)"/>
+   <xsl:copy-of select="$codefile1/htmlcode/node()"/>
 </xsl:template>
 
+<xsl:template name="user.header.navigation">
+   <xsl:variable name="codefile2" select="document('/usr/share/publican/Common_Content/pcp-brand/xsl/navigation.html',/)"/>
+   <xsl:copy-of select="$codefile2/htmlcode/node()"/>
+</xsl:template>
+
+<xsl:template name="user.footer.navigation">
+   <xsl:variable name="codefile4" select="document('/usr/share/publican/Common_Content/pcp-brand/xsl/footer.html',/)"/>
+   <xsl:copy-of select="$codefile4/htmlcode/node()"/>
+</xsl:template>
 </xsl:stylesheet>
