@@ -40,4 +40,5 @@
    <xsl:variable name="codefile4" select="document('/usr/share/publican/Common_Content/pcp-brand/xsl/footer.html',/)"/>
    <xsl:copy-of select="$codefile4/htmlcode/node()"/>
 </xsl:template>
+
 </xsl:stylesheet>
