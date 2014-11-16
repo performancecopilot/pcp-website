@@ -1,0 +1,12 @@
+.sass-cache
+*.css
+*.swp
+*.html
+docs/
+man/
+scripts/*.pyc
+books/
+images/
+!pcp-brand/en-US/images/
+!pcp-brand/en-US/css/*.css
+papers/landscape.swf
