@@ -18,3 +18,9 @@ for i in PCP_PG PCP_UAG PCP_TCS; do
     PDFPATH=$1/books/$i/tmp/en-US/pdf
     cp -rdp $PDFPATH books/$i
 done
+
+# FIXME: horrendous hack. This needs to be done in publican/xsl
+for i in `find books/ -type f -iname '*.html'`; do
+    perl -pi -e "s,</header>,</header> <div class='site-content'> <div class='how-to is-typeset'> <div class='row-parent'> <div class='row'>," "$i";
+    perl -pi -e 's,<footer xmlns="" class="global-footer is-typeset">,</div> </div> </div> </div> <footer class="global-footer is-typeset">,' "$i";
+done
