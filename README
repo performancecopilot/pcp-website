@@ -10,19 +10,27 @@ yum install -y git ruby rubygem-compass rubygam-haml lynx python rsync publican 
 
 1.a) Install the following rubygem:
   gem install sass-globbing
-  
 
 2) Clone the following repos (the pcp git repo has to be mine on github until we figure out all the
 right publican fixes):
   git clone https://github.com/mbaldessari/pcpwebng.git
   git clone git://oss.sgi.com/pcp/pcp.git
 
-3) Compile the pcp git tree with:
+3) Symlink the pcp-brand:
+ln -s ..DIR../pcpwebng/pcp-brand /usr/share/publican/Common_Content/
+
+Use the pcp-brand in the books:
+for i in `find ~/Devel/pcp/books/ -iname 'publican.cfg'`; do
+	perl -pi -e 's,^brand:.*$,brand: pcp-brand,' "$i";
+done
+
+4) Compile the pcp git tree with:
   ./configure --with-books
 
 This will have created all the books in all the needed formats
+using the pcp-brand
 
-4) Create the website:
+5) Create the website:
 Adjust the DSTLOCAL and DSTREMOTE in pcpwebng/Makefile and then
   cd pcpwebng; make
 

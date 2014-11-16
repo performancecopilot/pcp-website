@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+]>
+<section>
+	<title>We want feedback</title>
+	 <indexterm>
+		<primary>feedback</primary>
+		 <secondary>contact information for this manual</secondary>
+
+	</indexterm>
+
+		 <para>
+		If you find errors or have suggestions for improvement, we want your advice. Submit a report in Bugzilla against the pcp product and the pcp component. The following link automatically loads this information for you: &BZURL;.
+	</para>
+	 <procedure>
+		<para>
+			In Bugzilla:
+		</para>
+		 <step>
+			<para>
+				Provide a short summary of the error or your suggestion in the <literal>Summary</literal> field.
+			</para>
+
+		</step>
+		 <step>
+			<para>
+				Copy the following template into the <literal>Description</literal> field and give us the details of the error or suggestion as specifically as you can. If possible, include some surrounding text so we know where the error occurs or the suggestion fits.
+			</para>
+			 
+<screen>Document URL:
+
+
+Section number and name:
+
+
+Error or suggestion:
+
+
+Additional information:
+
+
+</screen>
+
+		</step>
+		 <step>
+			<para>
+				Click the <guibutton>Submit Bug</guibutton> button.
+			</para>
+
+		</step>
+
+	</procedure>
+
+</section>
+
+
