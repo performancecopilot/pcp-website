@@ -68,7 +68,7 @@ check:
 checkimages:
 	./scripts/check-for-unused-images.py $(DSTLOCAL)
 
-.PHONY: clean man docs
+.PHONY: clean man docs books
 
 clean:
 	rm -f *.html
