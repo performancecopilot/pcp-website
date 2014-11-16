@@ -31,12 +31,12 @@
    <xsl:copy-of select="$codefile1/htmlcode/node()"/>
 </xsl:template>
 
-<xsl:template name="user.header.navigation">
+<xsl:template name="user.header.content">
    <xsl:variable name="codefile2" select="document('/usr/share/publican/Common_Content/pcp-brand/xsl/navigation.html',/)"/>
    <xsl:copy-of select="$codefile2/htmlcode/node()"/>
 </xsl:template>
 
-<xsl:template name="user.footer.navigation">
+<xsl:template name="user.footer.content">
    <xsl:variable name="codefile4" select="document('/usr/share/publican/Common_Content/pcp-brand/xsl/footer.html',/)"/>
    <xsl:copy-of select="$codefile4/htmlcode/node()"/>
 </xsl:template>
