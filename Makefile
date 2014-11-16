@@ -75,4 +75,4 @@ clean:
 	rm -rf docs man books images
 	rm -rf $(DSTLOCAL)
 	mkdir $(DSTLOCAL)
-	find . -iname '*.css' -exec rm "{}" \;
+	rm assets/css/*.css
