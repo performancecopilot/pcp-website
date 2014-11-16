@@ -32,6 +32,8 @@
 
 - In the start index.html add the last couple of news items from news.haml
 
+- The pdf title should not be the file name
+
 *** Infrastructure ***
 
 - Document all the needed changes/steps for a new PCP release (update news.haml, twitter, etc)
