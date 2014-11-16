@@ -39,9 +39,7 @@
 - Generate books automatically via publican from the git tree
   This works with upstream wktohtmlpdf with patched qt:
   http://downloads.sourceforge.net/project/wkhtmltopdf/0.12.1/wkhtmltox-0.12.1_linux-centos7-amd64.rpm)
-  And with the following set of patches are here: https://github.com/mbaldessari/pcp/commits/publican-fixes
 
-  - Add a theme for publican that reflects the new PCP webpage
   - The condition sgi_termwidth is still an issue as it blends out lots of content
   - The pdf books often cut lines in the middle during a page jump
 
