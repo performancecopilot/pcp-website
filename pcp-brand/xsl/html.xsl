@@ -41,4 +41,64 @@
    <xsl:copy-of select="$codefile4/htmlcode/node()"/>
 </xsl:template>
 
+<!--
+From: /usr/share/publican/html.xsl
+Reason: Add needed DIVs
+Version:
+-->
+<xsl:template name="chunk-element-content">
+  <xsl:param name="prev"/>
+  <xsl:param name="next"/>
+  <xsl:param name="nav.context"/>
+  <xsl:param name="content">
+    <xsl:apply-imports/>
+  </xsl:param>
+
+  <xsl:call-template name="user.preroot"/>
+
+  <html>
+    <xsl:call-template name="html.head">
+      <xsl:with-param name="prev" select="$prev"/>
+      <xsl:with-param name="next" select="$next"/>
+    </xsl:call-template>
+
+    <body>
+      <xsl:call-template name="body.attributes"/>
+      <xsl:if test="$embedtoc != 0">
+        <div id="navigation"></div>
+        <div id="floatingtoc" class="hidden"></div>
+      </xsl:if>
+      <xsl:call-template name="user.header.navigation"/>
+      <div class='site-content'>
+	<div class='how-to is-typeset'>
+	  <div class='row-parent'>
+           <div class='row'>
+        <xsl:call-template name="header.navigation">
+        <xsl:with-param name="prev" select="$prev"/>
+        <xsl:with-param name="next" select="$next"/>
+        <xsl:with-param name="nav.context" select="$nav.context"/>
+      </xsl:call-template>
+
+      <xsl:call-template name="user.header.content"/>
+
+      <xsl:copy-of select="$content"/>
+
+      <xsl:call-template name="user.footer.content"/>
+
+      <xsl:call-template name="footer.navigation">
+        <xsl:with-param name="prev" select="$prev"/>
+        <xsl:with-param name="next" select="$next"/>
+        <xsl:with-param name="nav.context" select="$nav.context"/>
+      </xsl:call-template>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <xsl:call-template name="user.footer.navigation"/>
+    </body>
+  </html>
+  <xsl:value-of select="$chunk.append"/>
+</xsl:template>
+
 </xsl:stylesheet>
