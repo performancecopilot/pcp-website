@@ -73,4 +73,27 @@
           %div{:class => 'button-four'}
             %a{:href => '/documentation.html'} Learn More
 
+    %div{:class => 'hero2'}
+      %div{:class => 'colspan12-8 push12-2 colspan8-6 push8-1 colspan6-4 push6-1 colspan2-2'}
+        %div{:class => 'col__module col__module--cta'}
+          %h1 
+            %a{:href => "/news.html"} News
+          %div{:class => 'row-parent'}
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p 
+                      Oct 2014
+                      %br
+                      PCP 3.10.0
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p 
+                      Python v3 modules, Web service and
+                      front-end updates to support Graphite/Grafana, DS 389
+                      PMDAs. Additional nfs v4.1 and rpc.server metrics. Bug fixes.
+                      
+
+
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render

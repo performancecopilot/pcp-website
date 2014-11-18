@@ -28,8 +28,6 @@
 - most external man pages do not seem to exist:
   http://man7.org/linux/man-pages/man1/x.1.html 
 
-- In the start index.html add the last couple of news items from news.haml
-
 - The pdf title should not be the file name
 
 - The html title should not be the file name
@@ -42,7 +40,6 @@
   This works with upstream wktohtmlpdf with patched qt:
   http://downloads.sourceforge.net/project/wkhtmltopdf/0.12.1/wkhtmltox-0.12.1_linux-centos7-amd64.rpm)
 
-  - The condition sgi_termwidth is still an issue as it blends out lots of content
   - The pdf books often cut lines in the middle during a page jump
     Due to https://bugzilla.redhat.com/show_bug.cgi?id=1006796
 

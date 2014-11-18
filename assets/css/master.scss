@@ -173,6 +173,9 @@ table {
 .hero2 {
 	@extend .hero;
 	background-color: $jack-black;
+	p {
+		color: $pcp-white;
+	}
 }
 
 .casestudies {
