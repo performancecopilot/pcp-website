@@ -2,13 +2,11 @@
 
 - Add roadmap 
 
-- Make a nice download page and not a straight link to the ftp site
-  and also link older releases?
-  Make two columns one per distro and add rows as needed. Add log + instruction
-  for each distro
-  - We currently don't seem to keep older .tgz on ftp? We should put them somewhere
+- We currently don't seem to keep older .tgz on ftp? We should put them somewhere
 
 - Add a page about testimonials (Buffalo guys? Other folks?)
+
+- Add an "all videos" page which will contain every single PCP related video/link
 
 *** Visual fixes ***
 
@@ -33,6 +31,8 @@
 - In the start index.html add the last couple of news items from news.haml
 
 - The pdf title should not be the file name
+
+- The html title should not be the file name
 
 *** Infrastructure ***
 

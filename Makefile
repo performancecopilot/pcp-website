@@ -36,6 +36,7 @@ prep:
 	haml presentations.haml > presentations.html
 	haml glider.haml > glider.html
 	haml screenshots.haml > screenshots.html
+	haml download.haml > download.html
 	./scripts/build-team.py $(PCPGIT) | haml > team.html
 	./scripts/easyhacks.py | haml > easyhacks.html
 

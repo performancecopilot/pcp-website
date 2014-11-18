@@ -1,0 +1,86 @@
+!!! html
+%html
+  %head
+    = Haml::Engine.new(File.read("assets/haml-includes/head.haml")).render
+
+  %body
+    = Haml::Engine.new(File.read("assets/haml-includes/navigation.haml")).render
+
+    %div{:class => 'site-content'}
+      %div{:class => 'how-to is-typeset'}
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-8 push12-2 colspan8-8 colspan6-6 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h2 Download
+                %p 
+                  Performance Co-Pilot is already included in the most popular distributions
+                  (RHEL, Debian, Fedora, Suse, Ubuntu). Here are some instructions to install PCP
+                  on your distribution.
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-6 colspan8-4 colspan6-3 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %img{:src => '/images/debian.png'}
+                  %h3 Debian / Ubuntu
+                  %pre
+                    :preserve
+                      apt-get install pcp
+                      invoke-rc.d pcp start
+
+              %div{:class => 'colspan12-6 colspan8-4 colspan6-3 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %img{:src => '/images/fedora.png'}
+                  %h3 Fedora / RHEL
+                  %pre
+                    :preserve
+                      yum install pcp
+                      # RHEL 6
+                      service pcp start
+                      # RHEL 7 / Fedora
+                      systemctl start pcp
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-6 colspan8-4 colspan6-3 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %img{:src => '/images/opensuse.png'}
+                  %h3 OpenSuse
+                  %p 
+                    %a{:href => 'http://software.opensuse.org/package/pcp'} Direct Install
+                    link
+
+              %div{:class => 'colspan12-6 colspan8-4 colspan6-3 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %img{:src => '/images/solaris.png'}
+                  %h3 Solaris
+                  %p
+                    %a{:href => 'ftp://ftp.pcp.io/projects/pcp/download/solaris/'} Here
+                    are the tarballs for Solaris
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-6 colspan8-4 colspan6-3 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %img{:src => '/images/macosx.png'}
+                  %h3 Mac OSX
+                  %p 
+                    %a{:href => 'ftp://ftp.pcp.io/projects/pcp/download/mac/'} DMG
+                    files
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h3 Source tar file
+                  %p 
+                    Source .tar.gz files can be found here:
+                    %a{:href => 'ftp://ftp.pcp.io/projects/pcp/download/'} PCP FTP
+
+    = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
