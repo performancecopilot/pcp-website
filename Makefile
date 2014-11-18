@@ -71,5 +71,5 @@ checkimages:
 .PHONY: clean man docs books
 
 clean:
-	rm -f *.html docs man books images $(DSTLOCAL) assets/css/*.css || /bin/true
+	rm -rf *.html docs man books images $(DSTLOCAL) assets/css/*.css || /bin/true
 	mkdir $(DSTLOCAL)
