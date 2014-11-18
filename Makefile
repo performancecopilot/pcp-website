@@ -20,7 +20,7 @@ local:
 	$(RSYNC) . $(DSTLOCAL)
 	
 install: 
-	$(RSYNC) $(DSTLOCAL) $(DSTREMOTE)
+	$(RSYNC) --delete $(DSTLOCAL) $(DSTREMOTE)
 
 prep: 
 	compass compile -c compass/config.rb -s compressed
