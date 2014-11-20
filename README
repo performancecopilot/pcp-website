@@ -11,31 +11,34 @@ yum install -y git ruby rubygem-compass rubygam-haml lynx python rsync publican 
 1.a) Install the following rubygem:
   gem install sass-globbing
 
-2) Clone the following repos (the pcp git repo has to be mine on github until we figure out all the
-right publican fixes):
-  git clone https://github.com/mbaldessari/pcpwebng.git
-  git clone git://oss.sgi.com/pcp/pcp.git
+2) Clone the following repos:
+  git clone https://github.com/mbaldessari/pcpwebng.git [PCPWEBNG]
+  git clone git://git.pcp.io/pcp.git [PCP]
 
 3) Symlink the pcp-brand:
-ln -s ..DIR../pcpwebng/pcp-brand /usr/share/publican/Common_Content/
+ln -s [PCPWEBNG]/pcp-brand /usr/share/publican/Common_Content/
 
 Use the pcp-brand in the books:
-for i in `find ~/Devel/pcp/books/ -iname 'publican.cfg'`; do
+for i in `find [PCP]/books/ -iname 'publican.cfg'`; do
 	perl -pi -e 's,^brand:.*$,brand: pcp-brand,' "$i";
 done
 
+(should we add a configure option to [PCP] build --with-brand=xxx
+and generate these files?  seems generally useful... might need it
+for RHEL someday soon)
+
 4) Compile the pcp git tree with:
-  ./configure --with-books
+  cd [PCP] && ./configure --with-books && cd books && make
 
 This will have created all the books in all the needed formats
 using the pcp-brand
 
 5) Create the website:
-Adjust the DSTLOCAL and DSTREMOTE in pcpwebng/Makefile and then
-  cd pcpwebng; make
+Adjust the PCPGIT, DSTLOCAL and DSTREMOTE in pcpwebng/Makefile and then
+  cd [PCPWEBNG] && make
 
 This will create the website in /srv/$DSTLOCAL
 rsync the content to webserver
 
-You can run 'make check' to have linkchecker report on all the links, but it seems it requires
-the python-requests package that is present in F21
+You can run 'make check' to have linkchecker report on all the links, but it
+seems it requires the python-requests-2.2.0 package that is present in F21
