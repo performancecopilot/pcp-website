@@ -3,9 +3,10 @@ Process to make a new PCP release
 
 Steps to create the .tar.gz pcp release
 ---------------------------------------
-1. git release process
-2. upload .tar.gz to ftp
-3. Create mac osx, solaris builds and upload to ftp
+1. Update CHANGELOG with the closed BZ and release notes
+2. git release process
+3. upload .tar.gz to ftp
+4. Create mac osx, solaris builds and upload to ftp
 
 Steps to update the webpage for the new release
 -----------------------------------------------
