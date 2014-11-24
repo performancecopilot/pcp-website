@@ -19,4 +19,5 @@ Steps to update the webpage for the new release
 
 3. Send an email to pcp-announce with the details of the new release
 
-4. Tweet the new release
+4. Tweet the new release using ./scripts/twitter-new-release.py <filename>
+   Put the tweet text in filename and call the above script
