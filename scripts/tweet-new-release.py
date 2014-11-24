@@ -43,11 +43,11 @@ def main():
                       consumer_secret=keys['consumer_secret'],
                       access_token_key=keys['access_token_key'],
                       access_token_secret=keys['access_token_secret'])
-    print(api.VerifyCredentials())
 
     statuses = api.GetUserTimeline(screen_name=USER)
     print('User statuses:')
     print([s.text for s in statuses])
+    print()
     if len(sys.argv) <= 1:
         print('Specify a file whose length is <= 140 characters containing the text to be tweeted')
         sys.exit(0)
