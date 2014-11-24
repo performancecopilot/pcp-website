@@ -1,0 +1,21 @@
+Process to make a new PCP release
+=================================
+
+Steps to create the .tar.gz pcp release
+---------------------------------------
+1. git release process
+2. upload .tar.gz to ftp
+3. Create mac osx, solaris builds and upload to ftp
+
+Steps to update the webpage for the new release
+-----------------------------------------------
+1. Add info in news.haml file and create a new entry for the release
+   Make sure you link the right SHA pointing to the detailed changes in
+   the CHANGELOG (look at the 3.10.0 entry)
+
+2. Tweak index.haml and at the bottom replace the existing last PCP news
+   with the newly released info.
+
+3. Send an email to pcp-announce with the details of the new release
+
+4. Tweet the new release
