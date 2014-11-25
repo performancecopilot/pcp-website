@@ -37,6 +37,7 @@ prep:
 	haml glider.haml > glider.html
 	haml screenshots.haml > screenshots.html
 	haml download.haml > download.html
+	haml testimonials.haml > testimonials.html
 	./scripts/build-team.py $(PCPGIT) | haml > team.html
 	./scripts/easyhacks.py | haml > easyhacks.html
 
@@ -72,5 +73,5 @@ checkimages:
 .PHONY: clean man docs books
 
 clean:
-	rm -rf *.html docs man books images $(DSTLOCAL) assets/css/*.css || /bin/true
-	mkdir $(DSTLOCAL)
+	rm -rf *.html docs man books images $(DSTLOCAL)/* assets/css/*.css || /bin/true
+	mkdir $(DSTLOCAL) || /bin/true

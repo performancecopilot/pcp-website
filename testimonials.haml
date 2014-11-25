@@ -1,0 +1,58 @@
+!!! html
+%html
+  %head
+    = Haml::Engine.new(File.read("assets/haml-includes/head.haml")).render
+
+  %body
+    = Haml::Engine.new(File.read("assets/haml-includes/navigation.haml")).render
+
+    %div{:class => 'site-content'}
+      %div{:class => 'how-to is-typeset'}
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-8 push12-2 colspan8-8 colspan6-6 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h2 Testimonials
+                  %p 
+                    See who is using Performance Co-Pilot right now
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %img{:src => 'images/netflix.png'}
+              %div{:class => 'colspan12-10 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'features_left col__module--img'}
+                  %p
+                    "At Netflix, PCP is mainly used for collecting high resolution performance
+                    metrics to perform cross-metric correlation and to detect anomalies. PCP
+                    stateless model makes it lightweight and robust. Clients are responsible
+                    for keeping track of state, sampling rate and computation. We built a web
+                    client that fetches performance metrics published by pcp
+                    running on cloud instances. It offers self service to Netflix teams to
+                    capture on-demand performance metrics from a cloud instance. PCP offers
+                    rich set of performance monitoring agents (pmda) and libraries to build
+                    custom pmda. With integration of Brendan Gregg's 
+                    %a{:href => 'http://www.brendangregg.com/FlameGraphs/cpuflamegraphs.html'} FlameGraph
+                    and
+                    %a{:href => 'http://www.brendangregg.com/HeatMaps/latency.html'} Heat Maps
+                    into PCP, capturing and
+                    analyzing low level profiling data is simply a matter of mouse click in
+                    Vector.
+                    We greatly appreciate all the support provided by PCP community. We have
+                    plans to contribute to PCP and open source Vector and custom pcp pmda once
+                    tested and ready."
+                    %br
+                    %i Amer Ather at Netflix
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-12 colspan8-8 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %p
+                    Netflix is a registered trademark of Netflix, Inc.
+
+    = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
