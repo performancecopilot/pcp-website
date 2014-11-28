@@ -27,6 +27,46 @@
             %section{:class => 'row__colspaced'}
               %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                 %div{:class => 'col__module--img'}
+                  %p 2014, December 31
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    PCP 3.10.1 released.
+                    %ul
+                      %li
+                        pmda proc: rework existing per-cgroup metrics - no
+                        longer use dynamic metrics, allowing arbitray names
+                        %br
+                        pmda proc: add many new per-cgroup metrics, audited
+                        definitions (units, etc) for existing metrics.
+                      %li
+                        perfevent pmda: new libpfm hardware counters agent
+                      %li 
+                        papi pmda: switch to using dynamic metrics
+                        %br
+                        papi pmda: multiplexing, auto-enabling options
+                        %br
+                        papi pmda: added a new papi.control.reset metric
+                      %li
+                        pmwebd: improve /metrics/find for graphite dashboard
+                        %br
+                        pmwebd: $PCP_SHARE_DIR/webapps - default web content
+                      %li
+                        docs: clarify web services section in quick guide
+                        %br
+                        docs: fix books build for current publican versions
+                        %br
+                        docs: enable building of html book content as well
+                      %li
+                        linux pmda: improve aarch64 /proc/cpuinfo parsing
+                        %br
+                        libpcp: fix 64bit endian bug in highres event timers
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
                   %p 2014, October 31
               %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
                 %div{:class => 'col__module--img'}
