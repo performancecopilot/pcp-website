@@ -52,8 +52,12 @@
             %h2{:id => 'analyze'} Analyze
           %div{:class => 'row'}
             %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %img{:src => 'images/analyze.png'}
+
               %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                %div{:class => 'features_right col__module--img'}
+                %div{:class => 'features_left col__module--img'}
                   %p 
                     A single 
                     %strong API
@@ -75,10 +79,7 @@
                     true. 
                   %p
                     Access the graph data through a webinterface or a GUI
-                    %img{:src => 'images/pcp-grafana.jpg'}
-              %div{:class => 'colspan12-4 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                %div{:class => 'col__module--img'}
-                  %img{:src => 'images/analyze.png'}
+                  %img{:src => 'images/pcp-grafana.jpg'}
                   %img{:src => 'images/pmchart_cpu_disk_load.png'}
 
         %div{:class => 'row-parent'}
@@ -108,8 +109,12 @@
             %h2{:id => 'analyze'} Extend
           %div{:class => 'row'}
             %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %img{:src => 'images/extend.png'}
+
               %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                %div{:class => 'features_right col__module--img'}
+                %div{:class => 'features_left col__module--img'}
                   %p
                     A "plugin" framework (libraries, APIs, agents and daemon)
                     to collect performance data from multiple sources on a
@@ -123,8 +128,5 @@
                     application environment, along side the other generic
                     performance data. 
 
-              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                %div{:class => 'col__module--img'}
-                  %img{:src => 'images/extend.png'}
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
