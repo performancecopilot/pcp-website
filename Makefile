@@ -52,7 +52,7 @@ docs:
 	./scripts/build-docs.sh
 
 import:
-	mkdir docs man images || /bin/true
+	mkdir docs man images 2>/dev/null || /bin/true
 	rsync -Lrdp stock-images/* images/
 	rsync -Lrdp $(PCPGIT)/man/html/* docs/
 	rsync -Lrdp $(PCPGIT)/man/* man
@@ -74,4 +74,4 @@ checkimages:
 
 clean:
 	rm -rf *.html docs man books images $(DSTLOCAL)/* assets/css/*.css || /bin/true
-	mkdir $(DSTLOCAL) || /bin/true
+	mkdir $(DSTLOCAL) 2>/dev/null || /bin/true
