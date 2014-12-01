@@ -54,7 +54,7 @@ docs:
 import:
 	mkdir docs man images || /bin/true
 	rsync -Lrdp stock-images/* images/
-	rsync -Lrdp $(PCPGIT)/man/html docs
+	rsync -Lrdp $(PCPGIT)/man/html/* docs/
 	rsync -Lrdp $(PCPGIT)/man/* man
 	rsync -Lrdp $(PCPGIT)/man/html/images/* images/
 	rsync -Lrdp $(PCPGIT)/images/* docs/images
