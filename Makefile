@@ -1,15 +1,15 @@
 PCPGIT  := /home/michele/Devel/pcp
-PCPDOCS := $(PCPGIT)/man/html
+DSTLOCAL := /srv/pcp.acksyn.org/
+DSTREMOTE := webmichele2:/srv/pcp.acksyn.org/
+URL := http://pcp.acksyn.org
+-include ./localdefs
+
 RSYNC := rsync -azvP --prune-empty-dirs --exclude '*.scss' --exclude '*.haml' \
 	--exclude 'Makefile' --exclude 'README' --exclude 'TODO' --exclude 'links.out' \
 	--exclude '*.js' --exclude '.git' --exclude '*.swp' --exclude '.sass-cache' \
 	--exclude '.gitignore' --exclude 'scripts' --exclude 'README.md' --exclude 'compass' \
 	--exclude '*.[1-9]' --exclude 'GNUmakefile' --exclude 'Check' --exclude 'stock-images' \
 	--exclude 'pcp-brand' --exclude 'NEWRELEASE'
-
-DSTLOCAL := /srv/pcp.acksyn.org/
-DSTREMOTE := webmichele2:/srv/pcp.acksyn.org/
-URL := http://pcp.acksyn.org
 
 all: clean import books man docs prep local
 
@@ -54,7 +54,7 @@ docs:
 import:
 	mkdir docs man images || /bin/true
 	rsync -Lrdp stock-images/* images/
-	rsync -Lrdp $(PCPDOCS)/* docs
+	rsync -Lrdp $(PCPGIT)/man/html docs
 	rsync -Lrdp $(PCPGIT)/man/* man
 	rsync -Lrdp $(PCPGIT)/man/html/images/* images/
 	rsync -Lrdp $(PCPGIT)/images/* docs/images

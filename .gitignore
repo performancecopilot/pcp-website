@@ -11,3 +11,4 @@ images/
 !pcp-brand/en-US/css/*.css
 !pcp-brand/xsl/*.html
 papers/landscape.swf
+localdefs
