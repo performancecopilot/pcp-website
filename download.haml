@@ -41,7 +41,8 @@
                       # RHEL 6
                       service pcp start
                       # RHEL 7 / Fedora
-                      systemctl start pcp
+                      systemctl start pmcd
+                      systemctl start pmlogger
 
         %div{:class => 'row-parent'}
           %div{:class => 'row'}
