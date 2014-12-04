@@ -3,6 +3,7 @@
 *.swp
 *.html
 docs/
+doc/
 man/
 scripts/*.pyc
 books/
@@ -11,4 +12,5 @@ images/
 !pcp-brand/en-US/css/*.css
 !pcp-brand/xsl/*.html
 papers/landscape.swf
+favicon.ico
 localdefs

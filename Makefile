@@ -51,14 +51,20 @@ man:
 docs:
 	./scripts/build-docs.sh
 
+PG_PDF = ../books/PCP_PG/pdf/PCP-3-pcp-programmers-guide-en-US.pdf
+UAG_PDF = ../books/PCP_UAG/pdf/PCP-3-pcp-users-and-administrators-guide-en-US.pdf
+
 import:
-	mkdir docs man images 2>/dev/null || /bin/true
+	mkdir doc docs man images 2>/dev/null || /bin/true
 	rsync -Lrdp stock-images/* images/
 	rsync -Lrdp $(PCPGIT)/man/html/* docs/
 	rsync -Lrdp $(PCPGIT)/man/* man
 	rsync -Lrdp $(PCPGIT)/man/html/images/* images/
 	rsync -Lrdp $(PCPGIT)/images/* docs/images
 	rm -rf man/html man/retired
+	cd doc && ln -s $(UAG_PDF) pcp-users-and-administrators-guide.pdf
+	cd doc && ln -s $(PG_PDF) pcp-programmers-guide.pdf
+	ln -s images/pcp.ico favicon.ico
 
 uncompressed:
 	sass mycss.scss css/uncompressed.css
@@ -73,5 +79,5 @@ checkimages:
 .PHONY: clean man docs books
 
 clean:
-	rm -rf *.html docs man books images $(DSTLOCAL)/* assets/css/*.css || /bin/true
+	rm -rf *.html doc docs man books images favicon.ico $(DSTLOCAL)/* assets/css/*.css || /bin/true
 	mkdir $(DSTLOCAL) 2>/dev/null || /bin/true
