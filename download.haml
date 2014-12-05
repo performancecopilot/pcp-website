@@ -61,7 +61,7 @@
                   %h3 Solaris
                   %p
                     %a{:href => 'ftp://ftp.pcp.io/projects/pcp/download/solaris/'} Here
-                    are the tarballs for Solaris
+                    are the Solaris packages
 
         %div{:class => 'row-parent'}
           %div{:class => 'row'}
@@ -83,8 +83,9 @@
                   %p 
                     Source .tar.gz files can be found here:
                     %a{:href => 'ftp://ftp.pcp.io/projects/pcp/download/'} PCP FTP
-                  %p 
-                    Git repository can be cloned from here:
-                    %a{:href => 'http://git.pcp.io/cgi-bin/gitweb.cgi?p=pcp/pcp.git;a=summary'} git://git.pcp.io/pcp
+                  %p
+                    Git repositories can be cloned from either github or here:
+                    %a{:href => 'http://git.pcp.io/cgi-bin/gitweb.cgi?p=pcp/pcp.git;a=summary'} git://git.pcp.io/pcp , 
+                    %a{:href => 'http://git.pcp.io/cgi-bin/gitweb.cgi?p=pcp/pcp-webjs.git;a=summary'} git://git.pcp.io/pcp-webjs
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
