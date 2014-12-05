@@ -79,9 +79,12 @@
             %section{:class => 'row__colspaced'}
               %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
                 %div{:class => 'col__module--cta'}
-                  %h3 Source tar file
+                  %h3 Source code
                   %p 
                     Source .tar.gz files can be found here:
                     %a{:href => 'ftp://ftp.pcp.io/projects/pcp/download/'} PCP FTP
+                  %p 
+                    Git repository can be cloned from here:
+                    %a{:href => 'http://git.pcp.io/cgi-bin/gitweb.cgi?p=pcp/pcp.git;a=summary'} git://git.pcp.io/pcp
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
