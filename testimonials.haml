@@ -192,9 +192,40 @@
         %div{:class => 'row-parent'}
           %div{:class => 'row'}
             %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %img{:src => 'images/redhat.png'}
+                  %i Mark Goodwin, Support Engineer
+
+              %div{:class => 'colspan12-10 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'features_left col__module--img'}
+                  %p
+                    "Here in Red Hat Global Support Services, we're actively
+                    moving our Red Hat Enterprise Linux customers to the next
+                    generation of open source performance monitoring and
+                    analysis tools.
+                    PCP is a perfect fit to replace the outgoing sysstat
+                    legacy tools, especially now that PCP is fully supported
+                    in RHEL 6.6, RHEL 7 and onward.
+                    Compelling features such as broad and easily extensible
+                    metrics coverage, fully distributed operation, uniform
+                    metric naming and meta-data, APIs with multiple language
+                    bindings, robust configurable logging services, and secure
+                    authenticated IPC protocols are essential in the modern
+                    enterprise environment.
+                    In our business of providing critical support services,
+                    the ability to capture archive logs on customer systems
+                    for off-site retrospective analysis is an especially
+                    important feature where PCP excels."
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
               %div{:class => 'colspan12-12 colspan8-8 colspan6-5 colspan2-1 as-grid with-gutter'}
                 %div{:class => 'col__module--cta'}
                   %p
                     Netflix is a registered trademark of Netflix, Inc.
+                  %p
+                    Red Hat is a registered trademark of Red Hat, Inc.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
