@@ -12,7 +12,7 @@ yum install -y git ruby rubygem-compass rubygam-haml lynx python rsync publican 
   gem install sass-globbing
 
 2) Clone the following repos:
-  git clone https://github.com/mbaldessari/pcpwebng.git [PCPWEBNG]
+  git clone https://github.com/performancecopilot/pcp-website.git [PCPWEBNG]
   git clone git://git.pcp.io/pcp.git [PCP]
 
 3) Symlink the pcp-brand:
