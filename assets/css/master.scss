@@ -40,6 +40,10 @@ pre {
 	@include padding-leader(6);
 }
 
+pre span {
+    color: $agent-orange;
+}
+
 table {
 	border: solid $jack-black 1px;
 	tr {
