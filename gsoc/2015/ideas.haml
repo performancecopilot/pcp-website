@@ -1,0 +1,293 @@
+!!! html
+%html
+  %head
+    = Haml::Engine.new(File.read("assets/haml-includes/head.haml")).render
+
+  %body
+    = Haml::Engine.new(File.read("assets/haml-includes/navigation.haml")).render
+
+    %div{:class => 'site-content'}
+      %div{:class => 'how-to is-typeset'}
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-4 colspan8-3 colspan6-2 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %br
+                  %h3 Ideas List
+                  %ul
+                    %li
+                      %a{:href => '#golang'} Go language agents
+                    %li
+                      %a{:href => '#monitors'} Common monitoring tools
+                    %li
+                      %a{:href => '#jolokia'} Jolokia meets PCP
+                    %li
+                      %a{:href => '#rubylang'} Ruby language agents
+                    %li
+                      %a{:href => '#anomaly'} Anomaly detection
+                    %li
+                      %a{:href => '#pmlogger'} Archive optimizations
+                    %li
+                      %a{:href => '#blktrace'} Linux block tracing agent
+                    %li
+                      %a{:href => '#windows'} Native 64-bit Windows PCP
+                  %br
+
+              %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h2 Google
+                  %h2 Summer of Code
+                  %h2 2015
+                  %br
+                    (
+                    %a{:href => 'https://www.google-melange.com/gsoc/homepage/google/gsoc2015'} Home
+                    )
+                  %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'golang'}
+            %h3 Performance metric extraction using Go language agents
+            %p
+              PCP has an agent-based architecture for extracting
+              performance data.  Agents are responsible for making
+              live metric values available to monitoring tools.
+              Today, agents can be implemented in C, C++, Perl and
+              Python - this project will extend that set to include
+              agents written in the Go language.
+            %p
+              %strong Expected results:
+              An API binding allowing Go PCP agents, and at
+              least one sample agent demonstrating that binding.
+            %p
+              %strong Prerequisite knowledge:
+              C programming, Go a plus
+            %p
+              %strong Skill level:
+              Intermediate
+            %p
+              %strong Mentors:
+              Nathan Scott (primary), Lukas Berk (backup)
+            %br
+
+        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'monitors'}
+            %h3 PCP versions of common monitoring tools
+            %p
+              There are many handy text-based analysis tools available
+              on modern Linux platforms - tools like
+              %a{:href => 'http://man7.org/linux/man-pages/man8/vmstat.8.html'} vmstat
+              ,
+              %a{:href => 'http://man7.org/linux/man-pages/man1/mpstat.1.html'} mpstat
+              ,
+              %a{:href => 'http://man7.org/linux/man-pages/man1/iostat.1.html'} iostat
+              ,
+              %a{:href => 'http://man7.org/linux/man-pages/man1/pidstat.1.html'} pidstat
+              ,
+              %a{:href => 'http://man7.org/linux/man-pages/man8/nfsstat.8.html'} nfsstat
+              and so on.
+              These programs are very simple, and while allowing good
+              live-system analysis they lack historical reporting (to
+              answer questions like "what was happening on the system
+              at 2am on Tuesday?").
+            %p
+              PCP makes it easy to access both historical and live
+              performance data from Python scripts.
+              This project involves implementing several performance
+              tools from the above list in Python, using the PCP APIs to
+              solve the historical query aspect.  Students can expect to
+              gain insight into the meaning of the kernel data reported
+              by these tools, and the sampling techniques used in
+              building the tools.
+            %p
+              %strong Expected results:
+              Build and test versions of a selection of system tools
+              using the PCP python APIs to provide new functionality.
+            %p
+              %strong Prerequisite knowledge:
+              Python programming
+            %p
+              %strong Skill level:
+              Basic
+            %p
+              %strong Mentors:
+              Nathan Scott (primary), Mark Goodwin (backup)
+            %br
+
+        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'jolokia'}
+            %h3 Instrumenting the JVM with Jolokia and PCP
+            %p
+              %a{:href => 'http://jolokia.org'} Jolokia.org
+              "is remote JMX with JSON over HTTP",
+              and can be used to extract live performance data from
+              an unmodified Java application.
+            %p
+              PCP is a handy performance data sink and analysis toolkit;
+              the goal here is to build a PCP agent to extracted JVM
+              metrics (accessed over JSON/HTTP) from Jolokia for the
+              PCP analysis tools to consume (i.e. for charting, decision
+              making, reporting and other analysis).
+            %p
+              %strong Expected results:
+              A PCP agent that sources JVM performance data from
+              an unmodified Java/other demo application, using Jolokia.
+            %p
+              %strong Prerequisite knowledge:
+              Java and either Python or C programming
+            %p
+              %strong Skill level:
+              Intermediate
+            %p
+              %strong Mentors:
+              Paul Smith (primary), Nathan Scott (backup)
+            %br
+
+        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'rubylang'}
+            %h3 Performance metric extraction using Ruby language agents
+            %p
+              PCP has an agent-based architecture for extracting
+              performance data.  Agents are responsible for making
+              live metric values available to monitoring tools.
+              Today, agents can be implemented in C, C++, Perl and
+              Python - this project will extend that set to include
+              Ruby.
+            %p
+              %strong Expected results:
+              An API binding allowing Ruby PCP agents, and at
+              least one sample agent demonstrating that binding.
+            %p
+              %strong Prerequisite knowledge:
+              Ruby and C programming
+            %p
+              %strong Skill level:
+              Intermediate
+            %p
+              %strong Mentors:
+              Paul Smith (primary), Ryan Doyle (backup)
+            %br
+
+        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'anomaly'}
+            %h3 Anomaly detection in PCP Archives
+            %p
+              We collect PCP archives that store the state of a machine while running an
+              application.  These archives collect metrics like processor utilization,
+              memory consumption, network utilization, etc.  We have a set of algorithms
+              that are useful in determining if an application has run inefficiently.
+            %p
+              The student would be expected to code an implementation that would apply
+              these algorithms to existing PCP archives to determine which applications
+              have performed poorly.
+            %p
+              %strong Expected results:
+              Scripts that can analyze application performance based on application
+              specific algorithms.
+            %p
+              %strong Prerequisite knowledge:
+              Python programming
+            %p
+              %strong Skill level:
+              Intermediate
+            %p
+              %strong Mentors:
+              Martins Innus (primary), Joe White (backup), Nathan Scott (backup)
+            %br
+
+        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'pmlogger'}
+            %h3 Optimized logging of unchanging performance metrics
+            %p
+              The PCP 
+              %a{:href => 'http://man7.org/linux/man-pages/man1/pmlogger.1.html'} pmlogger
+              records statistics from a running machine.  Some of these metrics vary
+              frequently over time, but there is a large subset that vary infrequently.
+            %p
+              This project will implement changes to pmlogger to only log these metrics
+              when the metric values or set of instances changes.  A secondary phase will
+              involve post-processing existing log files to remove duplicate information.
+            %p
+              %strong Expected results:
+              A new command line option to pmlogger to only log changing metrics, and a
+              utility to prune existing archives.
+            %p
+              %strong Prerequisite knowledge:
+              C programming
+            %p
+              %strong Skill level:
+              Intermediate-Advanced
+            %p
+              %strong Mentors:
+              Martins Innus (primary), Ken McDonell (backup)
+            %br
+
+        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'blktrace'}
+            %h3 Block tracing metrics in PCP
+            %p
+              The Linux kernel block tracing utility extracts crucially
+              important device transfer information in real time, which
+              is reported by the
+              %a{:href => 'http://man7.org/linux/man-pages/man8/blktrace.8.html'} blktrace
+              utility.
+            %p
+              This project involves building an interface between this
+              facility and the PCP monitoring tools, via a new blktrace
+              agent.
+            %p
+              %strong Expected results:
+              A new PCP blktrace PMDA is built such that PCP
+              monitoring tools like
+              %a{:href => 'http://man7.org/linux/man-pages/man1/pmevent.1.html'} pmevent
+              can consume the metrics it makes available.
+            %p
+              %strong Prerequisite knowledge:
+              C programming
+            %p
+              %strong Skill level:
+              Advanced
+            %p
+              %strong Mentors:
+              Nathan Scott (primary), Mark Goodwin (backup), Paul Evans (backup)
+            %br
+
+        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'windows'}
+            %h3 Native 64-bit Windows PCP port
+            %p
+              PCP has been ported to many platforms, including Linux,
+              Solaris, FreeBSD, Mac OS X and also Windows.
+              The native Windows port was achieved using the MinGW
+              Win32 toolchain.  This project involves porting the
+              Windows support already in the PCP codebase to using
+              the MinGW64 compiler.
+            %p
+              A stretch goal is the subsequent packaging work for a
+              clean installation experience (e.g. MSI packages have
+              been built in the past).
+            %p
+              %strong Expected results:
+              Demonstrated monitoring of Windows servers with 64-bit
+              PCP code.  Installation via MSI package.
+            %p
+              %strong Prerequisite knowledge:
+              C programming
+            %p
+              %strong Skill level:
+              Intermediate
+            %p
+              %strong Mentors:
+              Nathan Scott (primary), Ken McDonell (backup)
+            %br
+
+    = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render

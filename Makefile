@@ -18,7 +18,7 @@ local:
 	find scripts/ -type f -iname '*.sh' -exec chmod 755 "{}" \;
 	find scripts/ -type f -iname '*.py' -exec chmod 755 "{}" \;
 	$(RSYNC) . $(DSTLOCAL)
-	
+
 install: 
 	$(RSYNC) $(DSTLOCAL) $(DSTREMOTE)
 
@@ -38,6 +38,7 @@ prep:
 	haml screenshots.haml > screenshots.html
 	haml download.haml > download.html
 	haml testimonials.haml > testimonials.html
+	haml gsoc/2015/ideas.haml > gsoc/2015/ideas.html
 	./scripts/build-team.py $(PCPGIT) | haml > team.html
 	./scripts/easyhacks.py | haml > easyhacks.html
 
