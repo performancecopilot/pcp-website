@@ -1,5 +1,19 @@
 #!/usr/bin/python
 
+# In order to get the API tokens for this script to work do the
+# following:
+# Go to http://apps.twitter.com and login with user "performancepcp"
+# and password
+# Click on "Create New App", fill in the fields and create the app
+# You should then be able to obtain four values (keys+secrets). Just
+# put them in a ~/.pcptwitter.conf file like the following:
+# $ more ~/.pcptwitter.conf 
+# [twitter]
+# consumer_key = ....
+# consumer_secret = ....
+# access_token_key = ....
+# access_token_secret = .... 
+
 from __future__ import print_function
 import ConfigParser
 import os
