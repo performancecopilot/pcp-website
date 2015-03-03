@@ -27,6 +27,51 @@
             %section{:class => 'row__colspaced'}
               %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                 %div{:class => 'col__module--img'}
+                  %p 2015, March 2
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    %a{:href => 'https://github.com/performancecopilot/pcp/commit/9b56a333538f1b35345cbb21e49c740fb4222245'}PCP 3.10.3
+                    %ul
+                      %li ongoing improvements to the native containers support
+                      %li pmlogger on-the-fly one-shot recording BZ#1073
+                      %li doc: containers tutorial.
+                    %ul
+                      %li build: new scripts directory. Contains useful scripts for project management tasks.
+                      %li build: python-pcp no longer required.
+                      %li build: python3 now used where available RHBZ#1194324
+                      %li build: new --with-papi configure option.
+                    %ul
+                      %li qa: lots of improvements for robustness, portablity and determinism.
+                      %li qa: duplicate PMNS names allowed by default.
+                    %ul
+                      %li pmdapapi: add papi refresh/read batching: papi.control.batch.
+                      %li pmdalinux: improve /proc/cpuinfo parser for irregular formats.
+                      %li services: ensure that they start after pmcd.
+                    %ul
+                      %li libpcp: allow duplicate names to map to the same PMID by default.
+                      %li libpcp: duplicate PMNS names allowed by default.
+                      %li pminfo: duplicate PMNS names allowed by default. Reverse the semantics of the -n and -N options.
+                      %li pmlogger: duplicate PMNS names allowed by default
+                      %li dbpmda: duplicate PMNS names allowed by default
+                      %li pmcd: duplicate PMNS names allowed by default. Reverse the semantics of the -n and -N options.
+                      %li pmdumplog: duplicate PMNS names allowed by default.
+                      %li pmlogreduce: duplicate PMNS names allowed by default.
+                      %li pmlogsummary: duplicate PMNS names allowed by default.
+                      %li pmlogcheck: duplicate PMNS names allowed by default.
+                      %li pmevent: duplicate PMNS names allowed by default.
+                      %li pmchart: add an extra optional chart colour scheme.
+                      %li solaris PMDA: duplicate PMNS names allowed by default.
+                    %ul
+                      %li ganglia2pcp: new utility.
+                      %li bug fix: pmlogger: signal delivery may lead to deadlock BZ#1104
+                      %li bug fix: libpcp: AF functionality has posix-signal-unsafe elements BZ#1069
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
                   %p 2015, January 23
               %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
                 %div{:class => 'col__module--img'}
