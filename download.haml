@@ -84,9 +84,19 @@
                     Source .tar.gz files can be found here:
                     %a{:href => 'ftp://ftp.pcp.io/projects/pcp/download/'} PCP FTP
                   %p
-                    Git clone from github or here:
+                    Git clone from the
+                    %a{:href => 'https://github.com/performancecopilot'} github
+                    PCP project, or
                     %a{:href => 'http://git.pcp.io/cgi-bin/gitweb.cgi?p=pcp/pcp.git;a=summary'} git://git.pcp.io/pcp
-                    ,
-                    %a{:href => 'http://git.pcp.io/cgi-bin/gitweb.cgi?p=pcp/pcp-webjs.git;a=summary'} git://git.pcp.io/pcp-webjs
+                  %br
+                  %p
+                    C++ PMDA interface:
+                    %a{:href => 'https://github.com/pcolby/pcp-pmda-cpp.git'} git://github.com/pcolby/pcp-pmda-cpp.git
+                  %p
+                    Apache Qpid metrics:
+                    %a{:href => 'https://github.com/pcolby/pcp-pmda-qpid.git'} git://github.com/pcolby/pcp-pmda-qpid.git
+                  %p
+                    Javascript frontends:
+                    %a{:href => 'https://sourceware.org/git/?p=pcpfans.git;a=shortlog;h=refs/heads/fche/webjs'} git://sourceware.org/pcpfans.git fche/webjs
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
