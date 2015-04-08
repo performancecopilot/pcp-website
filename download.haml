@@ -79,6 +79,7 @@
             %section{:class => 'row__colspaced'}
               %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
                 %div{:class => 'col__module--cta'}
+                  %a{:name => "source"}
                   %h3 Source code
                   %p 
                     Source .tar.gz files can be found here:
@@ -98,5 +99,8 @@
                   %p
                     Javascript frontends:
                     %a{:href => 'https://sourceware.org/git/?p=pcpfans.git;a=shortlog;h=refs/heads/webjs'} git://sourceware.org/pcpfans.git webjs
+                  %p
+                    Netflix Vector frontend:
+                    %a{:href => 'https://github.com/Netflix/vector'} git://github.com/Netflix/Vector.git
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
