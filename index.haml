@@ -86,6 +86,22 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p 
+                      Apr 2015
+                      %br
+                      PCP 3.10.4
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p 
+                      Device mapper thin provisioning metrics.  Improvements
+                      for working with the
+                      %a{:href => 'https://github.com/Netflix/vector'} Vector
+                      web interface.  Mac OS X updates.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p 
                       Mar 2015
                       %br
                       PCP 3.10.3
@@ -126,21 +142,6 @@
                       New and improved hardware event counter PMDAs.
                       Graphite dashboard tweaks. Bug fixes. New website!
 
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p 
-                      Oct 2014
-                      %br
-                      PCP 3.10.0
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p 
-                      Python v3 modules, Web service and
-                      front-end updates to support Graphite/Grafana, DS 389
-                      PMDAs. Additional nfs v4.1 and rpc.server metrics. Bug fixes.
-                      
 
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render

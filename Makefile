@@ -9,7 +9,8 @@ RSYNC := rsync -azvP --prune-empty-dirs --exclude '*.scss' --exclude '*.haml' \
 	--exclude '*.js' --exclude '.git' --exclude '*.swp' --exclude '.sass-cache' \
 	--exclude '.gitignore' --exclude 'scripts' --exclude 'README.md' --exclude 'compass' \
 	--exclude '*.[1-9]' --exclude 'GNUmakefile' --exclude 'Check' --exclude 'stock-images' \
-	--exclude 'pcp-brand' --exclude 'NEWRELEASE' --exclude 'pcp.git' --exclude 'pcp-gui.git'
+	--exclude 'pcp-brand' --exclude 'NEWRELEASE' --exclude 'pcp.git' --exclude 'pcp-gui.git' \
+	--exclude 'srpm'
 
 all: clean import books man docs prep local
 
