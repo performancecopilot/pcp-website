@@ -27,6 +27,55 @@
             %section{:class => 'row__colspaced'}
               %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                 %div{:class => 'col__module--img'}
+                  %p 2015, April 16
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    %a{:href => 'https://github.com/performancecopilot/pcp/commit/e852abbcbea3f8246ffde35045a8beed1529b208'}PCP 3.10.4
+                    %ul
+                      %li pmdalinux: fixed kernel.pernode.cpu.* for systems with only one CPU.
+                      %li pmdadm: merged in pmdadmcache, added thin provisioning metrics
+                      %li pmcd: fix failure to recover from errors sending client attrs
+                      %li pmcd: don't advertise presence if -A specified.
+                      %li pmchart: fix metric/host selection for containers
+                      %li python build: support for epel5 builds using python26 packages
+                      %li python api: do not assume unicode is only for python3
+                      %li stdpmid: updated the reserved domain number ranges
+                    %ul
+                      %li libpcp: fix instance request memory corruption for large requests
+                      %li libpcp: multi-threading fixes and pdubuf optimisations
+                      %li libpcp: fix Avahi-related memory corruption
+                      %li libpcp: fix an interpolation performance issue
+                      %li libpcp: fix getopt --hostsfile parsing
+                      %li libpcp: tighten error handling in __pmGetArchiveEnd()
+                    %ul
+                      %li pmwebd: enable multi-threading by default
+                      %li pmwebd: correct _indom array-allocation logic
+                      %li pmwebd: additional ACAO headers to resource responses
+                    %ul
+                      %li pcp2graphite: python version neutral handling of stdout flush
+                      %li pcp-verify: a new utility for verifying collector setups, especially for use with containers
+                      %li pcp sh: fix tempfile leak with sub-commands, refactor pcp-summary
+                      %li rc scripts: ensure rundir directories created when needed
+                      %li rc scripts: ensure tmpfiles not leftover from helper scripts
+                      %li rc_pmcd: add .NeedRemove option for pmcd start script also
+                      %li pmpause: lightweight pmsleep extension for a pmcd container
+                      %li pmlogcheck: merge previous versions, added documentation and tests
+                      %li pmdumplog: new options and new log reading logic
+                    %ul
+                      %li build: add missing configure check for pkg-config requirement
+                      %li build: Dockerfile for a pcp-pmcd container image based on Fedora
+                      %li build: get Mac builds going on current Mac OS X (10.9/10.10)
+                      %li configure: fix AC_MSG_ERROR parameter passing
+                      %li packaging: fix default pmlogger/pmie configs directory location
+                      %li packaging: simplify rpm dependencies on pcp-webjs package via %dir
+                      %li packaging: relax the allowed-libpfm-version checks a little
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
                   %p 2015, March 2
               %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
                 %div{:class => 'col__module--img'}
