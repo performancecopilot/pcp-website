@@ -8,6 +8,7 @@ man/
 scripts/*.pyc
 books/
 images/
+!buildbot/public_html/*.css
 !pcp-brand/en-US/images/
 !pcp-brand/en-US/css/*.css
 !pcp-brand/xsl/*.html
