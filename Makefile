@@ -40,6 +40,7 @@ prep:
 	haml download.haml > download.html
 	haml testimonials.haml > testimonials.html
 	haml gsoc/2015/ideas.haml > gsoc/2015/ideas.html
+	haml buildbot.haml > buildbot.html
 	./scripts/build-team.py $(PCPGIT) | haml > team.html
 	./scripts/easyhacks.py | haml > easyhacks.html
 
