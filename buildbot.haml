@@ -1,0 +1,116 @@
+!!! html
+%html
+  %head
+    = Haml::Engine.new(File.read("assets/haml-includes/head.haml")).render
+
+  %body
+    = Haml::Engine.new(File.read("assets/haml-includes/navigation.haml")).render
+
+    %div{:class => 'site-content'}
+      %div{:class => 'how-to is-typeset'}
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-8 push12-2 colspan8-8 colspan6-6 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h2 Contributing a BuildBot
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p Introduction
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    So!  You've decided you're interested in contributing to our PCP buildbot
+                    project.  First off, thank you!  You're awesome.  If you aren't interested
+                    in contributing a buildbot, and have made your way to this page by accident,
+                    well, that's too bad, but you now owe us your soul.  I suggest
+                    you stay around and contribute a buildbot, it's much easier, and involves far
+                    less tedious paperwork.
+                  %p
+                    The PCP buildbot project, is an effort to reduce the number of those pesky bugs
+                    found on various platforms by testsuite automation.  This means we can have our limited
+                    number of code monkeys focus solely on frantically mashing their keyboards to
+                    produce more fantastic and (hopefully!) bug free code.  "No way!" you say to
+                    yourself.  Yes way.  In fact, it gets even better.  By contributing a buildbot
+                    to this project, you can be proactively certain, your favourite platform will
+                    be ready to upgrade the instant a new PCP release drops. Regardless of what OS our
+                    monkeys were using throughout the development cycle.
+                  %p
+                    Now take a deep breath, relax, and calmly repeat our favourite gnus mantra:
+                    "dingus dingus dingus" as we dive into the more technical details.
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p Definitions
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    %ul
+                      %li
+                        %b BuildBot:
+                        This is the name of the open source testing framework we use.  More
+                        in-depth information about the project can be found
+                        %a{:href => 'http://buildbot.net/'}here.
+
+                      %li
+                        %b Buildmaster:
+                        A buildmaster is the controlling node within the framework.  It polls the
+                        source code repository for changes, schedules builds amongst the connected
+                        machines, provides the web interface, and records results.  It hasn't
+                        quite yet learned to get your coffee, but we're working on it.  The buildmaster
+                        for PCP can be found at
+                        %a{:href => 'http://buildbot.pcp.io'}buildbot.pcp.io
+
+                      %li
+                        %b Buildslave:
+                        A buildsalve is what you'll be contributing.  It's the machine which connects
+                        to the Buildmaster, builds the latest sources, and runs the full testsuite when
+                        there is a new set of commits.  The more variety of architectures and operating
+                        systems we have within our set of buildslaves, the better.
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p Prerequisites
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    %b 1.
+                    The first order of business is to setup your buildslave to properly compile the
+                    PCP sources, and run the full testsuite.  The testsuite should aim to have as
+                    few [notrun] tests as possible, and no failures.  Please take note of each step
+                    required along the way, as we'll have to reproduce them later in the recipe for
+                    your buildslave.
+                  %p
+                    %b 2.
+                    Once you've ensured the PCP qa environment is setup properly, we need to install
+                    the buildslave's dependencies.  This should be as simple as installing your distribution's
+                    python-setuptools package.  Specific directions can be found
+                    %a{:href => 'http://trac.buildbot.net/wiki/DownloadInstall#InstallingfromBinaryPackages'}here.
+                  %p
+                    %b 3.
+                    Run the setup-buildslave script provided in the sources (qa/buildbot/setup-buildslave) to
+                    automatically setup the buildslave environment.  This script is fairly straightforward
+                    if one would like to inspect it and run each step by hand.  Once completed, please
+                    contact a Lukas (lberk on irc/mailing lists) or a PCP maintainer with your
+                    buildslave name, password, and the list of steps required to install and run the PCP testsuite.
+                  %p
+                    %b 4.
+                    Once your buildslave has been added to the collective, start your buildslave with
+                    the command `buildslave start NAME` and review the subsequent results of your
+                    buildslave on the
+                    %a{:href => 'http://buildbot.pcp.io/waterfall'}buildbot waterfall page.
+                    Please consider adding an `@reboot start [basedir]` cronjob entry to automatically
+                    restart your buildslave if your machine reboots.  To aid in this, we've added a convenience
+                    script 'buildslave-cronjob' in the sources (qa/buildbot/setup-buildslave).
+
+    = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
