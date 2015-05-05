@@ -18,17 +18,8 @@ yum install -y git ruby rubygem-compass rubygam-haml lynx python rsync publican 
 3) Symlink the pcp-brand:
 ln -s [PCPWEBNG]/pcp-brand /usr/share/publican/Common_Content/
 
-Use the pcp-brand in the books:
-for i in `find [PCP]/books/ -iname 'publican.cfg'`; do
-	perl -pi -e 's,^brand:.*$,brand: pcp-brand,' "$i";
-done
-
-(should we add a configure option to [PCP] build --with-brand=xxx
-and generate these files?  seems generally useful... might need it
-for RHEL someday soon)
-
 4) Compile the pcp git tree with:
-  cd [PCP] && ./configure --with-books && cd books && make
+  cd [PCP] && ./configure --with-books --with-books-brand=pcp-brand && cd books && make
 
 This will have created all the books in all the needed formats
 using the pcp-brand

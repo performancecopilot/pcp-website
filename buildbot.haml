@@ -20,7 +20,7 @@
             %section{:class => 'row__colspaced'}
               %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                 %div{:class => 'col__module--img'}
-                  %p Introduction
+                  %h3 Introduction
               %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
                 %div{:class => 'col__module--img'}
                   %p
@@ -42,25 +42,25 @@
                   %p
                     Now take a deep breath, relax, and calmly repeat our favourite gnus mantra:
                     "dingus dingus dingus" as we dive into the more technical details.
-                  
+
         %div{:class => 'row-parent'}
           %div{:class => 'row'}
             %section{:class => 'row__colspaced'}
               %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                 %div{:class => 'col__module--img'}
-                  %p Definitions
+                  %h3 Definitions
               %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
                 %div{:class => 'col__module--img'}
                   %p
                     %ul
                       %li
-                        %b BuildBot: 
+                        %b BuildBot:
                         This is the name of the open source testing framework we use.  More
                         in-depth information about the project can be found
                         %a{:href => 'http://buildbot.net/'}here.
-                        
+
                       %li
-                        %b Buildmaster: 
+                        %b Buildmaster:
                         A buildmaster is the controlling node within the framework.  It polls the
                         source code repository for changes, schedules builds amongst the connected
                         machines, provides the web interface, and records results.  It hasn't
@@ -69,8 +69,8 @@
                         %a{:href => 'http://buildbot.pcp.io'}buildbot.pcp.io
 
                       %li
-                        %b Buildslave: 
-                        A buildsalve is what you'll be contributing.  It's the machine which connects
+                        %b Buildslave:
+                        A buildslave is what you'll be contributing.  It's the machine which connects
                         to the Buildmaster, builds the latest sources, and runs the full testsuite when
                         there is a new set of commits.  The more variety of architectures and operating
                         systems we have within our set of buildslaves, the better.
@@ -80,7 +80,7 @@
             %section{:class => 'row__colspaced'}
               %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                 %div{:class => 'col__module--img'}
-                  %p Prerequisites
+                  %h3 Prerequisites
               %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
                 %div{:class => 'col__module--img'}
                   %p
@@ -94,7 +94,7 @@
                     %b 2.
                     Once you've ensured the PCP qa environment is setup properly, we need to install
                     the buildslave's dependencies.  This should be as simple as installing your distribution's
-                    python-setuptools package.  Specific directions can be found 
+                    python-setuptools package.  Specific directions can be found
                     %a{:href => 'http://trac.buildbot.net/wiki/DownloadInstall#InstallingfromBinaryPackages'}here.
                   %p
                     %b 3.
@@ -107,10 +107,10 @@
                     %b 4.
                     Once your buildslave has been added to the collective, start your buildslave with
                     the command `buildslave start NAME` and review the subsequent results of your
-                    buildslave on the 
+                    buildslave on the
                     %a{:href => 'http://buildbot.pcp.io/waterfall'}buildbot waterfall page.
                     Please consider adding an `@reboot start [basedir]` cronjob entry to automatically
                     restart your buildslave if your machine reboots.  To aid in this, we've added a convenience
                     script 'buildslave-cronjob' in the sources (qa/buildbot/setup-buildslave).
-                  
+
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
