@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>PCP - Performance Co-Pilot</title>
+
+		<meta name="description" content="A complete framework for colleting and analyzing performance data">
+		<meta name="author" content="Michele Baldessari">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/pcp.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<div class="logo">
+						<img data-src="./images/logo-red.png" alt="PCP Logo"/>
+					</div>
+					<h1>Performance Co-Pilot</h1>
+					<h3>A System Performance and Analysis Framework</h3>
+					<p>
+						<small><a href="http://pcp.io">pcp.io</a> / <a href="http://twitter.com/performancepcp">@performancepcp</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Who in the audience has heard of or used Performance Co-Pilot?</h2>
+				</section>
+
+				<section>
+					<h2>What is Performance Co-Pilot?</h2>
+					<ul>
+						<li class="fragment">Framework for system-level performance analysis</li>
+						<li class="fragment">Collection, monitoring, and analysis of system metrics</li>
+						<li class="fragment">Uses a distributed architecture</li>
+						<li class="fragment">Provides a full API (C, Python, Perl)</li>
+						<li class="fragment">Easily extendible and flexible</li>
+					</ul>
+				</section>
+				<section>
+					<h2><a href="http://pcp.io/testimonials.html">Who uses PCP?</a></h2>
+					<p><span class="fragment">Netflix, </span><span class="fragment">Aconex, </span></p>
+					<p><span class="fragment">University of Buffalo, </span><span class="fragment">XFS Developers, </span></p>
+					<p><span class="fragment">MessageMedia, </span><span class="fragment">Red Hat, </span></p>
+					<p><span class="fragment">...</span></p>
+				</section>
+
+				<section>
+					<section>
+						<h2>Architecture</h2>
+					</section>
+					<section>
+						<ul>
+							<li class="fragment">pmcd - Performance Metrics Collector Daemon</li>
+							<li class="fragment">pmdas - Performance Metrics Domain Agents</li>
+							<li class="fragment">pmns - Performance Metrics Name Space</li>
+							<li class="fragment">Clients</li>
+						</ul>
+					</section>
+					<section>
+						<img width="921" height="616" data-src="./images/architecture.svg" alt="Architecture"/>
+					</section>
+					<section>
+						<h2>Existing PMDAs</h2>
+						<p><span class="fragment">activemq, </span><span class="fragment">apache, </span></p>
+						<p><span class="fragment">bonding, </span><span class="fragment">ds389, </span></p>
+						<p><span class="fragment">gluster, </span><span class="fragment">postgresql, </span></p>
+						<p><span class="fragment">papi, </span><span class="fragment">mysql, </span></p>
+						<p><span class="fragment">postfix, </span><span class="fragment">named, </span></p>
+						<p><span class="fragment">samba, </span><span class="fragment">linux, </span></p>
+						<p><span class="fragment">linux_proc, </span><span class="fragment">elasticsearch, </span></p>
+						<p><span class="fragment">json, </span><span class="fragment">systemtap, </span></p>
+						<p><span class="fragment">...</span></p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Installation</h2>
+						<span class="fragment">
+							<p>On RHEL/Fedora based systems:</p>
+							<pre><code># yum install pcp pcp-webjs pcp-webapi</pre></code>
+						</span>
+						<span class="fragment">
+							<p>On Debian(*) based systems:</p>
+							<pre><code># apt-get install pcp pcp-webapi</pre></code>
+						</span>
+					</section>
+					<section>
+						<h2>Installation</h2>
+						<span class="fragment">
+							<pre><code class="bash"># systemctl enable pmcd</code></pre>
+						</span>
+						<span class="fragment">
+							<pre><code class="bash"># systemctl start pmcd</code></pre>
+						</span>
+						<span class="fragment">
+							<pre><code class="bash">
+# pcp
+Performance Co-Pilot configuration on marquez.int.rhx:
+
+ platform: Linux marquez.int.rhx 4.0.0-0.rc6.git1.1.fc23.x86_64 
+ hardware: 8 cpus, 4 disks, 1 node, 11742MB RAM
+ timezone: CEST-2
+ services: pmcd
+     pmcd: Version 3.10.3-1, 7 agents
+     pmda: root pmcd proc xfs linux mmv jbd2
+							</pre></code>
+						</span>
+					</section>
+					<section>
+						<h2>Installation</h2>
+						<span class="fragment">
+							Web interface needed?
+						</span>
+						<span class="fragment">
+							<pre><code class="bash"># yum install pcp-webapi pcp-webjs</code></pre>
+						</span>
+						<span class="fragment">
+							<pre><code class="bash"># systemctl enable pmwebd</code></pre>
+						</span>
+						<span class="fragment">
+							<pre><code class="bash"># systemctl start pmwebd</code></pre>
+						</span>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Usage</h2>
+					</section>
+					<section>
+						<h2>pminfo</h2>
+						<p class="fragment">Displays information about performance metrics</p>
+						<span class="fragment">
+							<pre><code class="bash">
+# pminfo | head -n3
+cgroup.blkio.all.io_merged.async
+cgroup.blkio.all.io_merged.read
+cgroup.blkio.all.io_merged.sync
+							</pre></code>
+						</span>
+						<span class="fragment">
+							<pre><code class="bash">
+# pminfo | wc -l
+1618
+							</pre></code>
+						</span>
+					</section>
+					<section>
+						<h2>pminfo</h2>
+						<span class="fragment">
+							<pre><code class="bash">
+# pminfo -dtf mem.freemem
+
+mem.freemem [free system memory metric from /proc/meminfo]
+    Data Type: 64-bit unsigned int  InDom: PM_INDOM_NULL 0xffffff
+    Semantics: instant  Units: Kbyte
+    value 340832
+							</pre></code>
+						</span>
+						<span class="fragment">
+							<pre><code class="bash">
+# pminfo -dtTf network.interface.in.bytes
+
+network.interface.in.bytes [network recv read bytes from /proc/net/dev per network interface]
+    Data Type: 64-bit unsigned int  InDom: 60.3 0xf000003
+    Semantics: counter  Units: byte
+Help:
+bytes column on the "Receive" side of /proc/net/dev (stats->rx_bytes counter in
+rtnl_link_stats64)
+    inst [3 or "lo"] value 1449301
+    inst [4 or "virbr0-nic"] value 0
+    inst [5 or "virbr0"] value 0
+    inst [6 or "vnet0"] value 9087033220
+    inst [7 or "em1"] value 9371300105
+							</pre></code>
+						</span>
+					</section>
+					<section>
+						<h2>pmstore</h2>
+						<p class="fragment">PMDAs do not only pull information</p>
+						<p class="fragment">PMDAs can also dynamically get data pushed to them</p>
+						<span class="fragment">
+							<pre><code class="bash">
+# pmstore hotproc.control.config 'fname = "java"'
+							</pre></code>
+						</span>
+					</section>
+					<section>
+						<h2>pmval</h2>
+						<pre><code class="bash">
+# pmval mem.freemem
+
+metric:    mem.freemem
+host:      marquez.int.rhx
+semantics: instantaneous value
+units:     Kbyte
+samples:   all
+               371924
+               371824
+               371824
+               371456
+               371392
+						</pre></code>
+						<p class="fragment">
+							All metrics are autocompleted when using bash-completion
+						</p>
+					</section>
+					<section>
+						<h2>Other CLI tools</h2>
+						<p class="fragment">Implementing your favourite monitoring tool is simple</p>
+						<p class="fragment">For example: pmiostat</p>
+						<span class="fragment">
+							<pre><code class="bash">
+# Timestamp              Device rrqm/s wrqm/s  r/s   w/s rkB/s wkB/s avgrq-sz avgqu-sz await r_await w_await %util
+Mon Apr 27 21:59:44 2015 sda       0.0    0.0  0.0   0.0   0.0   0.0     0.00     0.00   0.0     0.0     0.0   0.0
+Mon Apr 27 21:59:44 2015 sdb       0.0    0.0  0.0   0.0   0.0   0.0     0.00     0.00   0.0     0.0     0.0   0.0
+Mon Apr 27 21:59:44 2015 sdc       0.0    0.0  0.0   0.0   0.0   0.0     0.00     0.00   0.0     0.0     0.0   0.0
+Mon Apr 27 21:59:44 2015 sdd       0.0    0.0  0.0  15.0   0.0 119.9     8.00     0.11   7.1     0.0     7.1   1.1
+Mon Apr 27 21:59:45 2015 sda       0.0    0.0  0.0   0.0   0.0   0.0     0.00     0.00   0.0     0.0     0.0   0.0
+Mon Apr 27 21:59:45 2015 sdb       0.0    0.0  0.0   0.0   0.0   0.0     0.00     0.00   0.0     0.0     0.0   0.0
+Mon Apr 27 21:59:45 2015 sdc       0.0    0.0  0.0   0.0   0.0   0.0     0.00     0.00   0.0     0.0     0.0   0.0
+Mon Apr 27 21:59:45 2015 sdd       0.0    0.0  0.0   2.0   0.0  51.8    26.00     0.01   3.0     0.0     3.0   0.3
+							</code></pre>
+						</span>
+					</section>
+					<section>
+						<h2>pmchart</h2>
+						<img width="921" height="616" data-src="./images/pmchart.png" alt="pmchart"/>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Historical Data</h2>
+						<p class="fragment">
+							Collect data over time via the <em>pmlogger</em> service.
+						</p>
+						<span class="fragment">
+							<pre><code class="bash">
+# systemctl enable pmlogger
+							</code></pre>
+						</span>
+						<span class="fragment">
+							<pre><code class="bash">
+# systemctl start pmlogger
+							</code></pre>
+						</span>
+						<p class="fragment">
+						Configuration in <em>/etc/pcp/pmlogger</em>. Default collection interval
+						is 1 minute.
+						</p>
+						<p class="fragment">
+						Archives end up in <em>/var/log/pcp/pmlogger/`hostname`</em>.
+						</p>
+					</section>
+					<section>
+						<h2>Historical Data</h2>
+						<p class="fragment">
+							Most tools can work with archive files directly via the <em>-a &lt;archive_file&gt;</em>
+							option.
+						</p>
+						<span class="fragment">
+							<pre><code class="bash">
+# pmval -a /var/log/pcp/pmlogger/root.acksyn.org/20150409 \
+  mem.freemem -S "Apr 09 02:00" -T "Apr 09 03:00" -t20min
+metric:    mem.freemem
+archive:   /var/log/pcp/pmlogger/root.acksyn.org/20150409
+host:      root.acksyn.org
+start:     Thu Apr  9 02:00:00 2015
+end:       Thu Apr  9 03:00:00 2015
+semantics: instantaneous value
+units:     Kbyte
+samples:   4
+interval:  600.00 sec
+02:00:00.000               179540
+02:20:00.000               173756
+02:40:00.000               184852
+03:00:00.000               186352
+							</code></pre>
+						</span>
+					</section>
+					<section>
+						<h2>Historical Data</h2>
+						<p class="fragment">
+							pmdiff can be used to find metrics that changed by a certain factor in one or two archives.
+						</p>
+						<span class="fragment">
+							<pre><code class="bash">
+# /usr/bin/pmdiff -q 50 \
+  /var/log/pcp/pmlogger/root.acksyn.org/20150408 \
+  /var/log/pcp/pmlogger/root.acksyn.org/20150409  
+Ratio Threshold: > 50.00 or < 0.020
+       20150408        20150409   Ratio  Metric-Instance
+      start-end       start-end
+          0.001           0.107   >100   disk.partitions.blkread ["md125"]
+          0.001           0.107   >100   disk.partitions.blkread ["dm-8"]
+          0.001           0.087  87.00   disk.partitions.blkread ["sda3"]
+          0.014           0.000    |-|   disk.partitions.blkread ["dm-3"]
+          0.002           0.000    |-|   disk.partitions.read ["dm-3"]
+          0.001           0.000    |-|   kernel.percpu.interrupts.PMI ["cpu1"]
+          0.000           0.186    |+|   kernel.all.nusers
+          0.000           0.019    |+|   disk.partitions.blkread ["sdb3"]
+          0.000           0.013    |+|   disk.partitions.read ["md125"]
+          0.000           0.013    |+|   disk.partitions.read ["dm-8"]
+          0.000           0.004    |+|   disk.partitions.read ["sda3"]
+          0.000           0.003    |+|   disk.partitions.blkread ["sdb1"]
+          0.000           0.003    |+|   disk.partitions.blkread ["dm-2"]
+							</code></pre>
+						</span>
+					</section>
+					<section>
+						<h2>Historical Data</h2>
+						<p class="fragment">
+						There are many more tools that can be used with archives (beyond the live tools):
+						</p>
+						<ul>
+							<li class="fragment">pmlogextract - reduce, extract, concatenate and merge archives</li>
+							<li class="fragment">pmlogsummary - calculate averages of metrics and output summary</li>
+							<li class="fragment">Convert from and to other metric formats: collectl2pcp, iostat2pcp, mrtg2pcp, sar2pcp, ganglia2pcp, pcp2graphite</li>
+							<li class="fragment"> <a href="https://github.com/performancecopilot/pcp2pdf">pcp2pdf</a>
+							can be used to create a formatted PDF report out of an archive</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Analyze Data</h2>
+						<p class="fragment">
+						Import an archive in <em>[i]python</em> and manipulate the data via <a href="http://pandas.pydata.org/">pandas</a>.
+						</p>
+						<span class="fragment">
+							<pre><code class="bash">
+git clone https://github.com/mbaldessari/pcpinteractive.git
+cd pcpinteractive
+							</code></pre>
+						</span>
+						<span class="fragment">
+							<pre><code class="ipython">
+$ ipython qtconsole --pylab=inline
+In [1]: import pcparchive, pandas
+In [2]: p = pcparchive.PcpArchive('testfiles/monday')
+In [3]: p.parse()
+Parsing archive: [########## 100.0%]
+In [4]: metrics = p.get_metrics()
+In [5]: len(metrics)
+Out[6]: 253
+							</code></pre>
+						</span>
+					</section>
+					<section>
+						<h2>Analyze Data</h2>
+						<span class="fragment">
+							<pre><code class="ipython">
+In [9]: net_in = p.get_pandas('network.interface.in.bytes')
+In [10]: net_in.plot()
+							</code></pre>
+						</span>
+						<span class="fragment">
+							<img data-src="./images/netpcpmatplot.png" alt="plotpcp"/>
+						</span>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Performance Metrics Inference Engine</h2>
+						<ul>
+							<li class="fragment">An inference engine that can evaluate rules and generate alarms or automate system management tasks</li>
+							<li class="fragment">Rules have actions attached to them. (e.g. generate an alarm, create a log entry, run a script)</li>
+							<li class="fragment">Works against live PMCD or Archives</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Performance Metrics Inference Engine</h2>
+						<span class="fragment">
+							<pre><code class="bash">
+# systemctl enable pmie
+							</code></pre>
+						</span>
+						<span class="fragment">
+							<pre><code class="bash">
+# systemctl start pmie
+							</code></pre>
+						</span>
+						<span class="fragment">
+							<p>If the number of IP packets received is more than 10 per second, send an email <em>/etc/pcp/pmie/config.default</em>:</p>
+							<pre><code class="bash">
+Delta = 1sec;
+network.ip.inreceives > 10 count/sec -> shell \
+ "echo foo | mail -s 'nomoreyoutube' icanthazcats@acksyn.org";
+							</code></pre>
+						</span>
+						<p class="fragment">
+							<em>man pmie</em>
+						</p>
+
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Containers</h2>
+						<p class="fragment">
+						Use the <em>--container</em> option to specify if a metric is to be fetched from
+						a container.
+						</p>
+						<p class="fragment">
+						There is no need to install any PCP components inside the container.
+						</p>
+					</section>
+					<section>
+						<span class="fragment">
+							<pre><code class="bash">
+# pminfo --fetch containers.name containers.state.running
+containers.name
+    inst [0 or "f4d3b90bea15..."] value "sharp_feynman"
+    inst [1 or "d43eda0a7e7d..."] value "cranky_colden"
+containers.state.running
+    inst [0 or "f4d3b90bea15..."] value 1
+    inst [1 or "d43eda0a7e7d..."] value 0
+
+# pmprobe -I network.interface.up
+network.interface.up 5 "p2p1" "wlp2s0" "lo" "docker0" "veth2"
+
+# pmprobe -I --container sharp_feynman network.interface.up
+network.interface.up 2 "lo" "eth0"
+							</code></pre>
+						</span>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Other</h2>
+					</section>
+					<section>
+						<h2>Grafana</h2>
+						<img data-src="./images/pcp-grafana.png" alt="grafana-pcp"/>
+					</section>
+					<section>
+						<h2>JSON interface</h2>
+						<img data-src="./images/arduino-pcp2.png" alt="json-pcp"/>
+					</section>
+					<section>
+						<h2>Blinkenlights ;)</h2>
+						<img data-src="./images/pcp-blinkenlights.png" alt="blinkenlights-pcp"/>
+					</section>
+					<section>
+						<h2>Vector</h2>
+						<img data-src="./images/vector.png" alt="vector-pcp"/>
+					</section>
+					<section>
+						<img data-src="./images/screenshot.png" alt="vector-screenshot"/>
+					</section>
+					<section>
+						<h2><a href="http://cockpit-project.org/">Cockpit</a></h2>
+						<img data-src="./images/screenshot-storage.png" alt="cockpit"/>
+					</section>
+				</section>
+
+				<section>
+					<h1>Questions?</h1>
+					<p>
+						<a href="email:pcp@oss.sgi.com">pcp@oss.sgi.com</a> <br>
+						<a href="http://pcp.io">http://pcp.io</a> <br>
+						<a href="http://twitter.com/performancepcp">@performancepcp</a>
+					</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

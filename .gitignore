@@ -13,5 +13,7 @@ images/
 !pcp-brand/en-US/css/*.css
 !pcp-brand/xsl/*.html
 papers/landscape.swf
+!papers/pcp-presentation/*.html
+!papers/pcp-presentation/*.css
 favicon.ico
 localdefs
