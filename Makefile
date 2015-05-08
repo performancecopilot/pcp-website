@@ -6,7 +6,7 @@ URL := http://pcp.acksyn.org
 
 RSYNC := rsync -azvP --prune-empty-dirs --exclude '*.scss' --exclude '*.haml' \
 	--exclude 'Makefile' --exclude 'README' --exclude 'TODO' --exclude 'links.out' \
-	--exclude '*.js' --exclude '.git' --exclude '*.swp' --exclude '.sass-cache' \
+	--exclude '.git' --exclude '*.swp' --exclude '.sass-cache' \
 	--exclude '.gitignore' --exclude 'scripts' --exclude 'README.md' --exclude 'compass' \
 	--exclude '*.[1-9]' --exclude 'GNUmakefile' --exclude 'Check' --exclude 'stock-images' \
 	--exclude 'pcp-brand' --exclude 'NEWRELEASE' --exclude 'pcp.git' --exclude 'pcp-gui.git' \
