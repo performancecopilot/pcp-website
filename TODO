@@ -40,7 +40,7 @@
 
 - Generate books automatically via publican from the git tree
   This works with upstream wktohtmlpdf with patched qt:
-  http://downloads.sourceforge.net/project/wkhtmltopdf/0.12.1/wkhtmltox-0.12.1_linux-centos7-amd64.rpm)
+  http://download.gna.org/wkhtmltopdf/0.12/)
 
   - The pdf books often cut lines in the middle during a page jump
     Due to https://bugzilla.redhat.com/show_bug.cgi?id=1006796
