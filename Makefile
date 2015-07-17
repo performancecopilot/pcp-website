@@ -27,7 +27,6 @@ prep:
 	compass compile -c compass/config.rb -s compressed
 	haml index.haml > index.html
 	haml features.haml > features.html
-	haml team.haml > team.html
 	haml documentation.haml > documentation.html
 	haml community.haml > community.html
 	haml website.haml > website.html
