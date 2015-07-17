@@ -23,7 +23,7 @@ def get_authors_haml_columns(authors):
         s2 += '%s%%li %s\n' % (indent, author)
     return (s1, s2)
 
-ret = subprocess.check_output(["sh", "-c", "git -C %s log --pretty=format:'%%an' | egrep -v 'pcpqa|unknown' | sort | uniq | sort" % sys.argv[1]])
+ret = subprocess.check_output(["sh", "-c", "git -C %s log --pretty=format:'%%an' | egrep -v 'pcpqa|unknown|EC2' | sort | uniq | sort" % sys.argv[1]])
 
 authors = ret.split('\n')
 (col1, col2) = get_authors_haml_columns(authors)
