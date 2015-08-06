@@ -31,8 +31,6 @@ prep:
 	haml community.haml > community.html
 	haml website.haml > website.html
 	haml faq.haml > faq.html
-	haml news.haml > news.html
-	haml old_news.haml > old_news.html
 	haml presentations.haml > presentations.html
 	haml glider.haml > glider.html
 	haml screenshots.haml > screenshots.html
