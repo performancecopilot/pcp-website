@@ -4,9 +4,11 @@ Process to make a new PCP release
 Steps to create the packages for a new release
 ----------------------------------------------
 1. Update CHANGELOG with release notes, BZs in fedora.spec
-2. git release process, tags must be gpg signed with project key
-3. Upload pkgs to https://bintray.com/pcp using the bintray upload
-   ./scripts in the PCP git tree
+2. Tag release in git (tagged and signed - git-tag -u DEA2C114)
+3. Upload pkgs to https://bintray.com/pcp using the bintray-upload
+   and bintray-version ./scripts from the pcp git tree
+4. Upload pkgs for Fedora/EPEL (via fedpkg, bodhi)
+5. Upload pkgs for Debian unstable (via Makepkgs)
 
 Steps to update the webpage for the new release
 -----------------------------------------------
