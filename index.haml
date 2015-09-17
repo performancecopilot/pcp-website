@@ -85,6 +85,22 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p 
+                      Sep 2015
+                      %br
+                      PCP 3.10.7
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p 
+                      New Intel MIC agent, pcp-atopsar(1) command, pcp-pmie
+                      container, Linux kernel scheduler cgroup and IPv6 metrics,
+                      added /etc/pcp/[pmie,pmlogger]/control.d support for
+                      Puppet/Ansible/Chef.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p 
                       Aug 2015
                       %br
                       PCP 3.10.6
@@ -124,21 +140,5 @@
                       for working with the
                       %a{:href => 'https://github.com/Netflix/vector'} Vector
                       web interface.  Mac OS X updates.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p 
-                      Mar 2015
-                      %br
-                      PCP 3.10.3
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p 
-                      Duplicate PMNS names allowed by default.
-                      Containers support improvements. pmdapapi fixes.
-                      Complete Python 3 bindings port. pmlogger fixes.
-                      ganglia2pcp import tool.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
