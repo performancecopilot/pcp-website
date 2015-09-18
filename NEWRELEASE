@@ -5,10 +5,12 @@ Steps to create the packages for a new release
 ----------------------------------------------
 1. Update CHANGELOG with release notes, BZs in fedora.spec
 2. Tag release in git (tagged and signed - git-tag -u DEA2C114)
-3. Upload pkgs to https://bintray.com/pcp using the bintray-upload
+3. Make canonical source tarball right away (./Makepkgs --source)
+   and upload it to www.pcp.io (to /oss/ftp/projects/pcp/download)
+4. Upload pkgs to https://bintray.com/pcp using the bintray-upload
    and bintray-version ./scripts from the pcp git tree
-4. Upload pkgs for Fedora/EPEL (via fedpkg, bodhi)
-5. Upload pkgs for Debian unstable (via Makepkgs)
+5. Upload pkgs for Fedora/EPEL (via fedpkg, bodhi)
+6. Upload pkgs for Debian unstable (via Makepkgs)
 
 Steps to update the webpage for the new release
 -----------------------------------------------
@@ -18,3 +20,4 @@ Steps to update the webpage for the new release
 3. Tweet the new release using ./scripts/tweet-new-release.py <filename>
    Put the tweet text in filename and call the above script
    e.g. text "Performance Co-Pilot X.Y.Z released: http://pcp.io"
+
