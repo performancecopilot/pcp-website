@@ -85,6 +85,21 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p 
+                      Oct 2015
+                      %br
+                      PCP 3.10.8
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p 
+                      New Slurm HPC scheduler metrics, pmie FQDN functionality,
+                      NVME device support, wireless interface support, pcp-atop
+                      NFS support.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p 
                       Sep 2015
                       %br
                       PCP 3.10.7
@@ -124,21 +139,5 @@
                     %p 
                       Improved containers support and finer-grained RPM
                       packaging split.  Generic JSON PMDA.  ATOP rewrite.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p 
-                      Apr 2015
-                      %br
-                      PCP 3.10.4
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p 
-                      Device mapper thin provisioning metrics.  Improvements
-                      for working with the
-                      %a{:href => 'https://github.com/Netflix/vector'} Vector
-                      web interface.  Mac OS X updates.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
