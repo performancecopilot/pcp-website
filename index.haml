@@ -91,9 +91,9 @@
                 %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'features_left col__module--cta'}
                     %p 
-                      New Slurm HPC scheduler metrics, pmie FQDN functionality,
-                      NVME device support, wireless interface support, pcp-atop
-                      NFS support.
+                      New Slurm HPC scheduler metrics. pmie FQDN functionality.
+                      NVME device and wireless interface support. pcp-atop(1)
+                      NFS reporting.
 
             %div{:class => 'row'}
               %section{:class => 'row__colspaced'}
@@ -106,9 +106,9 @@
                 %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'features_left col__module--cta'}
                     %p 
-                      New Intel MIC agent, pcp-atopsar(1) command, pcp-pmie
-                      container, Linux kernel scheduler cgroup and IPv6 metrics,
-                      added /etc/pcp/[pmie,pmlogger]/control.d support for
+                      New Intel MIC agent. New pcp-atopsar(1) command. pcp-pmie
+                      container. Linux kernel scheduler cgroup and IPv6 metrics.
+                      Added /etc/pcp/[pmie,pmlogger]/control.d support for
                       Puppet/Ansible/Chef.
 
             %div{:class => 'row'}
@@ -138,6 +138,6 @@
                   %div{:class => 'features_left col__module--cta'}
                     %p 
                       Improved containers support and finer-grained RPM
-                      packaging split.  Generic JSON PMDA.  ATOP rewrite.
+                      packaging split.  Generic JSON PMDA.  pcp-atop(1).
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
