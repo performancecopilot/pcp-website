@@ -1,8 +1,10 @@
 *** Website environment installation/configuration ***
 
+## Manual process for F20
+
 Instructions tested on an uptodate F20 installed with the minimal profile:
 1) Install the following packages:
-yum install -y git ruby rubygem-compass rubygam-haml lynx python rsync publican autoconf \
+yum install -y git ruby rubygem-compass rubygem-haml lynx python rsync publican autoconf \
   avahi-devel bison cairo-devel cyrus-sasl-devel desktop-file-utils flex libibmad-devel \
   libibumad-devel libmicrohttpd-devel ncurses-devel nss-devel papi-devel perl-ExtUtils-MakeMaker \
   python-devel python3-devel qt-devel readline-devel rpm-devel systemd-devel systemtap-sdt-devel \
@@ -34,3 +36,13 @@ rsync the content to webserver
 
 You can run 'make check' to have linkchecker report on all the links, but it
 seems it requires the python-requests-2.2.0 package that is present in F21
+
+## Vagrant based site build
+
+With vagrant and virtualbox installed, run:
+
+`vagrant up`
+
+This will build the site in the `generated-pcp-website` directory
+
+rsync the content to webserver
