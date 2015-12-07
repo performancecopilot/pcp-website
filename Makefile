@@ -1,5 +1,5 @@
-PCPGIT  := /home/michele/Devel/pcp
-DSTLOCAL := /srv/pcp.acksyn.org/
+PCPGIT  := /home/vagrant/pcp
+DSTLOCAL := /pcp-website/generated-pcp-website
 DSTREMOTE := webmichele2:/srv/pcp.acksyn.org/
 URL := http://pcp.acksyn.org
 -include ./localdefs
@@ -10,7 +10,7 @@ RSYNC := rsync -azvP --prune-empty-dirs --exclude '*.scss' --exclude '*.haml' \
 	--exclude '.gitignore' --exclude 'scripts' --exclude 'README.md' --exclude 'compass' \
 	--exclude '*.[1-9]' --exclude 'GNUmakefile' --exclude 'Check' --exclude 'stock-images' \
 	--exclude 'pcp-brand' --exclude 'NEWRELEASE' --exclude 'pcp.git' --exclude 'pcp-gui.git' \
-	--exclude 'srpm' --exclude 'buildbot'
+	--exclude 'srpm' --exclude 'buildbot' --exclude 'Vagrantfile' --exclude '.vagrant'
 
 all: clean import books man docs prep local
 
