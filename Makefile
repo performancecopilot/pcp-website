@@ -1,7 +1,7 @@
 PCPGIT  := /home/vagrant/pcp
 DSTLOCAL := /pcp-website/generated-pcp-website
-DSTREMOTE := webmichele2:/srv/pcp.acksyn.org/
-URL := http://pcp.acksyn.org
+DSTREMOTE = www.pcp.io:/oss/www/projects/pcp
+URL = http://www.pcp.io
 -include ./localdefs
 
 RSYNC := rsync -azvP --prune-empty-dirs --exclude '*.scss' --exclude '*.haml' \
