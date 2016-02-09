@@ -20,11 +20,11 @@
                     %li
                       %a{:href => '#golang'} Go language agents
                     %li
-                      %a{:href => '#monitors'} Common monitoring tools
-                    %li
                       %a{:href => '#jolokia'} Jolokia meets PCP
                     %li
                       %a{:href => '#rubylang'} Ruby language agents
+                    %li
+                      %a{:href => '#monitors'} Console monitoring tools
                     %li
                       %a{:href => '#anomaly'} Anomaly detection
                     %li
@@ -39,7 +39,7 @@
                 %div{:class => 'col__module--cta'}
                   %h2 Google
                   %h2 Summer of Code
-                  %h2 2015
+                  %h2 2016
                   %br
                     (
                     %a{:href => 'https://summerofcode.withgoogle.com'} Home
@@ -69,52 +69,7 @@
               Intermediate
             %p
               %strong Mentors:
-              Nathan Scott (primary), Lukas Berk (backup)
-            %br
-
-        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
-          %div{:class => 'col__module--img'}
-            %a{:name => 'monitors'}
-            %h3 PCP versions of common monitoring tools
-            %p
-              There are many handy text-based analysis tools available
-              on modern Linux platforms - tools like
-              %a{:href => 'http://man7.org/linux/man-pages/man8/vmstat.8.html'} vmstat
-              ,
-              %a{:href => 'http://man7.org/linux/man-pages/man1/mpstat.1.html'} mpstat
-              ,
-              %a{:href => 'http://man7.org/linux/man-pages/man1/iostat.1.html'} iostat
-              ,
-              %a{:href => 'http://man7.org/linux/man-pages/man1/pidstat.1.html'} pidstat
-              ,
-              %a{:href => 'http://man7.org/linux/man-pages/man8/nfsstat.8.html'} nfsstat
-              and so on.
-              These programs are very simple, and while allowing good
-              live-system analysis they lack historical reporting (to
-              answer questions like "what was happening on the system
-              at 2am on Tuesday?").
-            %p
-              PCP makes it easy to access both historical and live
-              performance data from Python scripts.
-              This project involves implementing several performance
-              tools from the above list in Python, using the PCP APIs to
-              solve the historical query aspect.  Students can expect to
-              gain insight into the meaning of the kernel data reported
-              by these tools, and the sampling techniques used in
-              building the tools.
-            %p
-              %strong Expected results:
-              Build and test versions of a selection of system tools
-              using the PCP python APIs to provide new functionality.
-            %p
-              %strong Prerequisite knowledge:
-              Python programming
-            %p
-              %strong Skill level:
-              Basic
-            %p
-              %strong Mentors:
-              Nathan Scott (primary), Mark Goodwin (backup)
+              Lukas Berk (primary), Nathan Scott (backup)
             %br
 
         %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
@@ -170,7 +125,48 @@
               Intermediate
             %p
               %strong Mentors:
-              Paul Smith (primary), Ryan Doyle (backup)
+              Ryan Doyle (primary), Nathan Scott (backup)
+            %br
+
+        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'monitors'}
+            %h3 PCP versions of console tools
+            %p
+              There are many handy text-based analysis tools available
+              on modern Linux platforms - tools like
+              %a{:href => 'http://man7.org/linux/man-pages/man1/mpstat.1.html'} mpstat
+              ,
+              %a{:href => 'http://man7.org/linux/man-pages/man1/pidstat.1.html'} pidstat
+              ,
+              %a{:href => 'http://man7.org/linux/man-pages/man8/nfsstat.8.html'} nfsstat
+              and so on.
+              These programs are very simple, and while allowing good
+              live-system analysis they lack historical reporting (to
+              answer questions like "what was happening on the system
+              at 2am last Tuesday?").
+            %p
+              PCP makes it easy to access both historical and live
+              performance data from Python scripts.
+              This project involves implementing several performance
+              tools from the above list in Python, using the PCP APIs to
+              solve the historical query aspect.  Students can expect to
+              gain insight into the meaning of the kernel data reported
+              by these tools, and the sampling techniques used in
+              building the tools.
+            %p
+              %strong Expected results:
+              Build and test versions of a selection of system tools
+              using the PCP python APIs to provide new functionality.
+            %p
+              %strong Prerequisite knowledge:
+              Python programming
+            %p
+              %strong Skill level:
+              Basic
+            %p
+              %strong Mentors:
+              Nathan Scott (primary), Mark Goodwin (backup)
             %br
 
         %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
@@ -179,7 +175,7 @@
             %h3 Anomaly detection in PCP Archives
             %p
               We collect PCP archives that store the state of a machine while running an
-              application.  These archives collect metrics like processor utilization,
+              HPC application.  These archives collect metrics like processor utilization,
               memory consumption, network utilization, etc.  We have a set of algorithms
               that are useful in determining if an application has run inefficiently.
             %p
@@ -198,7 +194,7 @@
               Intermediate
             %p
               %strong Mentors:
-              Martins Innus (primary), Joe White (backup), Nathan Scott (backup)
+              Martins Innus (primary), Lukas Berk (backup), Nathan Scott (backup)
             %br
 
         %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
@@ -263,25 +259,21 @@
         %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
           %div{:class => 'col__module--img'}
             %a{:name => 'windows'}
-            %h3 Native 64-bit Windows PCP port
+            %h3 Native 64-bit Windows PCP installer
             %p
               PCP has been ported to many platforms, including Linux,
               Solaris, FreeBSD, Mac OS X and also Windows.
-              The native Windows port was achieved using the MinGW
-              Win32 toolchain.  This project involves porting the
-              Windows support already in the PCP codebase to using
-              the MinGW64 compiler.
-            %p
-              A stretch goal is the subsequent packaging work for a
-              clean installation experience (e.g. MSI packages have
-              been built in the past).
+              The native Windows port was achieved using the MinGW-w64
+              toolchain and cross-compilation from Fedora.  This project
+              involves producing installable MSI packages using the open
+              source msitools or WiX packages.
             %p
               %strong Expected results:
               Demonstrated monitoring of Windows servers with 64-bit
               PCP code.  Installation via MSI package.
             %p
               %strong Prerequisite knowledge:
-              C programming
+              C and C++ programming, XML, Windows APIs
             %p
               %strong Skill level:
               Intermediate
