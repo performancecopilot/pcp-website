@@ -24,13 +24,13 @@
                     %li
                       %a{:href => '#rubylang'} Ruby language agents
                     %li
-                      %a{:href => '#monitors'} Console monitoring tools
-                    %li
                       %a{:href => '#anomaly'} Anomaly detection
                     %li
                       %a{:href => '#pmlogger'} Archive optimizations
                     %li
                       %a{:href => '#blktrace'} Linux block tracing agent
+                    %li
+                      %a{:href => '#monitors'} Console monitoring tools
                     %li
                       %a{:href => '#windows'} Native 64-bit Windows PCP
                   %br
@@ -130,47 +130,6 @@
 
         %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
           %div{:class => 'col__module--img'}
-            %a{:name => 'monitors'}
-            %h3 PCP versions of console tools
-            %p
-              There are many handy text-based analysis tools available
-              on modern Linux platforms - tools like
-              %a{:href => 'http://man7.org/linux/man-pages/man1/mpstat.1.html'} mpstat
-              ,
-              %a{:href => 'http://man7.org/linux/man-pages/man1/pidstat.1.html'} pidstat
-              ,
-              %a{:href => 'http://man7.org/linux/man-pages/man8/nfsstat.8.html'} nfsstat
-              and so on.
-              These programs are very simple, and while allowing good
-              live-system analysis they lack historical reporting (to
-              answer questions like "what was happening on the system
-              at 2am last Tuesday?").
-            %p
-              PCP makes it easy to access both historical and live
-              performance data from Python scripts.
-              This project involves implementing several performance
-              tools from the above list in Python, using the PCP APIs to
-              solve the historical query aspect.  Students can expect to
-              gain insight into the meaning of the kernel data reported
-              by these tools, and the sampling techniques used in
-              building the tools.
-            %p
-              %strong Expected results:
-              Build and test versions of a selection of system tools
-              using the PCP python APIs to provide new functionality.
-            %p
-              %strong Prerequisite knowledge:
-              Python programming
-            %p
-              %strong Skill level:
-              Basic
-            %p
-              %strong Mentors:
-              Nathan Scott (primary), Mark Goodwin (backup)
-            %br
-
-        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
-          %div{:class => 'col__module--img'}
             %a{:name => 'anomaly'}
             %h3 Anomaly detection in PCP Archives
             %p
@@ -194,7 +153,7 @@
               Intermediate
             %p
               %strong Mentors:
-              Martins Innus (primary), Lukas Berk (backup), Nathan Scott (backup)
+              Martins Innus (primary), Lukas Berk (backup)
             %br
 
         %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
@@ -254,6 +213,47 @@
             %p
               %strong Mentors:
               Nathan Scott (primary), Mark Goodwin (backup), Paul Evans (backup)
+            %br
+
+        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'monitors'}
+            %h3 PCP versions of console tools
+            %p
+              There are many handy text-based analysis tools available
+              on modern Linux platforms - tools like
+              %a{:href => 'http://man7.org/linux/man-pages/man1/mpstat.1.html'} mpstat
+              ,
+              %a{:href => 'http://man7.org/linux/man-pages/man1/pidstat.1.html'} pidstat
+              ,
+              %a{:href => 'http://man7.org/linux/man-pages/man8/nfsstat.8.html'} nfsstat
+              and so on.
+              These programs are very simple, and while allowing good
+              live-system analysis they lack historical reporting (to
+              answer questions like "what was happening on the system
+              at 2am last Tuesday?").
+            %p
+              PCP makes it easy to access both historical and live
+              performance data from Python scripts.
+              This project involves implementing several performance
+              tools from the above list in Python, using the PCP APIs to
+              solve the historical query aspect.  Students can expect to
+              gain insight into the meaning of the kernel data reported
+              by these tools, and the sampling techniques used in
+              building the tools.
+            %p
+              %strong Expected results:
+              Build and test versions of a selection of system tools
+              using the PCP python APIs to provide new functionality.
+            %p
+              %strong Prerequisite knowledge:
+              Python programming
+            %p
+              %strong Skill level:
+              Basic
+            %p
+              %strong Mentors:
+              Nathan Scott (primary), Mark Goodwin (backup)
             %br
 
         %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
