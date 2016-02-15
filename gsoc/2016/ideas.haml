@@ -24,8 +24,6 @@
                     %li
                       %a{:href => '#rubylang'} Ruby language agents
                     %li
-                      %a{:href => '#anomaly'} Anomaly detection
-                    %li
                       %a{:href => '#pmlogger'} Archive optimizations
                     %li
                       %a{:href => '#blktrace'} Linux block tracing agent
@@ -126,34 +124,6 @@
             %p
               %strong Mentors:
               Ryan Doyle (primary), Nathan Scott (backup)
-            %br
-
-        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
-          %div{:class => 'col__module--img'}
-            %a{:name => 'anomaly'}
-            %h3 Anomaly detection in PCP Archives
-            %p
-              We collect PCP archives that store the state of a machine while running an
-              HPC application.  These archives collect metrics like processor utilization,
-              memory consumption, network utilization, etc.  We have a set of algorithms
-              that are useful in determining if an application has run inefficiently.
-            %p
-              The student would be expected to code an implementation that would apply
-              these algorithms to existing PCP archives to determine which applications
-              have performed poorly.
-            %p
-              %strong Expected results:
-              Scripts that can analyze application performance based on application
-              specific algorithms.
-            %p
-              %strong Prerequisite knowledge:
-              Python programming
-            %p
-              %strong Skill level:
-              Intermediate
-            %p
-              %strong Mentors:
-              Martins Innus (primary), Lukas Berk (backup)
             %br
 
         %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
