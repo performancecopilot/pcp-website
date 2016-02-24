@@ -208,6 +208,8 @@
             %p
               There are many handy text-based system analysis tools available
               on modern Linux platforms - tools like
+              %a{:href => 'http://man7.org/linux/man-pages/man1/htop.1.html'} htop
+              ,
               %a{:href => 'http://man7.org/linux/man-pages/man1/mpstat.1.html'} mpstat
               ,
               %a{:href => 'http://man7.org/linux/man-pages/man1/pidstat.1.html'} pidstat
@@ -220,9 +222,9 @@
               at 2am last Tuesday?").
             %p
               PCP makes it easy to access both historical and live
-              performance data from Python scripts.
-              This project involves implementing several performance
-              tools from the above list in Python, using the PCP APIs to
+              performance data from client programs and (Python) scripts.
+              This project involves extending (and/or re-implementing)
+              performance tools from the above list, using PCP APIs to
               solve the historical query aspect.  Students can expect to
               gain insight into the meaning of the kernel data reported
               by these tools, and the sampling techniques used in
@@ -230,10 +232,10 @@
             %p
               %strong Expected results:
               Build and test versions of a selection of system tools
-              using the PCP python APIs to provide new functionality.
+              using PCP APIs to provide new functionality.
             %p
               %strong Prerequisite knowledge:
-              Python programming
+              Basic C, Python programming
             %p
               %strong Skill level:
               Basic
