@@ -20,6 +20,8 @@
                     %li
                       %a{:href => '#golang'} Go language agents
                     %li
+                      %a{:href => '#gocode'} Go instrumentation
+                    %li
                       %a{:href => '#jolokia'} Jolokia meets PCP
                     %li
                       %a{:href => '#rubylang'} Ruby language agents
@@ -62,6 +64,45 @@
             %p
               %strong Prerequisite knowledge:
               C programming, Go a plus
+            %p
+              %strong Skill level:
+              Intermediate
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:lberk@redhat.com'} Lukas Berk
+              (primary),
+              %a{:href => 'mailto:obutler@aconex.com'} Owen Butler
+              (backup),
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
+              (backup)
+            %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'gocode'}
+            %h3 Instrumentation of Go programs
+            %p
+              PCP supports an efficient memory-mapped instrumentation
+              mechanism for extracting performance instrumentation from
+              running programs.  There are currently two implementations
+              of the instrumentation API - one written
+              %a{:href => 'http://pcp.io/man/man3/mmv_stats_init.3.html'} in C
+              and the other
+              %a{:href => 'https://github.com/performancecopilot/parfait'} in Java.
+              This project aim to allow programs written in the Go language
+              to be instrumented with a native Go API (i.e. not using cgo).
+            %p
+              %strong Expected results:
+              A native Go API, allowing Go programs to be instrumented to
+              generate live performance metrics via the
+              %a{:href => 'http://pcp.io/man/man5/mmv.5.html'} MMV
+              shared memory format, read by the PCP
+              %a{:href => 'http://pcp.io/man/man1/pmdammv.1.html'} pmdammv
+              agent.
+              And a sample application demonstrating use of the API.
+            %p
+              %strong Prerequisite knowledge:
+              Go programming, C a plus
             %p
               %strong Skill level:
               Intermediate
