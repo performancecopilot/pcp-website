@@ -206,6 +206,8 @@
               %a{:href => 'mailto:minnus@buffalo.edu'} Martins Innus
               (primary),
               %a{:href => 'mailto:kenj@internode.on.net'} Ken McDonell
+              (backup),
+              %a{:href => 'mailto:brolley@redhat.com'} Dave Brolley
               (backup)
             %br
 
@@ -222,15 +224,15 @@
             %p
               This project involves building an interface between this
               facility and the PCP monitoring tools, via a new blktrace
-              agent.
+              agent (live) and/or log data import (historical).
             %p
               %strong Expected results:
-              A new PCP blktrace PMDA is built such that PCP monitoring tools like
+              New PCP blktrace data consumers are built such that PCP monitoring tools like
               %a{:href => 'http://man7.org/linux/man-pages/man1/pmevent.1.html'} pmevent
-              can consume the metrics it makes available.
+              can consume the metrics made available.
             %p
               %strong Prerequisite knowledge:
-              C programming
+              C programming, Linux kernel
             %p
               %strong Skill level:
               Advanced
