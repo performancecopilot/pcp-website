@@ -85,6 +85,21 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p 
+                      Mar 2016
+                      %br
+                      PCP 3.11.1
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p 
+                      Oracle database PMDA. Multi-archive contexts.
+                      Automated restart of unresponsive PMDAs.
+                      Linux MD driver statistics. Zabbix 3 support.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p 
                       Jan 2016
                       %br
                       PCP 3.11.0
@@ -153,20 +168,5 @@
                       Linux kernel scheduler cgroup and IPv6 metrics.
                       Added /etc/pcp/[pmie,pmlogger]/control.d support for
                       Puppet/Ansible/Chef.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p 
-                      Aug 2015
-                      %br
-                      PCP 3.10.6
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p 
-                      Largely a bugfix release; containers, Linux kernel and
-                      PostgreSQL metric additions.
-                      Also Solaris, Illumos and Windows build improvements.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
