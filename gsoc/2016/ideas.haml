@@ -18,9 +18,11 @@
                   %h3 Ideas List
                   %ul
                     %li
-                      %a{:href => '#golang'} Go language agents
-                    %li
                       %a{:href => '#gocode'} Go instrumentation
+                    %li
+                      %a{:href => '#vector'} Flame Graphs in Vector
+                    %li
+                      %a{:href => '#golang'} Go language agents
                     %li
                       %a{:href => '#jolokia'} Jolokia meets PCP
                     %li
@@ -48,37 +50,6 @@
 
         %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
           %div{:class => 'col__module--img'}
-            %a{:name => 'golang'}
-            %h3 Performance metric extraction using Go language agents
-            %p
-              PCP has an agent-based architecture for extracting
-              performance data.  Agents are responsible for making
-              live metric values available to monitoring tools.
-              Today, agents can be implemented in C, C++, Perl and
-              Python - this project will extend that set to include
-              agents written in the Go language.
-            %p
-              %strong Expected results:
-              An API binding allowing Go PCP agents, and at
-              least one sample agent demonstrating that binding.
-            %p
-              %strong Prerequisite knowledge:
-              C programming, Go a plus
-            %p
-              %strong Skill level:
-              Intermediate
-            %p
-              %strong Mentors:
-              %a{:href => 'mailto:lberk@redhat.com'} Lukas Berk
-              (primary),
-              %a{:href => 'mailto:obutler@aconex.com'} Owen Butler
-              (backup),
-              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
-              (backup)
-            %br
-
-        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
-          %div{:class => 'col__module--img'}
             %a{:name => 'gocode'}
             %h3 Instrumentation of Go programs
             %p
@@ -103,6 +74,71 @@
             %p
               %strong Prerequisite knowledge:
               Go programming, C a plus
+            %p
+              %strong Skill level:
+              Intermediate
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:lberk@redhat.com'} Lukas Berk
+              (primary),
+              %a{:href => 'mailto:obutler@aconex.com'} Owen Butler
+              (backup),
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
+              (backup)
+            %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'vector'}
+            %h3 Flame graphs in Vector
+            %p
+              %a{:href => 'http://www.brendangregg.com/flamegraphs.html'} Flame graphs
+              are a visualization of profiled software, allowing frequently
+              travelled code paths to be identified quickly and accurately.
+              This project idea explores possible interactions between the
+              %a{:href => 'https://github.com/Netflix/vector/wiki/Getting-Started'} Vector
+              web application, the Linux kernel eBPF and/or
+              %a{:href => 'http://man7.org/linux/man-pages/man1/perf.1.html'} perf
+              facilities, and the PCP pipe agent 
+              %a{:href => 'http://pcp.io/man/man1/pmdapipe.1.html'} pmdapipe
+            %p
+              %strong Expected results:
+              A capability for rendering flame graphs on-demand over a given
+              time interval is available from the Vector web application.
+            %p
+              %strong Prerequisite knowledge:
+              Javascript, C programming, Linux kernel
+            %p
+              %strong Skill level:
+              Intermediate
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:mspier@netflix.com'} Martin Spier
+              (primary),
+              %a{:href => 'mailto:brolley@redhat.com'} Dave Brolley
+              (backup),
+              %a{:href => 'mailto:lberk@redhat.com'} Lukas Berk
+              (backup)
+            %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'golang'}
+            %h3 Performance metric extraction using Go language agents
+            %p
+              PCP has an agent-based architecture for extracting
+              performance data.  Agents are responsible for making
+              live metric values available to monitoring tools.
+              Today, agents can be implemented in C, C++, Perl and
+              Python - this project will extend that set to include
+              agents written in the Go language.
+            %p
+              %strong Expected results:
+              An API binding allowing Go PCP agents, and at
+              least one sample agent demonstrating that binding.
+            %p
+              %strong Prerequisite knowledge:
+              C programming, Go a plus
             %p
               %strong Skill level:
               Intermediate
