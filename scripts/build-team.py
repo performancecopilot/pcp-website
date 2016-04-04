@@ -56,6 +56,7 @@ template = '''
                 %div{:class => 'col__module--cta'}
                   %h2 Maintainers
                   %p Performance Co-Pilot releases are coordinated by the core team.
+                  %br
                   %ul
 __COLUMN0__
 
@@ -66,7 +67,7 @@ __COLUMN0__
             %section{:class => 'row__colspaced'}
               %div{:class => 'colspan12-8 push12-2 colspan8-8 colspan6-6 colspan2-1 as-grid with-gutter'}
                 %div{:class => 'col__module--cta'}
-                  %h2 Contibutors
+                  %h2 Contributors
                   %p Bringing together the efforts of a fantastic developer community.
 
         %div{:class => 'row-parent'}
