@@ -62,12 +62,12 @@ __COLUMN0__
         %div{:class => 'row-parent'}
           %div{:class => 'row'}
             %section{:class => 'row__colspaced'}
-              %div{:class => 'logo colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+              %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
             %section{:class => 'row__colspaced'}
               %div{:class => 'colspan12-8 push12-2 colspan8-8 colspan6-6 colspan2-1 as-grid with-gutter'}
                 %div{:class => 'col__module--cta'}
                   %h2 Contibutors
-                  %p Releases bring together the efforts of a wide developer community.
+                  %p Bringing together the efforts of a fantastic developer community.
 
         %div{:class => 'row-parent'}
           %div{:class => 'row'}
