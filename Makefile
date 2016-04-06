@@ -1,5 +1,5 @@
 PCPGIT  := /home/vagrant/pcp
-DSTLOCAL := /pcp-website/generated-pcp-website
+DSTLOCAL := /pcp-website/generated-pcp-website/
 DSTREMOTE = www.pcp.io:/oss/www/projects/pcp
 URL = http://www.pcp.io
 -include ./localdefs
