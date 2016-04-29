@@ -5,6 +5,7 @@ Steps to create the packages for a new release
 ----------------------------------------------
 1. Update CHANGELOG with release notes, BZs in fedora.spec
 2. Tag release in git (tagged and signed - git-tag -u DEA2C114)
+   Ex: git tag -s -u DEA2C114 -m "X.YY.Z" X.YY.Z
 3. Make canonical source tarball right away (./Makepkgs --source)
    and upload it to www.pcp.io (to /oss/ftp/projects/pcp/download)
 4. Upload pkgs to https://bintray.com/pcp using the bintray-upload
