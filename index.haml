@@ -85,6 +85,22 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p 
+                      Apr 2016
+                      %br
+                      PCP 3.11.2
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p 
+                      Mainly a bugfix release.  Per-CPU softnet metrics,
+                      perfevent PMDA updates, blkio throttle cgroup stats,
+                      Docker 1.10 support.  More pcp-iostat reporting options,
+                      simplified automated PMDA restart, python3 deb packages.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p 
                       Mar 2016
                       %br
                       PCP 3.11.1
@@ -148,25 +164,5 @@
                       NVME device and wireless interface support.
                       %a{:href => '/man/man1/pcp-atop.1.html'} pcp-atop(1)
                       NFS reporting.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p 
-                      Sep 2015
-                      %br
-                      PCP 3.10.7
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p 
-                      New Intel MIC
-                      %a{:href => '/man/man1/pmdamic.1.html'} agent.
-                      New
-                      %a{:href => '/man/man1/pcp-atopsar.1.html'} pcp-atopsar(1)
-                      command. pcp-pmie container.
-                      Linux kernel scheduler cgroup and IPv6 metrics.
-                      Added /etc/pcp/[pmie,pmlogger]/control.d support for
-                      Puppet/Ansible/Chef.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
