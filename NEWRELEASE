@@ -7,10 +7,11 @@ Steps to create the packages for a new release
 2. Tag release in git (tagged and signed - git-tag -u DEA2C114)
    Ex: git tag -s -u DEA2C114 -m "X.YY.Z" X.YY.Z
 3. Make canonical source tarball right away (./Makepkgs --source)
-   and upload it to www.pcp.io (to /oss/ftp/projects/pcp/download)
-4. Upload pkgs to https://bintray.com/pcp using the bintray-upload
-   and bintray-version ./scripts from the pcp git tree. RPM build:
-   export RPM_SIGN_KEYID="pcp-masters"
+   and upload it bintray, using ./scripts/bintray-upload
+4. Upload binary pkgs to bintray using the ./scripts/bintray-upload
+   and ./scripts/bintray-version ./scripts from the pcp git tree.
+   For the RPM builds where gpg keys supported (modern distros, not
+   RHEL5): export RPM_SIGN_KEYID="pcp-masters"
    ./Makepkgs --with-vector --with-webjs --with-parfait --signed
 5. Upload pkgs for Fedora/EPEL (via fedpkg, bodhi)
 6. Upload pkgs for Debian unstable (./Makepkgs)
