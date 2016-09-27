@@ -86,6 +86,22 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p 
+                      Sep 2016
+                      %br
+                      PCP 3.11.5
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p 
+                      Virtual machine metrics from
+                      %a{:href => 'http://libvirt.org'} libvirt.org.
+                      %a{:href => '/man/man1/pmie.1.html'} pmie
+                      now supports rules with string metrics.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p 
                       Aug 2016
                       %br
                       PCP 3.11.4
@@ -152,23 +168,5 @@
                       Oracle database PMDA. Multi-archive contexts.
                       Automated restart of unresponsive PMDAs.
                       Linux MD driver statistics. Zabbix 3 support.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p 
-                      Jan 2016
-                      %br
-                      PCP 3.11.0
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p 
-                      Improved collector resilience: PMDA restarts without a
-                      %a{:href => '/man/man1/pmcd.1.html'} pmcd(1)
-                      restart.
-                      pcp-pmwebd container. Simplified metric fetch APIs.
-                      New Linux kernel and per-device XFS metrics.
-                      FreeBSD updates. Removed the pcp-compat RPM package.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
