@@ -974,19 +974,21 @@
                     Firstly, pmcd will attempt one immediate restart of any
                     PMDA it timed out, at the first available opportunity.
                     This is quite effective, but there remain several cases
-                    where it can be thwarted.
+                    where it can be thwarted.  As it involves a once-only
+                    rectification attempt, a backup strategy is also useful.
                   %p
                     Secondly, a local primary pmie daemon can be enabled to
-                    monitor PMDA status and signal to pmcd when a restart
-                    is needed in an on-going fashion.  If a PMDA can be
-                    restarted, eventually this is will manage to do so, so
-                    is quite reliable.  This is not typically enabled by
-                    default, however, refer to the pmie section in the
+                    continually monitor the PMDAs and signal to pmcd when a
+                    restart is needed.  If a PMDA can be restarted
+                    automatically, eventually this strategy will manage to
+                    do so (unlike the earlier single-shot strategy).  pmie is
+                    not typically enabled by default, however; refer to the
+                    pmie section in the
                     %a{:href => '/docs/guide.html#pmie'} Quick Reference
                     which describes how to enable pmie.
                   %p
-                    This mechanism will also write to the system log when any
-                    PMDA is detected to have failed (including details about
-                    exactly which PMDAs were affected).
+                    This latter mechanism also writes to the system log when
+                    a PMDA is detected to have failed, and the log message
+                    contains details about exactly which PMDAs were affected.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
