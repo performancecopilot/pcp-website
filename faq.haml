@@ -959,31 +959,34 @@
                     Since pmcd aims to provide realtime metrics at the time of
                     each sample, it cannot wait for long for the PMDA.  So it
                     times out the request after a short period (a few seconds
-                    by default) and then assumes the PMDA is unavailable if no
-                    response is received, closing its connection to the PMDA.
+                    by default), assuming the PMDA is unavailable when no
+                    response is received, and closes its connection to the PMDA.
                   %p
                     This appears from the client side as if the PMDA died as
-                    no values are available.  Examination of pmcd.log shows
-                    when timeouts have occured, however.
+                    no values are available.  Examination of pmcd.log can be
+                    used to confirm when timeouts have occured.
                   %p
                     As of pcp-3.11.3 there are now two strategies available
-                    to mitigate this and attempt automatically recovery.  In
-                    every case, pmdaroot must be configured (the default) for
-                    these strategies to be effective.
+                    to mitigate this by attempting automatic recovery.  In
+                    both cases, pmdaroot must be configured and running (by
+                    default it is) for these strategies to be effective.
                   %p
                     Firstly, pmcd will attempt one immediate restart of any
                     PMDA it timed out, at the first available opportunity.
                     This is quite effective, but there remain several cases
-                    where it can be thwarted (persistent latency from the
-                    source domain, race conditions, etc).
+                    where it can be thwarted.
                   %p
                     Secondly, a local primary pmie daemon can be enabled to
                     monitor PMDA status and signal to pmcd when a restart
                     is needed in an on-going fashion.  If a PMDA can be
                     restarted, eventually this is will manage to do so, so
                     is quite reliable.  This is not typically enabled by
-                    default, however, refer to the pmie notes in the
+                    default, however, refer to the pmie section in the
                     %a{:href => '/docs/guide.html#pmie'} Quick Reference
-                    which describe how to enable pmie.
+                    which describes how to enable pmie.
+                  %p
+                    This mechanism will also write to the system log when any
+                    PMDA is detected to have failed (including details about
+                    exactly which PMDAs were affected).
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
