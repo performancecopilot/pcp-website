@@ -16,7 +16,7 @@ from skip_list import ext_manpages
 with open(sys.argv[1], "r") as f:
     data = f.read()
 
-soup = BeautifulSoup(data)
+soup = BeautifulSoup(data, "lxml")
 #
 # Fix up all internal man urls
 # http://man7.org/linux/man-pages/man1/pmval.1.html
