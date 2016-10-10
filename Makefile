@@ -12,6 +12,11 @@ RSYNC := rsync -azvP --prune-empty-dirs --exclude '*.scss' --exclude '*.haml' \
 	--exclude 'pcp-brand' --exclude 'NEWRELEASE' --exclude 'pcp.git' --exclude 'pcp-gui.git' \
 	--exclude 'srpm' --exclude 'buildbot' --exclude 'Vagrantfile' --exclude '.vagrant'
 
+REDIRECTS = boards builds roadmap
+HAMLFILES = index features documentation community website faq buildbot \
+	    presentations glider screenshots download testimonials \
+	    gsoc/2015/ideas gsoc/2016/ideas \
+
 all: clean import books man docs prep local
 
 local: 
@@ -25,20 +30,12 @@ install:
 
 prep: 
 	compass compile -c compass/config.rb -s compressed
-	haml index.haml > index.html
-	haml features.haml > features.html
-	haml documentation.haml > documentation.html
-	haml community.haml > community.html
-	haml website.haml > website.html
-	haml faq.haml > faq.html
-	haml presentations.haml > presentations.html
-	haml glider.haml > glider.html
-	haml screenshots.haml > screenshots.html
-	haml download.haml > download.html
-	haml testimonials.haml > testimonials.html
-	haml gsoc/2015/ideas.haml > gsoc/2015/ideas.html
-	haml gsoc/2016/ideas.haml > gsoc/2016/ideas.html
-	haml buildbot.haml > buildbot.html
+	@for r in `echo $(REDIRECTS)`; do \
+	    haml $$r.haml > $$r; \
+	done
+	@for h in `echo $(HAMLFILES)`; do \
+	    haml $$h.haml > $$h.html; \
+	done
 	./scripts/build-team.py $(PCPGIT) | haml > team.html
 	./scripts/easyhacks.py | haml > easyhacks.html
 
