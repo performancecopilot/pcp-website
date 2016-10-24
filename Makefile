@@ -11,7 +11,6 @@ RSYNC := rsync -azvP --prune-empty-dirs --exclude '*.scss' --exclude '*.haml' \
 	--exclude 'pcp-brand' --exclude 'NEWRELEASE' --exclude 'pcp.git' --exclude 'pcp-gui.git' \
 	--exclude 'srpm' --exclude 'buildbot' --exclude 'Vagrantfile' --exclude '.vagrant'
 
-REDIRECTS = boards builds roadmap
 HAMLFILES = index features documentation community website faq buildbot \
 	    presentations glider screenshots download testimonials \
 	    gsoc/2015/ideas gsoc/2016/ideas \
@@ -31,9 +30,6 @@ install:
 
 prep: 
 	compass compile -c compass/config.rb -s compressed
-	@for r in `echo $(REDIRECTS)`; do \
-	    haml $$r.haml > $$r; \
-	done
 	@for h in `echo $(HAMLFILES)`; do \
 	    haml $$h.haml > $$h.html; \
 	done
