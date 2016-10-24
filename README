@@ -4,7 +4,7 @@
 
 Instructions tested on an uptodate F20 installed with the minimal profile:
 1) Install the following packages:
-yum install -y git ruby rubygem-compass rubygem-haml lynx python rsync publican autoconf \
+dnf install -y git ruby rubygem-compass rubygem-haml lynx python rsync publican autoconf \
   avahi-devel bison cairo-devel cyrus-sasl-devel desktop-file-utils flex libibmad-devel \
   libibumad-devel libmicrohttpd-devel ncurses-devel nss-devel papi-devel perl-ExtUtils-MakeMaker \
   python-devel python3-devel qt-devel readline-devel rpm-devel systemd-devel systemtap-sdt-devel \
@@ -14,11 +14,12 @@ yum install -y git ruby rubygem-compass rubygem-haml lynx python rsync publican 
   gem install sass-globbing
 
 2) Clone the following repos:
-  git clone https://github.com/performancecopilot/pcp-website.git [PCPWEBNG]
+  git clone https://github.com/performancecopilot/performancecopilot.github.io [PCPWEB]
+  git clone https://github.com/performancecopilot/pcp-website.git [PCPWEBSITE]
   git clone https://github.com/performancecopilot/pcp.git [PCP]
 
 3) Symlink the pcp-brand:
-ln -s [PCPWEBNG]/pcp-brand /usr/share/publican/Common_Content/
+ln -s [PCPWEBSITE]/pcp-brand /usr/share/publican/Common_Content/
 
 4) Compile the pcp git tree with:
   cd [PCP] && ./configure --with-books --with-books-brand=pcp-brand && cd books && make
@@ -27,12 +28,12 @@ This will have created all the books in all the needed formats
 using the pcp-brand
 
 5) Create the website:
-Adjust the PCPGIT, DSTLOCAL and DSTREMOTE in [PCPWEBNG]/Makefile or
-[PCPWEBNG]/localdefs then
-  cd [PCPWEBNG] && make
+Adjust the PCPGIT and DSTLOCAL in [PCPWEBSITE]/Makefile or
+[PCPWEBSITE]/localdefs then
+  cd [PCPWEBSITE] && make
 
-This will create the website in /srv/$DSTLOCAL
-rsync the content to webserver
+This will create the website content in $DSTLOCAL
+Commit the contents to PCPWEB and git push.
 
 You can run 'make check' to have linkchecker report on all the links, but it
 seems it requires the python-requests-2.2.0 package that is present in F21

@@ -1,7 +1,6 @@
 PCPGIT  := /home/vagrant/pcp
-DSTLOCAL := /pcp-website/generated-pcp-website/
-DSTREMOTE = www.pcp.io:/oss/www/projects/pcp
-URL = http://www.pcp.io
+PCPWEB  := /home/vagrant/performancecopilot.github.io
+URL = https://www.pcp.io
 -include ./localdefs
 
 RSYNC := rsync -azvP --prune-empty-dirs --exclude '*.scss' --exclude '*.haml' \
@@ -23,10 +22,12 @@ local:
 	find . -type f -exec chmod 644 "{}" \;
 	find scripts/ -type f -iname '*.sh' -exec chmod 755 "{}" \;
 	find scripts/ -type f -iname '*.py' -exec chmod 755 "{}" \;
-	$(RSYNC) . $(DSTLOCAL)
+	$(RSYNC) . $(PCPWEB)
+	cd $(PCPWEB) && git add . && cd $(PCPWEB) && git commit \
+	    -m "Automated update from performancecopilot/pcp-website.git"
 
 install: 
-	$(RSYNC) $(DSTLOCAL) $(DSTREMOTE)
+	cd $(PCPWEB) && git push
 
 prep: 
 	compass compile -c compass/config.rb -s compressed
@@ -37,7 +38,6 @@ prep:
 	    haml $$h.haml > $$h.html; \
 	done
 	./scripts/build-team.py $(PCPGIT) | haml > team.html
-	./scripts/easyhacks.py | haml > easyhacks.html
 
 books:
 	./scripts/build-books.sh $(PCPGIT)
@@ -72,10 +72,9 @@ check:
 	grep "errors found" links.out
 
 checkimages:
-	./scripts/check-for-unused-images.py $(DSTLOCAL)
+	./scripts/check-for-unused-images.py $(PCPWEB)
 
 .PHONY: clean man docs books
 
 clean:
-	rm -rf *.html doc docs man books images favicon.ico $(DSTLOCAL)/* assets/css/*.css || /bin/true
-	mkdir $(DSTLOCAL) 2>/dev/null || /bin/true
+	rm -rf *.html doc docs man books images favicon.ico $(PCPWEB)/* assets/css/*.css || /bin/true
