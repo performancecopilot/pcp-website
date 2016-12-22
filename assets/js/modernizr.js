@@ -78,7 +78,7 @@ window.Modernizr = (function( window, document, undefined ) {
     /*>>domprefixes*/
 
     /*>>ns*/
-    ns = {'svg': 'http://www.w3.org/2000/svg'},
+    ns = {'svg': 'https://www.w3.org/2000/svg'},
     /*>>ns*/
 
     tests = {},

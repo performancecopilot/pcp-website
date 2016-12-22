@@ -83,6 +83,8 @@
                       %a{:href => '#T10'} PMNS appears to be empty
                     %li
                       %a{:href => '#T11'} Resource utilization greater than 100%?
+                    %li
+                      %a{:href => '#T12'} PMDA appears to have died
   
         %div{:class => 'row-parent'}
           %div{:class => 'row'}
@@ -136,10 +138,10 @@
                   %p 
                     All of the libraries in the Performance Co-Pilot (PCP)
                     toolkit are licensed under Version 2.1 of the
-                    %a{:href => "http://www.gnu.org/copyleft/lesser.html"} GNU Lesser General Public License
+                    %a{:href => "https://www.gnu.org/copyleft/lesser.html"} GNU Lesser General Public License
                   %p
                     All other PCP components are licensed under Version 2 or later of the
-                    %a{:href => "http://www.gnu.org/copyleft/gpl.html"} GNU General Public License
+                    %a{:href => "https://www.gnu.org/copyleft/gpl.html"} GNU General Public License
   
             %section{:class => 'row__colspaced'}
               %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
@@ -677,15 +679,15 @@
                     Mail received from Nicholas Guillier on Wed, 30 Jun 2004.
                     %br
                     %i
-                      I use PCP-2.2.2-132 to remotly monitor a linux system.  I
-                      sometimes face a strange problem: between two
-                      acquisitions, the consumed cpu time is higher than the
+                      I use PCP-2.2.2 to remotely monitor a Linux system.
+                      I sometimes face a strange problem: between two
+                      samples, the consumed CPU time is higher than the
                       real time!  Once turned into a percentage, the resulting
-                      value can reach up to 250% of cpu load!  This case occurs
+                      value can reach up to 250% of CPU load!  This case occurs
                       for kernel.cpu.* metrics and with disk.all.avactive
-                      metric as well (both from linux pmda).
+                      metric as well (both from the Linux pmda).
                   %p
-                    First cpu time and disk active time are both really
+                    First CPU time and disk active time are both really
                     counters in units of time in the kernel, so the
                     reported value for the metric 
                     %i v
@@ -938,5 +940,55 @@
                     self-cancelling and diminish over longer sampling
                     intervals.  There is nothing inherently wrong here.
 
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--doc'}
+                  %p
+                    %a{:name => "T12"}
+                    %h3 PMDA appears to have died
+                  %p
+                    Sometimes errors are returned from a metric value fetch
+                    from pmcd like "No PMCD agent for domain of request".
+                  %p
+                    There are a number of possible causes, but one is most
+                    common.  This is the scenario where a PMDA is unable to
+                    respond to a request in a timely fashion, usually due to
+                    unexpected or unusual latency in the source of its values
+                    (the "domain") and not anything related to the PMDA at all.
+                  %p
+                    Since pmcd aims to provide realtime metrics at the time of
+                    each sample, it cannot wait for long for the PMDA.  So it
+                    times out the request after a short period (a few seconds
+                    by default), assuming the PMDA is unavailable when no
+                    response is received, and closes its connection to the PMDA.
+                  %p
+                    This appears from the client side as if the PMDA died as
+                    no values are available.  Examination of pmcd.log can be
+                    used to confirm when timeouts have occured.
+                  %p
+                    As of pcp-3.11.3 there are now two strategies available
+                    to mitigate this by attempting automatic recovery.  In
+                    both cases, pmdaroot must be configured and running (by
+                    default it is) for these strategies to be effective.
+                  %p
+                    Firstly, pmcd will attempt one immediate restart of any
+                    PMDA it timed out, at the first available opportunity.
+                    This is quite effective, but there remain several cases
+                    where it can be thwarted.  As it involves a once-only
+                    rectification attempt, a backup strategy is also useful.
+                  %p
+                    Secondly, a local primary pmie daemon can be enabled to
+                    continually monitor the PMDAs and signal to pmcd when a
+                    restart is needed.  If a PMDA can be restarted
+                    automatically, eventually this strategy will manage to
+                    do so (unlike the earlier single-shot strategy).  pmie is
+                    not typically enabled by default, however; refer to the
+                    pmie section in the
+                    %a{:href => '/docs/guide.html#pmie'} Quick Reference
+                    which describes how to enable pmie.
+                  %p
+                    This latter mechanism also writes to the system log when
+                    a PMDA is detected to have failed, and the log message
+                    contains details about exactly which PMDAs were affected.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render

@@ -16,7 +16,7 @@ from skip_list import ext_manpages
 with open(sys.argv[1], "r") as f:
     data = f.read()
 
-soup = BeautifulSoup(data)
+soup = BeautifulSoup(data, "lxml")
 # Fix up all internal man urls
 for url in soup.find_all('a'):
     link = url.get("href")

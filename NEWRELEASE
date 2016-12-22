@@ -4,13 +4,20 @@ Process to make a new PCP release
 Steps to create the packages for a new release
 ----------------------------------------------
 1. Update CHANGELOG with release notes, BZs in fedora.spec
-2. Tag release in git (tagged and signed - git-tag -u DEA2C114)
+2. Tag release in git (tagged and signed using pcp-masters key)
+   Ex: git tag -s -u DEA2C114 -m "X.YY.Z" X.YY.Z
 3. Make canonical source tarball right away (./Makepkgs --source)
-   and upload it to www.pcp.io (to /oss/ftp/projects/pcp/download)
-4. Upload pkgs to https://bintray.com/pcp using the bintray-upload
-   and bintray-version ./scripts from the pcp git tree
+   and upload it to bintray, using ./scripts/bintray-upload
+4. Upload binary pkgs to bintray using the ./scripts/bintray-upload
+   and ./scripts/bintray-version ./scripts from the pcp git tree.
+   For the RPM builds where gpg keys supported (modern distros, not
+   RHEL5): export RPM_SIGN_KEYID="pcp-masters"
+     ./Makepkgs --with-vector --with-webjs [ --signed ]
+   For the DEB builds (export DEB_SIGN_KEYID=36DD8C0C for official
+   uploads by debian developers)
+     ./Makepkgs --with-vector [ --signed ]
 5. Upload pkgs for Fedora/EPEL (via fedpkg, bodhi)
-6. Upload pkgs for Debian unstable (via Makepkgs)
+6. Upload pkgs for Debian unstable (./Makepkgs)
 
 Steps to update the webpage for the new release
 -----------------------------------------------
@@ -20,4 +27,5 @@ Steps to update the webpage for the new release
 3. Tweet the new release using ./scripts/tweet-new-release.py <filename>
    Put the tweet text in filename and call the above script
    e.g. text "Performance Co-Pilot X.Y.Z released: http://pcp.io"
+   (authentication issues - alternatively use twitter web interface)
 

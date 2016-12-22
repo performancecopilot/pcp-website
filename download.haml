@@ -43,7 +43,9 @@
                   %pre
                     :preserve
                       apt-get install pcp
-                      invoke-rc.d pcp start
+                      invoke-rc.d pmcd start
+                      invoke-rc.d pmie start
+                      invoke-rc.d pmlogger start
 
               %div{:class => 'colspan12-6 colspan8-4 colspan6-3 colspan2-2 as-grid with-gutter'}
                 %div{:class => 'col__module--img'}
@@ -53,9 +55,12 @@
                     :preserve
                       yum install pcp
                       # RHEL 6
-                      service pcp start
+                      service pmcd start
+                      service pmlogger start
+                      service pmie start
                       # RHEL 7 / Fedora
                       systemctl start pmcd
+                      systemctl start pmie
                       systemctl start pmlogger
 
         %div{:class => 'row-parent'}
@@ -66,7 +71,7 @@
                   %img{:src => '/images/opensuse.png'}
                   %h3 openSUSE
                   %p 
-                    %a{:href => 'http://software.opensuse.org/package/pcp'} Direct Install
+                    %a{:href => 'https://software.opensuse.org/package/pcp'} Direct Install
                     link
 
               %div{:class => 'colspan12-6 colspan8-4 colspan6-3 colspan2-2 as-grid with-gutter'}
@@ -108,9 +113,7 @@
                     %a{:href => 'https://bintray.com/pcp/source'} PCP source
                   %p
                     Git clone from the
-                    %a{:href => 'https://github.com/performancecopilot'} github
-                    PCP project, or
-                    %a{:href => 'http://git.pcp.io/cgi-bin/gitweb.cgi?p=pcp/pcp.git;a=summary'} git://git.pcp.io/pcp
+                    %a{:href => 'https://github.com/performancecopilot/pcp'} PCP repository
                   %br
                   %p
                     C++ PMDA interface:
@@ -119,10 +122,16 @@
                     Apache Qpid metrics:
                     %a{:href => 'https://github.com/pcolby/pcp-pmda-qpid.git'} git://github.com/pcolby/pcp-pmda-qpid.git
                   %p
-                    Javascript frontends:
-                    %a{:href => 'https://sourceware.org/git/?p=pcpfans.git;a=shortlog;h=refs/heads/webjs'} git://sourceware.org/pcpfans.git webjs
+                    Java instrumentation:
+                    %a{:href => 'https://github.com/performancecopilot/parfait'} git://github.com/performancecopilot/parfait.git
                   %p
                     Netflix Vector frontend:
                     %a{:href => 'https://github.com/Netflix/vector'} git://github.com/Netflix/Vector.git
+                  %p
+                    Other Javascript frontends:
+                    %a{:href => 'https://github.com/performancecopilot/pcp-webjs'} git://github.com/performancecopilot/pcp-webjs.git
+                  %p
+                    PDF graph converter:
+                    %a{:href => 'https://github.com/performancecopilot/pcp2pdf'} git://github.com/performancecopilot/pcp2pdf.git
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
