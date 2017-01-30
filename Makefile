@@ -11,9 +11,10 @@ RSYNC := rsync -azvP --prune-empty-dirs --exclude '*.scss' --exclude '*.haml' \
 	--exclude 'pcp-brand' --exclude 'NEWRELEASE' --exclude 'pcp.git' --exclude 'pcp-gui.git' \
 	--exclude 'srpm' --exclude 'buildbot' --exclude 'Vagrantfile' --exclude '.vagrant'
 
-HAMLFILES = index features documentation community website faq buildbot \
-	    presentations glider screenshots download testimonials \
-	    gsoc/2015/ideas gsoc/2016/ideas \
+HAMLFILES = \
+	gsoc/2015/ideas gsoc/2016/ideas gsoc/2017/ideas \
+	index features documentation community website faq buildbot \
+	presentations glider screenshots download testimonials \
 
 all: clean import books man docs prep local
 
@@ -30,7 +31,7 @@ install:
 
 prep: 
 	compass compile -c compass/config.rb -s compressed
-	@for h in `echo $(HAMLFILES)`; do \
+	for h in `echo $(HAMLFILES)`; do \
 	    haml $$h.haml > $$h.html; \
 	done
 	./scripts/build-team.py $(PCPGIT) | haml > team.html

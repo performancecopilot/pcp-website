@@ -1,0 +1,473 @@
+!!! html
+%html
+  %head
+    = Haml::Engine.new(File.read("assets/haml-includes/head.haml")).render
+
+  %body
+    = Haml::Engine.new(File.read("assets/haml-includes/navigation.haml")).render
+
+    %div{:class => 'site-content'}
+      %div{:class => 'how-to is-typeset'}
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-4 colspan8-3 colspan6-2 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %br
+                  %h3 Ideas List
+                  %ul
+                    %li
+                      %a{:href => '#analysis'} Analysis Tools
+                      %ul
+                        %li
+                          %a{:href => '#htop'} PCP version of htop
+                        %li
+                          %a{:href => '#collectl'} PCP version of collectl
+                        %li
+                          %a{:href => '#logsummary'} Graphical Log Summaries
+                        %li
+                          %a{:href => '#blocked'} Blocked process detection and reporting
+                        %li
+                          %a{:href => '#pmlogger'} Optimized logging of unchanging performance metrics
+                    %li
+                      %a{:href => '#webui'} Web Projects
+                      %ul
+                        %li
+                          %a{:href => '#vectorflames'} Flame Graphs in Vector
+                        %li
+                          %a{:href => '#vectorcustom'} Custom Graphs in Vector
+                    %li
+                      %a{:href => '#install'} Installer Projects
+                      %ul
+                        %li
+                          %a{:href => '#windowspcp'} Windows PCP Installer
+                        %li
+                          %a{:href => '#macosxpcp'} Mac OS X PCP Installer
+                    %li
+                      %a{:href => '#integrate'} Integration Projects
+                      %ul
+                        %li
+                          %a{:href => '#rubylang'} Instrumentation of Ruby applications
+                        %li
+                          %a{:href => '#parfait'} Java Metric Coverage
+                        %li
+                          %a{:href => '#hawkular'} Hawkular Metric Exporter
+                        %li
+                          %a{:href => '#prometheus'} Prometheus Metric Exporter
+                  %br
+
+              %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h2 Google
+                  %h2 Summer of Code
+                  %h2 2017
+                  %br
+                    (
+                    %a{:href => 'https://summerofcode.withgoogle.com'} Home
+                    )
+                  %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %a{:name => 'analysis'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'htop'}
+            %h3 PCP version of htop
+            %p
+              The Performance Co-Pilot provides a cross-platform API for accessing
+              live and historical performance data from the local or remote hosts.
+              %a{:href => 'http://hisham.hm/htop/'} HTOP
+              is a performance analysis utility reporting per-process metrics with
+              good, customizable visualization of that data.
+              This project will involve implementing a HTOP "platform" for PCP.
+            %p
+            %p
+              %strong Expected results:
+              A (C language) implementation of an HTOP backend using the PCP PMAPI,
+              with accompanying tests and documentation.
+              The student will extend their C programming skills, as well as learn
+              about the ncurses library.  Students can also expect to gain insight
+              into the meaning of the kernel data reported by these tools, and the
+              sampling techniques used in building the tools.
+            %p
+              %strong Prerequisite knowledge:
+              C programming, ncurses library knowledge a plus.
+            %p
+              %strong Skill level:
+              Intermediate
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:mgoodwin@redhat.com'} Mark Goodwin
+              ,
+              %a{:href => 'mailto:ryan@doylenet.net'} Ryan Doyle
+            %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %a{:name => 'analysis'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'collectl'}
+            %h3 PCP version of collectl
+            %p
+              The Performance Co-Pilot provides a cross-platform API for accessing
+              live and historical performance data from the local or remote hosts.
+              An initial PCP implementation (pcp-collectl) of the
+              %a{:href => 'http://collectl.sourceforge.net/'} Collectl
+              utility provides some initial support for the same style of reports.
+              This project will extend that initial code to complete the reporting
+              coverage provided by the initial collectl utility.
+              Additionally, the pcp-collectl utility will be updated to use modern
+              PCP API extensions, improve the test coverage and documentation.
+            %p
+              %strong Expected results:
+              The student will extend their Python programming skills,
+              and can also expect to gain insight into the meaning of the kernel
+              data reported by this tool, and the sampling techniques it uses.
+            %p
+              %strong Prerequisite knowledge:
+              Python programming.
+            %p
+              %strong Skill level:
+              Intermediate
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:mgoodwin@redhat.com'} Mark Goodwin
+              ,
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
+            %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'blocked'}
+            %h3 Blocked process detection and reporting
+            %p
+              Processes can become blocked from running as they wait for resources.
+              This may be processor time, waiting for I/O, blocked waiting for some
+              other process, etc.  Understanding these delays can be critical for a
+              performance analyst optimizing elapsed time in a workflow.
+            %p
+              In last years Google Summer of Code, a student created the
+              %a{:href => 'http://man7.org/linux/man-pages/man1/pcp-pidstat.1.html'} pcp-pidstat
+              utility.
+              This year, that tool will be extended to detect and report on blocked
+              processes - showing when, why and by whom processes become blocked and
+              unblocked.
+            %p
+              %strong Expected results:
+              The student will extend their Python programming skills,
+              and can also expect to gain insight into the meaning of the kernel
+              data reported by this tool, and the sampling techniques it uses.
+            %p
+              %strong Prerequisite knowledge:
+              Python programming.
+            %p
+              %strong Skill level:
+              Intermediate
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:mgoodwin@redhat.com'} Mark Goodwin
+              ,
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
+            %br
+
+        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'logsummary'}
+            %h3 Graphical Log Summaries
+            %p
+              The PCP 
+              %a{:href => 'http://man7.org/linux/man-pages/man1/pmlogger.1.html'} pmlogger
+              records statistics from a running machine.
+            %p
+              This project will develop a Python class library to read in PCP archives with
+              multidimensional indexing for data-science style analysis and performance data
+              mining.  It will also feed
+              %a{:href => 'http://man7.org/linux/man-pages/man1/pmlogsummary.1.html'} pmlogsummary
+              statistical data into Python's extensive data-science class librariess (e.g.
+              %a{:href => 'http://www.numpy.org/'} numpy
+              ) for analysis and graphical visualization.
+            %p
+              %strong Expected results:
+              Construction of a class library to assist with exporting PCP data to scientific
+              libraries, as well as tools to visualize that data.
+            %p
+              %strong Prerequisite knowledge:
+              Python programming,
+              %a{:href => 'https://wiki.python.org/moin/PyQt'} PyQt
+              knowledge a plus.
+            %p
+              %strong Skill level:
+              Intermediate
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:mgoodwin@redhat.com'} Mark Goodwin
+              ,
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
+            %br
+
+        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'pmlogger'}
+            %h3 Optimized logging of unchanging performance metrics
+            %p
+              The PCP 
+              %a{:href => 'http://man7.org/linux/man-pages/man1/pmlogger.1.html'} pmlogger
+              records statistics from a running machine.  Some of these metrics vary
+              frequently over time, but there is a large subset that vary infrequently.
+            %p
+              This project will implement changes to pmlogger to only log these metrics
+              when the metric values or set of instances changes.  A secondary phase will
+              involve post-processing existing log files to remove duplicate information.
+            %p
+              %strong Expected results:
+              A new command line option to pmlogger to only log changing metrics, and a
+              utility to prune existing archives.
+            %p
+              %strong Prerequisite knowledge:
+              C programming
+            %p
+              %strong Skill level:
+              Intermediate-Advanced
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:minnus@buffalo.edu'} Martins Innus
+              ,
+              %a{:href => 'mailto:kenj@internode.on.net'} Ken McDonell
+              ,
+              %a{:href => 'mailto:brolley@redhat.com'} Dave Brolley
+            %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %a{:name => 'webui'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'vectorflames'}
+            %h3 Flame graphs in Vector
+            %p
+              %a{:href => 'http://www.brendangregg.com/flamegraphs.html'} Flame graphs
+              are a visualization of profiled software, allowing frequently
+              travelled code paths to be identified quickly and accurately.
+              This project will implement an efficient, JSON-based interface between the
+              %a{:href => 'https://github.com/Netflix/vector/wiki/Getting-Started'} Vector
+              web application, the Linux kernel eBPF and/or
+              %a{:href => 'http://man7.org/linux/man-pages/man1/perf.1.html'} perf
+              facilities, and a PCP agent (PMDA) like
+              %a{:href => 'http://pcp.io/man/man1/pmdapipe.1.html'} pmdapipe
+              to trigger and relay the JSON output to Vector
+            %p
+              %strong Expected results:
+              A capability for rendering flame graphs on-demand over a given
+              time interval is available from the Vector web application.
+            %p
+              %strong Prerequisite knowledge:
+              C programming and Linux kernel knowledge, Javascript a plus
+            %p
+              %strong Skill level:
+              Advanced
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:mspier@netflix.com'} Martin Spier
+              ,
+              %a{:href => 'mailto:mgoodwin@redhat.com'} Mark Goodwin
+              ,
+              %a{:href => 'mailto:lberk@redhat.com'} Lukas Berk
+            %br
+
+        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'vectorcustom'}
+            %h3 Custom Graphs in Vector
+            %p
+              The
+              %a{:href => 'https://github.com/Netflix/vector/wiki/Getting-Started'} Vector
+              web application produces graphs and performance dashboards.
+              The student will design and build a JavaScript code generator for creating
+              new Vector charts for arbitrary PCP metrics.
+            %p
+              %strong Expected results:
+              The
+              %a{:href => 'http://vectoross.io/docs/creating-widgets.html'} simple example
+              shows creation of a custom Vector widget by-hand, it gives an idea of the sorts
+              of configurable widget that we aim to generate.
+            %p
+              %strong Prerequisite knowledge:
+              Javascript
+            %p
+              %strong Skill level:
+              Intermediate
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:mspier@netflix.com'} Martin Spier
+              ,
+              %a{:href => 'mailto:mgoodwin@redhat.com'} Mark Goodwin
+            %br
+
+        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+          %a{:name => 'install'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'windowspcp'}
+            %h3 Windows PCP installer
+            %p
+              PCP has been ported to many platforms, including Windows.
+              This project involves customizing and extending the popular
+              %a{:href => 'https://git-for-windows.github.io'} git
+              for Windows installer with PCP packages.
+              This installer is a particularly good match for PCP, as it
+              has many of the same sorts of needs (including the addition
+              of several unrelated POSIX command line utilities).
+            %p
+              %strong Expected results:
+              Demonstrated monitoring of Windows servers with latest PCP,
+              after a clean installation experience.
+            %p
+              %strong Prerequisite knowledge:
+              Knowledge of Windows and POSIX systems, Win32 API experience a plus.
+            %p
+              %strong Skill level:
+              Intermediate
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
+              ,
+              %a{:href => 'mailto:kenj@internode.on.net'} Ken McDonell
+            %br
+
+        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'macosxpcp'}
+            %h3 Mac OS X PCP installer
+            %p
+              PCP has been ported to many platforms, including Mac OS X.
+              This project involves building a new PCP installer for the
+              popular Mac OS X platform, based on technologies available
+              in the latest versions of the operating system, switching from
+              the (now deprecated) technologies previously used.
+            %p
+              In addition, the student will transition PCP to using the
+              %a{:href => 'https://en.wikipedia.org/wiki/Launchd'} launchd
+              for daemon process management.
+            %p
+              %strong Expected results:
+              Improved installation and runtime experience for PCP on Mac OS X.
+            %p
+              %strong Prerequisite knowledge:
+              Knowledge of Windows and POSIX systems, Win32 API experience a plus.
+            %p
+              %strong Skill level:
+              Intermediate
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
+              ,
+              %a{:href => 'mailto:psmith@aconex.com'} Paul Smith
+            %br
+
+        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+          %a{:name => 'integrate'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'rubylang'}
+            %h3 Instrumentation of Ruby applications
+            %p
+              PCP supports a mechanism for developers to expose metrics inside their
+              own applications.  There are three existing implementations - one for each
+              of C, Java and Go.  This project expands that to include Ruby.
+            %p
+              %strong Expected results:
+              The project will be implemented in three stages:
+              %ul
+                %li
+                  Create a library to write out the MMVv1/2 format.
+                %li
+                  Create a higher-level API for developers to use to add metrics to
+                  their applications.
+                %li
+                  Integrate with Rails and Sinatra web frameworks to automatically
+                  expose common metrics
+            %p
+              %strong Prerequisite knowledge:
+              Ruby and C programming
+            %p
+              %strong Skill level:
+              Intermediate-Advanced
+            %p
+              %strong Further reading:
+              %ul
+                %li
+                  %a{:href => 'https://github.com/performancecopilot/speed'} Speed
+                  Native Golang implementation, 2016 GSoC project
+                  %a{:href => 'https://github.com/performancecopilot/parfait'} Parfait
+                  Native Java implementation
+                  %a{:href => 'https://github.com/performancecopilot/pcp/blob/master/src/include/pcp/mmv_stats.h'} libpcp_mmv
+                  C implementation, also used for C++, Python and Perl code
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:ryan@doylenet.net'} Ryan Doyle
+              ,
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
+            %br
+
+        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'parfait'}
+            %h3 Java Metric Coverage
+            %p
+              TODO
+            %p
+              %strong Expected results:
+              TODO
+            %p
+              %strong Prerequisite knowledge:
+              Java
+            %p
+              %strong Skill level:
+              Intermediate
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
+              ,
+              %a{:href => 'mailto:psmith@aconex.com'} Paul Smith
+            %br
+
+        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'hawkular'}
+            %h3 Hawkular Metric Exporter
+            %p
+              TODO
+            %p
+              %strong Expected results:
+              TODO
+            %p
+              %strong Prerequisite knowledge:
+              Python, Java knowledge a plus
+            %p
+              %strong Skill level:
+              Intermediate
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:lberk@redhat.com'} Lukas Berk
+              ,
+              %a{:href => 'mailto:mwringe@redhat.com'} Matthew Wringe
+            %br
+
+        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'prometheus'}
+            %h3 Prometheus Metric Exporter
+            %p
+              TODO
+            %p
+              %strong Expected results:
+              TODO
+            %p
+              %strong Prerequisite knowledge:
+              Python, Golang knowledge a plus
+            %p
+              %strong Skill level:
+              Intermediate
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
+              ,
+              %a{:href => 'mailto:lberk@redhat.com'} Lukas Berk
+            %br
+
+    = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
