@@ -28,8 +28,6 @@
                           %a{:href => '#logsummary'} Graphical Log Summaries
                         %li
                           %a{:href => '#blocked'} Blocked process detection and reporting
-                        %li
-                          %a{:href => '#pmlogger'} Optimized logging of unchanging performance metrics
                     %li
                       Web Projects
                       %ul
@@ -200,38 +198,6 @@
               %a{:href => 'mailto:mgoodwin@redhat.com'} Mark Goodwin
               ,
               %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
-            %br
-
-        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
-          %div{:class => 'col__module--img'}
-            %a{:name => 'pmlogger'}
-            %h3 Optimized logging of unchanging performance metrics
-            %p
-              The PCP 
-              %a{:href => 'http://man7.org/linux/man-pages/man1/pmlogger.1.html'} pmlogger
-              records statistics from a running machine.  Some of these metrics vary
-              frequently over time, but there is a large subset that vary infrequently.
-            %p
-              This project will implement changes to pmlogger to only log these metrics
-              when the metric values or set of instances changes.  A secondary phase will
-              involve post-processing existing log files to remove duplicate information.
-            %p
-              %strong Expected results:
-              A new command line option to pmlogger to only log changing metrics, and a
-              utility to prune existing archives.
-            %p
-              %strong Prerequisite knowledge:
-              C programming
-            %p
-              %strong Skill level:
-              Intermediate-Advanced
-            %p
-              %strong Mentors:
-              %a{:href => 'mailto:minnus@buffalo.edu'} Martins Innus
-              ,
-              %a{:href => 'mailto:kenj@internode.on.net'} Ken McDonell
-              ,
-              %a{:href => 'mailto:brolley@redhat.com'} Dave Brolley
             %br
 
         %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
