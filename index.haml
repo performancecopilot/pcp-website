@@ -86,6 +86,22 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p
+                      Feb 2017
+                      %br
+                      PCP 3.11.8
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p
+                      New agents for Redis, NutCracker, BIND, Docker and LIO.
+                      Linux kernel virtual memory and SCSI tape metrics.
+                      Standalone Web server and Java application containers.
+                      Improvements to SELinux policy via custom PCP package.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p
                       Dec 2016
                       %br
                       PCP 3.11.7
@@ -153,23 +169,5 @@
                       %a{:href => '/man/man3/pmjsoninit.3.html'} JSON metric
                       extraction interfaces for PMDAs.
                       Memory Mapped Value v2 format support.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      Jun 2016
-                      %br
-                      PCP 3.11.3
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      Client certificate secure socket mode.  Zsh(1) command
-                      completion for PCP commands.  Added several new metrics to
-                      %a{:href => '/man/man1/collectl2pcp.1.html'} collectl2pcp(1).
-                      Linux kernel NUMA memory bandwidth, IPC metrics and a new
-                      %a{:href => '/man/man1/pcp-ipcs.1.html'} pcp-ipcs(1)
-                      command.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
