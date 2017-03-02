@@ -28,8 +28,14 @@
                           %a{:href => '#logsummary'} Graphical Log Summaries
                         %li
                           %a{:href => '#blocked'} Blocked process detection and reporting
+                    %li
+                      New Instrumentation
+                      %ul
                         %li
                           %a{:href => '#dmstats'} Device Mapper statistics
+                        %li
+                          %a{:href => '#ebpf'} Instrumentation with eBPF
+                        %li
                     %li
                       Web Projects
                       %ul
@@ -212,6 +218,46 @@
               %a{:href => 'mailto:bmr@redhat.com'} Bryn M. Reeves
               ,
               %a{:href => 'mailto:goodwinos@gmail.com'} Mark Goodwin
+            %br
+
+        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'ebpf'}
+            %h3 Instrumentation with eBPF
+            %p
+              eBPF (extended Berkeley Packet Filtering) is the latest tracing
+              capability added to the Linux kernel, which is an enhancement over
+              %a{:href => 'https://en.wikipedia.org/wiki/Berkeley_Packet_Filter'} BPF .
+              It is an in-kernel bytecode machine that can be used for tracing,
+              instrumentation and other capabilities.
+              It can be used to create custom metrics by either instrumenting the kernel
+              or a userspace program.
+            %p
+              Tools like
+              %a{:href => 'https://iovisor.github.io/bcc/'} bcc
+              have an elegant API and scripts (in python) to
+              use the eBPF interface to instrument the kernel/processes.
+            %p
+              %strong Expected results:
+              A PCP PMDA (using bcc) for the bpf subsystem will be
+              designed, implemented, tested and documented.
+              The PMDA can implement a few basic metrics and it should be extensible,
+              so that it can be enhanced.
+              The student is expected to gain insights on Linux kernel and user-space
+              instrumentation.
+            %p
+              %strong Prerequisite knowledge:
+              Python (optional), C, Linux kernel.
+            %p
+              %strong Skill level:
+              Intermediate-Advanced
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:hemant@linux.vnet.ibm.com'} Hemant Kumar
+              ,
+              %a{:href => 'mailto:goodwinos@gmail.com'} Mark Goodwin
+              ,
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
             %br
 
         %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
