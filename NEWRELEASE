@@ -9,7 +9,7 @@ Steps to create the packages for a new release
 3. Make canonical source tarball right away (./Makepkgs --source)
    and upload it to bintray, using ./scripts/bintray-upload
 4. Upload binary pkgs to bintray using the ./scripts/bintray-upload
-   and ./scripts/bintray-version ./scripts from the pcp git tree.
+   and ./scripts/bintray-version scripts from the PCP git repo.
    For the RPM builds where gpg keys supported (modern distros, not
    RHEL5): export RPM_SIGN_KEYID="pcp-masters"
      ./Makepkgs --with-webapps [ --signed ]
@@ -21,11 +21,12 @@ Steps to create the packages for a new release
 
 Steps to update the webpage for the new release
 -----------------------------------------------
-1. Tweak index.haml and at the end replace the previous last PCP news
-   with a short note about the new release.
-2. Send an email to pcp-announce with the details of the new release
-3. Tweet the new release using ./scripts/tweet-new-release.py <filename>
+1. From the end of index.haml replace the previous last PCP news
+   with a short note about the new release (moved to the front).
+2. Send an email to pcp-announce@groups.io and pcp@groups.io with
+   the details of the new release (include the full changelog).
+3. Tweet the release using ./scripts/tweet-new-release.py <filename>
    Put the tweet text in filename and call the above script
    e.g. text "Performance Co-Pilot X.Y.Z released: http://pcp.io"
-   (if there's authentication issues use twitter web interface directly)
+   (if authentication fails use twitter.com web interface directly)
 
