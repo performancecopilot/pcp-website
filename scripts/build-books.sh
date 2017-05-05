@@ -8,7 +8,7 @@ set -x
 
 rm -rf books
 mkdir books
-for i in PCP_PG PCP_UAG PCP_TCS; do
+for i in PCP_PG PCP_UAG; do
     echo $i
     mkdir "books/$i"
     HTMLPATH=$1/books/$i/tmp/en-US/html

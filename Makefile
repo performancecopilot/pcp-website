@@ -46,8 +46,10 @@ man:
 docs:
 	./scripts/build-docs.sh
 
-PG_PDF = ../books/PCP_PG/pdf/PCP-3-pcp-programmers-guide-en-US.pdf
-UAG_PDF = ../books/PCP_UAG/pdf/PCP-3-pcp-users-and-administrators-guide-en-US.pdf
+PG_PATH = ../books/PCP_PG/pdf
+PG_PDF = pcp-programmers-guide.pdf
+UAG_PATH = ../books/PCP_UAG/pdf
+UAG_PDF = pcp-users-and-administrators-guide.pdf
 
 import:
 	mkdir doc docs man images 2>/dev/null || /bin/true
@@ -57,8 +59,8 @@ import:
 	rsync -Lrdp $(PCPGIT)/man/html/images/* images/
 	rsync -Lrdp $(PCPGIT)/images/* docs/images
 	rm -rf man/html man/retired
-	cd doc && ln -s $(UAG_PDF) pcp-users-and-administrators-guide.pdf
-	cd doc && ln -s $(PG_PDF) pcp-programmers-guide.pdf
+	cd doc && ln -s $(UAG_PATH)/$(UAG_PDF) $(UAG_PDF)
+	cd doc && ln -s $(PG_PATH)/$(PG_PDF) $(PG_PDF)
 	ln -s images/pcp.ico favicon.ico
 
 uncompressed:
