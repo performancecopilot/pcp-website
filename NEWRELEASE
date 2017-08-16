@@ -23,6 +23,7 @@ Steps to update the webpage for the new release
 -----------------------------------------------
 1. From the end of index.haml replace the previous last PCP news
    with a short note about the new release (moved to the front).
+   Update the website via "make && make install" (see README).
 2. Send an email to pcp-announce@groups.io and pcp@groups.io with
    the details of the new release (include the full changelog).
 3. Tweet the release using ./scripts/tweet-new-release.py <filename>
