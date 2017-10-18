@@ -86,6 +86,23 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p
+                      Oct 2017
+                      %br
+                      PCP 3.12.2
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p
+                      Improvements to SELinux policy via custom PCP package.
+                      New Utilities: pcp2elasticsearch, pcp2json, pcp2xlsx, pcp2xml, pcp2zabbix.
+                      pmrep enhancements.
+                      pmwebd: improved performance, hostname-based naming.
+                      python API improvements.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p
                       Aug 2017
                       %br
                       PCP 3.12.1
@@ -157,21 +174,5 @@
                       Hardware PMU events export from the Linux kernel via
                       %a{:href => '/man/man1/pmdaperfevent.1.html'} pmdaperfevent .
                       Instrumented Redis, ElasticSearch and Golang containers.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      Feb 2017
-                      %br
-                      PCP 3.11.8
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      New agents for Redis, NutCracker, BIND, Docker and LIO.
-                      Linux kernel virtual memory and SCSI tape metrics.
-                      Standalone Web server and Java application containers.
-                      Improvements to SELinux policy via custom PCP package.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
