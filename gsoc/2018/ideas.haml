@@ -1,0 +1,438 @@
+!!! html
+%html
+  %head
+    = Haml::Engine.new(File.read("assets/haml-includes/head.haml")).render
+
+  %body
+    = Haml::Engine.new(File.read("assets/haml-includes/navigation.haml")).render
+
+    %div{:class => 'site-content'}
+      %div{:class => 'how-to is-typeset'}
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %br
+                  %h3 Ideas List
+                  %ol
+                    %li
+                      Analysis Tools
+                      %ul
+                        %li
+                          %a{:href => '#htop'} PCP version of htop
+                        %li
+                          %a{:href => '#collectl'} PCP version of collectl
+                        %li
+                          %a{:href => '#datavis'} Performance Data Visualization and Analysis with PCP
+                    %li
+                      New Instrumentation
+                      %ul
+                        %li
+                          %a{:href => '#ebpf'} Instrumentation with eBPF
+                        %li
+                          %a{:href => '#RESPpmproxy'} RESP support in pmproxy
+                    %li
+                      Web Projects
+                      %ul
+                        %li
+                          %a{:href => '#vectorflames'} Flame Graphs in Vector
+                    %li
+                      Installer Projects
+                      %ul
+                        %li
+                          %a{:href => '#windowspcp'} Windows PCP Installer
+                        %li
+                          %a{:href => '#macosxpcp'} Mac OS X PCP Installer
+                    %li
+                      Integration Projects
+                      %ul
+                        %li
+                          %a{:href => '#metadata'} Metadata Label Support for Instrumented Applications
+                  %br
+
+              %div{:class => 'colspan12-4 colspan8-3 colspan6-2 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h2 Google
+                  %h2 Summer of Code
+                  %h2 2018
+                  %br
+                    (
+                    %a{:href => 'https://summerofcode.withgoogle.com'} Home
+                    )
+                  %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'htop'}
+            %h3 PCP version of htop
+            %p
+              The Performance Co-Pilot provides a cross-platform API for accessing
+              live and historical performance data from the local or remote hosts.
+              %a{:href => 'http://hisham.hm/htop/'} HTOP
+              is a performance analysis utility reporting per-process metrics with
+              good, customizable visualization of that data.
+              This project will involve implementing a HTOP "platform" for PCP.
+            %p
+            %p
+              %strong Expected results:
+              A (C language) implementation of an HTOP backend using the PCP PMAPI,
+              with accompanying tests and documentation.
+              The student will extend their C programming skills, as well as learn
+              about the ncurses library.  Students can also expect to gain insight
+              into the meaning of the kernel data reported by these tools, and the
+              sampling techniques used in building the tools.
+            %p
+              %strong Prerequisite knowledge:
+              C programming, ncurses library knowledge a plus.
+            %p
+              %strong Skill level:
+              Intermediate
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:goodwinos@gmail.com'} Mark Goodwin
+              ,
+              %a{:href => 'mailto:lberk@redhat.com'} Lukas Berk
+            %p
+              %strong Interested students so far:
+              0
+            %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %a{:name => 'analysis'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'collectl'}
+            %h3 PCP version of collectl
+            %p
+              The Performance Co-Pilot provides a cross-platform API for accessing
+              live and historical performance data from the local or remote hosts.
+              An initial PCP implementation (pcp-collectl) of the
+              %a{:href => 'http://collectl.sourceforge.net/'} Collectl
+              utility provides some initial support for the same style of reports.
+              This project will extend that initial code to complete the reporting
+              coverage provided by the initial collectl utility.
+              Additionally, the pcp-collectl utility will be updated to use modern
+              PCP API extensions, improve the test coverage and documentation.
+            %p
+              %strong Expected results:
+              The student will extend their Python programming skills,
+              and can also expect to gain insight into the meaning of the kernel
+              data reported by this tool, and the sampling techniques it uses.
+            %p
+              %strong Prerequisite knowledge:
+              Python programming.
+            %p
+              %strong Skill level:
+              Intermediate
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
+              ,
+              %a{:href => 'mailto:goodwinos@gmail.com'} Mark Goodwin
+            %p
+              %strong Interested students so far:
+              0
+            %br
+
+        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'ebpf'}
+            %h3 Instrumentation with eBPF
+            %p
+              eBPF (extended Berkeley Packet Filtering) is the latest tracing
+              capability added to the Linux kernel, which is an enhancement over
+              %a{:href => 'https://en.wikipedia.org/wiki/Berkeley_Packet_Filter'} BPF .
+              It is an in-kernel bytecode machine that can be used for tracing,
+              instrumentation and other capabilities.
+              It can be used to create custom metrics by either instrumenting the kernel
+              or a userspace program.
+            %p
+              Tools like
+              %a{:href => 'https://iovisor.github.io/bcc/'} bcc
+              have an elegant API and scripts (in python) to
+              use the eBPF interface to instrument the kernel/processes.
+            %p
+              %strong Expected results:
+              A PCP PMDA (using bcc) for the bpf subsystem will be
+              designed, implemented, tested and documented.
+              The PMDA can implement a few basic metrics and it should be extensible,
+              so that it can be enhanced.
+              The student is expected to gain insights on Linux kernel and user-space
+              instrumentation.
+            %p
+              %strong Prerequisite knowledge:
+              Python, C, Linux kernel.
+            %p
+              %strong Skill level:
+              Intermediate-Advanced
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:hemant@linux.vnet.ibm.com'} Hemant Kumar
+              ,
+              %a{:href => 'mailto:goodwinos@gmail.com'} Mark Goodwin
+              ,
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
+            %p
+              %strong Interested students so far:
+              0
+            %br
+
+        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'datavis'}
+            %h3 Performance Data Visualization and Analysis with PCP
+            %p
+              The PCP
+              %a{:href => 'http://man7.org/linux/man-pages/man1/pmlogger.1.html'} pmlogger
+              records performance statistics from a running machine,
+              which can be efficiently queried and extracted as time
+              series data using pmseries,
+              %a{:href => 'http://man7.org/linux/man-pages/man1/pmrep.1.html'} pmrep,
+              %a{:href => 'http://man7.org/linux/man-pages/man1/pmwebd.1.html'} pmwebd
+              and other PCP client tools. This project will develop a
+              Python application to query, extract, reformat and
+              visualize PCP time series data using Python's extensive
+              data-science class libraries (e.g. 
+              %a{:href => 'http://www.numpy.org/'} NumPy,
+              %a{:href => 'http://pandas.pydata.org/'} Pandas,
+              %a{:href => 'https://matplotlib.org/'} MatPlotLib,
+              %a{:href => 'https://www.scipy.org/'} SciPy
+              and others).
+            %p
+              %strong Expected results:
+              Construction of an application (and class libraries) to query PCP
+              time-series data using various client tools and import this into
+              existing scientific data-science libraries for visualization and
+              analysis. Demonstration of meaningful statistical insights from
+              real-world PCP data archives.
+            %p
+              %strong Prerequisite knowledge:
+              Strong Python programming, knowledge of statistical
+              analysis, some experience with one or more python data-science
+              libraries.
+            %p
+              %strong Skill level:
+              Advanced
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:goodwinos@gmail.com'} Mark Goodwin
+              ,
+              %a{:href => 'mailto:myllnen@redhat.com'} Marko Myllynen              
+            %p
+              %strong Interested students so far:
+              0
+            %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'vectorflames'}
+            %h3 Flame Graphs in Vector
+            %p
+              %a{:href => 'http://www.brendangregg.com/flamegraphs.html'} Flame Graphs
+              are a visualization of profiled software, allowing frequently
+              travelled code paths to be identified quickly and accurately.
+              This project will implement an efficient interface between the
+              %a{:href => 'https://github.com/Netflix/vector/wiki/Getting-Started'} Vector
+              web application, the Linux kernel eBPF and/or
+              %a{:href => 'http://man7.org/linux/man-pages/man1/perf.1.html'} perf
+              facilities, and a PCP agent (PMDA) like
+              %a{:href => 'http://pcp.io/man/man1/pmdapipe.1.html'} pmdapipe
+              to trigger and relay the output to Vector
+            %p
+              %strong Expected results:
+              A capability for rendering Flame Graphs on-demand over a given
+              time interval is available from the Vector web application.
+            %p
+              %strong Prerequisite knowledge:
+              C programming and Linux kernel knowledge, JavaScript, Angular is a plus.
+            %p
+              %strong Skill level:
+              Advanced
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:mspier@netflix.com'} Martin Spier
+              ,
+              %a{:href => 'mailto:goodwinos@gmail.com'} Mark Goodwin
+              ,
+              %a{:href => 'mailto:lberk@redhat.com'} Lukas Berk
+            %p
+              %strong Interested students so far:
+              0
+            %br
+        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'RESPpmproxy'}
+            %h3 RESP support in pmproxy
+            %p
+              Redis 
+              %a{:href => 'http://redis.io'}
+              is an in-memory NoSQL data cache being used in PCP for
+              search and serving time series performance data. PCP
+              metadata and data keys are distributed across
+              potentially many Redis servers, and access to individual
+              keys is automated by PCP client library code, for PCP
+              client tools like pmseries(1). Direct access is
+              relatively non-intuitive for human operators and
+              developers - something we'd like to change.
+
+              Redis clients communicate with the Redis server using a protocol
+              called RESP
+              %a{:href => 'https://redis.io/topics/protocol'}
+              (REdis Serialization Protocol). It is a relatively
+              simple text-based protocol which can co-exist with other
+              protocols supported by the PCP pmproxy(1) daemon -
+              i.e. the native and secure PCP protocols.
+
+              This project involves extending pmproxy to support RESP, in a fashion
+              similar to the twemproxy
+              %a{:href => 'https://github.com/twitter/twemproxy/'}
+              (aka NutCracker) project, such that an arbitrary Redis client (like the
+              redis-cli
+              %a{:href => 'https://redis.io/topics/rediscli]'}
+              can access the distributed key store using the direct
+              key-to-server mapping mechanism used by the existing PCP
+              time series code.
+            %p
+              %strong Expected results:
+              The student will gain a deep understanding of Redis, a popular
+              in-memory cache, and Performance Co-Pilot, a toolkit for system-level
+              performance analysis.
+            %p
+              %strong Prerequisite knowledge:
+              Strong proficiency in C language programming is
+              required. Experience using and developing software on Linux would be
+              advantageous.
+            %p
+              %strong Skill level:
+              Advanced
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
+              ,
+              %a{:href => 'mailto:lberk@redhat.com'} Lukas Berk
+            %p
+              %strong Interested students so far:
+              0
+            %br
+
+        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'windowspcp'}
+            %h3 Windows PCP installer
+            %p
+              PCP has been ported to many platforms, including Windows.
+              This project involves customizing and extending the popular
+              %a{:href => 'https://git-for-windows.github.io'} git
+              for Windows installer with PCP packages.
+              This installer is a particularly good match for PCP, as it
+              has many of the same sorts of needs, such as the need to
+              install several POSIX command line utilities as well.
+            %p
+              %strong Expected results:
+              Demonstrated monitoring of Windows servers with latest PCP,
+              after a clean installation experience.
+            %p
+              %strong Prerequisite knowledge:
+              Knowledge of Windows and POSIX systems, Win32 API experience a plus.
+            %p
+              %strong Skill level:
+              Introductory-Intermediate
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
+              ,
+              %a{:href => 'mailto:kenj@kenj.id.au'} Ken McDonell
+            %p
+              %strong Interested students so far:
+              0
+            %br
+
+        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'macosxpcp'}
+            %h3 Mac OS X PCP installer
+            %p
+              PCP has been ported to many platforms, including Mac OS X.
+              This project involves building a new PCP installer for the
+              popular Mac OS X platform, based on technologies available
+              in the latest versions of the operating system, switching from
+              the (now deprecated) technologies previously used.
+            %p
+              In addition, the student will transition PCP to using
+              %a{:href => 'https://en.wikipedia.org/wiki/Launchd'} launchd
+              for daemon process management.
+            %p
+              %strong Expected results:
+              Improved installation and runtime experience for PCP on Mac OS X.
+            %p
+              %strong Prerequisite knowledge:
+              Knowledge of Mac OS X and POSIX systems
+            %p
+              %strong Skill level:
+              Introductory-Intermediate
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
+              ,
+              %a{:href => 'mailto:psmith@aconex.com'} Paul Smith
+            %p
+              %strong Interested students so far:
+              0
+            %br
+
+        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'metadata'}
+            %h3 Metadata Label Support for Instrumented Applications
+            %p
+              PCP provides an extremely lightweight mechanism for instrumenting
+              applications using shared memory backed by memory mapped files - the
+              %a{:href => 'http://man7.org/linux/man-pages/man5/mmv.5.html'} MMV
+              (memory mapped values) API.
+
+              Recently PCP has been extended to provide arbitrary metric metadata in
+              the form of key/value pairs - as an extension to the metadata it has
+              always provided, namely units, semantics, type, and so on.
+
+              This project will explore extending the memory-map instrumentation
+              model with support for labels. Firstly, an extension to the memory
+              mapped format to support labels will be devised by the student and
+              mentor (MMV version 3), and for reading this format will be added to
+              the PMDA and diagnostic utilities.
+
+              Secondly, the application instrumentation APIs will be extended to
+              support writing this revised format, with new APIs allowing metadata
+              labels to be set for individual metrics and groups of metrics within
+              an application. There are several language bindings that will need to
+              be updated to support this - the student can tackle some or all of
+              these - in languages as varied as C, Java, Python, Go and Rust.
+            %p
+              %strong Expected results:
+              The student will gain substantive knowledge of instrumenting
+              applications for performance analysis efficiently and
+              comprehensively. The Performance Co-Pilot toolkit will be explored in
+              depth, and significant knowledge about system-level performance
+              analysis in general will be acquired.
+            %p
+              %strong Prerequisite knowledge:
+              Strong C language proficiency is required, as well as knowledge of one
+              or more of Python, Java, Go and Rust. Experience in Linux use and
+              programming would be beneficial.
+            %p
+              %strong Skill level:
+              Advanced
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
+              ,
+              %a{:href => 'mailto:ryan@doylenet.net'} Ryan Doyle
+              ,
+              %a{:href => 'mailto:dextrous93@gmail.com'} Suyash
+              ,
+              %a{:href => 'sauravsachidanand@gmail.com'} Saurav Sachidanand
+            %p
+              %strong Interested students so far:
+              0
+            %br
+    = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
