@@ -144,6 +144,20 @@ table {
 	@include padding-trailer(20);
 }
 
+.tokyo-logo {
+	position: relative;
+	background-color: $macy-grey;
+	background-position: center bottom;
+	background-size: cover;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	background-image: url(/images/tokyo.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	@include padding-leader(20);
+	@include padding-trailer(20);
+}
+
 .hero {
 	position: relative;
 	//background-image: url(../../images/jetfighter2.jpg);

@@ -9,12 +9,13 @@ RSYNC := rsync -azvP --prune-empty-dirs --exclude '*.scss' --exclude '*.haml' \
 	--exclude '.gitignore' --exclude 'scripts' --exclude 'README.md' --exclude 'compass' \
 	--exclude '*.[1-9]' --exclude 'GNUmakefile' --exclude 'Check' --exclude 'stock-images' \
 	--exclude 'pcp-brand' --exclude 'NEWRELEASE' --exclude 'pcp.git' --exclude 'pcp-gui.git' \
-	--exclude 'srpm' --exclude 'buildbot' --exclude 'Vagrantfile' --exclude '.vagrant'
+	--exclude 'srpm' --exclude 'buildbot' --exclude 'Vagrantfile' --exclude '.vagrant' \
 
 HAMLFILES = \
 	index features documentation community website faq buildbot \
 	presentations glider screenshots download testimonials \
-	gsoc/2015/ideas gsoc/2016/ideas gsoc/2017/ideas gsoc/2018/ideas
+	gsoc/2015/ideas gsoc/2016/ideas gsoc/2017/ideas gsoc/2018/ideas \
+	conference/2018/home conference/2018/contact \
 
 all: clean import books man docs prep local
 
