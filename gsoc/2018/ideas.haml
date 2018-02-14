@@ -25,7 +25,7 @@
                         %li
                           %a{:href => '#collectl'} PCP version of collectl
                         %li
-                          %a{:href => '#datavis'} Visualization and Analysis of PCP datasets
+                          %a{:href => '#datavis'} Visualization and analysis of PCP datasets
                     %li
                       Integration Projects
                       %ul
@@ -86,7 +86,7 @@
               Intermediate
             %p
               %strong Mentors:
-              %a{:href => 'mailto:goodwinos@gmail.com'} Mark Goodwin
+              %a{:href => 'mailto:mgoodwin@redhat.com'} Mark Goodwin
               ,
               %a{:href => 'mailto:lberk@redhat.com'} Lukas Berk
             %p
@@ -124,9 +124,9 @@
               Introductory-Intermediate
             %p
               %strong Mentors:
-              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
+              %a{:href => 'mailto:mgoodwin@redhat.com'} Mark Goodwin
               ,
-              %a{:href => 'mailto:goodwinos@gmail.com'} Mark Goodwin
+              %a{:href => 'mailto:myllynen@redhat.com'} Marko Myllynen              
             %p
               %strong Interested students so far:
               0
@@ -135,7 +135,7 @@
         %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
           %div{:class => 'col__module--img'}
             %a{:name => 'datavis'}
-            %h3 Visualization and Analysis of PCP datasets
+            %h3 Visualization and analysis of PCP datasets
             %p
               The PCP
               %a{:href => 'http://man7.org/linux/man-pages/man1/pmlogger.1.html'} pmlogger
@@ -170,9 +170,9 @@
               Advanced
             %p
               %strong Mentors:
-              %a{:href => 'mailto:goodwinos@gmail.com'} Mark Goodwin
+              %a{:href => 'mailto:mgoodwin@redhat.com'} Mark Goodwin
               ,
-              %a{:href => 'mailto:myllnen@redhat.com'} Marko Myllynen              
+              %a{:href => 'mailto:myllynen@redhat.com'} Marko Myllynen              
             %p
               %strong Interested students so far:
               0
@@ -208,9 +208,62 @@
               %strong Mentors:
               %a{:href => 'mailto:mspier@netflix.com'} Martin Spier
               ,
-              %a{:href => 'mailto:goodwinos@gmail.com'} Mark Goodwin
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
+            %p
+              %strong Interested students so far:
+              0
+            %br
+
+        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'metadata'}
+            %h3 Metadata Label Support for Instrumented Applications
+            %p
+              PCP provides an extremely lightweight mechanism for instrumenting
+              applications using shared memory backed by memory mapped files - the
+              %a{:href => 'http://man7.org/linux/man-pages/man5/mmv.5.html'} MMV
+              (memory mapped values) API.
+
+              Recently PCP has been extended to provide arbitrary metric metadata in
+              the form of key/value pairs - as an extension to the metadata it has
+              always provided, namely units, semantics, type, and so on.
+            %p
+              This project will explore extending the memory-map instrumentation
+              model with support for labels. Firstly, an extension to the memory
+              mapped format to support labels will be devised by the student and
+              mentor (MMV version 3), and for reading this format will be added to
+              the PMDA and diagnostic utilities.
+
+              Secondly, the application instrumentation APIs will be extended to
+              support writing this revised format, with new APIs allowing metadata
+              labels to be set for individual metrics and groups of metrics within
+              an application. There are several language bindings that will need to
+              be updated to support this - the student can tackle some or all of
+              these - in languages as varied as C, Java, Python, Go and Rust.
+            %p
+              %strong Expected results:
+              The student will gain substantive knowledge of instrumenting
+              applications for performance analysis efficiently and
+              comprehensively. The Performance Co-Pilot toolkit will be explored in
+              depth, and significant knowledge about system-level performance
+              analysis in general will be acquired.
+            %p
+              %strong Prerequisite knowledge:
+              Strong C language proficiency is required, as well as knowledge of one
+              or more of Python, Java, Go and Rust. Experience in Linux use and
+              programming would be beneficial.
+            %p
+              %strong Skill level:
+              Advanced
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
               ,
-              %a{:href => 'mailto:lberk@redhat.com'} Lukas Berk
+              %a{:href => 'mailto:ryan@doylenet.net'} Ryan Doyle
+              ,
+              %a{:href => 'mailto:dextrous93@gmail.com'} Suyash
+              ,
+              %a{:href => 'sauravsachidanand@gmail.com'} Saurav Sachidanand
             %p
               %strong Interested students so far:
               0
@@ -336,58 +389,4 @@
               0
             %br
 
-        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
-          %div{:class => 'col__module--img'}
-            %a{:name => 'metadata'}
-            %h3 Metadata Label Support for Instrumented Applications
-            %p
-              PCP provides an extremely lightweight mechanism for instrumenting
-              applications using shared memory backed by memory mapped files - the
-              %a{:href => 'http://man7.org/linux/man-pages/man5/mmv.5.html'} MMV
-              (memory mapped values) API.
-
-              Recently PCP has been extended to provide arbitrary metric metadata in
-              the form of key/value pairs - as an extension to the metadata it has
-              always provided, namely units, semantics, type, and so on.
-            %p
-              This project will explore extending the memory-map instrumentation
-              model with support for labels. Firstly, an extension to the memory
-              mapped format to support labels will be devised by the student and
-              mentor (MMV version 3), and for reading this format will be added to
-              the PMDA and diagnostic utilities.
-
-              Secondly, the application instrumentation APIs will be extended to
-              support writing this revised format, with new APIs allowing metadata
-              labels to be set for individual metrics and groups of metrics within
-              an application. There are several language bindings that will need to
-              be updated to support this - the student can tackle some or all of
-              these - in languages as varied as C, Java, Python, Go and Rust.
-            %p
-              %strong Expected results:
-              The student will gain substantive knowledge of instrumenting
-              applications for performance analysis efficiently and
-              comprehensively. The Performance Co-Pilot toolkit will be explored in
-              depth, and significant knowledge about system-level performance
-              analysis in general will be acquired.
-            %p
-              %strong Prerequisite knowledge:
-              Strong C language proficiency is required, as well as knowledge of one
-              or more of Python, Java, Go and Rust. Experience in Linux use and
-              programming would be beneficial.
-            %p
-              %strong Skill level:
-              Advanced
-            %p
-              %strong Mentors:
-              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
-              ,
-              %a{:href => 'mailto:ryan@doylenet.net'} Ryan Doyle
-              ,
-              %a{:href => 'mailto:dextrous93@gmail.com'} Suyash
-              ,
-              %a{:href => 'sauravsachidanand@gmail.com'} Saurav Sachidanand
-            %p
-              %strong Interested students so far:
-              0
-            %br
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
