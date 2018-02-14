@@ -271,13 +271,12 @@
         %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
           %div{:class => 'col__module--img'}
             %a{:name => 'RESP'}
-            %h3 RESP support in pmproxy
+            %h3 RESP (Redis) support in pmproxy
             %p
-              Redis 
-              %a{:href => 'http://redis.io'}
+              %a{:href => 'http://redis.io'} Redis 
               is an in-memory NoSQL data cache being used in PCP for
-              search and serving time series performance data. PCP
-              metadata and data keys are distributed across
+              search and serving time series performance data.
+              PCP metadata and data keys are distributed across
               potentially many Redis servers, and access to individual
               keys is automated by PCP client library code, for PCP
               client tools like pmseries(1).  Direct access is
