@@ -17,6 +17,8 @@
                 %div{:class => 'col__module--cta'}
                   %h2 Performance Co-Pilot
                   %p Performance Co-Pilot is a system performance and analysis framework.
+                  %br
+                  %a{:href => '/conference/2018/home.html'} PCP.CONF 2018
 
         %div{:class => 'row-parent'}
           %div{:class => 'row'}
@@ -86,6 +88,27 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p
+                      Feb 2018
+                      %br
+                      PCP 4.0.0
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p
+                      Metric label metadata.  PMAPI refactoring.
+                      Recording of labels and help text by
+                      %a{:href => '/man/man1/pmlogger.1.html'} pmlogger
+                      Several new
+                      %a{:href => '/man/man1/pmrep.1.html'} pmrep
+                      analytic and reporting features.
+                      Linux kernel, Prometheus, BCC/eBPF and other new
+                      and improved metrics.
+                      Async client notification of namespace changes.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p
                       Oct 2017
                       %br
                       PCP 3.12.2
@@ -136,43 +159,5 @@
                       Threading improvements and made exclusive context
                       the only socket connection mode for pmcd now.
                       Added pkg-config and autoreconf support.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      May 2017
-                      %br
-                      PCP 3.11.10
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      Bug fix release, improved libpcp multi-threaded behaviour.
-                      Added Linux kernel entropy and zoneinfo metrics.
-                      Added
-                      %a{:href => 'https://libvirt.org'} libvirt
-                      metrics (block, perf event, VCPU).
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      Apr 2017
-                      %br
-                      PCP 3.11.9
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      Derived metrics language extensions.
-                      Several
-                      %a{:href => '/man/man1/pmchart.1.html'} pmchart
-                      fixes.
-                      %a{:href => '/man/man1/pcp-tapestat.1.html'} pcp-tapestat
-                      utility.
-                      Hardware PMU events export from the Linux kernel via
-                      %a{:href => '/man/man1/pmdaperfevent.1.html'} pmdaperfevent .
-                      Instrumented Redis, ElasticSearch and Golang containers.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
