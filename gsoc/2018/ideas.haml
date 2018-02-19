@@ -37,7 +37,9 @@
                       Web Projects
                       %ul
                         %li
-                          %a{:href => '#vectorflames'} Flame Graphs in Vector
+                          %a{:href => '#vectorbcc'} Vector BCC PMDA Integration
+                        %li
+                          %a{:href => '#bccpmda'} BCC PCP (PMDA) Agent Tool Extension
                     %li
                       Installer Projects
                       %ul
@@ -180,35 +182,67 @@
 
         %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
           %div{:class => 'col__module--img'}
-            %a{:name => 'vectorflames'}
-            %h3 Flame Graphs in Vector
+            %a{:name => 'vectorbcc'}
+            %h3 Vector BCC Tools
             %p
-              %a{:href => 'http://www.brendangregg.com/flamegraphs.html'} Flame Graphs
-              are a visualization of profiled software, allowing frequently
-              travelled code paths to be identified quickly and accurately.
-            %p
-              This project will implement an efficient interface between the
+              This project will implement a series of new
               %a{:href => 'https://github.com/Netflix/vector/wiki/Getting-Started'} Vector
-              web application, the Linux kernel eBPF and/or
-              %a{:href => 'http://man7.org/linux/man-pages/man1/perf.1.html'} perf
-              facilities, and a PCP agent (PMDA) like
-              %a{:href => 'http://pcp.io/man/man1/pmdapipe.1.html'} pmdapipe
-              to trigger and relay the output to Vector
+              widgets that expose
+              %a{:href => 'https://github.com/iovisor/bcc'} BCC tools
+              to users via a web interface.
+            %p
+              The list of BCC tools and Vector widgets is still under discussion, 
+              but this page will be updated with the final list once it's available.
             %p
               %strong Expected results:
-              A capability for rendering Flame Graphs on-demand over a given
-              time interval is available from the Vector web application.
+              Minimum of 6 new widgets added to Vector.
             %p
               %strong Prerequisite knowledge:
-              C programming and Linux kernel knowledge, JavaScript, Angular is a plus.
+              JavaScript and AngularJS. Previous experience in performance analysis is a plus.
             %p
               %strong Skill level:
-              Advanced
+              Intermediate
             %p
               %strong Mentors:
               %a{:href => 'mailto:mspier@netflix.com'} Martin Spier
               ,
               %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
+            %p
+              %strong Interested students so far:
+              0
+            %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'bccpmda'}
+            %h3 BCC PCP (PMDA) Agent Tool Extension
+            %p
+              This project will extend the capabilities of the current 
+              %a{:href => 'https://github.com/myllynen/pcp-bcc-pmda'} BCC PCP Agent (PMDA)
+              , by adding new
+              %a{:href => 'https://github.com/iovisor/bcc'} BCC tools
+              to it.
+            %p
+              These new tools will be used by
+              %a{:href => 'https://github.com/Netflix/vector'} Vector
+              in a set of new widgets that will expose these tools via a web interface.
+            %p
+              The list of BCC tools and Vector widgets is still under discussion, 
+              but this page will be updated with the final list once it's available.
+            %p
+              %strong Expected results:
+              Minimum of 6 new BCC tools added to the BCC PCP Agent (PMDA).
+            %p
+              %strong Prerequisite knowledge:
+              C programming and Linux kernel knowledge. Previous experience with BCC/BFP and performance analysis is a plus.
+            %p
+              %strong Skill level:
+              Advanced
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:myllynen@redhat.com'} Marko Myllynen
+              ,
+              %a{:href => 'mailto:mspier@netflix.com'} Martin Spier
             %p
               %strong Interested students so far:
               0
