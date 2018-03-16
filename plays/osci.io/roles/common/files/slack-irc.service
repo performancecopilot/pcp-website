@@ -1,0 +1,13 @@
+[Unit]
+Description=Slack-IRC Bridge
+After=network-online.target
+
+[Service]
+PIDFile=/home/irc-slack/.bot.pid
+WorkingDirectory=/home/irc-slack/slack-irc
+ExecStart=/usr/bin/slack-irc -c /home/irc-slack/slack-irc/slack-irc.json
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,5 @@
+---
+- import_playbook: update.yml
+- import_playbook: wekan-setup.yml
+- import_playbook: irc-slack-bridge.yml
+#- import_playbook: slackin.yml

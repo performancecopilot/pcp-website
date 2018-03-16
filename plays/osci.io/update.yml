@@ -1,0 +1,27 @@
+---
+- name: Update Machine
+  hosts: osas
+  tasks:
+    - name: yum update
+      yum:
+        name: '*'
+        state: latest
+        update_cache: yes
+
+    - name: Enable EPEL Repo
+      package:
+        name: epel-release
+        state: latest
+
+    - name: Install required Packages
+      package: name={{ item }} state=latest
+      with_items:
+        - pcp
+        - pcp-zeroconf
+        - redis
+        - docker
+        - docker-compose
+        - git
+        - npm
+        - gcc-c++
+        - unicode-ucd

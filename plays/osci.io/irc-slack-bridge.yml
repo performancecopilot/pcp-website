@@ -1,0 +1,37 @@
+---
+- name: Slack-IRC Bridge Setup
+  hosts: osas
+  tasks:
+    - name: Create irc-slack user
+      user:
+        name: irc-slack
+
+    - name: clone slack-irc
+      become_user: irc-slack
+      git:
+        repo: https://github.com/ekmartin/slack-irc
+        dest: /home/irc-slack/slack-irc
+        force: yes
+
+    - name: npm install slack-irc deps
+      shell: "npm -g install slack-irc"
+
+    - name: place service file
+      copy:
+        src: roles/common/files/slack-irc.service
+        dest: /usr/lib/systemd/system/slack-irc.service
+
+    - name: place config file
+      template:
+        src: roles/templates/slack-irc.conf.j2
+        dest: /home/irc-slack/slack-irc/slack-irc.json
+        force: yes
+
+    - name: service daemon-reload
+      shell: "systemctl daemon-reload"
+
+    - name: start/enable service
+      service:
+        name: slack-irc
+        state: started
+        enabled: yes

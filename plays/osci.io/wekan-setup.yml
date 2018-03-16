@@ -1,0 +1,45 @@
+---
+- name: Wekan Setup
+  hosts: osas
+  tasks:
+    - name: create wekan user
+      user:
+        name: wekan
+
+    - name: Download wekan release
+      become_user: wekan
+      git:
+        repo: https://github.com/lberk/wekan-mongodb.git
+        dest: /home/wekan/wekan-mongodb
+        force: yes
+# line
+    - name: Correct IP Address
+      shell: 'sed -i "s/\- ROOT_URL\=.*/\- ROOT_URL\={{ hostvars[groups["osas"][0]]["deployment_host"] }}/g" docker-compose.yml'
+      args:
+        chdir: /home/wekan/wekan-mongodb
+
+    - name: Docker Service
+      service:
+        name: docker
+        state: restarted
+
+    - name: Run Wekan
+      become_user: wekan
+      shell: docker-compose up -d
+      args:
+        chdir: /home/wekan/wekan-mongodb
+
+    - name: Copy Over Backup DB
+      copy:
+        src: "{{ hostvars[groups['local'][0]]['db-backup'] }}/"
+        dest: /home/wekan/
+        directory_mode: yes
+        backup: yes
+
+    - name: Copy db into container
+      shell: "docker cp wekan wekan-db:/data/"
+      args:
+        chdir: /home/wekan/
+
+    - name: Restore mongodb
+      shell: 'docker exec -d wekan-db sh -c "mongorestore --drop --db=wekan /data/wekan"'

@@ -1,0 +1,21 @@
+[
+        {
+                "nickname": "pcpbot",
+                "server": "irc.freenode.net",
+                "token": "{{ hostvars[groups['osas'][0]]['pcpbot'] }}",
+                "channelMapping": {
+                        "#general":            "#pcp",
+                        "#parfait":            "#parfait",
+                        "#ci":                 "#pcp-ci"
+                }
+        },
+        {
+                "nickname": "vectorbot",
+                "server": "irc.freenode.net",
+                "token": "{{ hostvars[groups['osas'][0]]['vectorbot'] }}",
+                "channelMapping": {
+                        "#general": "#vectoross",
+                        "#gsoc2017": "#vectorgsoc"
+                }
+        }
+]
