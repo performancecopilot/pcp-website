@@ -19,4 +19,5 @@ papers/landscape.swf
 favicon.ico
 localdefs
 links.out
-plays/*.retry
+plays/**/*.retry
+plays/**/*~
