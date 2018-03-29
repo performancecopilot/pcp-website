@@ -95,29 +95,15 @@
                 %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'features_left col__module--cta'}
                     %p
-                      Archive log management revamp with more frequent compression
-                      enabled by default and updates to related utilities.
-                      Updates to the pcp-zeroconf package and a cron driven daily report utility, 
+                      Archive management improvements allowing fine-grained compression.
+                      New shell-based PCP service discovery.
+                      New daily reporting utility,
                       %a{:href => '/man/man1/pmlogger_daily_report.1.html'} pmlogger_daily_report.
-                      Many
-                      %a{:href => '/man/man1/pmrep.1.html'} pmrep(1)
-                      bug fixes and new configuration entries.
-                      Updates to 
-                      %a{:href => '/man/man1/pmdaprometheus.1.html'} pmdaprometheus PMDA
-                      for control metrics, scalability improvements, support for URL config request
-                      headers and response filtering.
+                      Scalability improvements and metric filtering in the 
+                      %a{:href => '/man/man1/pmdaprometheus.1.html'} Prometheus PMDA.
                       The
-                      %a{:href => '/man/man1/pmdapostgresql.1.html'} postgreSQL PMDA
+                      %a{:href => '/man/man1/pmdapostgresql.1.html'} PostgreSQL PMDA
                       now supports up to version 9.6.
-                      Updates to many other PMDAs, including the enhancements to the 
-                      %a{:href => '/man/man1/pmdabcc.1.html'} BCC PMDA.
-                      SELinux updates for a variety of AVC denials, and new SELinux rules for
-                      pmdagluster and numad_t.
-                      Many bug fixes and enhancements to libpcp and libpcp_pmda including
-                      new service discovery API extensions.
-                      Performance improvments to pmwebd and support for etag headers.
-                      Build fixes for Windows/mingw and many other build, infrastructure
-                      and documentation updates.
 
             %div{:class => 'row'}
               %section{:class => 'row__colspaced'}
