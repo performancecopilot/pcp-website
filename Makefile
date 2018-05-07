@@ -15,7 +15,7 @@ HAMLFILES = \
 	index features documentation community website faq buildbot \
 	presentations glider screenshots download testimonials \
 	gsoc/2015/ideas gsoc/2016/ideas gsoc/2017/ideas gsoc/2018/ideas \
-	conference/2018/home conference/2018/contact \
+	conference/2018/home conference/2018/contact conference/2018/schedule \
 
 all: clean import books man docs prep local
 

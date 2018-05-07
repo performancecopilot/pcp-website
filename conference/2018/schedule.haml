@@ -1,0 +1,299 @@
+!!! html
+%html
+  %head
+    = Haml::Engine.new(File.read("assets/haml-includes/head.haml")).render
+
+  %body
+    = Haml::Engine.new(File.read("assets/haml-includes/navigation.haml")).render
+
+    %div{:class => 'site-content'}
+      %div{:class => 'how-to is-typeset'}
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-8 push12-2 colspan8-8 colspan6-6 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h2 Schedule
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'features_title row'}
+            %h2{:id => 'collect'} Welcome to Tokyo!
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    %strong Conference Committee
+                  %br
+                    9:00 - 9:15
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'features_left col__module--img'}
+                  %p
+                    A brief introduction to the developers who organised the
+                    mini-conference, a tip of the hat to our kind sponsors,
+                    and then we'll dive directly into the technical sessions.
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'features_title row'}
+            %h2{:id => 'collect'} Practical Performance Co-Pilot
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    %strong Nathan Scott
+                  %br
+                    9:15 - 10:00
+
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'features_left col__module--img'}
+                  %p
+                    A guided tour of the the Performance Co-Pilot toolkit,
+                    using real-world examples of production system analysis
+                    to explain use of PCP to triage and solve performance
+                    problems.
+                    We'll explore the use of all of the common PCP tools,
+                    and many of the lesser-known ones too.
+                  %p
+                    This talk will provide a solid foundation for anyone
+                    new to the tools, as well as a deeper understanding of
+                    the "how" and "why" of system-level analysis using PCP
+                    for those folk with more experience.
+
+        %div{:class => 'hero'}
+          %div{:class => 'colspan12-8 push12-2 colspan8-6 push8-1 colspan6-4 push6-1 colspan2-2'}
+            %div{:class => 'col__module col__module--cta'}
+              %h1 Morning Tea
+              %br
+                10:00 - 10:30
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'features_title row'}
+            %h2{:id => 'analyze'} Scalable time series analysis
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    %strong Lukas Berk
+                  %br
+                    10:30 - 11:15
+
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'features_left col__module--img'}
+                  %p 
+                    The next-generation of Performance Co-Pilot involves
+                    tackling performance analysis problems at scale using
+                    <a href='https://redis.io'>Redis</a>
+                  %p
+                    This talk will provide a practical introduction to
+                    using Redis and the new PCP time series querying
+                    language for time series analysis, when analysing
+                    large, multi-host, labeled metric data sets.
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'features_title row'}
+            %h2{:id => 'analyze'} Instrumenting Java Applications
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    %strong Ryan Doyle
+                  %br
+                    11:15 - 11:45
+
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'features_left col__module--img'}
+                  %p 
+                    A hands-on tutorial on instrumenting a web service with
+                    <a href='https://github.com/performancecopilot/parfait'>Parfait</a>
+                    We'll build an instrumented web service first using the
+                    parfait-agent, and then advancing to custom application
+                    level metrics.
+                  %p
+                    Finally, web dashboards will be constructed from these
+                    metrics showing the JVM, application and system level
+                    activity.
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'features_title row'}
+            %h2{:id => 'analyze'} Device Mapper statistics project
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    %strong Fumiya Shigemitsu
+                  %br
+                    11:45 - 12:00
+
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'features_left col__module--img'}
+                  %p 
+                    In the 2017 Google Summer of Code program, I was involved
+                    in updating the Device Mapper PMDA (Performance Metric
+                    Domain Agent) to support a new Device Mapper statistics
+                    API, mentored by Bryn Reeves and Mark Goodwin from Red Hat.
+                  %p
+                    This talk will describe the sorts of things I learned as
+                    a GSoC student, as well as the functionality that was
+                    introduced over the summer.
+                  %p
+                    It would be well suited to anyone considering involvement
+                    in the Google Summer of Code program as either a student
+                    or mentor, to gain insight into what is involved working
+                    with the
+                    <a href='https://summerofcode.withgoogle.com/organizations/5120861648977920/'>PCP organisation</a>
+                    mentors.
+
+        %div{:class => 'hero'}
+          %div{:class => 'colspan12-8 push12-2 colspan8-6 push8-1 colspan6-4 push6-1 colspan2-2'}
+            %div{:class => 'col__module col__module--cta'}
+              %h1 Lunch
+              %br
+                12:00 - 13:30
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'features_title row'}
+            %h2{:id => 'extend'} PCP+Vector deployment at Huobi, a crypto currency exchange
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    %strong Marc Spitzer
+                  %br
+                    13:30 - 14:00
+
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'features_left col__module--img'}
+                  %p 
+                    We have rolled out PCP and Vector to
+                    <a href='https://www.huobi.com'>Huobi</a>
+                    development and production servers to deal with Java
+                    performance issues.
+                  %p
+                    I'll be sharing what we have learned in setting this up and
+                    getting it used, and what we plan on doing next.
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'features_title row'}
+            %h2{:id => 'extend'} Tracking process states with pcp-pidstat
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    %strong Nikhil Kshirsagar
+                  %br
+                    14:10 - 14:30
+
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'features_left col__module--img'}
+                  %p 
+                    %strong pcp-pidstat
+                    is a PCP command used for monitoring individual tasks
+                    being managed by the Linux kernel.
+                    It is inspired by the
+                    %strong pidstat
+                    command and aims to be command line and output compatible
+                    with it.
+                  %p
+                    A feature recently added to
+                    %strong pcp-pidstat
+                    is the ability to report on process states (blocked,
+                    sleeping, zombie, running) and the amount of time spent
+                    in each state.
+                    This session discusses the tool, its code and architecture,
+                    and the process state tracking feature.
+
+        %div{:class => 'hero'}
+          %div{:class => 'colspan12-8 push12-2 colspan8-6 push8-1 colspan6-4 push6-1 colspan2-2'}
+            %div{:class => 'col__module col__module--cta'}
+              %h1 Afternoon Tea
+              %br
+                14:30 - 15:00
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'features_title row'}
+            %h2{:id => 'extend'} Scalable ingest and end-point monitoring with PCP
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    %strong Mark Goodwin
+                  %br
+                    15:00 - 15:45
+
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'features_left col__module--img'}
+                  %p 
+                    PCP can be used to monitor and ingest performance data
+                    from thousands of sources, including
+                    <a href='https://prometheus.io'>Prometheus</a>
+                    end-points and hundreds of other system and application
+                    specific plugins.
+                  %p
+                    This talk covers how we achieved this, the engineering
+                    challenges and how this data can be stored in a clustered
+                    <a href='https://redis.io'>Redis</a>
+                    system, dynamically managed, queried and presented,
+                    to help monitor and optimize large scale hybrid-cloud
+                    deployments.
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'features_title row'}
+            %h2{:id => 'extend'} What's new and what's planned?
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    %strong Nathan Scott
+                  %br
+                    15:45 - 16:15
+
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'features_left col__module--img'}
+                  %p 
+                    Features and improvements are being added to PCP
+                    all the time.
+                    This session will go through many of the features
+                    recently added so far this year, and then go onto
+                    covering the short term roadmap of active projects.
+                  %p
+                    Demonstrations of the efforts of each of our 2018
+                    Google Summer of Code students will be presented.
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'features_title row'}
+            %h2{:id => 'extend'} Panel discussion and wrap up
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    %strong Conference Committee
+                  %br
+                    16:15 - 17:00
+
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'features_left col__module--img'}
+                  %p 
+                    To close the day we will hold a panel discussion with
+                    the PCP developers.
+                    This session will be open to everyone to bring up any
+                    new ideas, hot topics and trends, or other directions
+                    you would like to see PCP take.
+                  %p 
+                    We'll also hold a quick retrospective on the conference
+                    itself, where attendees and speakers can raise anything
+                    they'd like to see done differently, or kept the same,
+                    in future PCP conferences.
+                  %p 
+                    Locations for next years conference will also be open
+                    for discussion!
+
+    = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
