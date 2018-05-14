@@ -27,13 +27,19 @@ ln -s [PCPWEBSITE]/pcp-brand /usr/share/publican/Common_Content/
 This will have created all the books in all the needed formats
 using the pcp-brand
 
-5) Create the website:
+5) if doing a new release, edit index.haml and add to the "News" section, using
+similar formatting as the previous news/release item. Beware indentation and
+tabs - when editing, best to use set sw=4 ts=8 expandtab
+
+6) Create the website:
 Adjust the PCPGIT and DSTLOCAL in [PCPWEBSITE]/Makefile or
 [PCPWEBSITE]/localdefs then
   cd [PCPWEBSITE] && make
 
 This will create the website content in $DSTLOCAL
-Commit the contents to PCPWEB and git push.
+Check index.html was built correctly - any syntax errors in index.haml will result
+in a zero size top level index.html but the build will still seem to have succeeded.
+If all OK, then commit the contents to PCPWEB and git push.
 
 You can run 'make check' to have linkchecker report on all the links, but it
 seems it requires the python-requests-2.2.0 package that is present in F21
