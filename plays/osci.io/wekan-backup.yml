@@ -1,0 +1,23 @@
+---
+- name: Wekan Backup
+  hosts: osas
+  tasks:
+    - name: Make dump directory
+      shell: 'docker exec -d wekan-db sh -c "mkdir -p /tmp/wekandb.bak/"'
+
+    - name: Dump mongodb
+      shell: 'docker exec -d wekan-db sh -c "mongodump --db wekan --out /tmp/wekandb.bak/"'
+
+    - name: Copy wekan out of container
+      shell: "docker cp wekan-db:/tmp/wekandb.bak wekan.bak"
+      args:
+        chdir: /home/wekan/
+
+    - name: Copy backup to target machine
+      synchronize:
+        src: /home/wekan/wekan.bak/wekan
+        dest: "{{ hostvars[groups['local'][0]]['db-backup'] }}/"
+        mode: pull
+
+    - name: remove backup dir
+      shell: 'docker exec -d wekan-db sh -c "rm -rf /tmp/wekandb.bak/"'
