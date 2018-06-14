@@ -25,3 +25,7 @@
         - npm
         - gcc-c++
         - unicode-ucd
+        - golang-bin
+        - firewalld
+        - postgresql-server
+        - python-psycopg2

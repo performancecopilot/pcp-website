@@ -1,0 +1,147 @@
+---
+- name: Git Repo and Gogs Setup
+  hosts: osas
+  tasks:
+
+    - name: add git user
+      user:
+        name: git
+
+    - name: make git directory
+      file:
+        path: /git/
+        state: directory
+        owner: git
+
+    - name: disable git user login
+      shell: 'passwd -l git'
+
+    - name: Set goroot for git user
+      become: true
+      become_user: git
+      become_method: su
+      lineinfile:
+        path: /home/git/.bashrc
+        regexp: "^export GOROOT="
+        line: "export GOROOT=$HOME/local/go"
+
+    - name: Set gopath for git user
+      become: true
+      become_user: git
+      become_method: su
+      lineinfile:
+        path: /home/git/.bashrc
+        regexp: "^export GOPATH="
+        line: "export GOPATH=$HOME/go"
+
+    - name: Set gopath for git user
+      become: true
+      become_user: git
+      become_method: su
+      lineinfile:
+        path: /home/git/.bashrc
+        regexp: "^export PATH"
+        line: "export PATH=$PATH:$GOROOT/bin:$GOPATH/bin"
+
+    - name: make git directory
+      become: true
+      become_user: git
+      become_method: su
+      file:
+        path: /home/git/local
+        state: directory
+
+    - name: Get gogs
+      become: true
+      become_user: git
+      become_method: su
+      shell: 'go get -u github.com/gogs/gogs'
+
+    - name: remove old gogs bin
+      file:
+        path: /home/git/go/src/github.com/gogs/gogs/gogs
+        state: absent
+
+    - name: create gogs custom directory
+      become: true
+      become_user: git
+      file:
+        path: /home/git/go/src/github.com/gogs/gogs/custom/conf/
+        state: directory
+
+    - name: place custom gogs config file
+      become: true
+      become_user: git
+      template:
+        src: roles/templates/gogs.app.ini.j2
+        dest: /home/git/go/src/github.com/gogs/gogs/custom/conf/app.ini
+        force: yes
+
+    - name: Build gogs
+      become: true
+      become_user: git
+      become_method: su
+      shell: 'go build'
+      args:
+        chdir: /home/git/go/src/github.com/gogs/gogs
+
+#    - name: init postgresql setup
+#      shell: "postgresql-setup initdb"
+
+    - name: set postgres listen to localhost
+      lineinfile:
+        path: /var/lib/pgsql/data/postgresql.conf
+        regexp: "^#listen_addresses"
+        line: "listen_addresses = 'localhost'"
+
+    - name: set postgres to accept password logins
+      lineinfile:
+        path: /var/lib/pgsql/data/pg_hba.conf
+        regexp: "^host    all             all             127.0.0.1/32"
+        line: "host    all             all             127.0.0.1/32            md5"
+
+    - name: start/enable postgresql
+      service:
+        name: postgresql
+        enabled: yes
+        state: restarted
+
+    - name: create git user and grant access to gogs_production server
+      become: true
+      become_user: postgres
+      postgresql_user:
+#        db: gogs_production
+        name: git
+        password: "{{ hostvars[groups['local'][0]]['gogs-db-password'] }}"
+        role_attr_flags: CREATEDB,SUPERUSER
+#        priv: "CONNECT/products:ALL"
+        expires: infinity
+
+    - name: create gogs_production database
+      become: true
+      become_user: postgres
+      postgresql_db:
+        name: gogs_production
+        owner: git
+        template: template1
+
+    - name: place gogs service file
+      copy:
+        src: roles/templates/gogs.service
+        dest: /etc/systemd/system/gogs.service
+        force: yes
+
+    - name: correct selinux permissions
+      sefcontext:
+        target: '/git(/.*)?'
+        setype: git_content_t
+        state: present
+
+    - name: service daemon-reload
+      shell: "systemctl daemon-reload"
+
+    - name: start gogs service
+      service:
+        name: gogs
+        state: started
+        enabled: yes

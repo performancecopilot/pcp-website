@@ -1,0 +1,26 @@
+RUN_MODE = prod
+RUN_USER = git
+
+[server]
+DOMAIN = git.pcp.io
+SSH_DOMAIN = pcp.osci.io
+
+[repository]
+ROOT = /git
+PREFERRED_LICENSES = GNU General Public License v2.0, GNU Lesser General Public License v2.1
+
+[database]
+DB_TYPE = postgres
+HOST = 127.0.0.1:5432
+NAME = gogs_production
+USER = git
+PATH = data/gogs.db
+PASSWD = {{ hostvars[groups['local'][0]]['gogs-db-password'] }}
+
+
+[security]
+SECRET_KEY = {{ hostvars[groups['local'][0]]['gogs-secret-key'] }}
+#INSTALL_LOCK = true
+
+#[cache]
+#ADAPTER = redis
