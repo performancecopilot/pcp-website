@@ -89,6 +89,26 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p
+                      Jun 2018
+                      %br
+                      PCP 4.1.0
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p
+                      A colourful new
+                      %a{:href => '/man/man1/pcp-dstat.1.html'} pcp-dstat
+                      utility, building on the dstat legacy.
+                      Archive discovery and log tailing APIs.
+                      eBPF/BCC PMDA additions - new modules, histograms.
+                      Kernel metrics - AIO, interrupts, socket statistics,
+                      file locking, OOM, session count metrics.
+                      Automatic metadata compression.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p
                       May 2018
                       %br
                       PCP 4.0.2
@@ -189,25 +209,5 @@
                       Several
                       %a{:href => '/man/man1/pmdaprometheus.1.html'} Prometheus
                       endpoint PMDA improvements.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      Jul 2017
-                      %br
-                      PCP 3.12.0
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      Prometheus endpoint and Linux IPv6 socket metrics.
-                      Speedups in auto-configuration of logging.
-                      Mandatory
-                      %a{:href => '/man/man3/pmwebapi.3.html'} web API
-                      authentication option.
-                      Threading improvements and made exclusive context
-                      the only socket connection mode for pmcd now.
-                      Added pkg-config and autoreconf support.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
