@@ -21,7 +21,7 @@
           %div{:class => 'button-five'}
             %a{:href => 'contact.html'} Contact
           %div{:class => 'button-two'}
-            %a{:href => 'https://www.eventbrite.com/e/performance-co-pilot-conference-tickets-42620817011'} REGISTER NOW
+            %a{:href => 'https://www.eventbrite.com/e/performance-co-pilot-conference-tickets-42620817011'} Registration
 
     %div{:class => 'site-content'}
       %div{:class => 'how-to is-typeset'}
@@ -43,12 +43,19 @@
                     %strong Conference Committee
                   %br
                     9:00 - 9:15
+                  %br
+                    Slides -
+                    %a{:href => '/papers/welcome-jp.pdf'} PDF
+                    (329K),
+                    %a{:href => '/papers/welcome-jp.odp'} ODP
+                    (544K)
+
               %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
                 %div{:class => 'features_left col__module--img'}
                   %p
                     A brief introduction to the developers who organised the
                     mini-conference, a tip of the hat to our kind
-                    <a href='https://www.spi-inc.org/projects/pcp/'>sponsors</a>
+                    %a{:href => 'https://www.spi-inc.org/projects/pcp/'} sponsors
                     and then we'll dive directly into the technical sessions.
 
         %div{:class => 'row-parent'}
@@ -62,6 +69,12 @@
                     %strong Nathan Scott
                   %br
                     9:15 - 10:00
+                  %br
+                    Slides -
+                    %a{:href => '/papers/practical-pcp.pdf'} PDF
+                    (787K),
+                    %a{:href => '/papers/practical-pcp.odp'} ODP
+                    (720K)
 
               %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
                 %div{:class => 'features_left col__module--img'}
@@ -95,6 +108,12 @@
                     %strong Lukas Berk
                   %br
                     10:30 - 11:15
+                  %br
+                    Slides -
+                    %a{:href => '/papers/scalable-time-series.pdf'} PDF
+                    (90K),
+                    %a{:href => '/papers/scalable-time-series.odp'} ODP
+                    (46K)
 
               %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
                 %div{:class => 'features_left col__module--img'}
@@ -105,7 +124,7 @@
                     with very large numbers of hosts and metrics.
                   %p
                     This talk will provide a practical introduction to
-                    <a href='https://redis.io'>Redis</a>
+                    %a{:href => 'https://redis.io'} Redis
                     and the new fast, scalable PCP time series querying
                     language that has been built using it.
                     New, underlying technology that has been introduced
@@ -129,7 +148,7 @@
                 %div{:class => 'features_left col__module--img'}
                   %p 
                     A hands-on tutorial on instrumenting a web service with
-                    <a href='https://github.com/performancecopilot/parfait'>Parfait</a>
+                    %a{:href => 'https://github.com/performancecopilot/parfait'} Parfait
                     We'll build an instrumented web service first using the
                     parfait-agent, and then advancing to custom application
                     level metrics.
@@ -149,6 +168,12 @@
                     %strong Fumiya Shigemitsu
                   %br
                     11:45 - 12:00
+                  %br
+                    Slides -
+                    %a{:href => '/papers/dmstats-project.pdf'} PDF
+                    (420K),
+                    %a{:href => '/papers/dmstats-project.odp'} ODP
+                    (1.1M)
 
               %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
                 %div{:class => 'features_left col__module--img'}
@@ -166,7 +191,7 @@
                     in the Google Summer of Code program as either a student
                     or mentor, to gain insight into what is involved working
                     with the
-                    <a href='https://summerofcode.withgoogle.com/organizations/5120861648977920/'>PCP organisation</a>
+                    %a{:href => 'https://summerofcode.withgoogle.com/organizations/5120861648977920/'} PCP organisation
                     mentors.
 
         %div{:class => 'hero'}
@@ -186,16 +211,22 @@
                     %strong Marc Spitzer
                   %br
                     13:30 - 14:00
+                  %br
+                    Slides -
+                    %a{:href => '/papers/pcp-and-vector-at-huobi.pdf'} PDF
+                    (948K),
+                    %a{:href => '/papers/pcp-and-vector-at-huobi.pptx'} PPTX
+                    (15M)
 
               %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
                 %div{:class => 'features_left col__module--img'}
                   %p 
                     We have rolled out PCP and Vector to
-                    <a href='https://www.huobi.com'>Huobi</a>
+                    %a{:href => 'https://www.huobi.com'} Huobi
                     development and production servers to deal with Java
                     performance issues.
                   %p
-                    I'll be sharing what we have learned in setting this up and
+                    I will share what we have learned in setting this up,
                     getting it used, and what we plan on doing next.
 
         %div{:class => 'row-parent'}
@@ -246,19 +277,25 @@
                     %strong Mark Goodwin
                   %br
                     15:00 - 15:45
+                  %br
+                    Slides -
+                    %a{:href => '/papers/ingest-export.pdf'} PDF
+                    (301K),
+                    %a{:href => '/papers/ingest-export.odp'} ODP
+                    (317K)
 
               %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
                 %div{:class => 'features_left col__module--img'}
                   %p 
                     PCP can be used to monitor and ingest performance data
                     from thousands of sources, including
-                    <a href='https://prometheus.io'>Prometheus</a>
+                    %a{:href => 'https://prometheus.io'} Prometheus
                     end-points and hundreds of other system and application
                     specific plugins.
                   %p
                     This talk covers how we achieved this, the engineering
                     challenges and how this data can be stored in a clustered
-                    <a href='https://redis.io'>Redis</a>
+                    %a{:href => 'https://redis.io'} Redis
                     system, dynamically managed, queried and presented,
                     to help monitor and optimize large scale hybrid-cloud
                     deployments.
@@ -274,6 +311,12 @@
                     %strong Nathan Scott
                   %br
                     15:45 - 16:15
+                  %br
+                    Slides -
+                    %a{:href => '/papers/whats-new.pdf'} PDF
+                    (356K),
+                    %a{:href => '/papers/whats-new.odp'} ODP
+                    (544K)
 
               %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
                 %div{:class => 'features_left col__module--img'}
@@ -283,11 +326,11 @@
                     This session will go through many of the features
                     recently added so far this year, and then go onto
                     covering the short term
-                    <a href='http://pcp.io/roadmap'>roadmap</a>
+                    %a{:href => 'https://pcp.io/roadmap'} roadmap
                     of active projects.
                   %p
-                    Demonstrations of the efforts of each of our 2018
-                    <a href='https://summerofcode.withgoogle.com/organizations/5120861648977920/'>Google Summer of Code</a>
+                    Demonstrations of some of the efforts of our 2018
+                    %a{:href => 'https://summerofcode.withgoogle.com/organizations/5120861648977920/'} Google Summer of Code
                     students will be presented.
 
         %div{:class => 'row-parent'}
@@ -301,6 +344,12 @@
                     %strong Conference Committee
                   %br
                     16:15 - 17:00
+                  %br
+                    Slides -
+                    %a{:href => '/papers/closing-jp.pdf'} PDF
+                    (662K),
+                    %a{:href => '/papers/closing-jp.odp'} ODP
+                    (2.6M)
 
               %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
                 %div{:class => 'features_left col__module--img'}
@@ -311,9 +360,9 @@
                     new ideas, hot topics and trends, or other directions
                     you would like to see PCP take.
                   %p 
-                    We'll also hold a quick retrospective on the conference
+                    We will also hold a quick retrospective on the conference
                     itself, where attendees and speakers can raise anything
-                    they'd like to see done differently, or kept the same,
+                    they would like to see done differently, or kept the same
                     in future PCP conferences.
                   %p 
                     Locations for next years conference will also be open
