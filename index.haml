@@ -86,6 +86,20 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p
+                      Aug 2018
+                      %br
+                      PCP 4.1.1
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p
+                      Improved archive management, PMDA additions and enhancments,
+                      Expanded pcp-dstat capabilities, Export metrics to Apache Spark.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p
                       Jun 2018
                       %br
                       PCP 4.1.0
@@ -187,24 +201,5 @@
                       pmrep enhancements.
                       pmwebd: improved performance, hostname-based naming.
                       python API improvements.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      Aug 2017
-                      %br
-                      PCP 3.12.1
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      New
-                      %a{:href => 'https://haproxy.org'} HAProxy
-                      agent.
-                      Linux Device Mapper regions and NFSD metrics.
-                      Several
-                      %a{:href => '/man/man1/pmdaprometheus.1.html'} Prometheus
-                      endpoint PMDA improvements.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
