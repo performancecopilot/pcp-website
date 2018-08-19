@@ -28,7 +28,7 @@ ret = subprocess.check_output(["sh", "-c", "git -C %s log --pretty=format:'%%an'
 everyone = ret.split('\n')
 
 # split apart the maintainers and contributors groups
-core = ('Dave Brolley', 'Ken McDonell', 'Lukas Berk', 'Mark Goodwin', 'Nathan Scott')
+core = ('Lukas Berk', 'Ken McDonell', 'Mark Goodwin', 'Marko Myllynen', 'Nathan Scott')
 col0 = ''
 for person in core:
     everyone.remove(person)
