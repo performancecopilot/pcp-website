@@ -86,6 +86,25 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p
+                      Sep 2018
+                      %br
+                      PCP 4.1.3
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p
+                      Support for PostgreSQL 10.x in a new python
+                      %a{:href => '/man/man1/pmdapostgresql.1.html'} pmdapostgresql.
+                      Labels support in
+                      %a{:href => '/man/man1/pmlogrewrite.1.html'} pmlogrewrite
+                      and improvements to other utilities like
+                      %a{:href => '/man/man1/pcp-dstat.1.html'} pcp-dstat.
+                      Improvements to the BCC, KVM, Redis and Linux kernel PMDAs.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p
                       Aug 2018
                       %br
                       PCP 4.1.1
@@ -189,22 +208,5 @@
                       Linux kernel, Prometheus, BCC/eBPF and other new
                       and improved metrics.
                       Async client notification of namespace changes.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      Oct 2017
-                      %br
-                      PCP 3.12.2
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      Improvements to SELinux policy via custom PCP package.
-                      New Utilities: pcp2elasticsearch, pcp2json, pcp2xlsx, pcp2xml, pcp2zabbix.
-                      pmrep enhancements.
-                      pmwebd: improved performance, hostname-based naming.
-                      python API improvements.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
