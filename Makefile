@@ -1,6 +1,6 @@
 PCPGIT  := /home/vagrant/pcp
 PCPWEB  := /home/vagrant/performancecopilot.github.io
-URL = https://www.pcp.io
+URL = https://pcp.io
 -include ./localdefs
 
 RSYNC := rsync -azvP --prune-empty-dirs --exclude '*.scss' --exclude '*.haml' \
