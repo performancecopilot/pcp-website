@@ -18,6 +18,12 @@ dnf install -y git ruby rubygem-compass rubygem-haml lynx python rsync publican 
   git clone https://github.com/performancecopilot/pcp-website.git [PCPWEBSITE]
   git clone https://github.com/performancecopilot/pcp.git [PCP]
 
+  Note: these build instructions assume PCPWEB is up-to-date locally. If not, then you
+  should either  cd PCPWEB; git pull  or move the existing tree aside and reclone with:
+    git clone git@github.com:performancecopilot/performancecopilot.github.io.git
+  Otherwise after running the build in PCPWEBSITE, the make install (i.e. git push) will
+  probably fail because upstream has more recent commits than locally.
+
 3) Symlink the pcp-brand:
 ln -s [PCPWEBSITE]/pcp-brand /usr/share/publican/Common_Content/
 
