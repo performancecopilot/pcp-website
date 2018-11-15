@@ -86,6 +86,34 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p
+                      Nov 2018
+                      %br
+                      PCP 4.2.0
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p
+                      %a{:href => 'https://podman.io/'} podman
+                      container metrics and PMDA.
+                      New
+                      %a{:href => '/man/man1/pmdaelasticsearch.1.html'} elasticsearch
+                      and
+                      %a{:href => '/man/man1/pmdalmsensors.1.html'} lmsensors
+                      PMDA implementations.
+                      %a{:href => '/man/man1/pmlogrewrite.1.html'} pmlogrewrite
+                      support for metric labels and help text.
+                      Important bug fixes in the
+                      %a{:href => '/man/man1/pmie.1.html'} pmie
+                      ,
+                      %a{:href => '/man/man1/pmchart.1.html'} pmchart
+                      ,
+                      %a{:href => '/man/man1/pcp-dstat.1.html'} pcp dstat
+                      utilities.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p
                       Sep 2018
                       %br
                       PCP 4.1.3
@@ -187,26 +215,5 @@
                       The
                       %a{:href => '/man/man1/pmdapostgresql.1.html'} PostgreSQL PMDA
                       now supports up to version 9.6.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      Feb 2018
-                      %br
-                      PCP 4.0.0
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      Metric label metadata.  PMAPI refactoring.
-                      Recording of labels and help text by
-                      %a{:href => '/man/man1/pmlogger.1.html'} pmlogger
-                      Several new
-                      %a{:href => '/man/man1/pmrep.1.html'} pmrep
-                      analytic and reporting features.
-                      Linux kernel, Prometheus, BCC/eBPF and other new
-                      and improved metrics.
-                      Async client notification of namespace changes.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
