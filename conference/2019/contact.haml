@@ -1,0 +1,77 @@
+!!! html
+%html
+  %head
+    = Haml::Engine.new(File.read("assets/haml-includes/head.haml")).render
+
+  %body
+    = Haml::Engine.new(File.read("assets/haml-includes/navigation.haml")).render
+
+    %div{:class => 'tokyo-logo'}
+
+    %div{:class => 'hero'}
+      %div{:class => 'colspan12-8 push12-2 colspan8-6 push8-1 colspan6-4 push6-1 colspan2-2'}
+        %div{:class => 'col__module col__module--cta'}
+          %h1 pcp.conf 2019
+          %div{:class => 'button-one'}
+            %a{:href => 'home.html'} Home
+          %div{:class => 'button-four'}
+            %a{:href => 'contact.html'} Contact
+          %div{:class => 'button-five'}
+            %a{:href => 'https://www.eventbrite.com/e/performance-co-pilot-conference-tickets-52947951749'} Register
+
+    %div{:class => 'site-content'}
+      %div{:class => 'how-to is-typeset'}
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-4 colspan8-3 colspan6-2 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %h3 Contacts
+                  %p
+                    %a{:href => 'mailto:pcp-conf@groups.io'} Organising Committee
+                    %br
+                    pcp-conf@groups.io
+                  %p
+                    %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
+                    %br
+                    nathans@redhat.com
+                  %p
+                    %a{:href => 'http://www.theoddoneout.com.au/'} Venue
+                    %br
+                    oddoneout@inventium.com.au
+
+              %div{:class => 'colspan12-8 colspan8-5 colspan6-3 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    Thank you for your interest in the Performance Co-Pilot
+                    annual conference!
+                  %p
+                    If you would like to join our group of presenters, we
+                    would love to hear from you.
+                  %p
+                    You are encouraged to present on recent developments,
+                    production system deployment and anaylsis with PCP, or
+                    to provide a hands-on tutorial.
+                  %p
+                    Talks on technologies closely related to PCP, such as
+                    %a{:href => 'http://getvector.io/'} Vector
+                    ,
+                    %a{:href => 'https://grafana.com'} Grafana
+                    and
+                    %a{:href => 'https://redis.io/'} Redis
+                    are also entirely appropriate, as are topics related
+                    to the PCP organisations involvement in the
+                    %a{:href => 'https://summerofcode.withgoogle.com/'} Google Summer of Code
+                    program.
+                  %p
+                    Slots of 15, 30 and 45 minutes are available.
+                  %p
+                    To register your interest in presenting, please send an
+                    email to the
+                    %a{:href => 'mailto:pcp-conf@groups.io'} organising committee
+                    to discuss further - we look forward to hearing from you!
+                  %p
+                    This is a highly targetted and deeply technical conference.
+                    Advertising or marketing style presentations would be unsuitable.
+
+    = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render

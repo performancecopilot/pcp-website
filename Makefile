@@ -16,6 +16,7 @@ HAMLFILES = \
 	presentations glider screenshots download testimonials \
 	gsoc/2015/ideas gsoc/2016/ideas gsoc/2017/ideas gsoc/2018/ideas \
 	conference/2018/home conference/2018/contact conference/2018/schedule \
+	conference/2019/home conference/2019/contact \
 
 all: clean import books man docs prep local
 
