@@ -24,11 +24,11 @@ def get_authors_haml_columns(authors):
     return (s1, s2)
 
 # filter out a handful of git history author botches
-ret = subprocess.check_output(["sh", "-c", "git -C %s log --pretty=format:'%%an' | egrep -v 'pcpqa|unknown|EC2|cessna|buffalo.edu|test-account-0' | sort | uniq" % sys.argv[1]])
+ret = subprocess.check_output(["sh", "-c", "git -C %s log --pretty=format:'%%an' | egrep -v 'root|pcpqa|unknown|EC2|cessna|buffalo.edu|test-account-0' | sort | uniq" % sys.argv[1]])
 everyone = ret.split('\n')
 
 # split apart the maintainers and contributors groups
-core = ('Lukas Berk', 'Ken McDonell', 'Mark Goodwin', 'Marko Myllynen', 'Nathan Scott')
+core = ('Ken McDonell', 'Lukas Berk', 'Mark Goodwin', 'Marko Myllynen', 'Nathan Scott')
 col0 = ''
 for person in core:
     everyone.remove(person)
