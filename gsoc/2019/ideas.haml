@@ -1,0 +1,128 @@
+!!! html
+%html
+  %head
+    = Haml::Engine.new(File.read("assets/haml-includes/head.haml")).render
+
+  %body
+    = Haml::Engine.new(File.read("assets/haml-includes/navigation.haml")).render
+
+    %div{:class => 'site-content'}
+      %div{:class => 'how-to is-typeset'}
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %br
+                  %h3 Ideas List
+                  %ol
+                    %li
+                      Analysis Tools
+                      %ul
+                        %li
+                          %a{:href => '#htop'} PCP version of htop
+                        %li
+                          %a{:href => '#datavis'} Visualization and analysis of PCP datasets
+                    %li
+                      Integration Projects
+                      %ul
+                    %li
+                      Web Projects
+                      %ul
+                  %br
+
+              %div{:class => 'colspan12-4 colspan8-3 colspan6-2 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h2 Google
+                  %h2 Summer of Code
+                  %h2 2019
+                  %br
+                    (
+                    %a{:href => 'https://summerofcode.withgoogle.com'} Home
+                    )
+                  %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'htop'}
+            %h3 PCP version of htop
+            %p
+              The Performance Co-Pilot provides a cross-platform API for accessing
+              live and historical performance data from the local or remote hosts.
+              %a{:href => 'http://hisham.hm/htop/'} HTOP
+              is a performance analysis utility reporting per-process metrics with
+              good, customizable visualization of that data.
+            %p
+              This project will involve implementing a HTOP "platform" for PCP.
+            %p
+              %strong Expected results:
+              A (C language) implementation of an HTOP backend using the PCP PMAPI,
+              with accompanying tests and documentation.
+              The student will extend their C programming skills, as well as learn
+              about the ncurses library.  Students can also expect to gain insight
+              into the meaning of the kernel data reported by these tools, and the
+              sampling techniques used in building the tools.
+            %p
+              %strong Prerequisite knowledge:
+              C programming, ncurses library knowledge a plus.
+            %p
+              %strong Skill level:
+              Intermediate
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:mgoodwin@redhat.com'} Mark Goodwin
+              ,
+              %a{:href => 'mailto:lberk@redhat.com'} Lukas Berk
+            %p
+              %strong Interested students so far:
+              0
+            %br
+
+        %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'datavis'}
+            %h3 Visualization and analysis of PCP datasets
+            %p
+              The PCP
+              %a{:href => 'http://man7.org/linux/man-pages/man1/pmlogger.1.html'} pmlogger
+              records performance statistics from a running machine,
+              which can be efficiently queried and extracted as time
+              series data using PCP tools like
+              %a{:href => 'http://man7.org/linux/man-pages/man1/pmrep.1.html'} pmrep
+            %p
+              This project will develop a
+              Python application to query, extract, reformat and
+              visualize PCP time series data using Python's extensive
+              data-science class libraries (e.g. 
+              %a{:href => 'http://www.numpy.org/'} NumPy,
+              %a{:href => 'http://pandas.pydata.org/'} Pandas,
+              %a{:href => 'https://matplotlib.org/'} MatPlotLib,
+              %a{:href => 'https://www.scipy.org/'} SciPy
+              and others).
+            %p
+              %strong Expected results:
+              Construction of an application (and class libraries) to query PCP
+              time-series data using various client tools and import this into
+              existing scientific data-science libraries for visualization and
+              analysis. Demonstration of meaningful statistical insights from
+              real-world PCP data archives.
+            %p
+              %strong Prerequisite knowledge:
+              Strong Python programming, knowledge of statistical
+              analysis, some experience with one or more python data-science
+              libraries.
+            %p
+              %strong Skill level:
+              Advanced
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:mgoodwin@redhat.com'} Mark Goodwin
+              ,
+              %a{:href => 'mailto:myllynen@redhat.com'} Marko Myllynen
+            %p
+              %strong Interested students so far:
+              0
+            %br
+
+    = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
