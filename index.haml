@@ -89,6 +89,32 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p
+                      Dec 2018
+                      %br
+                      PCP 4.3.0
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p
+                      New (experimental)
+                      %a{:href => '/man/man1/pmseries.1.html'} pmseries
+                      timeseries analysis tool.
+                      Numerous updates to
+                      %a{:href => '/man/man1/pmdapostgresql.1.html'} postgresql
+                      ,
+                      %a{:href => '/man/man1/pmdafreebsd.1.html'} freebsd
+                      and
+                      %a{:href => '/man/man1/pmdaperfevent.1.html'} perfevent
+                      PMDA implementations.
+                      Derived metric language extentions.
+                      %a{:href => '/man/man1/pmrep.1.html'} pmrep
+                      name change event handling.
+                      Fine tuned pcp-zeroconf space usage and log management scripts.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p
                       Nov 2018
                       %br
                       PCP 4.2.0
@@ -197,26 +223,5 @@
                       Better handling of compressed archives in
                       %a{:href => '/man/man1/pmwebd.1.html'} pmwebd.
                       Numerous important SELinux updates and bug fixes in libpcp.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      March 2018
-                      %br
-                      PCP 4.0.1
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      Archive management improvements allowing fine-grained compression.
-                      New shell-based PCP service discovery.
-                      New daily reporting utility,
-                      %a{:href => '/man/man1/pmlogger_daily_report.1.html'} pmlogger_daily_report.
-                      Scalability improvements and metric filtering in the 
-                      %a{:href => '/man/man1/pmdaprometheus.1.html'} Prometheus PMDA.
-                      The
-                      %a{:href => '/man/man1/pmdapostgresql.1.html'} PostgreSQL PMDA
-                      now supports up to version 9.6.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
