@@ -21,7 +21,7 @@
                       Analysis Tools
                       %ul
                         %li
-                          %a{:href => '#pmlogreduce'} Temporal data reduction for PCP archives
+                          %a{:href => '#archives'} Enhancements for PCP archives
                         %li
                           %a{:href => '#collectl'} PCP version of collectl
                         %li
@@ -57,37 +57,50 @@
 
         %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
           %div{:class => 'col__module--img'}
-            %a{:name => 'pmlogreduce'}
-            %h3 Temporal data reduction for PCP archives
+            %a{:name => 'archives'}
+            %h3 Enhancements for PCP archives
             %p
-              The primary focus of this project is the implementation of proper
-              and sound semantics for reduction of the PCP archive data volume,
-              in the temporal domain.
+              One of the key features of PCP is that real-time and historical
+              sources of performance metrics are equivalent from the perspective
+              of a client application consuming and processing performance data.
               The PCP
-              %a{:href => 'https://pcp.io/man/man1/pmlogreduce.1.html'} pmlogreduce
-              utility already exists to transform an input archive into a reduced
-              archive.
-              This will require a student to gain a deep understanding of the
-              PCP archive format created by
-              %a{:href => 'https://pcp.io/man/man1/pmlogger.1.html'} pmlogger
-              and to tackle issues around data reduction by pmlogreduce in the
-              presence of counter wraps, restarts, small amounts of missing
-              data, and so on.
-            %p
-              There are also several possible areas of extension on this work,
-              which include:
+              %a{:href => 'https://pcp.io/man/man5/LOGARCHIVE.5.html'} archive
+              format is the corner-stone of the historical data support.
+              This project aims to improve the usefulness and performance of
+              PCP archives through a number of independent sub-projects.
               %ul
                 %li
-                  Omitting repeated value-instance pairs
+                  Over time, we would like to reduce the volume of archived data
+                  by increasing the effective sampling interval, e.g. going from
+                  sub-minute sampling for the most recent archives to hourly
+                  sampling for weekly or monthly archives.
+                  This process needs to account for counters that might wrap,
+                  counters that might be reset at system or service restarts,
+                  small amounts of missing data, etc. while maintaining the
+                  semantics of the original data.
+                  %a{:href => 'https://pcp.io/man/man1/pmlogreduce.1.html'} pmlogreduce
+                  already does some of this, but there are a number of issues
+                  that can best be addressed by a complete re-implementation.
                 %li
-                  Lazy (just in time) loading of metadata
+                  There is considerable redundancy in the on-disk metadata that
+                  could be reduced by a new incremental format for instance
+                  domains.
                 %li
-                  Delta encoding of metric instance domains
+                  When an archive is opened, not all the metrics are of interest
+                  to a particular applications, so run-time efficiency could be
+                  enhanced by lazy (just in time) loading of metadata.
+               These projects will require the student to gain a deep
+               understanding of the PCP archive format created by
+               %a{:href => 'https://pcp.io/man/man1/pmlogger'} pmlogger
+               and to apply basic statistical concepts to the transformation of
+               timeseries data.
             %p
               %strong Expected results:
-              The student will extend their C language programming skills,
-              and can also expect to gain deep insight into the semantics of
-              performance data stored by PCP.
+              The student will extend their C language programming skills
+              with both green fields and maintenance development within a
+              big and mature software project.
+              They can also expect to gain deep insight into the semantics
+              of performance data stored within a PCP archive.
             %p
               %strong Prerequisite knowledge:
               C programming.
