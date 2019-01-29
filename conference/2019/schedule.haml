@@ -1,0 +1,322 @@
+!!! html
+%html
+  %head
+    = Haml::Engine.new(File.read("assets/haml-includes/head.haml")).render
+
+  %body
+    = Haml::Engine.new(File.read("assets/haml-includes/navigation.haml")).render
+
+    %div{:class => 'melbourne-logo'}
+
+    %div{:class => 'hero'}
+      %div{:class => 'colspan12-8 push12-2 colspan8-6 push8-1 colspan6-4 push6-1 colspan2-2'}
+        %div{:class => 'col__module col__module--cta'}
+          %h1 pcp.conf 2019
+          %div{:class => 'button-one'}
+            %a{:href => 'home.html'} Home
+          %div{:class => 'button-three'}
+            %a{:href => 'schedule.html'} Schedule
+          %div{:class => 'button-four'}
+            %a{:href => 'contact.html'} Contact
+          %div{:class => 'button-two'}
+            %a{:href => 'https://www.eventbrite.com/e/performance-co-pilot-conference-tickets-52947951749'} Register
+
+    %div{:class => 'site-content'}
+      %div{:class => 'how-to is-typeset'}
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-8 push12-2 colspan8-8 colspan6-6 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h2 Schedule
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'features_title row'}
+            %h2{:id => 'welcome'} Welcome to Melbourne!
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    %strong Conference Committee
+                  %br
+                    9:00 - 9:15
+
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'features_left col__module--img'}
+                  %p
+                    A brief introduction by the developers who organised
+                    the mini-conference, a tip of the hat to our kind
+                    %a{:href => 'https://www.spi-inc.org/projects/pcp/'} sponsors
+                    and then we'll dive directly into the technical sessions.
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'features_title row'}
+            %h2{:id => 'reflect'} Reflections on Fifty Years of Performance Analysis
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    %strong Ken McDonell
+                  %br
+                    9:15 - 10:00
+
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'features_left col__module--img'}
+                  %p
+                    The origins of many of the concepts and assumptions
+                    embedded in PCP go back to earlier performance work
+                    that began almost 50 years ago.
+                    In the interim, the speed and complexity of systems
+                    has grown at least as fast as Moore's Law would have
+                    predicted, roughly 2**25 or more than 30 million times
+                    bigger and faster.
+                  %p
+                    This presentation will provide some historical context
+                    for the genesis of PCP, then review the major design
+                    milestones in the evolution of PCP, with commentary
+                    on what worked, what was a mistake and what might be
+                    done differently if starting again.
+                    The true meaning of the original "co-pilot" analogy
+                    will be explained and we'll review how well that
+                    objective has been met.
+                  %p
+                    Concluding comments will consider some crystal ball
+                    projections for future performance analysis scenarios.
+
+        %div{:class => 'hero'}
+          %div{:class => 'colspan12-8 push12-2 colspan8-6 push8-1 colspan6-4 push6-1 colspan2-2'}
+            %div{:class => 'col__module col__module--cta'}
+              %h2 Morning Tea
+              %h3 10:00 - 10:30
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'features_title row'}
+            %h2{:id => 'extend'} Next generation Grafana and PCP
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    %strong Mark Goodwin
+                  %br
+                    10:30 - 11:15
+
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'features_left col__module--img'}
+                  %p 
+                    This talk covers the current state of the integration
+                    between Grafana and PCP, and the rationale behind our
+                    increased focus on Grafana and scaling PCP.
+                  %p
+                    The challenges in matching PCP time series to Grafana
+                    data models will be explored, with an introduction to
+                    using
+                    %a{:href => 'https://redis.io'} Redis
+                    as a scalable cache for historical PCP data.
+                  %p
+                    Live demonstrations and discussion of future work for
+                    both PCP and Grafana projects will be included.
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'features_title row'}
+            %h2{:id => 'lmsensors'} Linux monitoring sensors (lmsensors)
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    %strong Christian Horn
+                  %br
+                    11:15 - 11:45
+
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'features_left col__module--img'}
+                  %p 
+                    Findings from my first foray into PCP - updating the
+                    lmsensors metrics (PMDA) code.
+                    %ul
+                      %li
+                        motivation
+                      %li
+                        implementation stages
+                      %li
+                        documentation, aids for new developers
+                      %li
+                        ideas for improvement
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'features_title row'}
+            %h2{:id => 'lmsensors'} Open discussion
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    %strong Christian Horn, Lukas Berk
+                  %br
+                    11:45 - 12:00
+
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'features_left col__module--img'}
+                  %p 
+                    Open discussion soliciting ideas and RFEs in general
+                    from all attendees regarding:
+                    %ul
+                      %li
+                        power management metrics
+                      %li
+                        improving the experience for new PCP hackers
+
+        %div{:class => 'hero'}
+          %div{:class => 'colspan12-8 push12-2 colspan8-6 push8-1 colspan6-4 push6-1 colspan2-2'}
+            %div{:class => 'col__module col__module--cta'}
+              %h2 Lunch
+              %h3 12:00 - 13:30
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'features_title row'}
+            %h2{:id => 'process'} Process refinements for commits, QA and release
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    %strong Lukas Berk
+                  %br
+                    13:30 - 14:15
+
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'features_left col__module--img'}
+                  %p 
+                    Removing process barriers before people contributing
+                    to PCP and PCP maintainers alike has been a goal of
+                    mine for some time.
+                    There are places where we could streamline processes
+                    in terms of time and accuracy through automation,
+                    and also remove single-points-of-failure making PCP
+                    a more resilient project overall.
+                  %p
+                    This talk will also cover my recent findings while
+                    using Vagrant-based VMs to address:
+                    %ul
+                      %li
+                        add commit (PR) verification before merging,
+                        not after
+                      %li
+                        assist developers with QA failure diagnosis
+                      %li
+                        automating the release build process
+                  %p
+                    missing process argument informations, and the
+                    first-time experience of adding code to PCP.
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'features_title row'}
+            %h2{:id => 'pidstat'} PCP for Customer Support
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    %strong Vaibhav Nagare
+                  %br
+                    14:15 - 15:00
+
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'features_left col__module--img'}
+                  %p 
+                    An overview of use of PCP tools in the Red Hat
+                    customer support context, by worked example.
+                  %p
+                    This talk will also cover the way in which the
+                    the PCP pidstat utility was extended to add in
+                    missing process argument informations, and the
+                    first-time experience of adding code to PCP.
+
+        %div{:class => 'hero'}
+          %div{:class => 'colspan12-8 push12-2 colspan8-6 push8-1 colspan6-4 push6-1 colspan2-2'}
+            %div{:class => 'col__module col__module--cta'}
+              %h2 Afternoon Tea
+              %h3 15:00 - 15:30
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'features_title row'}
+            %h2{:id => 'tracing'} Event tracing in production at Aconex
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    %strong Paul Smith
+                  %br
+                    15:30 - 16:00
+
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'features_left col__module--img'}
+                  %p 
+                    Aconex is a cloud platform for connecting people involved
+                    in projects in construction and engineering.
+                    Aconex has seen significant value from its PCP deployment,
+                    and developed the Parfait project to efficiently interface
+                    Java web applications to PCP.
+                  %p
+                    This talk will explore the mechanisms through which Aconex
+                    engineers added and utilize per-request tracing with their
+                    production web applications.
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'features_title row'}
+            %h2{:id => 'review'} What's new and planned?
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    %strong Nathan Scott
+                  %br
+                    16:00 - 16:45
+
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'features_left col__module--img'}
+                  %p 
+                    Features and improvements are being added to PCP
+                    all the time.
+                    This session will go through many of the features
+                    recently added in the past year, and then go onto
+                    covering the short term
+                    %a{:href => 'https://pcp.io/roadmap'} roadmap
+                    of active projects.
+                  %p
+                    Demonstrations of features from some newer tools,
+                    REST APIs, and kernel metrics will be presented.
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'features_title row'}
+            %h2{:id => 'extend'} Wrapup
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %p
+                    %strong Conference Committee
+                  %br
+                    16:45 - 17:00
+
+              %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'features_left col__module--img'}
+                  %p 
+                    To close the day we will hold an open ended discussion.
+                    This session will be available for everyone to bring up
+                    any topics or directions you would like to see PCP take.
+                  %p 
+                    We will also hold a quick retrospective on the conference
+                    itself, where attendees and speakers can raise anything
+                    they would like to see done differently, or kept the same
+                    in future PCP conferences.
+                  %p 
+                    Locations for next years conference will also be open
+                    for discussion!
+
+    = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
