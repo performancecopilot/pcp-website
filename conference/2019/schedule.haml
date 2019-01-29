@@ -136,15 +136,11 @@
                   %p 
                     Findings from my first foray into PCP - updating the
                     lmsensors metrics (PMDA) code.
-                    %ul
-                      %li
-                        motivation
-                      %li
-                        implementation stages
-                      %li
-                        documentation, aids for new developers
-                      %li
-                        ideas for improvement
+                  %p
+                    The motivation for making these changes will be
+                    discussed.  I will cover the various implementation
+                    stages, documentation, aids for new developers and
+                    ideas for further improvement.
 
         %div{:class => 'row-parent'}
           %div{:class => 'features_title row'}
@@ -154,7 +150,7 @@
               %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                 %div{:class => 'col__module--img'}
                   %p
-                    %strong Christian Horn, Lukas Berk
+                    %strong Lukas Berk, Christian Horn
                   %br
                     11:45 - 12:00
 
@@ -162,12 +158,11 @@
                 %div{:class => 'features_left col__module--img'}
                   %p 
                     Open discussion soliciting ideas and RFEs in general
-                    from all attendees regarding:
-                    %ul
-                      %li
-                        power management metrics
-                      %li
-                        improving the experience for new PCP hackers
+                    from all attendees regarding initially the power
+                    management metrics, but moving into discussion of
+                    improving the experience for new PCP hackers and
+                    finally any more general needs or ideas others have
+                    for PCP development.
 
         %div{:class => 'hero'}
           %div{:class => 'colspan12-8 push12-2 colspan8-6 push8-1 colspan6-4 push6-1 colspan2-2'}
@@ -200,17 +195,15 @@
                   %p
                     This talk will also cover my recent findings while
                     using Vagrant-based VMs to address:
-                    %ul
+                  %p
+                    %ol
                       %li
-                        add commit (PR) verification before merging,
-                        not after
+                        adding commit (PR) verification before merging,
+                        not afterward
                       %li
-                        assist developers with QA failure diagnosis
+                        assisting developers with QA failure diagnosis
                       %li
                         automating the release build process
-                  %p
-                    missing process argument informations, and the
-                    first-time experience of adding code to PCP.
 
         %div{:class => 'row-parent'}
           %div{:class => 'features_title row'}
@@ -243,7 +236,7 @@
 
         %div{:class => 'row-parent'}
           %div{:class => 'features_title row'}
-            %h2{:id => 'tracing'} Event tracing in production at Aconex
+            %h2{:id => 'tracing'} Event tracing at Aconex
           %div{:class => 'row'}
             %section{:class => 'row__colspaced'}
               %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
