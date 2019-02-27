@@ -7,7 +7,8 @@ Steps to create the packages for a new release
 2. Tag release in git (tagged and signed using pcp-masters key)
    Ex: git tag -s -u DEA2C114 -m "X.YY.Z" X.YY.Z
    Update https://github.com/performancecopilot/pcp/releases to
-   indicate the new version is now the latest.
+   indicate the new version is now the latest (Edit Release ->
+   Update Release in the web UI).
 3. Make canonical source tarball right away (./Makepkgs --source)
    and upload it to bintray, using ./scripts/bintray-upload
 4. Upload binary pkgs to bintray using the ./scripts/bintray-upload
