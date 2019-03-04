@@ -22,7 +22,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", privileged: false,  inline: <<-SHELL
     sudo yum install -y git ruby rubygem-compass rubygem-haml lynx python rsync publican autoconf \
       avahi-devel bison cairo-devel cyrus-sasl-devel desktop-file-utils flex libibmad-devel \
-      libibumad-devel libmicrohttpd-devel ncurses-devel nss-devel papi-devel perl-ExtUtils-MakeMaker \
+      libibumad-devel libmicrohttpd-devel ncurses-devel nss-devel perl-ExtUtils-MakeMaker \
       python-devel python3-devel qt-devel readline-devel rpm-devel systemd-devel systemtap-sdt-devel \
       glibc-devel gcc gcc-c++ man2html vim linkchecker python-beautifulsoup4 rubygems python-requests
 

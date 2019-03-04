@@ -6,7 +6,7 @@ Instructions tested on an uptodate F20 installed with the minimal profile:
 1) Install the following packages:
 dnf install -y git ruby rubygem-compass rubygem-haml lynx python rsync publican autoconf \
   avahi-devel bison cairo-devel cyrus-sasl-devel desktop-file-utils flex libibmad-devel \
-  libibumad-devel libmicrohttpd-devel ncurses-devel nss-devel papi-devel perl-ExtUtils-MakeMaker \
+  libibumad-devel libmicrohttpd-devel ncurses-devel nss-devel perl-ExtUtils-MakeMaker \
   python-devel python3-devel qt-devel readline-devel rpm-devel systemd-devel systemtap-sdt-devel \
   glibc-devel gcc gcc-c++ man2html vim linkchecker python-beautifulsoup4 rubygems python-requests
 
