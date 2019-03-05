@@ -59,46 +59,50 @@
           %div{:class => 'row'}
             %section{:class => 'row__colspaced'}
               %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                %h3 Mailing lists
-                %p
-                  General user and developer discussion:
-                  %br
-                  %a{:href => 'https://groups.io/g/pcp'} pcp@groups.io
-                %p
-                  Announcements of new releases and similar information:
-                  %br
-                  %a{:href => 'https://groups.io/g/pcp-announce'} pcp-announce@groups.io
+                %div{:class => 'col__module--img'}
+                  %h3 Mailing lists
+                  %p
+                    General user and developer discussion:
+                    %br
+                    %a{:href => 'https://groups.io/g/pcp'} pcp@groups.io
+                  %p
+                    Announcements of new releases and similar information:
+                    %br
+                    %a{:href => 'https://groups.io/g/pcp-announce'} pcp-announce@groups.io
 
         %div{:class => 'row-parent'}
           %div{:class => 'row'}
             %section{:class => 'row__colspaced'}
               %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                %h3 Chat
-                %p
-                  You can also chat directly with some of the PCP developers, on the #pcp IRC channel on the
-                  %a{:href => 'https://webchat.freenode.net/?channels=pcp'}FreeNode
-                  network, or via our
-                  %a{:href => 'https://slackin-tcwvlllkkf.now.sh/'} Slack
-                  team.
+                %div{:class => 'col__module--img'}
+                  %h3 Chat
+                  %p
+                    You can also chat directly with some of the PCP developers, on the #pcp IRC channel on the
+                    %a{:href => 'https://webchat.freenode.net/?channels=pcp'}FreeNode
+                    network, or via our
+                    %a{:href => 'https://slackin-tcwvlllkkf.now.sh/'} Slack
+                    team.
 
         %div{:class => 'row-parent'}
           %div{:class => 'row'}
             %section{:class => 'row__colspaced'}
               %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                %h3 Funding
-                %p
-                  %ul
-                    %li
-                      %a{:href => 'https://devswag.com/products/performance-co-pilot-t-shirt'} T-shirts
-                      and
-                      %a{:href => 'https://devswag.com/products/pcp'} Stickers
-                      %br
-                      A percentage of profits from sale of PCP merchandise
-                      is used to fund continued development and support.
-                    %li
-                      You can also
-                      %a{:href => 'http://spi-inc.org/projects/pcp/'} donate
-                      directly via our not-for-profit fiscal sponsor
-                      %a{:href => 'http://spi-inc.org/'} SPI, Inc .
+                %div{:class => 'col__module--img'}
+                  %h3 Funding
+                  %p
+                    %ul
+                      %li
+                        %a{:href => 'https://devswag.com/products/performance-co-pilot-t-shirt'} T-shirts
+                        and
+                        %a{:href => 'https://devswag.com/products/pcp'} Stickers
+                        %br
+                        A percentage of profits from sale of PCP merchandise
+                        is used to fund continued development and support.
+                      %li
+                        You can also
+                        %a{:href => 'http://spi-inc.org/projects/pcp/'} donate
+                        directly via our not-for-profit fiscal sponsor
+                        %a{:href => 'http://spi-inc.org/'} SPI, Inc
+                        (Software in the Public Interest).
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
