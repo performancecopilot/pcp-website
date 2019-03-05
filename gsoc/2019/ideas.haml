@@ -25,8 +25,6 @@
                         %li
                           %a{:href => '#collectl'} PCP version of collectl
                         %li
-                          %a{:href => '#htop'} PCP platform for htop
-                        %li
                           %a{:href => '#nmon'} PCP version of nmon
                     %li
                       Integration Projects
@@ -37,11 +35,9 @@
                       Web Projects
                       %ul
                         %li
-                          %a{:href => '#pmseries'} Scaling timeseries injest and querying
+                          %a{:href => '#redis'} Scaling timeseries injest and querying
                         %li
-                          %a{:href => '#dashboards'} Grafana dashboards for PCP metrics
-                        %li
-                          %a{:href => '#worldmap'} Grafana world map for PCP metrics
+                          %a{:href => '#grafana'} Grafana dashboards for PCP metrics
                   %br
 
               %div{:class => 'colspan12-4 colspan8-3 colspan6-2 colspan2-2 as-grid with-gutter'}
@@ -156,42 +152,6 @@
 
         %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
           %div{:class => 'col__module--img'}
-            %a{:name => 'htop'}
-            %h3 PCP platform for htop
-            %p
-              The Performance Co-Pilot provides a cross-platform API for accessing
-              live and historical performance data from the local or remote hosts.
-              %a{:href => 'http://hisham.hm/htop/'} HTOP
-              is a performance analysis utility reporting per-process metrics with
-              good, customizable visualization of that data.
-            %p
-              This project will involve implementing a HTOP "platform" for PCP.
-            %p
-              %strong Expected results:
-              A (C language) implementation of an HTOP backend using the PCP PMAPI,
-              with accompanying tests and documentation.
-              The student will extend their C programming skills, as well as learn
-              about the ncurses library.  Students can also expect to gain insight
-              into the meaning of the kernel data reported by these tools, and the
-              sampling techniques used in building the tools.
-            %p
-              %strong Prerequisite knowledge:
-              C programming, ncurses library knowledge a plus.
-            %p
-              %strong Skill level:
-              Intermediate
-            %p
-              %strong Mentors:
-              %a{:href => 'mailto:mgoodwin@redhat.com'} Mark Goodwin
-              ,
-              %a{:href => 'mailto:lberk@redhat.com'} Lukas Berk
-            %p
-              %strong Interested students so far:
-              0
-            %br
-
-        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
-          %div{:class => 'col__module--img'}
             %a{:name => 'nmon'}
             %h3 PCP version of nmon
             %p
@@ -221,7 +181,7 @@
               %strong Mentors:
               %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
               ,
-              %a{:href => 'mailto:lberk@redhat.com'} Lukas Berk
+              %a{:href => 'mailto:mgoodwin@redhat.com'} Mark Goodwin
             %p
               %strong Interested students so far:
               0
@@ -267,7 +227,7 @@
 
         %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
           %div{:class => 'col__module--img'}
-            %a{:name => 'nmon'}
+            %a{:name => 'redis'}
             %h3 Scaling timeseries injest and querying
             %p
               The Performance Co-Pilot approach to scalable, multi-host performance
@@ -302,9 +262,9 @@
               Intermediate-Advanced
             %p
               %strong Mentors:
-              %a{:href => 'mailto:lberk@redhat.com'} Lukas Berk
-              ,
               %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
+              ,
+              %a{:href => 'mailto:mgoodwin@redhat.com'} Mark Goodwin
             %p
               %strong Interested students so far:
               0
@@ -312,56 +272,30 @@
 
         %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
           %div{:class => 'col__module--img'}
-            %a{:name => 'dashboards'}
+            %a{:name => 'grafana'}
             %h3 Grafana dashboards for PCP metrics
             %p
               This project will involve developing Grafana
               %a{:href => 'https://grafana.com/dashboards'} dashboards
-              and panels for displaying high level performance data across all of
-              the common system level performance analysis domains - CPU, memory,
-              network, disk, applications (and many more). With Grafana, each high
-              level panel can be linked (via a URL) to more refined/specific
-              performance data, and thus offer an intuitive drill-down model for
-              rapidly solving common, yet complex, performance analysis issues. The
-              new Grafana PCP data source currently under development will have
-              access (via the new
+              and panels for displaying high level performance data across
+              the common system level performance analysis domains - CPU,
+              memory, network, disk, applications (and many more).
+              In Grafana, each high level panel can be linked (via a URL) to
+              more detailed performance data, and thus offer an
+              intuitive drill-down model for rapidly solving common, yet
+              complex, performance issues.
+            %p
+              The Grafana PCP data source accesses all PCP metric data via
+              %a{:href => 'https://redis.io/'} Redis
+              and
               %a{:href => 'https://pcp.io/man/man1/pmproxy.1.html'} pmproxy
-              REST APIs) to all PCP PMDA data from any
-              accessible host running the PCP daemons, and thus potentially have
-              direct access to more performance data than any other datasource. The
-              resulting Grafana charts and panels can be exported in JSON format
+              REST APIs.
+              Resulting Grafana charts and panels can be exported in JSON format
               with template variables and included as part of Grafana itself, or
               shipped separately as part of PCP and installed/imported using the
               Grafana provisioning mechanisms.
             %p
-              %strong Expected results:
-              The student will extend their Javascript programming
-              skills, and will gain insight into the semantics of various forms of
-              performance data available from systems and applications, and
-              visualization techniques appropriate to their analysis.
-
-            %p
-              %strong Prerequisite knowledge:
-              Javascript programming.
-            %p
-              %strong Skill level:
-              Introductory / Intermediate
-            %p
-              %strong Mentors:
-              %a{:href => 'mailto:mgoodwin@redhat.com'} Mark Goodwin
-              ,
-              %a{:href => 'mailto:lberk@redhat.com'} Lukas Berk
-            %p
-              %strong Interested students so far:
-              0
-            %br
-
-        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
-          %div{:class => 'col__module--img'}
-            %a{:name => 'worldmap'}
-            %h3 Grafana world map for PCP metrics
-            %p
-              The Grafana
+              Additionally, the Grafana
               %a{:href => 'https://grafana.com/plugins/grafana-worldmap-panel/installation'} world map
               panel displays time series data or geohash data from a metric
               source overlaid on a world map.
@@ -378,8 +312,11 @@
               Grafana and Redis for PCP metrics.
             %p
               %strong Expected results:
-              The student will extend their C and javascript programming skills,
-              learn about the
+              The student will extend their C and Javascript programming
+              skills, will gain insight into the semantics of various forms of
+              performance data available from systems and applications, and
+              visualization techniques appropriate to their analysis.
+              The student will also learn about the
               %a{:href => 'https://redis.io'} Redis
               distributed data store and geolocation services.
             %p
@@ -387,7 +324,7 @@
               C, Javascript programming.
             %p
               %strong Skill level:
-              Introductory
+              Intermediate
             %p
               %strong Mentors:
               %a{:href => 'mailto:mgoodwin@redhat.com'} Mark Goodwin
@@ -395,7 +332,7 @@
               %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
             %p
               %strong Interested students so far:
-              0
+              3
             %br
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
