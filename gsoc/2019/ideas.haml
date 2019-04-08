@@ -31,6 +31,9 @@
                       %ul
                         %li
                           %a{:href => '#statsd'} Using metrics from statsd with PCP
+                      %ul
+                        %li
+                          %a{:href => '#bpftrace'} Using metrics from bpftrace with PCP and Vector
                     %li
                       Web Projects
                       %ul
@@ -184,7 +187,7 @@
               %a{:href => 'mailto:mgoodwin@redhat.com'} Mark Goodwin
             %p
               %strong Interested students so far:
-              3
+              5
             %br
 
         %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
@@ -220,6 +223,47 @@
               %a{:href => 'mailto:lzap@redhat.com'} Lukas Zapletal
               ,
               %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
+            %p
+              %strong Interested students so far:
+              3
+            %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'bpftrace'}
+            %h3 Using metrics from bpftrace with PCP and Vector
+            %p
+              %a{:href => 'https://github.com/iovisor/pbftrace'} bpftrace
+              is a high-level tracing language for efficient kernel tracing
+              using the Linux kernel eBPF (extended Berkeley Packet Filters)
+              feature.
+              The goal is to design and write a PCP agent which runs arbitrary
+              bpftrace scripts and stores the output as PCP metrics, and a new
+              %a{:href => 'http://http://getvector.io/'} Vector
+              widget which visualizes these collected metrics in a live heat
+              map or table.
+            %p
+              The Vector widget will include a bpftrace query builder for the
+              rapid creation of bpftrace scripts.
+            %p
+              Regression tests will be implemented and documentation
+              provided.
+            %p
+              %strong Expected results:
+              The student will extend their C language programming skills,
+              and learn about the inner workings of performance analysis tools
+              like PCP, Vector and eBPF.
+            %p
+              %strong Prerequisite knowledge:
+              C and Javascript programming.
+            %p
+              %strong Skill level:
+              Advanced
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:mspiers@netflix.com'} Martin Spiers
+              ,
+              %a{:href => 'mailto:myllynen@redhat.com'} Marko Myllynen
             %p
               %strong Interested students so far:
               1
