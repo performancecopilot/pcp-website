@@ -1,0 +1,197 @@
+!!! html
+%html
+  %head
+    = Haml::Engine.new(File.read("assets/haml-includes/head.haml")).render
+
+  %body
+    = Haml::Engine.new(File.read("assets/haml-includes/navigation.haml")).render
+
+    %div{:class => 'site-content'}
+      %div{:class => 'how-to is-typeset'}
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %br
+                  %h3 Ideas List
+                  %ol
+                    %li
+                      New Content Areas
+                      %ul
+                        %li
+                          %a{:href => '#vector'} Netflix Vector documentation
+                        %li
+                          %a{:href => '#grafana'} Grafana PCP datasource documentation
+                    %li
+                      Book Project Areas
+                      %ul
+                        %li
+                          %a{:href => '#howtos'} Provide How-To style launching points
+                      %ul
+                        %li
+                          %a{:href => '#readthedocs'} Convert docbook to 'readthedocs' content
+                  %br
+
+              %div{:class => 'colspan12-4 colspan8-3 colspan6-2 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h2 Google
+                  %h2 Season of Docs
+                  %h2 2019
+                  %br
+                    (
+                    %a{:href => 'https://developers.google.com/season-of-docs/'} Home
+                    )
+                  %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'vector'}
+            %h3 Netflix Vector Documentation
+            %p
+              %a{:href => 'http://getvector.io/docs'} Vector
+              is an open source host-level performance monitoring framework
+              which exposes hand-picked, high-resolution system and application
+              metrics to every engineer’s browser.
+              It focuses on realtime extraction and visualization of performance
+              data primarily using Performance Co-Pilot (PCP) Representational State
+              Transfer (REST) Application Programming Interfaces (APIs).
+            %p
+              The goal of this project is to work with mentors and developers in
+              the Vector and PCP communities to extend the existing documentation to
+              include many of the Vector features that are not yet documented.
+              This includes flamegraph, heatmap and table visuals, extended Berkly
+              Packet Format (eBPF) and Linux container instrumentation support, and
+              a number of other areas.
+            %p
+              %strong Expected results:
+              This new documentation will take the form of updates to the Vector
+              website, new tutorials (ideally supplemented with short explanatory
+              video content), and inclusion of Vector content in
+              %a{:href => 'https://readthedocs.io/'} readthedocs.io
+              and
+              %a{:href => 'https://en.wikipedia.org/wiki/ReStructuredText'} RST
+              format to ease the task of community contributors editing and
+              providing new content.
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:mspier@netflix.com'} Martin Spier
+              ,
+              %a{:href => 'mailto:andreas@gerstmayr.me'} Andreas Gerstmayr
+            %p
+              %strong Interested writers so far:
+              0
+            %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'grafana'}
+            %h3 PCP Grafana datasource documentation
+            %p
+              The Performance Co-Pilot approach to scalable, multi-host performance
+              analysis builds on the
+              %a{:href => 'https://redis.io'} Redis
+              distributed data store and its native time series support.
+              The
+              %a{:href => 'https://pcp.io/man/man1/pmseries.1.html'} pmseries
+              utility and
+              %a{:href => 'https://pcp.io/man/man1/pmproxy.1.html'} pmproxy
+              daemon provide the tooling and APIs to support this.
+            %p
+              The Grafana PCP data source accesses all PCP metric data via
+              %a{:href => 'https://pcp.io/man/man1/pmproxy.1.html'} pmproxy
+              REST APIs, which are used to access the scalable
+              %a{:href => 'https://redis.io/'} Redis
+              backend cache.
+              Resulting Grafana charts and panels can be exported in JSON format
+              with template variables and included as part of Grafana itself, or
+              shipped separately as part of PCP and installed/imported using the
+              Grafana provisioning mechanisms.
+            %p
+              %strong Expected results:
+              This is a significant opportunity for a technical writer to work with
+              PCP developers to document new REST APIs, command line utilities, new
+              language specification, and the administrative procedures required to
+              setup a cloud based time series analysis system at scale, as these
+              features are being put into production environments for the first time.
+              The new content will need to link into existing PCP and Grafana docs.
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
+              ,
+              %a{:href => 'mailto:mgoodwin@redhat.com'} Mark Goodwin
+            %p
+              %strong Interested writers so far:
+              0
+            %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'howtos'}
+            %h3 Provide How-To style launching points
+            %p
+              One area of need in the PCP documentation identified at this years
+              %a{:href => 'https://pcp.io/conference/2019/home.html'} conference
+              was for us to provide short, hands-on introductory texts and videos
+              that guide people toward the in-depth documentation they need.
+              The deep documentation exists and is needed, but its buried in alot
+              of the detail-oriented, jargon-heavy books.
+            %p
+              %strong Expected results:
+              A series of short, introductory pieces will be created that provide
+              simple introductions to complex topics.
+              These topics include writing new instrumentation agents, application
+              instrumentation in Java, Go, Rust, python and C languages, writing
+              analysis tools, and some PCP administration tasks.
+              These will each link to the detailed documentation elsewhere - such
+              as in the 'Users and Administors Guide', or the 'Programmers Guide'.
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:kenj@kenj.id.au'} Ken McDonell
+              ,
+              %a{:href => 'mailto:chorn@redhat.com'} Christian Horn
+            %p
+              %strong Interested writers so far:
+              0
+            %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'readthedocs'}
+            %h3 Convert docbook content to readthedocs and reStructuredText format
+            %p
+              The Performance Co-Pilot documentation currently exists in several forms.
+              These are the primary PCP
+              %a{:href => 'https://pcp.io/'} website
+              ,
+              %a{:href => 'https://pcp.io/man/'} man pages
+              and the two PCP
+              %a{:href => 'https://pcp.io/documentation.html'} books
+              (docbook format).
+              This project will focus on transfering and updating this
+              %a{:href => 'https://en.wikipedia.org/wiki/DocBook'} docbook
+              content to
+              %a{:href => 'https://en.wikipedia.org/wiki/ReStructuredText'} RST
+              such that it can be hosted on the modern, community
+              %a{:href => 'https://readthedocs.io/'} readthedocs.io
+              site.
+              This will allow community contributors to more easily change and
+              extend this content.
+            %p
+              %strong Expected results:
+              You will work with the mentors to setup the Performance Co-Pilot
+              %a{:href => 'https://readthedocs.io/'} readthedocs.io
+              hosting, and by the end of the project we will be able to
+              edit and contribute to the books directly through github.
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
+              ,
+              %a{:href => 'mailto:kenj@kenj.id.au'} Ken McDonell
+            %p
+              %strong Interested writers so far:
+              0
+            %br
+
+    = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
