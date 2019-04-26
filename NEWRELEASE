@@ -31,6 +31,6 @@ Steps to update the webpage for the new release
    the details of the new release (include the full changelog).
 3. Tweet the release using ./scripts/tweet-new-release.py <filename>
    Put the tweet text in filename and call the above script
-   e.g. text "Performance Co-Pilot X.Y.Z released: http://pcp.io"
+   e.g. text "Performance Co-Pilot X.Y.Z released: https://pcp.io"
    (if authentication fails use twitter.com web interface directly)
 
