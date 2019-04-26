@@ -86,6 +86,23 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p
+                      Apr 2019
+                      %br
+                      PCP 4.3.2
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p
+                      Primarily a bug-fix release.
+                      %a{:href => '/man/man1/pmproxy.1.html'} pmproxy
+                      in time series mode supporting configuration files,
+                      Redis cluster protocol, and is also able to proxy
+                      the Redis wire protocol now.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p
                       Feb 2019
                       %br
                       PCP 4.3.1
@@ -193,25 +210,5 @@
                       and exporting of metrics to Apache Spark via a new
                       %a{:href => '/man/man1/pcp2spark.1.html'} pcp2spark
                       utility.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      Jun 2018
-                      %br
-                      PCP 4.1.0
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      A colourful new
-                      %a{:href => '/man/man1/pcp-dstat.1.html'} pcp-dstat
-                      utility, building on the dstat legacy.
-                      Archive discovery and log tailing APIs.
-                      eBPF/BCC PMDA additions - new modules, histograms.
-                      Kernel metrics - AIO, interrupts, socket statistics,
-                      file locking, OOM, session count metrics.
-                      Automatic metadata compression.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
