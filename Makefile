@@ -79,4 +79,4 @@ checkimages:
 .PHONY: clean man docs books
 
 clean:
-	rm -rf *.html doc docs man books images favicon.ico $(PCPWEB)/* assets/css/*.css || /bin/true
+	rm -rf *.html doc docs man books images favicon.ico $(PCPWEB)/* assets/css/*.css conference/*/*.html gsod/*/*.html gsoc/*/*.html || /bin/true
