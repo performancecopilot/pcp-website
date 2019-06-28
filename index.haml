@@ -86,6 +86,24 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p
+                      Jun 2019
+                      %br
+                      PCP 4.3.3
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p
+                      Primarily bug-fix release.
+                      Extended PCP
+                      %a{:href => '/man/man3/PMWEBAPI.3.html'} REST API
+                      now available from
+                      %a{:href => '/man/man1/pmproxy.1.html'} pmproxy
+                      in timeseries mode.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p
                       Apr 2019
                       %br
                       PCP 4.3.2
@@ -194,24 +212,5 @@
                       and improvements to other utilities like
                       %a{:href => '/man/man1/pcp-dstat.1.html'} pcp-dstat.
                       Improvements to the BCC, KVM, Redis and Linux kernel PMDAs.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      Aug 2018
-                      %br
-                      PCP 4.1.1
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      Improved archive management, BCC and KVM metric enhancements,
-                      Memory Mapped Value metrics label support (name:value pairs).
-                      Historical analysis in
-                      %a{:href => '/man/man1/pcp-dstat.1.html'} pcp-dstat
-                      and exporting of metrics to Apache Spark via a new
-                      %a{:href => '/man/man1/pcp2spark.1.html'} pcp2spark
-                      utility.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
