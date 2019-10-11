@@ -15,10 +15,10 @@ Steps to create the packages for a new release
    and ./scripts/bintray-version scripts from the PCP git repo.
    For the RPM builds where gpg keys supported (modern distros, not
    RHEL5): export RPM_SIGN_KEYID="pcp-masters"
-     ./Makepkgs --with-webapps [ --signed ]
+     ./Makepkgs [ --signed ]
    For the DEB builds (export DEB_SIGN_KEYID=0xFE0842EE36DD8C0C
    for official uploads by debian developers)
-     ./Makepkgs [ --with-webapps | --signed ]
+     ./Makepkgs [ --signed ]
 5. Upload pkgs for Fedora/EPEL (via fedpkg, bodhi)
 6. Upload pkgs for Debian unstable (./Makepkgs)
 
