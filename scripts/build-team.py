@@ -5,7 +5,7 @@ import subprocess
 import sys
 
 def get_authors_haml_columns(authors):
-    x = len(authors) / 2
+    x = int(len(authors) / 2)
     a = authors[:x]
     b = authors[x:]
     indent = ' ' * 20
@@ -25,7 +25,8 @@ def get_authors_haml_columns(authors):
 
 # filter out a handful of git history author botches
 ret = subprocess.check_output(["sh", "-c", "git -C %s log --pretty=format:'%%an' | egrep -v 'root|pcpqa|unknown|EC2|cessna|buffalo.edu|test-account-0' | sort | uniq" % sys.argv[1]])
-everyone = ret.split('\n')
+val = ret.decode("utf-8")
+everyone = val.split('\n')
 
 # split apart the maintainers and contributors groups
 core = ('Andreas Gerstmayr', 'Ken McDonell', 'Lukas Berk', 'Mark Goodwin', 'Marko Myllynen', 'Nathan Scott')
