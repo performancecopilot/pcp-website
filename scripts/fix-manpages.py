@@ -8,7 +8,10 @@ import os
 import shutil
 import sys
 import tempfile
-import urllib
+try:
+    from urllib.parse import unquote
+except ImportError:
+    from urllib import unquote
 
 from skip_list import ext_manpages
 
@@ -22,7 +25,7 @@ for url in soup.find_all('a'):
     link = url.get("href")
     if link is None:
         continue
-    link = urllib.unquote(link)
+    link = unquote(link)
     if link.lower().startswith("/man/man2html?"):
         # /man/man2html?3+__pmGetConfig
         section = link[link.find('?') + 1]
