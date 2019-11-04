@@ -86,6 +86,22 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p
+                      Nov 2019
+                      %br
+                      PCP 5.0.1
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p
+                      Minor bug fix release - especially in REST API and kernel agents.
+                      Support for hv_24x7 nest events in the
+                      %a{:href => '/man/man1/pmdaperfevent.1.html'} perfevent
+                      agent.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p
                       Oct 2019
                       %br
                       PCP 5.0.0
@@ -187,31 +203,5 @@
                       New features and fixes in the
                       %a{:href => '/man/man1/pmseries.1.html'} pmseries
                       scalable time series analysis utility.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      Dec 2018
-                      %br
-                      PCP 4.3.0
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      New (experimental)
-                      %a{:href => '/man/man1/pmseries.1.html'} pmseries
-                      timeseries analysis tool.
-                      Numerous updates to
-                      %a{:href => '/man/man1/pmdapostgresql.1.html'} postgresql
-                      ,
-                      %a{:href => '/man/man1/pmdafreebsd.1.html'} freebsd
-                      and
-                      %a{:href => '/man/man1/pmdaperfevent.1.html'} perfevent
-                      PMDA implementations.
-                      Derived metric language extentions.
-                      %a{:href => '/man/man1/pmrep.1.html'} pmrep
-                      name change event handling.
-                      Fine tuned pcp-zeroconf space usage and log management scripts.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
