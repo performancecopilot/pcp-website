@@ -26,9 +26,9 @@
                       Timeseries projects
                       %ul
                         %li
-                          %a{:href => '#scalable'} Scale-out timeseries injest and querying
-                        %li
                           %a{:href => '#language'} Timeseries query language extensions
+                        %li
+                          %a{:href => '#scalable'} Scale-out timeseries injest and querying
                   %br
 
               %div{:class => 'colspan12-4 colspan8-3 colspan6-2 colspan2-2 as-grid with-gutter'}
@@ -112,12 +112,88 @@
 
         %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
           %div{:class => 'col__module--img'}
+            %a{:name => 'language'}
+            %h3 Timeseries query language extension
+            %p
+              Performance Co-Pilot timeseries are series of time-stamped values
+              gathered centrally from hosts making performance data available.
+              This data could be gathered for many metrics, at high frequency,
+              and from many hosts.
+              It is potentially high volume data, and searching it efficiently
+              (querying) at speed is a non-trivial problem.
+            %p
+              The Performance Co-Pilot timeseries query language is designed to
+              allow fast querying based on metric names and labels.
+              A command line utility and a REST API are available from
+              %a{:href => 'https://pcp.io/man/man1/pmseries.1.html'} pmseries
+              and the
+              %a{:href => 'https://pcp.io/man/man1/pmproxy.1.html'} pmproxy
+              daemon.
+            %p
+              The following is a simple example query which extracts the five
+              most recently sampled values for aggregate disk read throughput
+              (disk.all.read metric) for two hosts:
+              %pre
+                disk.all.read { hostname: "app1.acme.com" || hostname: "app2.acme.com" } [count: 5]
+            %p
+              Internally, the PCP query language makes use of the
+              %a{:href => 'https://redis.io/'} Redis
+              distributed data store and its native
+              %a{:href => 'https://redis.io/topics/streams-intro'} timeseries
+              features.
+              The
+              %a{:href => 'https://pcp.io/man/man1/pmseries.1.html'} pmseries
+              command line utility provides low-level access to the language.
+            %p
+              This project will extend the existing query language with:
+              %ol
+                %li
+                  statistical functions (sum, mean, average, standard deviation,
+                  histogram binning, top-N, N-th percentile)
+                %li
+                  rate conversion function for counter metrics
+                %li
+                  scale and unit conversion functions
+                %li
+                  mathematical functions (abs, floor, log, sqrt, round)
+                %li
+                  binary operators for numeric metrics (addition, subtraction,
+                  division, multiplication, exponentiation)
+            %p
+              %strong Expected results:
+              The student will extend their C language programming skills,
+              learn about the
+              %a{:href => 'https://en.wikipedia.org/wiki/Lex_(software)'} lex
+              and
+              %a{:href => 'https://en.wikipedia.org/wiki/Yacc'} yacc
+              language parsing tools,
+              performance analysis with PCP and the
+              %a{:href => 'https://redis.io/'} Redis
+              distributed data store.
+            %p
+              %strong Prerequisite knowledge:
+              C programming.
+            %p
+              %strong Skill level:
+              Intermediate-Advanced
+            %p
+              %strong Primary mentor:
+              %a{:href => 'mailto:mgoodwin@redhat.com'} Mark Goodwin
+              , secondary mentor:
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
+            -#%p
+              %strong Interested students so far:
+              0
+            %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
             %a{:name => 'scalable'}
             %h3 Scaling timeseries injest and querying
             %p
               The Performance Co-Pilot approach to scalable, multi-host performance
               analysis builds on the
-              %a{:href => 'https://redis.io'} Redis
+              %a{:href => 'https://redis.io/'} Redis
               distributed data store and its native timeseries support.
               The
               %a{:href => 'https://pcp.io/man/man1/pmseries.1.html'} pmseries
@@ -168,73 +244,6 @@
               %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
               , secondary mentor:
               %a{:href => 'mailto:mgoodwin@redhat.com'} Mark Goodwin
-            -#%p
-              %strong Interested students so far:
-              0
-            %br
-
-        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
-          %div{:class => 'col__module--img'}
-            %a{:name => 'language'}
-            %h3 Timeseries query language extension
-            %p
-              The Performance Co-Pilot timeseries query language allows for
-              queries based on metric names and labels using logical operators.
-              A command line utility and a REST API are available from
-              %a{:href => 'https://pcp.io/man/man1/pmseries.1.html'} pmseries
-              and the
-              %a{:href => 'https://pcp.io/man/man1/pmproxy.1.html'} pmproxy
-              daemon.
-            %p
-              The following is a simple example query which extracts the five
-              most recently sampled values for aggregate disk read throughput
-              (disk.all.read metric) for two hosts:
-              %pre
-                disk.all.read { hostname: "app1.acme.com" || hostname: "app2.acme.com" } [count: 5]
-            %p
-              Under the covers, the query language uses the
-              %a{:href => 'https://redis.io/'} Redis
-              distributed data store and its native timeseries support.
-              The
-              %a{:href => 'https://pcp.io/man/man1/pmseries.1.html'} pmseries
-              command line utility provides low-level access to the language.
-            %p
-              This project will extend the existing query language with:
-              %ol
-                %li
-                  statistical functions (sum, mean, average, standard deviation,
-                  histogram binning, top-N, N-th percentile)
-                %li
-                  rate conversion function for counter metrics
-                %li
-                  scale and unit conversion functions
-                %li
-                  mathematical functions (abs, floor, log, sqrt, round)
-                %li
-                  binary operators for numeric metrics (addition, subtraction,
-                  division, multiplication, exponentiation)
-            %p
-              %strong Expected results:
-              The student will extend their C language programming skills,
-              learn about the
-              %a{:href => 'https://en.wikipedia.org/wiki/Lex_(software)'} lex
-              and
-              %a{:href => 'https://en.wikipedia.org/wiki/Yacc'} yacc
-              language parsing tools,
-              performance analysis with PCP and the
-              %a{:href => 'https://redis.io/'} Redis
-              distributed data store.
-            %p
-              %strong Prerequisite knowledge:
-              C programming.
-            %p
-              %strong Skill level:
-              Intermediate-Advanced
-            %p
-              %strong Primary mentor:
-              %a{:href => 'mailto:mgoodwin@redhat.com'} Mark Goodwin
-              , secondary mentor:
-              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
             -#%p
               %strong Interested students so far:
               0
