@@ -136,6 +136,13 @@
                   queries use Redis features for parallel query execution, with
                   the aim of scaling up PCP timeseries injest and querying to the
                   level of many-thousands-of-nodes.
+                %li
+                  implementing compression of responses in
+                  %a{:href => 'https://pcp.io/man/man1/pmproxy.1.html'} pmproxy
+                  and evaluating impact on overall and individual response performance
+                %li
+                  implementing and evaluating other performance improvement ideas
+                  based on profiling and analysis of the server under load
             %p
               %strong Expected results:
               The student will extend their C language programming skills,
@@ -181,9 +188,9 @@
             %p
               The following is a simple example query which extracts the five
               most recently sampled values for aggregate disk read throughput
-              (disk.all.read metric) for two hosts (app1 and app2.acme.com):
+              (disk.all.read metric) for two hosts:
               %pre
-                disk.all.read { hostname:"app1" || hostname:"app2" }[count: 5]
+                disk.all.read { hostname: "app1.acme.com" || hostname: "app2.acme.com" } [count: 5]
             %p
               Under the covers, the query language uses the
               %a{:href => 'https://redis.io/'} Redis
