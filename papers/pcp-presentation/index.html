@@ -142,13 +142,13 @@ Performance Co-Pilot configuration on marquez.int.rhx:
 							Web interface needed?
 						</span>
 						<span class="fragment">
-							<pre><code class="bash"># yum install pcp-webapi pcp-webjs</code></pre>
+							<pre><code class="bash"># yum install grafana-pcp</code></pre>
 						</span>
 						<span class="fragment">
-							<pre><code class="bash"># systemctl enable pmwebd</code></pre>
+							<pre><code class="bash"># systemctl enable pmproxy grafana-server</code></pre>
 						</span>
 						<span class="fragment">
-							<pre><code class="bash"># systemctl start pmwebd</code></pre>
+							<pre><code class="bash"># systemctl start pmproxy grafana-server</code></pre>
 						</span>
 					</section>
 				</section>
