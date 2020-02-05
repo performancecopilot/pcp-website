@@ -15,22 +15,20 @@
               %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
                 %div{:class => 'col__module--img'}
                   %br
-                  %h2 Ideas List
+                  %h3 Ideas List
                   %ol
                     %li
                       Web projects
-                      %br
                       %ul
                         %li
                           %a{:href => '#directed'} Directed Grafana dashboards
                     %li
                       Timeseries projects
-                      %br
                       %ul
                         %li
                           %a{:href => '#scalable'} Scale-out timeseries injest and querying
                         %li
-                          %a{:href => '#language'} Timeseries query language extenstions
+                          %a{:href => '#language'} Timeseries query language extensions
                   %br
 
               %div{:class => 'colspan12-4 colspan8-3 colspan6-2 colspan2-2 as-grid with-gutter'}
@@ -70,7 +68,7 @@
                   search on PCP metric names, labels and descriptions
             %p
               Based on performance metrics from PCP and a predefined rule set,
-              the 'targeted' dashboard should display only relevant metrics to
+              the 'directed' dashboard should display only relevant metrics to
               the user.
               For example, if the CPU utilization is high, it should show an
               overview of CPU statistics and processes contributing load.
@@ -170,7 +168,7 @@
         %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
           %div{:class => 'col__module--img'}
             %a{:name => 'language'}
-            %h3 Timeseries query language extenstion
+            %h3 Timeseries query language extension
             %p
               The Performance Co-Pilot timeseries query language allows for
               queries based on metric names and labels using logical operators.
