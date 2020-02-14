@@ -18,10 +18,12 @@
                   %h3 Ideas List
                   %ol
                     %li
-                      Web projects
+                      Front-end projects
                       %ul
                         %li
                           %a{:href => '#grafana'} Extending PCP &amp; Grafana integration
+                        %li
+                          %a{:href => '#grafana'} Extending PCP &amp; pbench integration
                     %li
                       Timeseries projects
                       %ul
@@ -99,12 +101,72 @@
               TypeScript, JavaScript and React programming, operating systems.
             %p
               %strong Skill level:
-              Intermediate-Advanced
+              Intermediate
             %p
               %strong Primary mentor:
               %a{:href => 'mailto:agerstmayr@redhat.com'} Andreas Gerstmayr
               , secondary mentor:
               %a{:href => 'mailto:jkoch@netflix.com'} Jason Koch
+            -#%p
+              %strong Interested students so far:
+              0
+            %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'grafana'}
+            %h3 Extending PCP &amp; pbench integration
+            %p
+              This project involves advancing the performance analysis
+              capabilities provided by the PCP integration in the
+              %a{:href => 'https://distributed-system-analysis.github.io/pbench/'} pbench
+              benchmarking and analysis framework.
+            %p
+              The student will work on:
+              %ol
+                %li
+                  Modifying pbench to leverage pmlogger's remote collection capabilities
+                %li
+                  Leveraging PCP's archive compression feature for efficient storage
+                %li
+                  Enhancing pbench with the ability to enable live display of
+                  collected metrics via
+                  %a{:href => 'https://grafana.com/'} Grafana
+                %li
+                  Modify PCP to provide new
+                  %a{:href => 'https://pcp.io/man/man1/pmcd.1.html'} pmcd
+                  agent metrics,
+                  %a{:href => 'https://pcp.io/man/man1/pmlogger.1.html'} pmlogger
+                  and
+                  %a{:href => 'https://pcp.io/man/man1/pmlogconf.1.html'} pmlogconf
+                  templates tailored to recommended performance analysis
+                  data collection for target workloads (database, web
+                  server, computation, low-latency networking, etc.)
+            %p
+              %strong Expected results:
+              The student will extend their Python and Bash programming
+              skills, learn about extensible system benchmarking with
+              %a{:href => 'https://distributed-system-analysis.github.io/pbench/'} pbench,
+              learn how to export data to
+              %a{:href => 'https://redis.io/'} Redis
+              for the
+              %a{:href => 'https://grafana-pcp.readthedocs.io/'} grafana-pcp
+              data source, work with the PCP
+              %a{:href => 'https://pcp.io/man/man1/pmlogger.1.html'} pmlogger
+              tool to efficiently collect data, and discover the kinds of
+              operating system and application metrics PCP is capable
+              of collecting to match various workloads.
+            %p
+              %strong Prerequisite knowledge:
+              Python and Bash programming, operating systems.
+            %p
+              %strong Skill level:
+              Intermediate
+            %p
+              %strong Primary mentor:
+              %a{:href => 'mailto:portant@redhat.com'} Peter Portant
+              , secondary mentor:
+              %a{:href => 'mailto:ndokos@redhat.com'} Nick Dokos
             -#%p
               %strong Interested students so far:
               0
