@@ -16,7 +16,7 @@ HAMLFILES = \
 	presentations glider screenshots download testimonials \
 	gsoc/2015/ideas gsoc/2016/ideas gsoc/2017/ideas gsoc/2018/ideas \
 	gsoc/2019/ideas gsoc/2020/ideas \
-	gsod/2019/ideas \
+	gsod/2019/ideas gsod/2020/ideas \
 	conference/2018/home conference/2018/contact conference/2018/schedule \
 	conference/2019/home conference/2019/contact conference/2019/schedule \
 
