@@ -9,39 +9,52 @@
     %div{:class => 'site-content'}
       %div{:class => 'how-to is-typeset'}
 
-        %div{:class => 'row-parent'}
-          %div{:class => 'row'}
-            %section{:class => 'row__colspaced'}
-              %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
-                %div{:class => 'col__module--img'}
-                  %br
-                  %h3 Ideas List
-                  %ol
-                    %li
-                      New Content Areas
-                      %ul
-                        %li
-                          %a{:href => '#pcp'} Short PCP How-To documents
-                        %li
-                          %a{:href => '#grafana-pcp'} Grafana PCP tutorial
-                    %li
-                      Book Project Areas
-                      %ul
-                        %li
-                          %a{:href => '#howtos'} Provide How-To style launching points
-                      %ul
-                        %li
-                          %a{:href => '#readthedocs'} Transitioning the current (docbook) to a contributor friendly format and hosting
-                      %ul
-                        %li
-                          %a{:href => '#apiguide-readthedocs'}
-                          Ansible PCP tutorial
-                      %ul
-                        %li
-                          %a{:href => '#ansible-pcp-tutorial'}
-                          Transition the REST API documentation from man page to developer friendly format
-
-                  %br
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'pcp'}
+            %h3 Welcome!
+            %p
+              Thanks for your interest in working on Performance Co-Pilot (PCP)
+              in this years Google Season of Docs program.
+              PCP is a system-level performance analysis toolkit for complex,
+              distributed computer systems.
+            %p
+              The tools in PCP are fairly well documented, but there is plenty
+              of room for improvement!
+              Below are a list of project ideas and areas we'd like to see the
+              existing documentation improved, and new documentation added.
+            %p
+              If you find below projects of interest, please contact the group
+              of mentors at
+              %a{:href => 'mailto:pcp-mentors@groups.io'} pcp-mentors@groups.io
+              and CC individual mentors listed with your area(s) of interest.
+            %p
+              Please provide at that time:
+            %ul
+              %li
+                a brief introduction to yourself, a little about your background
+                and any experience you have in technical writin
+              %li
+                the PCP project area(s) you are interested in working on
+            %p
+              We'll then chat with you directly about the idea(s) and work with
+              you on a project proposal.
+              A strong proposal will likely include more than one idea from the
+              list that follows, and a strong candidate would be one with an
+              interest in learning about performance analysis, monitoring tools,
+              and improving documentation!
+            %h3 Resources
+            %p
+              To learn about PCP basics, philosophy and tools, we recommend you:
+            %ul
+              %li
+                Install PCP on your computer - refer to the
+                %a{:href => 'https://pcp.io/docs/guide.html'} Quick Reference Guide
+                to help you get started.
+              %li
+                Peruse the introductory chapters of the
+                %a{:href => 'https://pcp.io/docs/books/PCP_UAG/html/'} PCP Users and Administrators Guide
+            %br
 
               %div{:class => 'colspan12-4 colspan8-3 colspan6-2 colspan2-2 as-grid with-gutter'}
                 %div{:class => 'col__module--cta'}
@@ -54,6 +67,33 @@
                     )
                   %br
 
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %br
+                  %h3 Ideas List
+                  %ol
+                    %li
+                      New Content Areas
+                      %ul
+                        %li
+                          %a{:href => '#grafana-pcp'} Grafana PCP tutorial
+                        %li
+                          %a{:href => '#howtos'} Provide How-To style launching points
+                    %li
+                      Book Project Areas
+                      %ul
+                        %li
+                          %a{:href => '#readthedocs'} Transitioning the current (docbook) to a contributor friendly format and hosting
+                      %ul
+                        %li
+                          %a{:href => '#restapi'}
+                          Transition the REST API documentation from man page to developer friendly format
+
+                  %br
+
         %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
           %div{:class => 'col__module--img'}
             %a{:name => 'pcp'}
@@ -61,17 +101,15 @@
             %p
             %ul
               %li
-                A basic C++ PMDA - linking to detailed Programmers Guide section
-              and pcp-pmda-cpp
-            %ul
-              %li
                 %a{:href => 'https://pcp.io/books/PCP_PG/html/LE98072-PARENT.html'}
                 A basic python PMDA - linking to detailed Programmers Guide section
-
+              %li
+                A basic C++ PMDA - linking to detailed Programmers Guide section
+                and pcp-pmda-cpp
 
             %p
               %strong Mentors:
-              %a{:href => 'mailto:mspier@netflix.com'} Martin Spier
+              %a{:href => 'mailto:scott.nato@gmail.com'} Nathan Scott
               ,
               %a{:href => 'mailto:andreas@gerstmayr.me'} Andreas Gerstmayr
             %p
@@ -81,8 +119,8 @@
 
         %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
           %div{:class => 'col__module--img'}
-            %a{:name => 'grafana'}
-            %h3 PCP Grafana datasource documentation
+            %a{:name => 'grafana-pcp'}
+            %h3 PCP Grafana documentation
             %p
               The Performance Co-Pilot approach to scalable, multi-host performance
               analysis builds on the
@@ -113,12 +151,9 @@
               The new content will need to link into existing PCP and Grafana docs.
             %p
               %strong Mentors:
-              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
+              %a{:href => 'mailto:andreas@gerstmayr.me'} Andreas Gerstmayr
               ,
               %a{:href => 'mailto:mgoodwin@redhat.com'} Mark Goodwin
-            %p
-              %strong Interested writers so far:
-              0
             %br
 
         %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
@@ -126,7 +161,7 @@
             %a{:name => 'howtos'}
             %h3 Provide How-To style launching points
             %p
-              One area of need in the PCP documentation identified at this years
+              One area of need in the PCP documentation identified at last years
               %a{:href => 'https://pcp.io/conference/2019/home.html'} conference
               was for us to provide short, hands-on introductory texts and videos
               that guide people toward the in-depth documentation they need.
@@ -143,14 +178,9 @@
               as in the 'Users and Administors Guide', or the 'Programmers Guide'.
             %p
               %strong Mentors:
-              %a{:href => 'mailto:kenj@kenj.id.au'} Ken McDonell
-              ,
               %a{:href => 'mailto:chorn@redhat.com'} Christian Horn
               ,
-              %a{:href => 'mailto:lberk@redhat.com'} Lukas Berk
-            %p
-              %strong Interested writers so far:
-              0
+              %a{:href => 'mailto:abhide@redhat.com'} Apurva Bhide
             %br
 
         %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
@@ -185,10 +215,38 @@
               %strong Mentors:
               %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
               ,
-              %a{:href => 'mailto:kenj@kenj.id.au'} Ken McDonell
+              %a{:href => 'mailto:abhide@redhat.com'} Apurva Bhide
+            %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'restapi'}
+            %h3 Transition the REST API documentation from man page to developer friendly format
             %p
-              %strong Interested writers so far:
-              0
+              The Performance Co-Pilot REST API is currently documented in
+              %a{:href => 'https://pcp.io/man/man3/pmwebapi.3.html'} man page
+              format primarily.
+              This is not ideal for web developers, so we'd like to transition
+              to separate formatted web pages describing individual requests,
+              allowed inputs, sample outputs, etc.
+              Likely, this would also be in
+              %a{:href => 'https://en.wikipedia.org/wiki/ReStructuredText'} RST
+              form such that it can be hosted on the modern, community
+              %a{:href => 'https://readthedocs.io/'} readthedocs.io
+              site.
+              This will allow community contributors to more easily change and
+              extend this content.
+            %p
+              %strong Expected results:
+              You will work with the mentors to create modern REST API documentation
+              for the Performance Co-Pilot, readily consumable by web developers.
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:andreas@gerstmayr.me'} Andreas Gerstmayr
+              ,
+              %a{:href => 'mailto:abhide@redhat.com'} Apurva Bhide
+              ,
+              %a{:href => 'mailto:scott.nato@gmail.com'} Nathan Scott
             %br
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
