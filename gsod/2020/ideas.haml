@@ -93,30 +93,6 @@
                     )
                   %br
 
-
-        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
-          %div{:class => 'col__module--img'}
-            %a{:name => 'pcp'}
-            %h3 Short PCP How-To documents
-            %p
-            %ul
-              %li
-                %a{:href => 'https://pcp.io/books/PCP_PG/html/LE98072-PARENT.html'}
-                A basic python PMDA - linking to detailed Programmers Guide section
-              %li
-                A basic C++ PMDA - linking to detailed Programmers Guide section
-                and pcp-pmda-cpp
-
-            %p
-              %strong Mentors:
-              %a{:href => 'mailto:scott.nato@gmail.com'} Nathan Scott
-              ,
-              %a{:href => 'mailto:andreas@gerstmayr.me'} Andreas Gerstmayr
-            %p
-              %strong Interested writers so far:
-              0
-            %br
-
         %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
           %div{:class => 'col__module--img'}
             %a{:name => 'grafana-pcp'}
@@ -151,9 +127,9 @@
               The new content will need to link into existing PCP and Grafana docs.
             %p
               %strong Mentors:
-              %a{:href => 'mailto:andreas@gerstmayr.me'} Andreas Gerstmayr
+              %a{:href => 'mailto:agerstmayr@redhat.com'} Andreas Gerstmayr &lt;agerstmayr@redhat.com&gt;
               ,
-              %a{:href => 'mailto:mgoodwin@redhat.com'} Mark Goodwin
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott &lt;nathans@redhat.com&gt;
             %br
 
         %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
@@ -178,9 +154,9 @@
               as in the 'Users and Administors Guide', or the 'Programmers Guide'.
             %p
               %strong Mentors:
-              %a{:href => 'mailto:chorn@redhat.com'} Christian Horn
+              %a{:href => 'mailto:chorn@redhat.com'} Christian Horn &lt;chorn@redhat.com&gt;
               ,
-              %a{:href => 'mailto:abhide@redhat.com'} Apurva Bhide
+              %a{:href => 'mailto:abhide@redhat.com'} Apurva Bhide &lt;abhide@redhat.com&gt;
             %br
 
         %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
@@ -213,9 +189,9 @@
               edit and contribute to the books directly through github.
             %p
               %strong Mentors:
-              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott &lt;nathans@redhat.com&gt;
               ,
-              %a{:href => 'mailto:abhide@redhat.com'} Apurva Bhide
+              %a{:href => 'mailto:abhide@redhat.com'} Apurva Bhide &lt;abhide@redhat.com&gt;
             %br
 
         %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
@@ -242,11 +218,9 @@
               for the Performance Co-Pilot, readily consumable by web developers.
             %p
               %strong Mentors:
-              %a{:href => 'mailto:andreas@gerstmayr.me'} Andreas Gerstmayr
+              %a{:href => 'mailto:agerstmayr@redhat.com'} Andreas Gerstmayr &lt;agerstmayr@redhat.com&gt;
               ,
-              %a{:href => 'mailto:abhide@redhat.com'} Apurva Bhide
-              ,
-              %a{:href => 'mailto:scott.nato@gmail.com'} Nathan Scott
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott &lt;nathans@redhat.com&gt;
             %br
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
