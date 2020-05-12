@@ -79,11 +79,11 @@
                       Book Project Areas
                       %ul
                         %li
-                          %a{:href => '#readthedocs'} Convert docbook content to readthedocs and reStructuredText format
-                      %ul
+                          %a{:href => '#readthedocs-pcp'} Convert PCP docbook content to readthedocs and reStructuredText format
                         %li
-                          %a{:href => '#restapi'} Convert REST API documentation from man page to developer friendly format
-
+                          %a{:href => '#readthedocs-restapi'} Convert REST API documentation from man page to developer friendly format
+                        %li
+                          %a{:href => '#readthedocs-pbench'} Convert pbench guides to readthedocs hosting
                   %br
 
               %div{:class => 'colspan12-4 colspan8-3 colspan6-2 colspan2-2 as-grid with-gutter'}
@@ -200,14 +200,12 @@
               %strong Mentors:
               %a{:href => 'mailto:ashwinnayak111@gmail.com'} Ashwin Nayak &lt;ashwinnayak111@gmail.com&gt;
               ,
-              %a{:href => 'mailto:pportant@redhat.com'} Peter Portant &lt;pportant@redhat.com&gt;
-              ,
               %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott &lt;nathans@redhat.com&gt;
             %br
 
         %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
           %div{:class => 'col__module--img'}
-            %a{:name => 'readthedocs'}
+            %a{:name => 'readthedocs-pcp'}
             %h3 Convert docbook content to readthedocs and reStructuredText format
             %p
               The Performance Co-Pilot documentation currently exists in several forms.
@@ -242,7 +240,7 @@
 
         %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
           %div{:class => 'col__module--img'}
-            %a{:name => 'restapi'}
+            %a{:name => 'readthedocs-restapi'}
             %h3 Convert REST API documentation from man page to developer friendly format
             %p
               The Performance Co-Pilot REST API is currently documented in
@@ -265,6 +263,41 @@
             %p
               %strong Mentors:
               %a{:href => 'mailto:agerstmayr@redhat.com'} Andreas Gerstmayr &lt;agerstmayr@redhat.com&gt;
+              ,
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott &lt;nathans@redhat.com&gt;
+            %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'readthedocs-pbench'}
+            %h3 Convert pbench MarkDown content to readthedocs and reStructuredText format
+            %p
+              The pbench benchmarking suite makes use of Performance
+              Co-Pilot services for recording arbitrary performance metrics
+              during benchmark runs.
+              It is currently documented in a traditional fashion similar
+              to PCP itself, with much content in large individual files and
+              typically in
+              %a{:href => 'https://en.wikipedia.org/wiki/Markdown'} MarkDown
+              format.
+              This project will focus on transfering and updating the pbench
+              %a{:href => 'https://github.com/distributed-system-analysis/pbench/tree/master/doc'} guides
+              to
+              %a{:href => 'https://en.wikipedia.org/wiki/ReStructuredText'} RST
+              such that it can be hosted on the modern, community
+              %a{:href => 'https://readthedocs.io/'} readthedocs.io
+              site.
+              This will allow community contributors to more easily change and
+              extend this content.
+            %p
+              %strong Expected results:
+              You will work with the mentors to setup the pbench
+              %a{:href => 'https://readthedocs.io/'} readthedocs.io
+              hosting, and by the end of the project we will be able to
+              edit and contribute to the content directly through github.
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:ashwinnayak111@gmail.com'} Ashwin Nayak &lt;ashwinnayak111@gmail.com&gt;
               ,
               %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott &lt;nathans@redhat.com&gt;
             %br
