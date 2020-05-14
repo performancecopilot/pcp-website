@@ -102,43 +102,51 @@
             %a{:name => 'grafana-pcp'}
             %h3 PCP Grafana documentation
             %p
-              The Performance Co-Pilot approach to scalable, multi-host performance
-              analysis builds on the
-              %a{:href => 'https://redis.io'} Redis
-              distributed data store and its native time series support.
-              The
-              %a{:href => 'https://pcp.io/man/man1/pmseries.1.html'} pmseries
-              utility and
-              %a{:href => 'https://pcp.io/man/man1/pmproxy.1.html'} pmproxy
-              daemon provide the tooling and APIs to support this.
+              %a{:href => 'https://grafana-pcp.readthedocs.io/'} grafana-pcp
+              is a plugin for Grafana, which allows the visualization
+              of Performance Co-Pilot metrics in the Grafana metric visualization application.
+              There are three data sources available at the moment:
+            %ul
+              %li
+                scalable, multi-host performance metrics stored
+                in the
+                %a{:href => 'https://redis.io'} Redis
+                distributed data store
+              %li
+                live, on-host metrics provided by the Vector data source
+                (supercedes the original standalone
+                %a{:href => 'http://getvector.io/'} Vector
+                web application, which is now deprecated)
+              %li
+                on-demand kernel metrics provided by
+                %a{:href => 'https://github.com/iovisor/bpftrace'} bpftrace scripts
             %p
-              The Grafana PCP data source accesses all PCP metric data via
+              All three data sources access PCP metric data via
               %a{:href => 'https://pcp.io/man/man1/pmproxy.1.html'} pmproxy
-              REST APIs, which are used to access the scalable
+              REST APIs, which in turn requests the metric values from the scalable
               %a{:href => 'https://redis.io/'} Redis
-              backend cache.
-              Resulting Grafana charts and panels can be exported in JSON format
-              with template variables and included as part of Grafana itself, or
-              shipped separately as part of PCP and installed/imported using the
-              Grafana provisioning mechanisms.
+              database,
+              %a{:href => 'https://pcp.io/man/man3/pmapi.3.html'} pmapi
+              or the
+              %a{:href => 'https://github.com/performancecopilot/pcp/blob/master/src/pmdas/bpftrace/README.md'} bpftrace PMDA.
+              Grafana dashboards can be exported in JSON format and shipped with grafana-pcp or
+              imported using the Grafana provisioning mechanisms.
             %p
-              The Vector PCP data source accesses all live PCP metric data,
-              via the realtime REST API services
-              %a{:href => 'https://pcp.io/man/man1/pmproxy.1.html'} pmproxy
-              offers.
-              This functionality supercedes the original standalone
-              %a{:href => 'http://getvector.io/'} Vector
-              web application which is now deprecated.
+              This is a significant opportunity for a technical writer to work with
+              PCP developers to document the existing functionality, write guides,
+              document REST APIs and the administrative procedures required to setup local and
+              cloud-based time series analysis at scale.
             %p
               %strong Expected results:
-              This is a significant opportunity for a technical writer to work with
-              PCP developers to create tutorials, document REST APIs, command line
-              utilities, new language specifications, and the administrative procedures
-              required to setup local and cloud-based time series analysis at scale.
-              The new content will link into existing PCP and Grafana documentations,
-              starting with the existing PCP, Redis, Grafana, Vector and
-              %a{:href => 'https://grafana-pcp.readthedocs.io/'} grafana-pcp
-              documentation.
+              Initial documentation is available at
+              %a{:href => 'https://grafana-pcp.readthedocs.io/'} grafana-pcp.readthedocs.io,
+              which will serve as a starting point.
+              This documentation should be extended by describing the functionality of grafana-pcp
+              in much greater detail, adding screenshots, infographics and various guides to setup
+              core functionality.
+              Additionally, the documentation should contain a section about the technical details -
+              specifically the interaction of all involved components (pmcd, pmproxy, pmseries, redis, Grafana)
+              with one or more diagrams.
             %p
               %strong Mentors:
               %a{:href => 'mailto:agerstmayr@redhat.com'} Andreas Gerstmayr &lt;agerstmayr@redhat.com&gt;
