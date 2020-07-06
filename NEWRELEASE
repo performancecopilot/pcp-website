@@ -4,7 +4,7 @@ Process to make a new PCP release
 Steps to create the packages for a new release
 ----------------------------------------------
 1. Update CHANGELOG with release notes, BZs in fedora.spec
-2. Tag release in git (tagged and signed using pcp-masters key)
+2. Tag release in git (tagged and signed using pcp-maintainers key)
    Ex: git tag -s -u DEA2C114 -m "X.YY.Z" X.YY.Z
    Update https://github.com/performancecopilot/pcp/releases to
    indicate the new version is now the latest (Edit Release ->
@@ -14,7 +14,7 @@ Steps to create the packages for a new release
 4. Upload binary pkgs to bintray using the ./scripts/bintray-upload
    and ./scripts/bintray-version scripts from the PCP git repo.
    For the RPM builds where gpg keys supported (modern distros, not
-   RHEL5): export RPM_SIGN_KEYID="pcp-masters"
+   RHEL5): export RPM_SIGN_KEYID="pcp-maintainers"
      ./Makepkgs [ --signed ]
    For the DEB builds (export DEB_SIGN_KEYID=0xFE0842EE36DD8C0C
    for official uploads by debian developers)
