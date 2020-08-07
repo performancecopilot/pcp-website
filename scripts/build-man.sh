@@ -53,9 +53,9 @@ cp man/man3/pmgetoptions.3.html man/man3/pmgetcontextoptions.3.html
 cp man/man3/pmgetoptions.3.html man/man3/pmfreeoptions.3.html
 cp man/man3/pmgetoptions.3.html man/man3/pmusagemessage.3.html
 cp man/man3/pmdafetch.3.html man/man3/pmdasetfetchcallback.3.html
-cp man/man3/pmafm.3.html man/man3/pmrecordsetup.3.html
-cp man/man3/pmafm.3.html man/man3/pmrecordaddhost.3.html
-cp man/man3/pmafm.3.html man/man3/pmrecordcontrol.3.html
+cp man/man3/pmrecord.3.html man/man3/pmrecordsetup.3.html
+cp man/man3/pmrecord.3.html man/man3/pmrecordaddhost.3.html
+cp man/man3/pmrecord.3.html man/man3/pmrecordcontrol.3.html
 cp man/man1/pmquery.1.html man/man1/pmconfirm.1.html
 cp man/man1/pmquery.1.html man/man1/pmmessage.1.html
 cp man/man3/pmdamain.3.html man/man3/pmdagetcontext.3.html
