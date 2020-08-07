@@ -86,6 +86,32 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p
+                      Aug 2020
+                      %br
+                      PCP 5.2.0
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p
+                      New tools -
+                      %a{:href => '/man/man1/pmiectl.1.html'} pmiectl
+                      ,
+                      %a{:href => '/man/man1/pmlogctl.1.html'} pmlogctl
+                      ,
+                      %a{:href => '/man/man1/pmlogpaste.1.html'} pmlogpaste
+                      and
+                      %a{:href => '/man/man1/pmsearch.1.html'} pmsearch
+                      New metrics - process accounting, ZRAM, multi-path TCP, S.M.A.R.T.
+                      Retired
+                      %a{:href => '/man/man1/pcpcompat.1.html'} pmmgr
+                      in favour of the
+                      %a{:href => '/man/man1/pmfind_check.1.html'} pmfind
+                      service.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p
                       May 2020
                       %br
                       PCP 5.1.1
@@ -225,23 +251,5 @@
                       and Microsoft
                       %a{:href => '/man/man1/pmdamssql.1.html'} SQL Server
                       PMDAs.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      Aug 2019
-                      %br
-                      PCP 4.3.4
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      Bugfix release - systemd and selinux integration fixes.
-                      Numerous
-                      %a{:href => '/man/man1/pmproxy.1.html'} pmproxy
-                      improvements with new and improved
-                      %a{:href => '/man/man3/pmwebapi.3.html'} REST APIs
-                      for Grafana integration and HTTPS support.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
