@@ -86,6 +86,30 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p
+                      Sep 2020
+                      %br
+                      PCP 5.2.1
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p
+                      Minor bug fix release.
+                      Per-context derived metrics support, new REST APIs.
+                      Support Windows authentication mode in the
+                      %a{:href => '/man/man1/pmdamssql.1.html'} SQL Server
+                      agent.
+                      Improved metric labels handling in the
+                      %a{:href => '/man/man1/pmdaopenmetrics.1.html'} OpenMetrics
+                      agent, 
+                      %a{:href => '/man/man1/pcp2elasticsearch.1.html'} pcp2elasticsearch
+                      and
+                      %a{:href => '/man/man1/pcp2spark.1.html'} pcp2spark
+                      utilities.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p
                       Aug 2020
                       %br
                       PCP 5.2.0
@@ -221,35 +245,5 @@
                       Support for hv_24x7 nest events in the
                       %a{:href => '/man/man1/pmdaperfevent.1.html'} perfevent
                       agent.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      Oct 2019
-                      %br
-                      PCP 5.0.0
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      Async I/O REST API via
-                      %a{:href => '/man/man1/pmproxy.1.html'} pmproxy
-                      and optional HTTPS support.
-                      Auto-enabled archive discovery and
-                      %a{:href => 'https://redis.io'} Redis
-                      time series import via pmproxy.
-                      New
-                      %a{:href => 'https://www.mankier.com/8/bpftrace'} bpftrace
-                      PMDA, works closely with the
-                      %a{:href => 'https://github.com/performancecopilot/grafana-pcp'} grafana-pcp
-                      bpftrace datasource.
-                      New
-                      %a{:href => '/man/man1/pmdastatsd.1.html'} statsd
-                      ,
-                      %a{:href => '/man/man1/pmdanetcheck.1.html'} netcheck
-                      and Microsoft
-                      %a{:href => '/man/man1/pmdamssql.1.html'} SQL Server
-                      PMDAs.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
