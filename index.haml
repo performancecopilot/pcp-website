@@ -86,6 +86,26 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p
+                      Nov 2020
+                      %br
+                      PCP 5.2.2
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p
+                      Minor bug fix release - especially in
+                      %a{:href => '/man/man1/pmproxy.1.html'} pmproxy
+                      REST API, KVM, XFS and other Linux kernel metrics.
+                      Support for hv_gpci and hv_24x7 core-level events in the
+                      %a{:href => '/man/man1/pmdaperfevent.1.html'} perfevent
+                      agent.
+                      New online version of the PCP Guides at
+                      %a{:href => 'https://pcp.readthedocs.io'} readthedocs
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p
                       Sep 2020
                       %br
                       PCP 5.2.1
@@ -229,21 +249,5 @@
                       in particular.
                       Support for kernel and systemd v2 cgroups use.
                       New REST API extracting all possible values for requested labels.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      Nov 2019
-                      %br
-                      PCP 5.0.1
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      Minor bug fix release - especially in REST API and kernel agents.
-                      Support for hv_24x7 nest events in the
-                      %a{:href => '/man/man1/pmdaperfevent.1.html'} perfevent
-                      agent.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
