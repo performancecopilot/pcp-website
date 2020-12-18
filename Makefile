@@ -20,7 +20,7 @@ HAMLFILES = \
 	conference/2018/home conference/2018/contact conference/2018/schedule \
 	conference/2019/home conference/2019/contact conference/2019/schedule \
 
-all: clean import books man docs prep local
+all: clean import man docs prep local
 
 local: 
 	find . -type f -exec chmod 644 "{}" \;
@@ -40,20 +40,12 @@ prep:
 	done
 	./scripts/build-team.py $(PCPGIT) | haml > team.html
 
-books:
-	./scripts/build-books.sh $(PCPGIT)
-
 man:
 	./scripts/build-man.sh $(PCPGIT)
 	./scripts/create-manindex.py
 
 docs:
 	./scripts/build-docs.sh
-
-PG_PATH = ../books/PCP_PG/pdf
-PG_PDF = pcp-programmers-guide.pdf
-UAG_PATH = ../books/PCP_UAG/pdf
-UAG_PDF = pcp-users-and-administrators-guide.pdf
 
 import:
 	mkdir doc docs man images 2>/dev/null || /bin/true
@@ -63,8 +55,6 @@ import:
 	rsync -Lrdp $(PCPGIT)/man/html/images/* images/
 	rsync -Lrdp $(PCPGIT)/images/* docs/images
 	rm -rf man/html man/retired
-	cd doc && ln -s $(UAG_PATH)/$(UAG_PDF) $(UAG_PDF)
-	cd doc && ln -s $(PG_PATH)/$(PG_PDF) $(PG_PDF)
 	ln -s images/pcp.ico favicon.ico
 
 uncompressed:
@@ -77,7 +67,7 @@ check:
 checkimages:
 	./scripts/check-for-unused-images.py $(PCPWEB)
 
-.PHONY: clean man docs books
+.PHONY: clean man docs
 
 clean:
-	rm -rf *.html doc docs man books images favicon.ico $(PCPWEB)/* assets/css/*.css conference/*/*.html gsod/*/*.html gsoc/*/*.html || /bin/true
+	rm -rf *.html doc docs man images favicon.ico $(PCPWEB)/* assets/css/*.css conference/*/*.html gsod/*/*.html gsoc/*/*.html || /bin/true
