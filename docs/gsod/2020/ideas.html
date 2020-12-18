@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='initial-scale=1' name='viewport'>
+<title>Performance Co-Pilot</title>
+<link href='/assets/css/screen.css' media='all' rel='stylesheet' type='text/css'>
+<link href='/assets/css/master.css' media='all' rel='stylesheet' type='text/css'>
+<link href='/images/pcp.ico' rel='shortcut icon' type='image/ico'>
+
+</head>
+<body>
+<header class='global-header'>
+<div class='row'>
+<h1 class='global-logo colspan12-6 colspan8-4 colspan6-3 colspan2-1 as-grid'>
+<a href='/index.html'>Performance Co-Pilot</a>
+</h1>
+<nav class='global-header__navigation colspan12-6 colspan8-6 colspan6-4 colspan2-1 as-grid'>
+<ul>
+<li>
+<a href='/features.html'>Features</a>
+</li>
+<li>
+<a href='/documentation.html'>Documentation</a>
+</li>
+<li>
+<a href='/download.html'>Download</a>
+</li>
+<li>
+<a href='/community.html'>Get Involved</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+
+<div class='site-content'>
+<div class='how-to is-typeset'>
+<div class='row-parent'>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='pcp'></a>
+<h3>Welcome!</h3>
+<p>
+Thanks for your interest in working on Performance Co-Pilot (PCP)
+in this years Google Season of Docs program.
+PCP is a system-level performance analysis toolkit for complex,
+distributed computer systems.
+</p>
+<p>
+The tools in PCP are fairly well documented, but there is plenty
+of room for improvement!
+Below are a list of project ideas and areas we'd like to see the
+existing documentation improved, and new documentation added.
+</p>
+<p>
+If you find below projects of interest, please contact the group
+of mentors at
+<a href='mailto:pcp-mentors@groups.io'>pcp-mentors@groups.io</a>
+and CC individual mentors listed with your area(s) of interest.
+</p>
+<p>
+Please provide at that time:
+</p>
+<ol>
+<li>
+a brief introduction to yourself, a little about your background
+and any experience you have in technical writing
+</li>
+<li>
+the PCP project area(s) you are interested in working on
+</li>
+</ol>
+<p>
+We'll then chat with you directly about the idea(s) and work with
+you on a project proposal.
+A strong proposal will likely include more than one idea from the
+list that follows, and a strong candidate would be one with an
+interest in learning about performance analysis, monitoring tools,
+and improving documentation!
+</p>
+<h3>Resources</h3>
+<p>
+To learn about PCP basics, philosophy and tools, we recommend you:
+</p>
+<ol>
+<li>
+Install PCP on your computer by refering to the
+<a href='https://pcp.io/docs/guide.html'>Quick Reference Guide</a>
+to help you get started.
+</li>
+<li>
+Peruse the introductory chapters of the
+<a href='https://pcp.io/books/PCP_UAG/html/'>PCP Users and Administrators Guide</a>
+</li>
+</ol>
+<br>
+</div>
+</div>
+<div class='colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<br>
+<h3>Ideas List</h3>
+<ol>
+<li>
+New Content Areas
+<ul>
+<li>
+<a href='#grafana-pcp'>PCP Grafana documentation</a>
+</li>
+<li>
+<a href='#howtos'>Provide How-To style launching points</a>
+</li>
+<li>
+<a href='#pbench'>Benchmarking with PCP and pbench</a>
+</li>
+</ul>
+</li>
+<li>
+Book Project Areas
+<ul>
+<li>
+<a href='#readthedocs-pcp'>Convert PCP docbook content to readthedocs and reStructuredText format</a>
+</li>
+<li>
+<a href='#readthedocs-restapi'>Convert REST API documentation from man page to developer friendly format</a>
+</li>
+<li>
+<a href='#readthedocs-pbench'>Convert pbench guides to readthedocs hosting</a>
+</li>
+</ul>
+</li>
+</ol>
+<br>
+</div>
+</div>
+<div class='colspan12-4 colspan8-3 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module--cta'>
+<h2>Google</h2>
+<h2>Season of Docs</h2>
+<h2>2020</h2>
+<br>
+(
+<a href='https://developers.google.com/season-of-docs/'>Home</a>
+)
+</br>
+<br>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div class='colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='grafana-pcp'></a>
+<h3>PCP Grafana documentation</h3>
+<p>
+<a href='https://grafana-pcp.readthedocs.io/'>grafana-pcp</a>
+is a plugin for Grafana, which allows the visualization
+of Performance Co-Pilot metrics in the Grafana metric visualization application.
+There are three data sources available at the moment:
+</p>
+<ol>
+<li>
+scalable, multi-host performance metrics stored
+in the
+<a href='https://redis.io'>Redis</a>
+distributed data store
+</li>
+<li>
+live, on-host metrics provided by the Vector data source
+(supercedes the original standalone
+<a href='http://getvector.io/'>Vector</a>
+web application, which is now deprecated)
+</li>
+<li>
+on-demand kernel metrics provided by
+<a href='https://github.com/iovisor/bpftrace'>bpftrace scripts</a>
+</li>
+</ol>
+<p>
+All three data sources access PCP metric data via
+<a href='https://pcp.io/man/man1/pmproxy.1.html'>pmproxy</a>
+REST APIs, which in turn requests the metric values from the scalable
+<a href='https://redis.io/'>Redis</a>
+database,
+<a href='https://pcp.io/man/man3/pmapi.3.html'>pmapi</a>
+or the
+<a href='https://github.com/performancecopilot/pcp/blob/master/src/pmdas/bpftrace/README.md'>bpftrace PMDA.</a>
+Grafana dashboards can be exported in JSON format and shipped with grafana-pcp or
+imported using the Grafana provisioning mechanisms.
+</p>
+<p>
+This is a significant opportunity for a technical writer to work with
+PCP developers to document the existing functionality, write guides,
+document REST APIs and the administrative procedures required to setup local and
+cloud-based time series analysis at scale.
+</p>
+<p>
+<strong>Expected results:</strong>
+Initial documentation is available at
+<a href='https://grafana-pcp.readthedocs.io/'>grafana-pcp.readthedocs.io,</a>
+which will serve as a starting point.
+This documentation should be extended by describing the functionality of grafana-pcp
+in much greater detail, adding screenshots, infographics and various guides to setup
+core functionality.
+Additionally, the documentation should contain a section about the technical details -
+specifically the interaction of all involved components (pmcd, pmproxy, pmseries, redis, Grafana)
+with one or more diagrams.
+</p>
+<p>
+<strong>Mentors:</strong>
+<a href='mailto:agerstmayr@redhat.com'>Andreas Gerstmayr &lt;agerstmayr@redhat.com&gt;</a>
+,
+<a href='mailto:nathans@redhat.com'>Nathan Scott &lt;nathans@redhat.com&gt;</a>
+</p>
+<br>
+</div>
+</div>
+<div class='colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='howtos'></a>
+<h3>Provide How-To style launching points</h3>
+<p>
+One area of need in the PCP documentation identified at last years
+<a href='https://pcp.io/conference/2019/home.html'>conference</a>
+was for us to provide short, hands-on introductory texts and videos
+that guide people toward the in-depth documentation they need.
+The deep documentation exists and is needed, but its buried in alot
+of the detail-oriented, jargon-heavy books.
+</p>
+<p>
+<strong>Expected results:</strong>
+A series of short, introductory pieces will be created that provide
+simple introductions to complex topics.
+These topics include writing new instrumentation agents, application
+instrumentation in Java, Go, Rust, python and C languages, writing
+analysis tools, and some PCP administration tasks.
+These will each link to the detailed documentation elsewhere - such
+as in the 'Users and Administors Guide', or the 'Programmers Guide'.
+</p>
+<p>
+<strong>Mentors:</strong>
+<a href='mailto:chorn@redhat.com'>Christian Horn &lt;chorn@redhat.com&gt;</a>
+,
+<a href='mailto:abhide@redhat.com'>Apurva Bhide &lt;abhide@redhat.com&gt;</a>
+</p>
+<br>
+</div>
+</div>
+<div class='colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='pbench'></a>
+<h3>Benchmarking with PCP and pbench</h3>
+<p>
+This project involves documenting recent advances in the performance
+analysis capabilities provided by PCP within the
+<a href='https://distributed-system-analysis.github.io/pbench/'>pbench</a>
+benchmarking and analysis framework.
+This involves documenting the new pbench direction of using the PCP
+<a href='https://pcp.io/man/man1/pmlogger.1.html'>pmlogger</a>
+tool's remote collection and efficient archive storage capabilities.
+Users should also be guided through the processes for adding new PCP
+metrics into the set collected during a pbench benchmarkng run.
+This could be in the form of tutorials, extensions to the existing
+online pbench documentation, other novel formats, or all of the above.
+</p>
+<p>
+<strong>Expected results:</strong>
+This project provides a good opportunity to the technical writer to
+work hand-in-hand with PCP and pbench developers.
+The new content will need to link in, and form part of the existing pbench
+documentation, such that it guides the (expert level) users how to use the
+tools in an intuitive and informative way.
+</p>
+<p>
+<strong>Mentors:</strong>
+<a href='mailto:ashwinnayak111@gmail.com'>Ashwin Nayak &lt;ashwinnayak111@gmail.com&gt;</a>
+,
+<a href='mailto:nathans@redhat.com'>Nathan Scott &lt;nathans@redhat.com&gt;</a>
+</p>
+<br>
+</div>
+</div>
+<div class='colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='readthedocs-pcp'></a>
+<h3>Convert docbook content to readthedocs and reStructuredText format</h3>
+<p>
+The Performance Co-Pilot documentation currently exists in several forms.
+These are the primary PCP
+<a href='https://pcp.io/'>website</a>
+,
+<a href='https://pcp.io/man/'>man pages</a>
+and the two PCP
+<a href='https://pcp.io/documentation.html'>books</a>
+(docbook format).
+This project will focus on transfering and updating this
+<a href='https://en.wikipedia.org/wiki/DocBook'>docbook</a>
+content to
+<a href='https://en.wikipedia.org/wiki/ReStructuredText'>RST</a>
+such that it can be hosted on the modern, community
+<a href='https://readthedocs.io/'>readthedocs.io</a>
+site.
+This will allow community contributors to more easily change and
+extend this content.
+</p>
+<p>
+<strong>Expected results:</strong>
+You will work with the mentors to setup the Performance Co-Pilot
+<a href='https://readthedocs.io/'>readthedocs.io</a>
+hosting, and by the end of the project we will be able to
+edit and contribute to the books directly through github.
+</p>
+<p>
+<strong>Mentors:</strong>
+<a href='mailto:abhide@redhat.com'>Apurva Bhide &lt;abhide@redhat.com&gt;</a>
+,
+<a href='mailto:nathans@redhat.com'>Nathan Scott &lt;nathans@redhat.com&gt;</a>
+</p>
+<br>
+</div>
+</div>
+<div class='colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='readthedocs-restapi'></a>
+<h3>Convert REST API documentation from man page to developer friendly format</h3>
+<p>
+The Performance Co-Pilot REST API is currently documented in
+<a href='https://pcp.io/man/man3/pmwebapi.3.html'>man page</a>
+format primarily.
+This is not ideal for web developers, so we'd like to transition
+to separate formatted web pages describing individual requests,
+allowed inputs, sample outputs, etc.
+Likely, this would also be in
+<a href='https://en.wikipedia.org/wiki/ReStructuredText'>RST</a>
+form such that it can be hosted on the modern, community
+<a href='https://readthedocs.io/'>readthedocs.io</a>
+site.
+This will allow community contributors to more easily change and
+extend this content.
+</p>
+<p>
+<strong>Expected results:</strong>
+You will work with the mentors to create modern REST API documentation
+for the Performance Co-Pilot, readily consumable by web developers.
+</p>
+<p>
+<strong>Mentors:</strong>
+<a href='mailto:agerstmayr@redhat.com'>Andreas Gerstmayr &lt;agerstmayr@redhat.com&gt;</a>
+,
+<a href='mailto:nathans@redhat.com'>Nathan Scott &lt;nathans@redhat.com&gt;</a>
+</p>
+<br>
+</div>
+</div>
+<div class='colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='readthedocs-pbench'></a>
+<h3>Convert pbench MarkDown content to readthedocs and reStructuredText format</h3>
+<p>
+The pbench benchmarking suite makes use of Performance
+Co-Pilot services for recording arbitrary performance metrics
+during benchmark runs.
+It is currently documented in a traditional fashion similar
+to PCP itself, with much content in large individual files and
+typically in
+<a href='https://en.wikipedia.org/wiki/Markdown'>MarkDown</a>
+format.
+This project will focus on transfering and updating the pbench
+<a href='https://github.com/distributed-system-analysis/pbench/tree/master/doc'>guides</a>
+to
+<a href='https://en.wikipedia.org/wiki/ReStructuredText'>RST</a>
+such that it can be hosted on the modern, community
+<a href='https://readthedocs.io/'>readthedocs.io</a>
+site.
+This will allow community contributors to more easily change and
+extend this content.
+</p>
+<p>
+<strong>Expected results:</strong>
+You will work with the mentors to setup the pbench
+<a href='https://readthedocs.io/'>readthedocs.io</a>
+hosting, and by the end of the project we will be able to
+edit and contribute to the content directly through github.
+</p>
+<p>
+<strong>Mentors:</strong>
+<a href='mailto:ashwinnayak111@gmail.com'>Ashwin Nayak &lt;ashwinnayak111@gmail.com&gt;</a>
+,
+<a href='mailto:nathans@redhat.com'>Nathan Scott &lt;nathans@redhat.com&gt;</a>
+</p>
+<br>
+</div>
+</div>
+</div>
+</div>
+<footer class='global-footer is-typeset'>
+<div class='row-parent'>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>Main Menu</h4>
+<ul>
+<li>
+<a href='/features.html'>Features</a>
+</li>
+<li>
+<a href='/documentation.html'>Documentation</a>
+</li>
+<li>
+<a class='download' href='/download.html'>Download</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>Developers</h4>
+<ul>
+<li>
+<a href='https://github.com/performancecopilot/pcp/issues'>Report an issue</a>
+</li>
+<li>
+<a href='https://github.com/performancecopilot/pcp/projects/1'>Roadmap</a>
+</li>
+<li>
+<a href='/community.html'>Contributing</a>
+</li>
+<li>
+<a href='/team.html'>Team</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>About</h4>
+<ul>
+<li>
+<a href='/testimonials.html'>Testimonials</a>
+</li>
+<li>
+<a href='/faq.html'>FAQ</a>
+</li>
+<li>
+<a href='/website.html'>Website</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>Get Social</h4>
+<ul>
+<li>
+<a class='twitter' href='https://twitter.com/performancepcp' rel='external'>Twitter</a>
+</li>
+<li>
+<a class='github' href='https://github.com/performancecopilot' rel='external'>Github</a>
+</li>
+</ul>
+</div>
+</div>
+</section>
+</div>
+<div class='row'>
+<div class='colspan2-2'>
+<p class='legal'>
+This website is Copyright &copy; 2000-2004 Silicon Graphics Inc, 2007-2010 Aconex, 2012-2020 Red Hat
+</p>
+</div>
+</div>
+</div>
+</footer>
+
+</body>
+</html>

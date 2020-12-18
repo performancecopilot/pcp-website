@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='initial-scale=1' name='viewport'>
+<title>Performance Co-Pilot</title>
+<link href='/assets/css/screen.css' media='all' rel='stylesheet' type='text/css'>
+<link href='/assets/css/master.css' media='all' rel='stylesheet' type='text/css'>
+<link href='/images/pcp.ico' rel='shortcut icon' type='image/ico'>
+
+</head>
+<body>
+<header class='global-header'>
+<div class='row'>
+<h1 class='global-logo colspan12-6 colspan8-4 colspan6-3 colspan2-1 as-grid'>
+<a href='/index.html'>Performance Co-Pilot</a>
+</h1>
+<nav class='global-header__navigation colspan12-6 colspan8-6 colspan6-4 colspan2-1 as-grid'>
+<ul>
+<li>
+<a href='/features.html'>Features</a>
+</li>
+<li>
+<a href='/documentation.html'>Documentation</a>
+</li>
+<li>
+<a href='/download.html'>Download</a>
+</li>
+<li>
+<a href='/community.html'>Get Involved</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+
+<div class='site-content'>
+<div class='how-to is-typeset'>
+<div class='row-parent'>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-8 push12-2 colspan8-8 colspan6-6 colspan2-1 as-grid with-gutter'>
+<div class='col__module--cta'>
+<h2>Features</h2>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div class='row-parent'>
+<div class='features_title row'>
+<h2 id='collect'>Collect</h2>
+</div>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'>
+<div class='col__module--img'>
+<img src='images/collect.png'>
+</div>
+</div>
+<div class='colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'>
+<div class='features_left col__module--img'>
+<p>
+<strong>Kernel agents</strong>
+for each supported platform. The Linux agent
+exports a broad range of performance data from kernels
+since 2.0.36 or later. This includes coverage of activity
+in the areas of: CPU, disk, memory, swapping, network, NFS,
+RPC, filesystems, and per-process statistics.
+</p>
+<p>
+<strong>Other agents</strong>
+export performance data from:
+Databases, Log files, Web servers, Mail systems,
+Cisco routers, Search engines, Cluster infrastructure,
+Application instrumentation (including the JVM)
+and the PCP infrastructure itself.
+</p>
+<p>
+Assorted simple
+<strong>monitoring tools</strong>
+that use the PCP APIs to
+retrieve and display either arbitrary performance metrics, or
+specific groups of metrics (as in pmstat, a cluster-aware
+vmstat lookalike).
+</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div class='row-parent'>
+<div class='features_title row'>
+<h2 id='analyze'>Analyze</h2>
+</div>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'>
+<div class='col__module--img'>
+<img src='images/analyze.png'>
+</div>
+</div>
+<div class='colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'>
+<div class='features_left col__module--img'>
+<p>
+A single
+<strong>API</strong>
+for accessing the performance data that hides
+details of where the data comes from and how it was
+captured and imported into the PCP framework.
+</p>
+<p>
+Integrated archive logging and replay so a client
+application can use the same API to process real-time data
+from a host or historical data from an archive.
+</p>
+<p>
+The framework supports APIs and configuration file formats
+that enable the scope of performance monitoring to be
+extended at all levels.
+</p>
+<p>
+The PCP inference engine supports automated monitoring
+through a rule-based language and interpreter that performs
+user-defined actions when rule predicates are found to be
+true.
+</p>
+<p>
+Access the graph data through a web interface or a GUI
+</p>
+<img src='images/bpftrace-cpu.png'>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div class='row-parent'>
+<div class='features_title row'>
+<h2 id='distributed'>Distributed</h2>
+</div>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'>
+<div class='col__module--img'>
+<img src='images/distributed.png'>
+</div>
+</div>
+<div class='colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'>
+<div class='features_left col__module--img'>
+<p>
+A client-server architecture allows multiple clients to
+monitor the same host, and a single client to monitor
+multiple hosts (e.g. in a cluster). This enables centralized
+monitoring of distributed processing.
+</p>
+<p>
+An endian-safe transport layer for moving performance
+metrics between the collector and the monitoring
+applications over TCP/IP. This means a desktop with PCP can
+monitor remote server systems with different architectures
+and operating systems.
+</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div class='row-parent'>
+<div class='features_title row'>
+<h2 id='extend'>Extend</h2>
+</div>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'>
+<div class='col__module--img'>
+<img src='images/extend.png'>
+</div>
+</div>
+<div class='colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'>
+<div class='features_left col__module--img'>
+<p>
+A "plugin" framework (libraries, APIs, agents and daemon)
+to collect performance data from multiple sources on a
+single host, e.g. from the hardware, the kernel, the
+service layers, the application libraries, and the
+applications themselves.
+</p>
+<p>
+Libraries and sample implementations encourage the
+development of new "plugins" (or agents) to capture and
+export the performance data that matters in your
+application environment, along side the other generic
+performance data.
+</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</div>
+<footer class='global-footer is-typeset'>
+<div class='row-parent'>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>Main Menu</h4>
+<ul>
+<li>
+<a href='/features.html'>Features</a>
+</li>
+<li>
+<a href='/documentation.html'>Documentation</a>
+</li>
+<li>
+<a class='download' href='/download.html'>Download</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>Developers</h4>
+<ul>
+<li>
+<a href='https://github.com/performancecopilot/pcp/issues'>Report an issue</a>
+</li>
+<li>
+<a href='https://github.com/performancecopilot/pcp/projects/1'>Roadmap</a>
+</li>
+<li>
+<a href='/community.html'>Contributing</a>
+</li>
+<li>
+<a href='/team.html'>Team</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>About</h4>
+<ul>
+<li>
+<a href='/testimonials.html'>Testimonials</a>
+</li>
+<li>
+<a href='/faq.html'>FAQ</a>
+</li>
+<li>
+<a href='/website.html'>Website</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>Get Social</h4>
+<ul>
+<li>
+<a class='twitter' href='https://twitter.com/performancepcp' rel='external'>Twitter</a>
+</li>
+<li>
+<a class='github' href='https://github.com/performancecopilot' rel='external'>Github</a>
+</li>
+</ul>
+</div>
+</div>
+</section>
+</div>
+<div class='row'>
+<div class='colspan2-2'>
+<p class='legal'>
+This website is Copyright &copy; 2000-2004 Silicon Graphics Inc, 2007-2010 Aconex, 2012-2020 Red Hat
+</p>
+</div>
+</div>
+</div>
+</footer>
+
+</body>
+</html>

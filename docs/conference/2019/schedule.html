@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='initial-scale=1' name='viewport'>
+<title>Performance Co-Pilot</title>
+<link href='/assets/css/screen.css' media='all' rel='stylesheet' type='text/css'>
+<link href='/assets/css/master.css' media='all' rel='stylesheet' type='text/css'>
+<link href='/images/pcp.ico' rel='shortcut icon' type='image/ico'>
+
+</head>
+<body>
+<header class='global-header'>
+<div class='row'>
+<h1 class='global-logo colspan12-6 colspan8-4 colspan6-3 colspan2-1 as-grid'>
+<a href='/index.html'>Performance Co-Pilot</a>
+</h1>
+<nav class='global-header__navigation colspan12-6 colspan8-6 colspan6-4 colspan2-1 as-grid'>
+<ul>
+<li>
+<a href='/features.html'>Features</a>
+</li>
+<li>
+<a href='/documentation.html'>Documentation</a>
+</li>
+<li>
+<a href='/download.html'>Download</a>
+</li>
+<li>
+<a href='/community.html'>Get Involved</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+
+<div class='melbourne-logo'></div>
+<div class='hero'>
+<div class='colspan12-8 push12-2 colspan8-6 push8-1 colspan6-4 push6-1 colspan2-2'>
+<div class='col__module col__module--cta'>
+<h1>pcp.conf 2019</h1>
+<div class='button-one'>
+<a href='home.html'>Home</a>
+</div>
+<div class='button-two'>
+<a href='https://photos.app.goo.gl/rFC8PctF2e5b7c2N9'>Photos</a>
+</div>
+<div class='button-three'>
+<a href='schedule.html'>Schedule</a>
+</div>
+<div class='button-four'>
+<a href='contact.html'>Contact</a>
+</div>
+<div class='button-five'>
+<a href='https://www.eventbrite.com/e/performance-co-pilot-conference-tickets-52947951749'>Registration</a>
+</div>
+</div>
+</div>
+</div>
+<div class='site-content'>
+<div class='how-to is-typeset'>
+<div class='row-parent'>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-8 push12-2 colspan8-8 colspan6-6 colspan2-1 as-grid with-gutter'>
+<div class='col__module--cta'>
+<h2>Schedule</h2>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div class='row-parent'>
+<div class='features_title row'>
+<h2 id='welcome'>Welcome to Melbourne!</h2>
+</div>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'>
+<div class='col__module--img'>
+<p>
+<strong>Conference Committee</strong>
+</p>
+<br>
+9:00 - 9:15
+</br>
+<br>
+Slides -
+<a href='/papers/welcome-mel.pdf'>PDF</a>
+(329K),
+<a href='/papers/welcome-mel.odp'>ODP</a>
+(545K)
+</br>
+</div>
+</div>
+<div class='colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'>
+<div class='features_left col__module--img'>
+<p>
+A brief introduction by the developers who organised
+the mini-conference, a tip of the hat to our kind
+<a href='https://www.spi-inc.org/projects/pcp/'>sponsors</a>
+and then we'll dive directly into the technical sessions.
+</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div class='row-parent'>
+<div class='features_title row'>
+<h2 id='reflect'>Reflections on Fifty Years of Performance Analysis</h2>
+</div>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'>
+<div class='col__module--img'>
+<p>
+<strong>Ken McDonell</strong>
+</p>
+<br>
+9:15 - 10:00
+</br>
+<br>
+Slides -
+<a href='/papers/50-years-of-performance-analysis.pdf'>PDF</a>
+(4M)
+<a href='/papers/50-years-of-performance-analysis.odp'>ODP</a>
+(2.8M)
+</br>
+</div>
+</div>
+<div class='colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'>
+<div class='features_left col__module--img'>
+<p>
+The origins of many of the concepts and assumptions
+embedded in PCP go back to earlier performance work
+that began almost 50 years ago.
+In the interim, the speed and complexity of systems
+has grown at least as fast as Moore's Law would have
+predicted, roughly 2**25 or more than 30 million times
+bigger and faster.
+</p>
+<p>
+This presentation will provide some historical context
+for the genesis of PCP, then review the major design
+milestones in the evolution of PCP, with commentary
+on what worked, what was a mistake and what might be
+done differently if starting again.
+The true meaning of the original "co-pilot" analogy
+will be explained and we'll review how well that
+objective has been met.
+</p>
+<p>
+Concluding comments will consider some crystal ball
+projections for future performance analysis scenarios.
+</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div class='hero'>
+<div class='colspan12-8 push12-2 colspan8-6 push8-1 colspan6-4 push6-1 colspan2-2'>
+<div class='col__module col__module--cta'>
+<h2>Morning Tea</h2>
+<h3>10:00 - 10:30</h3>
+</div>
+</div>
+</div>
+<div class='row-parent'>
+<div class='features_title row'>
+<h2 id='extend'>Next generation Grafana and PCP</h2>
+</div>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'>
+<div class='col__module--img'>
+<p>
+<strong>Mark Goodwin</strong>
+</p>
+<br>
+10:30 - 11:15
+</br>
+<br>
+Slides -
+<a href='/papers/pcp-grafana-nextgen.pdf'>PDF</a>
+(282K)
+</br>
+</div>
+</div>
+<div class='colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'>
+<div class='features_left col__module--img'>
+<p>
+This talk covers the current state of the integration
+between Grafana and PCP, and the rationale behind our
+increased focus on Grafana and scaling PCP.
+</p>
+<p>
+The challenges in matching PCP time series to Grafana
+data models will be explored, with an introduction to
+using
+<a href='https://redis.io'>Redis</a>
+as a scalable cache for historical PCP data.
+</p>
+<p>
+Live demonstrations and discussion of future work for
+both PCP and Grafana projects will be included.
+</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div class='row-parent'>
+<div class='features_title row'>
+<h2 id='lmsensors'>Linux monitoring sensors (lmsensors)</h2>
+</div>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'>
+<div class='col__module--img'>
+<p>
+<strong>Christian Horn</strong>
+</p>
+<br>
+11:15 - 11:45
+Slides -
+<a href='/papers/lmsensors.20190308.pdf'>PDF</a>
+(210K)
+</br>
+</div>
+</div>
+<div class='colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'>
+<div class='features_left col__module--img'>
+<p>
+Findings from my first foray into PCP - updating the
+lmsensors metrics (PMDA) code.
+</p>
+<p>
+The motivation for making these changes will be
+discussed.  I will cover the various implementation
+stages, documentation, aids for new developers and
+ideas for further improvement.
+</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div class='row-parent'>
+<div class='features_title row'>
+<h2 id='lmsensors'>Open discussion</h2>
+</div>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'>
+<div class='col__module--img'>
+<p>
+<strong>Lukas Berk, Christian Horn</strong>
+</p>
+<br>
+11:45 - 12:00
+</br>
+<br>
+Slides -
+<a href='/papers/CommunityExpectations.pdf'>PDF</a>
+(90K)
+</br>
+</div>
+</div>
+<div class='colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'>
+<div class='features_left col__module--img'>
+<p>
+Open discussion soliciting ideas and RFEs in general
+from all attendees regarding initially the power
+management metrics, but moving into discussion of
+improving the experience for new PCP hackers and
+finally any more general needs or ideas others have
+for PCP development.
+</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div class='hero'>
+<div class='colspan12-8 push12-2 colspan8-6 push8-1 colspan6-4 push6-1 colspan2-2'>
+<div class='col__module col__module--cta'>
+<h2>Lunch</h2>
+<h3>12:00 - 13:30</h3>
+</div>
+</div>
+</div>
+<div class='row-parent'>
+<div class='features_title row'>
+<h2 id='process'>Process refinements for commits, QA and release</h2>
+</div>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'>
+<div class='col__module--img'>
+<p>
+<strong>Lukas Berk</strong>
+</p>
+<br>
+13:30 - 14:15
+</br>
+</div>
+</div>
+<div class='colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'>
+<div class='features_left col__module--img'>
+<p>
+Removing process barriers before people contributing
+to PCP and PCP maintainers alike has been a goal of
+mine for some time.
+There are places where we could streamline processes
+in terms of time and accuracy through automation,
+and also remove single-points-of-failure making PCP
+a more resilient project overall.
+</p>
+<p>
+This talk will also cover my recent findings while
+using Vagrant-based VMs to address:
+</p>
+<p>
+<ol>
+<li>
+adding commit (PR) verification before merging,
+not afterward
+</li>
+<li>
+assisting developers with QA failure diagnosis
+</li>
+<li>
+automating the release build process
+</li>
+</ol>
+</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div class='row-parent'>
+<div class='features_title row'>
+<h2 id='pidstat'>PCP for Customer Support</h2>
+</div>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'>
+<div class='col__module--img'>
+<p>
+<strong>Vaibhav Nagare</strong>
+</p>
+<br>
+14:15 - 15:00
+</br>
+<br>
+Slides -
+<a href='/papers/pcp-customer-support.pdf'>PDF</a>
+(1.5M),
+<a href='/papers/pcp-customer-support.odp'>ODP</a>
+(7.1M)
+</br>
+</div>
+</div>
+<div class='colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'>
+<div class='features_left col__module--img'>
+<p>
+An overview of use of PCP tools in the Red Hat
+customer support context, by worked example.
+</p>
+<p>
+This talk will also cover the way in which the
+the PCP pidstat utility was extended to add in
+missing process argument informations, and the
+first-time experience of adding code to PCP.
+</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div class='hero'>
+<div class='colspan12-8 push12-2 colspan8-6 push8-1 colspan6-4 push6-1 colspan2-2'>
+<div class='col__module col__module--cta'>
+<h2>Afternoon Tea</h2>
+<h3>15:00 - 15:30</h3>
+</div>
+</div>
+</div>
+<div class='row-parent'>
+<div class='features_title row'>
+<h2 id='tracing'>Event tracing at Aconex</h2>
+</div>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'>
+<div class='col__module--img'>
+<p>
+<strong>Paul Smith</strong>
+</p>
+<br>
+15:30 - 16:00
+</br>
+<br>
+Slides -
+<a href='/papers/pcp-conf-event-tracing-aconex.pdf'>PDF</a>
+(5.1M)
+</br>
+</div>
+</div>
+<div class='colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'>
+<div class='features_left col__module--img'>
+<p>
+Aconex is a cloud platform for connecting people involved
+in projects in construction and engineering.
+Aconex has seen significant value from its PCP deployment,
+and developed the Parfait project to efficiently interface
+Java web applications to PCP.
+</p>
+<p>
+This talk will explore the mechanisms through which Aconex
+engineers added and utilize per-request tracing with their
+production web applications.
+</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div class='row-parent'>
+<div class='features_title row'>
+<h2 id='review'>What's new and planned?</h2>
+</div>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'>
+<div class='col__module--img'>
+<p>
+<strong>Nathan Scott</strong>
+</p>
+<br>
+16:00 - 16:45
+</br>
+<br>
+Slides -
+<a href='/papers/whats-new-mel.pdf'>PDF</a>
+(1.8M),
+<a href='/papers/whats-new-mel.odp'>ODP</a>
+(1.4M)
+</br>
+</div>
+</div>
+<div class='colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'>
+<div class='features_left col__module--img'>
+<p>
+Features and improvements are being added to PCP
+all the time.
+This session will go through many of the features
+recently added in the past year, and then go onto
+covering the short term
+<a href='https://github.com/performancecopilot/pcp/projects/1'>roadmap</a>
+of active projects.
+</p>
+<p>
+Demonstrations of features from some newer tools,
+REST APIs, and kernel metrics will be presented.
+</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div class='row-parent'>
+<div class='features_title row'>
+<h2 id='extend'>Wrapup</h2>
+</div>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'>
+<div class='col__module--img'>
+<p>
+<strong>Conference Committee</strong>
+</p>
+<br>
+16:45 - 17:00
+</br>
+<br>
+Slides -
+<a href='/papers/closing-mel.pdf'>PDF</a>
+(510K),
+<a href='/papers/closing-mel.odp'>ODP</a>
+(821K)
+</br>
+</div>
+</div>
+<div class='colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'>
+<div class='features_left col__module--img'>
+<p>
+To close the day we will hold an open ended discussion.
+This session will be available for everyone to bring up
+any topics or directions you would like to see PCP take.
+</p>
+<p>
+We will also hold a quick retrospective on the conference
+itself, where attendees and speakers can raise anything
+they would like to see done differently, or kept the same
+in future PCP conferences.
+</p>
+<p>
+Locations for next years conference will also be open
+for discussion!
+</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</div>
+<footer class='global-footer is-typeset'>
+<div class='row-parent'>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>Main Menu</h4>
+<ul>
+<li>
+<a href='/features.html'>Features</a>
+</li>
+<li>
+<a href='/documentation.html'>Documentation</a>
+</li>
+<li>
+<a class='download' href='/download.html'>Download</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>Developers</h4>
+<ul>
+<li>
+<a href='https://github.com/performancecopilot/pcp/issues'>Report an issue</a>
+</li>
+<li>
+<a href='https://github.com/performancecopilot/pcp/projects/1'>Roadmap</a>
+</li>
+<li>
+<a href='/community.html'>Contributing</a>
+</li>
+<li>
+<a href='/team.html'>Team</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>About</h4>
+<ul>
+<li>
+<a href='/testimonials.html'>Testimonials</a>
+</li>
+<li>
+<a href='/faq.html'>FAQ</a>
+</li>
+<li>
+<a href='/website.html'>Website</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>Get Social</h4>
+<ul>
+<li>
+<a class='twitter' href='https://twitter.com/performancepcp' rel='external'>Twitter</a>
+</li>
+<li>
+<a class='github' href='https://github.com/performancecopilot' rel='external'>Github</a>
+</li>
+</ul>
+</div>
+</div>
+</section>
+</div>
+<div class='row'>
+<div class='colspan2-2'>
+<p class='legal'>
+This website is Copyright &copy; 2000-2004 Silicon Graphics Inc, 2007-2010 Aconex, 2012-2020 Red Hat
+</p>
+</div>
+</div>
+</div>
+</footer>
+
+</body>
+</html>

@@ -63,7 +63,7 @@
               sources of performance metrics are equivalent from the perspective
               of a client application consuming and processing performance data.
               The PCP
-              %a{:href => 'https://pcp.io/man/man5/LOGARCHIVE.5.html'} archive
+              %a{:href => 'https://man7.org/linux/man-pages/man5/LOGARCHIVE.5.html'} archive
               format is the corner-stone of the historical data support.
               This project aims to improve the usefulness and performance of
               PCP archives through a number of independent sub-projects.
@@ -77,7 +77,7 @@
                   counters that might be reset at system or service restarts,
                   small amounts of missing data, etc. while maintaining the
                   semantics of the original data.
-                  %a{:href => 'https://pcp.io/man/man1/pmlogreduce.1.html'} pmlogreduce
+                  %a{:href => 'https://man7.org/linux/man-pages/man1/pmlogreduce.1.html'} pmlogreduce
                   already does some of this, but there are a number of issues
                   that can best be addressed by a complete re-implementation.
                 %li
@@ -90,7 +90,7 @@
                   enhanced by lazy (just in time) loading of metadata.
               These projects will require the student to gain a deep
               understanding of the PCP archive format created by
-              %a{:href => 'https://pcp.io/man/man1/pmlogger'} pmlogger
+              %a{:href => 'https://man7.org/linux/man-pages/man1/pmlogger'} pmlogger
               and to apply basic statistical concepts to the transformation of
               timeseries data.
             %p
@@ -279,9 +279,9 @@
               %a{:href => 'https://redis.io'} Redis
               distributed data store and its native timeseries support.
               The
-              %a{:href => 'https://pcp.io/man/man1/pmseries.1.html'} pmseries
+              %a{:href => 'https://man7.org/linux/man-pages/man1/pmseries.1.html'} pmseries
               utility and
-              %a{:href => 'https://pcp.io/man/man1/pmproxy.1.html'} pmproxy
+              %a{:href => 'https://man7.org/linux/man-pages/man1/pmproxy.1.html'} pmproxy
               daemon provide the tooling and APIs to support this.
               This project will explore scalability limits of each these programs,
               with the aim of scaling up PCP timeseries injest and querying to the
@@ -332,7 +332,7 @@
               The Grafana PCP data source accesses all PCP metric data via
               %a{:href => 'https://redis.io/'} Redis
               and
-              %a{:href => 'https://pcp.io/man/man1/pmproxy.1.html'} pmproxy
+              %a{:href => 'https://man7.org/linux/man-pages/man1/pmproxy.1.html'} pmproxy
               REST APIs.
               Resulting Grafana charts and panels can be exported in JSON format
               with template variables and included as part of Grafana itself, or
@@ -344,7 +344,7 @@
               panel displays time series data or geohash data from a metric
               source overlaid on a world map.
               The PCP 
-              %a{:href => 'https://pcp.io/man/man1/pmseries.1.html'} pmseries
+              %a{:href => 'https://man7.org/linux/man-pages/man1/pmseries.1.html'} pmseries
               tool and APIs can injest and respond to queries about
               performance metrics labeled with geographical location
               information, with the help of the

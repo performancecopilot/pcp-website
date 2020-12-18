@@ -58,7 +58,7 @@
                       to help you get started.
                     %li
                       Peruse the introductory chapters of the
-                      %a{:href => 'https://pcp.io/books/PCP_UAG/html/'} PCP Users and Administrators Guide
+                      %a{:href => 'https://pcp.readthedocs.io'} PCP Guides
                   %br
 
               %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
@@ -114,21 +114,20 @@
                 distributed data store
               %li
                 live, on-host metrics provided by the Vector data source
-                (supercedes the original standalone
-                %a{:href => 'http://getvector.io/'} Vector
-                web application, which is now deprecated)
+                (supercedes the original standalone Vector web application,
+                which is now deprecated)
               %li
                 on-demand kernel metrics provided by
                 %a{:href => 'https://github.com/iovisor/bpftrace'} bpftrace scripts
             %p
               All three data sources access PCP metric data via
-              %a{:href => 'https://pcp.io/man/man1/pmproxy.1.html'} pmproxy
+              %a{:href => 'https://man7.org/linux/man-pages/man1/pmproxy.1.html'} pmproxy
               REST APIs, which in turn requests the metric values from the scalable
               %a{:href => 'https://redis.io/'} Redis
               database,
-              %a{:href => 'https://pcp.io/man/man3/pmapi.3.html'} pmapi
+              %a{:href => 'https://man7.org/linux/man/man3/pmapi.3.html'} pmapi
               or the
-              %a{:href => 'https://github.com/performancecopilot/pcp/blob/master/src/pmdas/bpftrace/README.md'} bpftrace PMDA.
+              %a{:href => 'https://man7.org/linux/man/man1/pmdabpftrace.1.html'} bpftrace PMDA.
               Grafana dashboards can be exported in JSON format and shipped with grafana-pcp or
               imported using the Grafana provisioning mechanisms.
             %p
@@ -160,7 +159,7 @@
             %h3 Provide How-To style launching points
             %p
               One area of need in the PCP documentation identified at last years
-              %a{:href => 'https://pcp.io/conference/2019/home.html'} conference
+              %a{:href => '/conference/2019/home.html'} conference
               was for us to provide short, hands-on introductory texts and videos
               that guide people toward the in-depth documentation they need.
               The deep documentation exists and is needed, but its buried in alot
@@ -191,7 +190,7 @@
               %a{:href => 'https://distributed-system-analysis.github.io/pbench/'} pbench
               benchmarking and analysis framework.
               This involves documenting the new pbench direction of using the PCP
-              %a{:href => 'https://pcp.io/man/man1/pmlogger.1.html'} pmlogger
+              %a{:href => 'https://man7.org/linux/man-pages/man1/pmlogger.1.html'} pmlogger
               tool's remote collection and efficient archive storage capabilities.
               Users should also be guided through the processes for adding new PCP
               metrics into the set collected during a pbench benchmarkng run.
@@ -219,11 +218,7 @@
               The Performance Co-Pilot documentation currently exists in several forms.
               These are the primary PCP
               %a{:href => 'https://pcp.io/'} website
-              ,
-              %a{:href => 'https://pcp.io/man/'} man pages
-              and the two PCP
-              %a{:href => 'https://pcp.io/documentation.html'} books
-              (docbook format).
+              and the PCP books (docbook format).
               This project will focus on transfering and updating this
               %a{:href => 'https://en.wikipedia.org/wiki/DocBook'} docbook
               content to
@@ -252,7 +247,7 @@
             %h3 Convert REST API documentation from man page to developer friendly format
             %p
               The Performance Co-Pilot REST API is currently documented in
-              %a{:href => 'https://pcp.io/man/man3/pmwebapi.3.html'} man page
+              %a{:href => 'https://man7.org/linux/man-pages/man3/pmwebapi.3.html'} man page
               format primarily.
               This is not ideal for web developers, so we'd like to transition
               to separate formatted web pages describing individual requests,

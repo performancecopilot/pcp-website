@@ -1,61 +1,9 @@
-*** Website environment installation/configuration ***
+*** pcp.io website build/configuration ***
 
-## Manual process for F20
+1) Install the following packages (Fedora):
+dnf install -y git ruby rubygem-haml lynx rsync linkchecker rubygems
 
-Instructions tested on an uptodate F20 installed with the minimal profile:
-1) Install the following packages:
-dnf install -y git ruby rubygem-compass rubygem-haml lynx python rsync publican autoconf \
-  avahi-devel bison cairo-devel cyrus-sasl-devel desktop-file-utils flex libibmad-devel \
-  libibumad-devel libmicrohttpd-devel ncurses-devel nss-devel perl-ExtUtils-MakeMaker \
-  python-devel python3-devel qt-devel readline-devel rpm-devel systemd-devel systemtap-sdt-devel \
-  glibc-devel gcc gcc-c++ man2html vim linkchecker python-beautifulsoup4 rubygems python-requests
-
-1.a) Install the following rubygem:
+2) Install the following rubygem:
   gem install sass-globbing
 
-2) Clone the following repos:
-  git clone https://github.com/performancecopilot/performancecopilot.github.io [PCPWEB]
-  git clone https://github.com/performancecopilot/pcp-website.git [PCPWEBSITE]
-  git clone https://github.com/performancecopilot/pcp.git [PCP]
-
-  Note: these build instructions assume PCPWEB is up-to-date locally. If not, then you
-  should either  cd PCPWEB; git pull  or move the existing tree aside and reclone with:
-    git clone git@github.com:performancecopilot/performancecopilot.github.io.git
-  Otherwise after running the build in PCPWEBSITE, the make install (i.e. git push) will
-  probably fail because upstream has more recent commits than locally.
-
-3) Symlink the pcp-brand:
-ln -s [PCPWEBSITE]/pcp-brand /usr/share/publican/Common_Content/
-
-4) Compile the pcp git tree with:
-  cd [PCP] && ./configure --with-books --with-books-brand=pcp-brand && cd books && make
-
-This will have created all the books in all the needed formats
-using the pcp-brand
-
-5) if doing a new release, edit index.haml and add to the "News" section, using
-similar formatting as the previous news/release item. Beware indentation and
-tabs - when editing, best to use set sw=4 ts=8 expandtab
-
-6) Create the website:
-Adjust the PCPGIT and DSTLOCAL in [PCPWEBSITE]/Makefile or
-[PCPWEBSITE]/localdefs then
-  cd [PCPWEBSITE] && make
-
-This will create the website content in $DSTLOCAL
-Check index.html was built correctly - any syntax errors in index.haml will result
-in a zero size top level index.html but the build will still seem to have succeeded.
-If all OK, then commit the contents to PCPWEB and git push.
-
-You can run 'make check' to have linkchecker report on all the links, but it
-seems it requires the python-requests-2.2.0 package that is present in F21
-
-## Vagrant based site build
-
-With vagrant and virtualbox installed, run:
-
-`vagrant up`
-
-This will build the site in the `generated-pcp-website` directory
-
-rsync the content to webserver
+3) if doing a new PCP release, see NEWRELEASE file.

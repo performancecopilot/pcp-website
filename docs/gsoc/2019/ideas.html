@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='initial-scale=1' name='viewport'>
+<title>Performance Co-Pilot</title>
+<link href='/assets/css/screen.css' media='all' rel='stylesheet' type='text/css'>
+<link href='/assets/css/master.css' media='all' rel='stylesheet' type='text/css'>
+<link href='/images/pcp.ico' rel='shortcut icon' type='image/ico'>
+
+</head>
+<body>
+<header class='global-header'>
+<div class='row'>
+<h1 class='global-logo colspan12-6 colspan8-4 colspan6-3 colspan2-1 as-grid'>
+<a href='/index.html'>Performance Co-Pilot</a>
+</h1>
+<nav class='global-header__navigation colspan12-6 colspan8-6 colspan6-4 colspan2-1 as-grid'>
+<ul>
+<li>
+<a href='/features.html'>Features</a>
+</li>
+<li>
+<a href='/documentation.html'>Documentation</a>
+</li>
+<li>
+<a href='/download.html'>Download</a>
+</li>
+<li>
+<a href='/community.html'>Get Involved</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+
+<div class='site-content'>
+<div class='how-to is-typeset'>
+<div class='row-parent'>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<br>
+<h3>Ideas List</h3>
+<ol>
+<li>
+Analysis Tools
+<ul>
+<li>
+<a href='#archives'>Enhancements for PCP archives</a>
+</li>
+<li>
+<a href='#collectl'>PCP version of collectl</a>
+</li>
+<li>
+<a href='#nmon'>PCP version of nmon</a>
+</li>
+</ul>
+</li>
+<li>
+Integration Projects
+<ul>
+<li>
+<a href='#statsd'>Using metrics from statsd with PCP</a>
+</li>
+</ul>
+<ul>
+<li>
+<a href='#bpftrace'>Using metrics from bpftrace with PCP and Vector</a>
+</li>
+</ul>
+</li>
+<li>
+Web Projects
+<ul>
+<li>
+<a href='#redis'>Scaling timeseries injest and querying</a>
+</li>
+<li>
+<a href='#grafana'>Grafana dashboards for PCP metrics</a>
+</li>
+</ul>
+</li>
+</ol>
+<br>
+</div>
+</div>
+<div class='colspan12-4 colspan8-3 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module--cta'>
+<h2>Google</h2>
+<h2>Summer of Code</h2>
+<h2>2019</h2>
+<br>
+(
+<a href='https://summerofcode.withgoogle.com'>Home</a>
+)
+</br>
+<br>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div class='colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='archives'></a>
+<h3>Enhancements for PCP archives</h3>
+<p>
+One of the key features of PCP is that real-time and historical
+sources of performance metrics are equivalent from the perspective
+of a client application consuming and processing performance data.
+The PCP
+<a href='https://pcp.io/man/man5/LOGARCHIVE.5.html'>archive</a>
+format is the corner-stone of the historical data support.
+This project aims to improve the usefulness and performance of
+PCP archives through a number of independent sub-projects.
+<ul>
+<li>
+Over time, we would like to reduce the volume of archived data
+by increasing the effective sampling interval, e.g. going from
+sub-minute sampling for the most recent archives to hourly
+sampling for weekly or monthly archives.
+This process needs to account for counters that might wrap,
+counters that might be reset at system or service restarts,
+small amounts of missing data, etc. while maintaining the
+semantics of the original data.
+<a href='https://pcp.io/man/man1/pmlogreduce.1.html'>pmlogreduce</a>
+already does some of this, but there are a number of issues
+that can best be addressed by a complete re-implementation.
+</li>
+<li>
+There is considerable redundancy in the on-disk metadata that
+could be reduced by a new incremental format for instance
+domains.
+</li>
+<li>
+When an archive is opened, not all the metrics are of interest
+to a particular applications, so run-time efficiency could be
+enhanced by lazy (just in time) loading of metadata.
+</li>
+</ul>
+These projects will require the student to gain a deep
+understanding of the PCP archive format created by
+<a href='https://pcp.io/man/man1/pmlogger'>pmlogger</a>
+and to apply basic statistical concepts to the transformation of
+timeseries data.
+</p>
+<p>
+<strong>Expected results:</strong>
+The student will extend their C language programming skills
+with both green fields and maintenance development within a
+big and mature software project.
+They can also expect to gain deep insight into the semantics
+of performance data stored within a PCP archive.
+</p>
+<p>
+<strong>Prerequisite knowledge:</strong>
+C programming.
+</p>
+<p>
+<strong>Skill level:</strong>
+Intermediate-Advanced
+</p>
+<p>
+<strong>Mentors:</strong>
+<a href='mailto:kenj@kenj.id.au'>Ken McDonell</a>
+,
+<a href='mailto:mgoodwin@redhat.com'>Mark Goodwin</a>
+</p>
+<p>
+<strong>Interested students so far:</strong>
+1
+</p>
+<br>
+</div>
+</div>
+<div class='colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='collectl'></a>
+<h3>PCP version of collectl</h3>
+<p>
+The Performance Co-Pilot provides a cross-platform API for accessing
+live and historical performance data from the local or remote hosts.
+An initial PCP implementation (pcp-collectl) of the
+<a href='http://collectl.sourceforge.net/'>Collectl</a>
+utility provides some initial support for the same style of reports.
+This project will extend that initial code to complete the reporting
+coverage provided by the initial collectl utility.
+The pcp-collectl utility will be updated to use the more modern
+<a href='http://man7.org/linux/man-pages/man1/pmrep.1.html'>pmrep</a>
+utility modules under the covers.
+Additionally, the test coverage and documentation will be improved.
+</p>
+<p>
+<strong>Expected results:</strong>
+The student will extend their Python programming skills,
+and can also expect to gain insight into the meaning of the kernel
+data reported by this tool, and the sampling techniques it uses.
+</p>
+<p>
+<strong>Prerequisite knowledge:</strong>
+Python programming.
+</p>
+<p>
+<strong>Skill level:</strong>
+Introductory-Intermediate
+</p>
+<p>
+<strong>Mentors:</strong>
+<a href='mailto:mgoodwin@redhat.com'>Mark Goodwin</a>
+,
+<a href='mailto:nathans@redhat.com'>Nathan Scott</a>
+</p>
+<p>
+<strong>Interested students so far:</strong>
+3
+</p>
+<br>
+</div>
+</div>
+<div class='colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='nmon'></a>
+<h3>PCP version of nmon</h3>
+<p>
+The Performance Co-Pilot provides a cross-platform API for accessing
+live and historical performance data from the local or remote hosts.
+The
+<a href='http://nmon.sourceforge.net/pmwiki.php'>nmon</a>
+utility provides a curses-based interface for reporting on a variety
+of system and per-process metrics to a console, as well as a CSV
+(Comma Separated Value) output format.
+This project will implement a version of the nmon utility using the
+PCP metrics API (PMAPI), based on the current nmon source code.
+Additionally, regression tests will be implemented and documentation
+will be improved.
+</p>
+<p>
+<strong>Expected results:</strong>
+The student will extend their C language programming skills,
+and can also expect to gain insight into the meaning of the kernel
+data reported by this tool, and the sampling techniques it uses.
+</p>
+<p>
+<strong>Prerequisite knowledge:</strong>
+C programming.
+</p>
+<p>
+<strong>Skill level:</strong>
+Introductory-Intermediate
+</p>
+<p>
+<strong>Mentors:</strong>
+<a href='mailto:nathans@redhat.com'>Nathan Scott</a>
+,
+<a href='mailto:mgoodwin@redhat.com'>Mark Goodwin</a>
+</p>
+<p>
+<strong>Interested students so far:</strong>
+5
+</p>
+<br>
+</div>
+</div>
+<div class='colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='statsd'></a>
+<h3>Using metrics from statsd with PCP</h3>
+<p>
+Performance Co-Pilot is a system performance analysis toolkit which
+currently does not provide an agent for
+<a href='https://github.com/etsy/statsd'>statsd</a>
+protocol, a text-based UDP protocol for
+<a href='https://codeascraft.com/2011/02/15/measure-anything-measure-everything/'>performance data</a>
+aggregation.
+The goal is to design and write a PCP agent as a multi-threaded C
+process performing aggregation of statsd packets as pluggable modules
+with two implementations: exact computation and HDR histogram with
+parsing code as pluggable modules: custom parser or ragel-based parser.
+Additionally, regression tests will be implemented and documentation
+provided.
+</p>
+<p>
+<strong>Expected results:</strong>
+The student will extend their C language programming skills,
+and learn about the inner workings of performance analysis tools
+like PCP and statsd.
+</p>
+<p>
+<strong>Prerequisite knowledge:</strong>
+C programming.
+</p>
+<p>
+<strong>Skill level:</strong>
+Introductory-Intermediate
+</p>
+<p>
+<strong>Mentors:</strong>
+<a href='mailto:lzap@redhat.com'>Lukas Zapletal</a>
+,
+<a href='mailto:nathans@redhat.com'>Nathan Scott</a>
+</p>
+<p>
+<strong>Interested students so far:</strong>
+3
+</p>
+<br>
+</div>
+</div>
+<div class='colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='bpftrace'></a>
+<h3>Using metrics from bpftrace with PCP and Vector</h3>
+<p>
+<a href='https://github.com/iovisor/pbftrace'>bpftrace</a>
+is a high-level tracing language for efficient kernel tracing
+using the Linux kernel eBPF (extended Berkeley Packet Filters)
+feature.
+The goal is to design and write a PCP agent which runs arbitrary
+bpftrace scripts and stores the output as PCP metrics, and a new
+<a href='http://http://getvector.io/'>Vector</a>
+widget which visualizes these collected metrics in a live heat
+map or table.
+</p>
+<p>
+The Vector widget will include a bpftrace query builder for the
+rapid creation of bpftrace scripts.
+</p>
+<p>
+Regression tests will be implemented and documentation
+provided.
+</p>
+<p>
+<strong>Expected results:</strong>
+The student will extend their C language programming skills,
+and learn about the inner workings of performance analysis tools
+like PCP, Vector and eBPF.
+</p>
+<p>
+<strong>Prerequisite knowledge:</strong>
+C and Javascript programming.
+</p>
+<p>
+<strong>Skill level:</strong>
+Advanced
+</p>
+<p>
+<strong>Mentors:</strong>
+<a href='mailto:mspiers@netflix.com'>Martin Spiers</a>
+,
+<a href='mailto:myllynen@redhat.com'>Marko Myllynen</a>
+</p>
+<p>
+<strong>Interested students so far:</strong>
+1
+</p>
+<br>
+</div>
+</div>
+<div class='colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='redis'></a>
+<h3>Scaling timeseries injest and querying</h3>
+<p>
+The Performance Co-Pilot approach to scalable, multi-host performance
+analysis builds on the
+<a href='https://redis.io'>Redis</a>
+distributed data store and its native timeseries support.
+The
+<a href='https://pcp.io/man/man1/pmseries.1.html'>pmseries</a>
+utility and
+<a href='https://pcp.io/man/man1/pmproxy.1.html'>pmproxy</a>
+daemon provide the tooling and APIs to support this.
+This project will explore scalability limits of each these programs,
+with the aim of scaling up PCP timeseries injest and querying to the
+level of many-thousands-of-nodes.
+</p>
+<p>
+<strong>Expected results:</strong>
+The student will extend their C language programming skills,
+learn about the
+<a href='https://redis.io'>Redis</a>
+distributed data store (and
+<a href='https://redis.io/topics/cluster-spec'>Redis clustering</a>
+in particular),
+gain deep familiarity with performance tuning tools such as
+<a href='https://perf.wiki.kernel.org/index.php/Tutorial'>perf</a>
+as well as learning to apply PCP tools to analyse complex distributed
+system performance problems.
+</p>
+<p>
+<strong>Prerequisite knowledge:</strong>
+C programming.
+</p>
+<p>
+<strong>Skill level:</strong>
+Intermediate-Advanced
+</p>
+<p>
+<strong>Mentors:</strong>
+<a href='mailto:nathans@redhat.com'>Nathan Scott</a>
+,
+<a href='mailto:mgoodwin@redhat.com'>Mark Goodwin</a>
+</p>
+<p>
+<strong>Interested students so far:</strong>
+2
+</p>
+<br>
+</div>
+</div>
+<div class='colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='grafana'></a>
+<h3>Grafana dashboards for PCP metrics</h3>
+<p>
+This project will involve developing Grafana
+<a href='https://grafana.com/dashboards'>dashboards</a>
+and panels for displaying high level performance data across
+the common system level performance analysis domains - CPU,
+memory, network, disk, applications (and many more).
+In Grafana, each high level panel can be linked (via a URL) to
+more detailed performance data, and thus offer an
+intuitive drill-down model for rapidly solving common, yet
+complex, performance issues.
+</p>
+<p>
+The Grafana PCP data source accesses all PCP metric data via
+<a href='https://redis.io/'>Redis</a>
+and
+<a href='https://pcp.io/man/man1/pmproxy.1.html'>pmproxy</a>
+REST APIs.
+Resulting Grafana charts and panels can be exported in JSON format
+with template variables and included as part of Grafana itself, or
+shipped separately as part of PCP and installed/imported using the
+Grafana provisioning mechanisms.
+</p>
+<p>
+Additionally, the Grafana
+<a href='https://grafana.com/plugins/grafana-worldmap-panel/installation'>world map</a>
+panel displays time series data or geohash data from a metric
+source overlaid on a world map.
+The PCP
+<a href='https://pcp.io/man/man1/pmseries.1.html'>pmseries</a>
+tool and APIs can injest and respond to queries about
+performance metrics labeled with geographical location
+information, with the help of the
+<a href='https://redis.io/commands/geohash'>geohash</a>
+support in the
+<a href='https://redis.io'>Redis</a>
+distributed data store.
+This project will implement tooling and APIs to interface
+Grafana and Redis for PCP metrics.
+</p>
+<p>
+<strong>Expected results:</strong>
+The student will extend their C and Javascript programming
+skills, will gain insight into the semantics of various forms of
+performance data available from systems and applications, and
+visualization techniques appropriate to their analysis.
+The student will also learn about the
+<a href='https://redis.io'>Redis</a>
+distributed data store and geolocation services.
+</p>
+<p>
+<strong>Prerequisite knowledge:</strong>
+C, Javascript programming.
+</p>
+<p>
+<strong>Skill level:</strong>
+Intermediate
+</p>
+<p>
+<strong>Mentors:</strong>
+<a href='mailto:mgoodwin@redhat.com'>Mark Goodwin</a>
+,
+<a href='mailto:nathans@redhat.com'>Nathan Scott</a>
+</p>
+<p>
+<strong>Interested students so far:</strong>
+6
+</p>
+<br>
+</div>
+</div>
+</div>
+</div>
+<footer class='global-footer is-typeset'>
+<div class='row-parent'>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>Main Menu</h4>
+<ul>
+<li>
+<a href='/features.html'>Features</a>
+</li>
+<li>
+<a href='/documentation.html'>Documentation</a>
+</li>
+<li>
+<a class='download' href='/download.html'>Download</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>Developers</h4>
+<ul>
+<li>
+<a href='https://github.com/performancecopilot/pcp/issues'>Report an issue</a>
+</li>
+<li>
+<a href='https://github.com/performancecopilot/pcp/projects/1'>Roadmap</a>
+</li>
+<li>
+<a href='/community.html'>Contributing</a>
+</li>
+<li>
+<a href='/team.html'>Team</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>About</h4>
+<ul>
+<li>
+<a href='/testimonials.html'>Testimonials</a>
+</li>
+<li>
+<a href='/faq.html'>FAQ</a>
+</li>
+<li>
+<a href='/website.html'>Website</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>Get Social</h4>
+<ul>
+<li>
+<a class='twitter' href='https://twitter.com/performancepcp' rel='external'>Twitter</a>
+</li>
+<li>
+<a class='github' href='https://github.com/performancecopilot' rel='external'>Github</a>
+</li>
+</ul>
+</div>
+</div>
+</section>
+</div>
+<div class='row'>
+<div class='colspan2-2'>
+<p class='legal'>
+This website is Copyright &copy; 2000-2004 Silicon Graphics Inc, 2007-2010 Aconex, 2012-2020 Red Hat
+</p>
+</div>
+</div>
+</div>
+</footer>
+
+</body>
+</html>

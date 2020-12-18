@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='initial-scale=1' name='viewport'>
+<title>Performance Co-Pilot</title>
+<link href='/assets/css/screen.css' media='all' rel='stylesheet' type='text/css'>
+<link href='/assets/css/master.css' media='all' rel='stylesheet' type='text/css'>
+<link href='/images/pcp.ico' rel='shortcut icon' type='image/ico'>
+
+</head>
+<body>
+<header class='global-header'>
+<div class='row'>
+<h1 class='global-logo colspan12-6 colspan8-4 colspan6-3 colspan2-1 as-grid'>
+<a href='/index.html'>Performance Co-Pilot</a>
+</h1>
+<nav class='global-header__navigation colspan12-6 colspan8-6 colspan6-4 colspan2-1 as-grid'>
+<ul>
+<li>
+<a href='/features.html'>Features</a>
+</li>
+<li>
+<a href='/documentation.html'>Documentation</a>
+</li>
+<li>
+<a href='/download.html'>Download</a>
+</li>
+<li>
+<a href='/community.html'>Get Involved</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+
+<div class='site-content'>
+<div class='how-to is-typeset'>
+<div class='row-parent'>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-4 colspan8-3 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<br>
+<h3>Ideas List</h3>
+<ul>
+<li>
+<a href='#gocode'>Go instrumentation</a>
+</li>
+<li>
+<a href='#vector'>Flame Graphs in Vector</a>
+</li>
+<li>
+<a href='#golang'>Go language agents</a>
+</li>
+<li>
+<a href='#jolokia'>Jolokia meets PCP</a>
+</li>
+<li>
+<a href='#rubylang'>Ruby language agents</a>
+</li>
+<li>
+<a href='#pmlogger'>Archive optimizations</a>
+</li>
+<li>
+<a href='#blktrace'>Linux block tracing agent</a>
+</li>
+<li>
+<a href='#monitors'>Console monitoring tools</a>
+</li>
+<li>
+<a href='#windows'>Native 64-bit Windows PCP</a>
+</li>
+</ul>
+<br>
+</div>
+</div>
+<div class='colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'>
+<div class='col__module--cta'>
+<h2>Google</h2>
+<h2>Summer of Code</h2>
+<h2>2016</h2>
+<br>
+(
+<a href='https://summerofcode.withgoogle.com'>Home</a>
+)
+</br>
+<br>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div class='colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='gocode'></a>
+<h3>Instrumentation of Go programs</h3>
+<p>
+PCP supports an efficient memory-mapped instrumentation
+mechanism for extracting performance instrumentation from
+running programs.  There are currently two implementations
+of the instrumentation API - one written
+<a href='http://pcp.io/man/man3/mmv_stats_init.3.html'>in C</a>
+and the other
+<a href='https://github.com/performancecopilot/parfait'>in Java.</a>
+This project aims to allow programs written in the Go language
+to be instrumented with a native Go API (i.e. not using cgo).
+</p>
+<p>
+<strong>Expected results:</strong>
+A native Go API, allowing Go programs to be instrumented to
+generate live performance metrics via the
+<a href='http://pcp.io/man/man5/mmv.5.html'>MMV</a>
+shared memory format, read by the PCP
+<a href='http://pcp.io/man/man1/pmdammv.1.html'>pmdammv</a>
+agent.
+And a sample application demonstrating use of the API.
+</p>
+<p>
+<strong>Prerequisite knowledge:</strong>
+Go programming, C a plus
+</p>
+<p>
+<strong>Skill level:</strong>
+Intermediate
+</p>
+<p>
+<strong>Mentors:</strong>
+<a href='mailto:lberk@redhat.com'>Lukas Berk</a>
+(primary),
+<a href='mailto:obutler@aconex.com'>Owen Butler</a>
+(backup),
+<a href='mailto:nathans@redhat.com'>Nathan Scott</a>
+(backup)
+</p>
+<br>
+</div>
+</div>
+<div class='colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='vector'></a>
+<h3>Flame graphs in Vector</h3>
+<p>
+<a href='http://www.brendangregg.com/flamegraphs.html'>Flame graphs</a>
+are a visualization of profiled software, allowing frequently
+travelled code paths to be identified quickly and accurately.
+This project idea explores possible interactions between the
+<a href='https://github.com/Netflix/vector/wiki/Getting-Started'>Vector</a>
+web application, the Linux kernel eBPF and/or
+<a href='http://man7.org/linux/man-pages/man1/perf.1.html'>perf</a>
+facilities, and the PCP pipe agent
+<a href='http://pcp.io/man/man1/pmdapipe.1.html'>pmdapipe</a>
+</p>
+<p>
+<strong>Expected results:</strong>
+A capability for rendering flame graphs on-demand over a given
+time interval is available from the Vector web application.
+</p>
+<p>
+<strong>Prerequisite knowledge:</strong>
+Javascript, C programming, Linux kernel
+</p>
+<p>
+<strong>Skill level:</strong>
+Intermediate
+</p>
+<p>
+<strong>Mentors:</strong>
+<a href='mailto:mspier@netflix.com'>Martin Spier</a>
+(primary),
+<a href='mailto:brolley@redhat.com'>Dave Brolley</a>
+(backup),
+<a href='mailto:lberk@redhat.com'>Lukas Berk</a>
+(backup)
+</p>
+<br>
+</div>
+</div>
+<div class='colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='golang'></a>
+<h3>Performance metric extraction using Go language agents</h3>
+<p>
+PCP has an agent-based architecture for extracting
+performance data.  Agents are responsible for making
+live metric values available to monitoring tools.
+Today, agents can be implemented in C, C++, Perl and
+Python - this project will extend that set to include
+agents written in the Go language.
+</p>
+<p>
+<strong>Expected results:</strong>
+An API binding allowing Go PCP agents, and at
+least one sample agent demonstrating that binding.
+</p>
+<p>
+<strong>Prerequisite knowledge:</strong>
+C programming, Go a plus
+</p>
+<p>
+<strong>Skill level:</strong>
+Intermediate
+</p>
+<p>
+<strong>Mentors:</strong>
+<a href='mailto:lberk@redhat.com'>Lukas Berk</a>
+(primary),
+<a href='mailto:obutler@aconex.com'>Owen Butler</a>
+(backup),
+<a href='mailto:nathans@redhat.com'>Nathan Scott</a>
+(backup)
+</p>
+<br>
+</div>
+</div>
+<div class='colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='jolokia'></a>
+<h3>Instrumenting the JVM with Jolokia and PCP</h3>
+<p>
+<a href='http://jolokia.org'>Jolokia.org</a>
+"is remote JMX with JSON over HTTP",
+and can be used to extract live performance data from
+an unmodified Java application.
+</p>
+<p>
+PCP is a handy performance data sink and analysis toolkit;
+the goal here is to build a PCP agent to extracted JVM
+metrics (accessed over JSON/HTTP) from Jolokia for the
+PCP analysis tools to consume (i.e. for charting, decision
+making, reporting and other analysis).
+</p>
+<p>
+<strong>Expected results:</strong>
+A PCP agent that sources JVM performance data from
+an unmodified Java/other demo application, using Jolokia.
+</p>
+<p>
+<strong>Prerequisite knowledge:</strong>
+Java and either Python or C programming
+</p>
+<p>
+<strong>Skill level:</strong>
+Intermediate
+</p>
+<p>
+<strong>Mentors:</strong>
+<a href='mailto:nathans@redhat.com'>Nathan Scott</a>
+(primary),
+<a href='mailto:psmith@aconex.com'>Paul Smith</a>
+(backup),
+<a href='mailto:rhuss@redhat.com'>Roland Huss</a>
+(backup)
+</p>
+<br>
+</div>
+</div>
+<div class='colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='rubylang'></a>
+<h3>Performance metric extraction using Ruby language agents</h3>
+<p>
+PCP has an agent-based architecture for extracting
+performance data.  Agents are responsible for making
+live metric values available to monitoring tools.
+Today, agents can be implemented in C, C++, Perl and
+Python - this project will extend that set to include
+Ruby.
+</p>
+<p>
+<strong>Expected results:</strong>
+An API binding allowing Ruby PCP agents, and at
+least one sample agent demonstrating that binding.
+</p>
+<p>
+<strong>Prerequisite knowledge:</strong>
+Ruby and C programming
+</p>
+<p>
+<strong>Skill level:</strong>
+Intermediate
+</p>
+<p>
+<strong>Mentors:</strong>
+<a href='mailto:ryan@doylenet.net'>Ryan Doyle</a>
+(primary),
+<a href='mailto:nathans@redhat.com'>Nathan Scott</a>
+(backup)
+</p>
+<br>
+</div>
+</div>
+<div class='colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='pmlogger'></a>
+<h3>Optimized logging of unchanging performance metrics</h3>
+<p>
+The PCP
+<a href='http://man7.org/linux/man-pages/man1/pmlogger.1.html'>pmlogger</a>
+records statistics from a running machine.  Some of these metrics vary
+frequently over time, but there is a large subset that vary infrequently.
+</p>
+<p>
+This project will implement changes to pmlogger to only log these metrics
+when the metric values or set of instances changes.  A secondary phase will
+involve post-processing existing log files to remove duplicate information.
+</p>
+<p>
+<strong>Expected results:</strong>
+A new command line option to pmlogger to only log changing metrics, and a
+utility to prune existing archives.
+</p>
+<p>
+<strong>Prerequisite knowledge:</strong>
+C programming
+</p>
+<p>
+<strong>Skill level:</strong>
+Intermediate-Advanced
+</p>
+<p>
+<strong>Mentors:</strong>
+<a href='mailto:minnus@buffalo.edu'>Martins Innus</a>
+(primary),
+<a href='mailto:kenj@internode.on.net'>Ken McDonell</a>
+(backup),
+<a href='mailto:brolley@redhat.com'>Dave Brolley</a>
+(backup)
+</p>
+<br>
+</div>
+</div>
+<div class='colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='blktrace'></a>
+<h3>Block tracing metrics in PCP</h3>
+<p>
+The Linux kernel block tracing utility extracts crucially
+important device transfer information in real time, which
+is reported by the
+<a href='http://man7.org/linux/man-pages/man8/blktrace.8.html'>blktrace</a>
+utility.
+</p>
+<p>
+This project involves building an interface between this
+facility and the PCP monitoring tools, via a new blktrace
+agent (live) and/or log data import (historical).
+</p>
+<p>
+<strong>Expected results:</strong>
+New PCP blktrace data consumers are built such that PCP monitoring tools like
+<a href='http://man7.org/linux/man-pages/man1/pmevent.1.html'>pmevent</a>
+can consume the metrics made available.
+</p>
+<p>
+<strong>Prerequisite knowledge:</strong>
+C programming, Linux kernel
+</p>
+<p>
+<strong>Skill level:</strong>
+Advanced
+</p>
+<p>
+<strong>Mentors:</strong>
+<a href='mailto:mgoodwin@redhat.com'>Mark Goodwin</a>
+(primary),
+<a href='mailto:kenj@internode.on.net'>Ken McDonell</a>
+(backup)
+</p>
+<br>
+</div>
+</div>
+<div class='colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='monitors'></a>
+<h3>PCP versions of console tools</h3>
+<p>
+There are many handy text-based system analysis tools available
+on modern Linux platforms - tools like
+<a href='http://man7.org/linux/man-pages/man1/htop.1.html'>htop</a>
+,
+<a href='http://man7.org/linux/man-pages/man1/mpstat.1.html'>mpstat</a>
+,
+<a href='http://man7.org/linux/man-pages/man1/pidstat.1.html'>pidstat</a>
+,
+<a href='http://man7.org/linux/man-pages/man8/nfsstat.8.html'>nfsstat</a>
+and so on.
+These programs are quite simple, but while they allow good
+live-system analysis, they lack historical reporting (to
+answer questions like "what was happening on the system
+at 2am last Tuesday?").
+</p>
+<p>
+PCP makes it easy to access both historical and live
+performance data from client programs and (Python) scripts.
+This project involves extending (and/or re-implementing)
+performance tools from the above list, using PCP APIs to
+solve the historical query aspect.  Students can expect to
+gain insight into the meaning of the kernel data reported
+by these tools, and the sampling techniques used in
+building the tools.
+</p>
+<p>
+<strong>Expected results:</strong>
+Build and test versions of a selection of system tools
+using PCP APIs to provide new functionality.
+</p>
+<p>
+<strong>Prerequisite knowledge:</strong>
+Intermediate C, Python programming
+</p>
+<p>
+<strong>Skill level:</strong>
+Basic-Intermediate
+</p>
+<p>
+<strong>Mentors:</strong>
+<a href='mailto:ryan@doylenet.net'>Ryan Doyle</a>
+(primary),
+<a href='mailto:nathans@redhat.com'>Nathan Scott</a>
+(backup),
+<a href='mailto:mgoodwin@redhat.com'>Mark Goodwin</a>
+(backup)
+</p>
+<br>
+</div>
+</div>
+<div class='colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='windows'></a>
+<h3>Native 64-bit Windows PCP installer</h3>
+<p>
+PCP has been ported to many platforms, including Linux,
+Solaris, FreeBSD, Mac OS X and also Windows.
+The native Windows port was achieved using the MinGW-w64
+toolchain and cross-compilation from Fedora.  This project
+involves producing installable MSI packages using the open
+source msitools or WiX packages.
+</p>
+<p>
+<strong>Expected results:</strong>
+Demonstrated monitoring of Windows servers with 64-bit
+PCP code.  Installation via MSI package.
+</p>
+<p>
+<strong>Prerequisite knowledge:</strong>
+C and C++ programming, XML, Windows APIs
+</p>
+<p>
+<strong>Skill level:</strong>
+Intermediate
+</p>
+<p>
+<strong>Mentors:</strong>
+<a href='mailto:nathans@redhat.com'>Nathan Scott</a>
+(primary),
+<a href='mailto:kenj@internode.on.net'>Ken McDonell</a>
+(backup)
+</p>
+<br>
+</div>
+</div>
+</div>
+</div>
+<footer class='global-footer is-typeset'>
+<div class='row-parent'>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>Main Menu</h4>
+<ul>
+<li>
+<a href='/features.html'>Features</a>
+</li>
+<li>
+<a href='/documentation.html'>Documentation</a>
+</li>
+<li>
+<a class='download' href='/download.html'>Download</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>Developers</h4>
+<ul>
+<li>
+<a href='https://github.com/performancecopilot/pcp/issues'>Report an issue</a>
+</li>
+<li>
+<a href='https://github.com/performancecopilot/pcp/projects/1'>Roadmap</a>
+</li>
+<li>
+<a href='/community.html'>Contributing</a>
+</li>
+<li>
+<a href='/team.html'>Team</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>About</h4>
+<ul>
+<li>
+<a href='/testimonials.html'>Testimonials</a>
+</li>
+<li>
+<a href='/faq.html'>FAQ</a>
+</li>
+<li>
+<a href='/website.html'>Website</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>Get Social</h4>
+<ul>
+<li>
+<a class='twitter' href='https://twitter.com/performancepcp' rel='external'>Twitter</a>
+</li>
+<li>
+<a class='github' href='https://github.com/performancecopilot' rel='external'>Github</a>
+</li>
+</ul>
+</div>
+</div>
+</section>
+</div>
+<div class='row'>
+<div class='colspan2-2'>
+<p class='legal'>
+This website is Copyright &copy; 2000-2004 Silicon Graphics Inc, 2007-2010 Aconex, 2012-2020 Red Hat
+</p>
+</div>
+</div>
+</div>
+</footer>
+
+</body>
+</html>

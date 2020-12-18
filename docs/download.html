@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='initial-scale=1' name='viewport'>
+<title>Performance Co-Pilot</title>
+<link href='/assets/css/screen.css' media='all' rel='stylesheet' type='text/css'>
+<link href='/assets/css/master.css' media='all' rel='stylesheet' type='text/css'>
+<link href='/images/pcp.ico' rel='shortcut icon' type='image/ico'>
+
+</head>
+<body>
+<header class='global-header'>
+<div class='row'>
+<h1 class='global-logo colspan12-6 colspan8-4 colspan6-3 colspan2-1 as-grid'>
+<a href='/index.html'>Performance Co-Pilot</a>
+</h1>
+<nav class='global-header__navigation colspan12-6 colspan8-6 colspan6-4 colspan2-1 as-grid'>
+<ul>
+<li>
+<a href='/features.html'>Features</a>
+</li>
+<li>
+<a href='/documentation.html'>Documentation</a>
+</li>
+<li>
+<a href='/download.html'>Download</a>
+</li>
+<li>
+<a href='/community.html'>Get Involved</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+
+<div class='site-content'>
+<div class='how-to is-typeset'>
+<div class='row-parent'>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-8 push12-2 colspan8-8 colspan6-6 colspan2-1 as-grid with-gutter'>
+<div class='col__module--cta'>
+<h2>Download</h2>
+</div>
+<p>
+Pre-built Performance Co-Pilot packages and containers can be installed from
+<a href='https://bintray.com/pcp'>BinTray</a>
+</p>
+<p>
+First find the
+<a href='https://bintray.com/pcp/repositories'>repository</a>
+and then follow the "Set Me Up" instructions appropriate to your distribution.
+</p>
+<p>
+To verify signed package builds, use the PCP maintainers
+<a href='https://bintray.com/user/downloadSubjectPublicKey?username=pcp'>public key</a>
+</p>
+</div>
+</section>
+</div>
+</div>
+<div class='row-parent'>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-8 push12-2 colspan8-8 colspan6-6 colspan2-1 as-grid with-gutter'>
+<div class='col__module--cta'>
+<h2>Distributions</h2>
+</div>
+<p>
+Performance Co-Pilot is already included in the most popular distributions
+(RHEL, Debian, Fedora, Suse, Ubuntu). Here are some instructions to install PCP
+from your distribution.
+</p>
+</div>
+</section>
+</div>
+</div>
+<div class='row-parent'>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-6 colspan8-4 colspan6-3 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<img src='/images/debian.png'>
+<h3>Debian / Ubuntu</h3>
+<pre>apt-get install pcp&#x000A;invoke-rc.d pmcd start&#x000A;invoke-rc.d pmie start&#x000A;invoke-rc.d pmlogger start&#x000A;</pre>
+</div>
+</div>
+<div class='colspan12-6 colspan8-4 colspan6-3 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<img src='/images/fedora.png'>
+<h3>Fedora / RHEL</h3>
+<pre>yum install pcp&#x000A;# RHEL 6&#x000A;service pmcd start&#x000A;service pmlogger start&#x000A;service pmie start&#x000A;# RHEL 7 / Fedora&#x000A;systemctl start pmcd&#x000A;systemctl start pmie&#x000A;systemctl start pmlogger&#x000A;</pre>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div class='row-parent'>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-6 colspan8-4 colspan6-3 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<img src='/images/opensuse.png'>
+<h3>openSUSE</h3>
+<p>
+<a href='https://software.opensuse.org/package/pcp'>Direct Install</a>
+link
+</p>
+</div>
+</div>
+<div class='colspan12-6 colspan8-4 colspan6-3 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<img src='/images/solaris.png'>
+<h3>Solaris</h3>
+<p>
+<a href='https://bintray.com/pcp/solaris11'>Here</a>
+are the Solaris packages
+</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div class='row-parent'>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-6 colspan8-4 colspan6-3 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<img src='/images/macosx.png'>
+<h3>Mac OSX</h3>
+<p>
+<a href='https://bintray.com/pcp/macosx'>DMG</a>
+files
+</p>
+</div>
+</div>
+<div class='colspan12-6 colspan8-4 colspan6-3 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<img src='/images/windows.png'>
+<h3>Windows</h3>
+<p>
+<a href='https://bintray.com/pcp/windows'>Here</a>
+are the Windows MSI packages (NB: they are a bit outdated, we're working on it)
+</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div class='row-parent'>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'>
+<div class='col__module--cta'>
+<a name='source'></a>
+<h2>Source code</h2>
+<p>
+Source .tar.gz files can be found here:
+<a href='https://bintray.com/pcp/source'>PCP source</a>
+</p>
+<p>
+Git clone from the
+<a href='https://github.com/performancecopilot/pcp'>PCP repository</a>
+</p>
+<br>
+<p>
+C++ PMDA interface:
+<a href='https://github.com/pcolby/pcp-pmda-cpp.git'>git://github.com/pcolby/pcp-pmda-cpp.git</a>
+</p>
+<p>
+Apache Qpid metrics:
+<a href='https://github.com/pcolby/pcp-pmda-qpid.git'>git://github.com/pcolby/pcp-pmda-qpid.git</a>
+</p>
+<p>
+Java instrumentation:
+<a href='https://github.com/performancecopilot/parfait'>git://github.com/performancecopilot/parfait.git</a>
+</p>
+<p>
+Netflix Vector frontend:
+<a href='https://github.com/Netflix/vector'>git://github.com/Netflix/Vector.git</a>
+</p>
+<p>
+Other Javascript frontends:
+<a href='https://github.com/performancecopilot/pcp-webjs'>git://github.com/performancecopilot/pcp-webjs.git</a>
+</p>
+<p>
+PDF graph converter:
+<a href='https://github.com/performancecopilot/pcp2pdf'>git://github.com/performancecopilot/pcp2pdf.git</a>
+</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</div>
+<footer class='global-footer is-typeset'>
+<div class='row-parent'>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>Main Menu</h4>
+<ul>
+<li>
+<a href='/features.html'>Features</a>
+</li>
+<li>
+<a href='/documentation.html'>Documentation</a>
+</li>
+<li>
+<a class='download' href='/download.html'>Download</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>Developers</h4>
+<ul>
+<li>
+<a href='https://github.com/performancecopilot/pcp/issues'>Report an issue</a>
+</li>
+<li>
+<a href='https://github.com/performancecopilot/pcp/projects/1'>Roadmap</a>
+</li>
+<li>
+<a href='/community.html'>Contributing</a>
+</li>
+<li>
+<a href='/team.html'>Team</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>About</h4>
+<ul>
+<li>
+<a href='/testimonials.html'>Testimonials</a>
+</li>
+<li>
+<a href='/faq.html'>FAQ</a>
+</li>
+<li>
+<a href='/website.html'>Website</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>Get Social</h4>
+<ul>
+<li>
+<a class='twitter' href='https://twitter.com/performancepcp' rel='external'>Twitter</a>
+</li>
+<li>
+<a class='github' href='https://github.com/performancecopilot' rel='external'>Github</a>
+</li>
+</ul>
+</div>
+</div>
+</section>
+</div>
+<div class='row'>
+<div class='colspan2-2'>
+<p class='legal'>
+This website is Copyright &copy; 2000-2004 Silicon Graphics Inc, 2007-2010 Aconex, 2012-2020 Red Hat
+</p>
+</div>
+</div>
+</div>
+</footer>
+
+</body>
+</html>
