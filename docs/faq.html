@@ -452,6 +452,9 @@ project.
 Why yes, yes there are - in addition to the examples in the
 books about PCP, you might also enjoy this local
 <a href='/screenshots.html'>collection</a>
+and some from the more recent
+<a href='https://grafana-pcp.readthedocs.io/en/latest/screenshots.html'>Grafana PCP</a>
+plugin.
 .
 </p>
 </div>
@@ -598,7 +601,7 @@ metrics periodically.
 <li>
 The monitoring client connects to PMCD and explores the
 Performance Metrics Name Space using
-<a href='/man/man3/pmgetchildren.3.html'>pmGetChildren(3)</a>
+<a href='https://man7.org/linux/man-pages/man3/pmgetchildren.3.html'>pmGetChildren(3)</a>
 or pmTraversePMNS(3) for
 either one-level at a time expansion or recursive
 expansion.
@@ -606,34 +609,34 @@ expansion.
 <li>
 Once the client has the name(s) of the metrics of
 interest,
-<a href='/man/man3/pmlookupname.3.html'>pmLookupName(3)</a>
+<a href='https://man7.org/linux/man-pages/man3/pmlookupname.3.html'>pmLookupName(3)</a>
 returns PMIDs and then
-<a href='/man/man3/pmlookupdesc.3.html'>pmLookupDesc(3)</a>
+<a href='https://man7.org/linux/man-pages/man3/pmlookupdesc.3.html'>pmLookupDesc(3)</a>
 will return the descriptor for a metric.
 </li>
 <li>
 For set-valued metrics, use the instance domain number
 from the metric descriptor, and the routines
-<a href='/man/man3/pmlookupindom.3.html'>pmLookupInDom(3)</a>
-<a href='/man/man3/pmgetindom.3.html'>pmGetInDom(3)</a>
+<a href='https://man7.org/linux/man-pages/man3/pmlookupindom.3.html'>pmLookupInDom(3)</a>
+<a href='https://man7.org/linux/man-pages/man3/pmgetindom.3.html'>pmGetInDom(3)</a>
 and
-<a href='/man/man3/pmnameindom.3.html'>pmNameInDom(3)</a>
+<a href='https://man7.org/linux/man-pages/man3/pmnameindom.3.html'>pmNameInDom(3)</a>
 to browse the instance domain.
 Alternatively, ignore the instance domain and all
 instances will be returned.
 </li>
 <li>
 See also
-<a href='/man/man3/pmlookuptext.3.html'>pmLookupText(3)</a>
+<a href='https://man7.org/linux/man-pages/man3/pmlookuptext.3.html'>pmLookupText(3)</a>
 and
-<a href='/man/man3/pmlookupindomtext.3.html'>pmLookupIndomText(3)</a>
+<a href='https://man7.org/linux/man-pages/man3/pmlookupindomtext.3.html'>pmLookupIndomText(3)</a>
 for help text about metrics and instances (better
 suited for human consumption than interpretation by
 monitoring clients).
 </li>
 <li>
 Repeat until bored:
-<a href='/man/man3/pmfetch.3.html'>pmFetch(3)</a>
+<a href='https://man7.org/linux/man-pages/man3/pmfetch.3.html'>pmFetch(3)</a>
 ; report; sleep;
 </li>
 </ol>
@@ -670,7 +673,7 @@ aggregation belongs in the monitoring clients.  The PMDA
 cannot see the client state, so the PMDA does not know
 which client it is responding to at the moment, so you'd
 need to add some additional state using the
-<a href='/man/man3/pmstore.3.html'>pmStore(3)</a>
+<a href='https://man7.org/linux/man-pages/man3/pmstore.3.html'>pmStore(3)</a>
 interface to selectively modify state in the PMDA from a
 client (this is typically used to toggle debug flags or
 enable optional instrumentation and changing units would be
@@ -790,7 +793,7 @@ express access path.
 </p>
 <p>
 See PM_CONTEXT_LOCAL in
-<a href='/man/man3/pmnewcontext.3.html'>pmNewContext(3).</a>
+<a href='https://man7.org/linux/man-pages/man3/pmnewcontext.3.html'>pmNewContext(3).</a>
 </p>
 </div>
 </div>

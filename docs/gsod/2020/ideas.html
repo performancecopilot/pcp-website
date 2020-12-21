@@ -94,7 +94,7 @@ to help you get started.
 </li>
 <li>
 Peruse the introductory chapters of the
-<a href='https://pcp.io/books/PCP_UAG/html/'>PCP Users and Administrators Guide</a>
+<a href='https://pcp.readthedocs.io'>PCP Guides</a>
 </li>
 </ol>
 <br>
@@ -172,9 +172,8 @@ distributed data store
 </li>
 <li>
 live, on-host metrics provided by the Vector data source
-(supercedes the original standalone
-<a href='http://getvector.io/'>Vector</a>
-web application, which is now deprecated)
+(supercedes the original standalone Vector web application,
+which is now deprecated)
 </li>
 <li>
 on-demand kernel metrics provided by
@@ -183,13 +182,13 @@ on-demand kernel metrics provided by
 </ol>
 <p>
 All three data sources access PCP metric data via
-<a href='https://pcp.io/man/man1/pmproxy.1.html'>pmproxy</a>
+<a href='https://man7.org/linux/man-pages/man1/pmproxy.1.html'>pmproxy</a>
 REST APIs, which in turn requests the metric values from the scalable
 <a href='https://redis.io/'>Redis</a>
 database,
-<a href='https://pcp.io/man/man3/pmapi.3.html'>pmapi</a>
+<a href='https://man7.org/linux/man/man3/pmapi.3.html'>pmapi</a>
 or the
-<a href='https://github.com/performancecopilot/pcp/blob/master/src/pmdas/bpftrace/README.md'>bpftrace PMDA.</a>
+<a href='https://man7.org/linux/man/man1/pmdabpftrace.1.html'>bpftrace PMDA.</a>
 Grafana dashboards can be exported in JSON format and shipped with grafana-pcp or
 imported using the Grafana provisioning mechanisms.
 </p>
@@ -226,7 +225,7 @@ with one or more diagrams.
 <h3>Provide How-To style launching points</h3>
 <p>
 One area of need in the PCP documentation identified at last years
-<a href='https://pcp.io/conference/2019/home.html'>conference</a>
+<a href='/conference/2019/home.html'>conference</a>
 was for us to provide short, hands-on introductory texts and videos
 that guide people toward the in-depth documentation they need.
 The deep documentation exists and is needed, but its buried in alot
@@ -261,7 +260,7 @@ analysis capabilities provided by PCP within the
 <a href='https://distributed-system-analysis.github.io/pbench/'>pbench</a>
 benchmarking and analysis framework.
 This involves documenting the new pbench direction of using the PCP
-<a href='https://pcp.io/man/man1/pmlogger.1.html'>pmlogger</a>
+<a href='https://man7.org/linux/man-pages/man1/pmlogger.1.html'>pmlogger</a>
 tool's remote collection and efficient archive storage capabilities.
 Users should also be guided through the processes for adding new PCP
 metrics into the set collected during a pbench benchmarkng run.
@@ -293,11 +292,7 @@ tools in an intuitive and informative way.
 The Performance Co-Pilot documentation currently exists in several forms.
 These are the primary PCP
 <a href='https://pcp.io/'>website</a>
-,
-<a href='https://pcp.io/man/'>man pages</a>
-and the two PCP
-<a href='https://pcp.io/documentation.html'>books</a>
-(docbook format).
+and the PCP books (docbook format).
 This project will focus on transfering and updating this
 <a href='https://en.wikipedia.org/wiki/DocBook'>docbook</a>
 content to
@@ -330,7 +325,7 @@ edit and contribute to the books directly through github.
 <h3>Convert REST API documentation from man page to developer friendly format</h3>
 <p>
 The Performance Co-Pilot REST API is currently documented in
-<a href='https://pcp.io/man/man3/pmwebapi.3.html'>man page</a>
+<a href='https://man7.org/linux/man-pages/man3/pmwebapi.3.html'>man page</a>
 format primarily.
 This is not ideal for web developers, so we'd like to transition
 to separate formatted web pages describing individual requests,

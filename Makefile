@@ -1,8 +1,8 @@
 URL = https://pcp.io
 WEB = pcp-website.github.io
 
-RSYNC := rsync -azvP --prune-empty-dirs \
-        --exclude '*.haml' --exclude 'Makefile' --exclude '*.swp' \
+RSYNC := rsync -azvP --prune-empty-dirs --exclude '*.haml' \
+        --exclude GNUmakefile --exclude Makefile --exclude '*.swp' \
         --exclude '.git' --exclude '.github' --exclude '.gitignore'
 LDIRT = links.out
 
@@ -24,6 +24,7 @@ default:
 	for h in `echo $(HAMLFILES)`; do \
 	    haml $$h.haml > docs/$$h.html; \
 	done
+	test -d ../pcp/man/html && $(RSYNC) ../pcp/man/html docs
 	$(RSYNC) CNAME images snaps assets papers docs
 	git add docs
 	git status

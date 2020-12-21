@@ -109,7 +109,7 @@ feature of Grafana and using PCP metrics
 <li>
 implementing support for PCP 'derived metrics' in the Vector data source,
 as described in the PCP
-<a href='https://pcp.io/man/man3/pmwebapi.3.html'>REST API</a>
+<a href='https://man7.org/linux/man-pages/man3/pmwebapi.3.html'>REST API</a>
 documentation
 </li>
 <li>
@@ -196,11 +196,11 @@ collected metrics via
 </li>
 <li>
 Modify PCP to provide new
-<a href='https://pcp.io/man/man1/pmcd.1.html'>pmcd</a>
+<a href='https://man7.org/linux/man-pages/man1/pmcd.1.html'>pmcd</a>
 agent metrics,
-<a href='https://pcp.io/man/man1/pmlogger.1.html'>pmlogger</a>
+<a href='https://man7.org/linux/man-pages/man1/pmlogger.1.html'>pmlogger</a>
 and
-<a href='https://pcp.io/man/man1/pmlogconf.1.html'>pmlogconf</a>
+<a href='https://man7.org/linux/man-pages/man1/pmlogconf.1.html'>pmlogconf</a>
 templates tailored to recommended performance analysis
 data collection for target workloads (database, web
 server, computation, low-latency networking, etc.)
@@ -217,7 +217,7 @@ learn how to export data to
 for the
 <a href='https://grafana-pcp.readthedocs.io/'>grafana-pcp</a>
 data source, work with the PCP
-<a href='https://pcp.io/man/man1/pmlogger.1.html'>pmlogger</a>
+<a href='https://man7.org/linux/man-pages/man1/pmlogger.1.html'>pmlogger</a>
 tool to efficiently collect data, and discover the kinds of
 operating system and application metrics PCP is capable
 of collecting to match various workloads.
@@ -259,9 +259,9 @@ It is potentially high volume data, and searching it efficiently
 The Performance Co-Pilot timeseries query language is designed to
 allow fast querying based on metric names and labels.
 A command line utility and a REST API are available from
-<a href='https://pcp.io/man/man1/pmseries.1.html'>pmseries</a>
+<a href='https://man7.org/linux/man-pages/man1/pmseries.1.html'>pmseries</a>
 and the
-<a href='https://pcp.io/man/man1/pmproxy.1.html'>pmproxy</a>
+<a href='https://man7.org/linux/man-pages/man1/pmproxy.1.html'>pmproxy</a>
 daemon.
 </p>
 <p>
@@ -277,7 +277,7 @@ distributed data store and its native
 <a href='https://redis.io/topics/streams-intro'>timeseries</a>
 features.
 The
-<a href='https://pcp.io/man/man1/pmseries.1.html'>pmseries</a>
+<a href='https://man7.org/linux/man-pages/man1/pmseries.1.html'>pmseries</a>
 command line utility provides low-level access to the language.
 </p>
 <p>
@@ -345,27 +345,27 @@ analysis builds on the
 <a href='https://redis.io/'>Redis</a>
 distributed data store and its native timeseries support.
 The
-<a href='https://pcp.io/man/man1/pmseries.1.html'>pmseries</a>
+<a href='https://man7.org/linux/man-pages/man1/pmseries.1.html'>pmseries</a>
 utility and
-<a href='https://pcp.io/man/man1/pmproxy.1.html'>pmproxy</a>
+<a href='https://man7.org/linux/man-pages/man1/pmproxy.1.html'>pmproxy</a>
 daemon provide the tooling and APIs to support this.
 This project will improve scalability in these programs through:
 <ol>
 <li>
 extending PCP instrumentation in
-<a href='https://pcp.io/man/man1/pmproxy.1.html'>pmproxy</a>
+<a href='https://man7.org/linux/man-pages/man1/pmproxy.1.html'>pmproxy</a>
 to expose latency and throughput metrics to analysis tools
 </li>
 <li>
 adding PCP functionality to make
-<a href='https://pcp.io/man/man1/pmseries.1.html'>pmseries</a>
+<a href='https://man7.org/linux/man-pages/man1/pmseries.1.html'>pmseries</a>
 queries use Redis features for parallel query execution, with
 the aim of scaling up PCP timeseries injest and querying to the
 level of many-thousands-of-nodes.
 </li>
 <li>
 implementing compression of responses in
-<a href='https://pcp.io/man/man1/pmproxy.1.html'>pmproxy</a>
+<a href='https://man7.org/linux/man-pages/man1/pmproxy.1.html'>pmproxy</a>
 and evaluating impact on overall and individual response performance
 </li>
 <li>
