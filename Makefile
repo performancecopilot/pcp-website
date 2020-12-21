@@ -1,6 +1,5 @@
 URL = https://pcp.io
 WEB = pcp-website.github.io
-PCP = ../pcp
 
 RSYNC := rsync -azvP --prune-empty-dirs --exclude '*.haml' \
         --exclude GNUmakefile --exclude Makefile --exclude '*.swp' \
@@ -25,7 +24,7 @@ default:
 	for h in `echo $(HAMLFILES)`; do \
 	    haml $$h.haml > docs/$$h.html; \
 	done
-	test -d $(PCP)/man/html && $(RSYNC) $(PCP)/man/html $(PCP)/images docs
+	test -d ../pcp/man/html && $(RSYNC) ../pcp/man/html docs
 	$(RSYNC) CNAME images snaps assets papers docs
 	git add docs
 	git status
