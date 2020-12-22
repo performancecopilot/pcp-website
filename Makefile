@@ -41,7 +41,7 @@ uncompressed:
 
 check:
 	linkchecker --check-extern -v $(URL) | grep -v seconds > links.out || /bin/true
-	grep "errors found" links.out
+	test -f links.out && grep "errors found" links.out
 
 .PHONY: clean
 
