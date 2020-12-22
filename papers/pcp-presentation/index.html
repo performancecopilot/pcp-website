@@ -107,11 +107,11 @@
 						<h2>Installation</h2>
 						<span class="fragment">
 							<p>On RHEL/Fedora based systems:</p>
-							<pre><code># yum install pcp pcp-webjs pcp-webapi</pre></code>
+							<pre><code># dnf install pcp-zeroconf</pre></code>
 						</span>
 						<span class="fragment">
 							<p>On Debian(*) based systems:</p>
-							<pre><code># apt-get install pcp pcp-webapi</pre></code>
+							<pre><code># apt-get install pcp</pre></code>
 						</span>
 					</section>
 					<section>
@@ -130,7 +130,7 @@ Performance Co-Pilot configuration on marquez.int.rhx:
  platform: Linux marquez.int.rhx 4.0.0-0.rc6.git1.1.fc23.x86_64 
  hardware: 8 cpus, 4 disks, 1 node, 11742MB RAM
  timezone: CEST-2
- services: pmcd
+ services: pmcd pmproxy
      pmcd: Version 3.10.3-1, 7 agents
      pmda: root pmcd proc xfs linux mmv jbd2
 							</pre></code>
@@ -142,7 +142,7 @@ Performance Co-Pilot configuration on marquez.int.rhx:
 							Web interface needed?
 						</span>
 						<span class="fragment">
-							<pre><code class="bash"># yum install grafana-pcp</code></pre>
+							<pre><code class="bash"># dnf install grafana-pcp</code></pre>
 						</span>
 						<span class="fragment">
 							<pre><code class="bash"># systemctl enable pmproxy grafana-server</code></pre>

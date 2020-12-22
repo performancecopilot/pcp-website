@@ -1,9 +1,9 @@
-*** pcp.io website build/configuration ***
+# pcp.io website build
 
-1) Install the following packages (Fedora):
+1) Install the following packages (e.g. for Fedora):
 dnf install -y git ruby rubygem-haml lynx rsync linkchecker rubygems
 
 2) Install the following rubygem:
   gem install sass-globbing
 
-3) if doing a new PCP release, see NEWRELEASE file.
+3) make
