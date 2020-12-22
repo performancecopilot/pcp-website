@@ -1,10 +1,5 @@
 .sass-cache
 .vagrant
-*.css
 *.swp
-!buildbot/public_html/*.css
-papers/landscape.swf
-!papers/pcp-presentation/*.html
-!papers/pcp-presentation/*.css
 favicon.ico
 links.out
