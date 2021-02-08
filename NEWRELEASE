@@ -3,24 +3,18 @@ Process to make a new PCP release
 
 Steps to create the packages for a new release
 ----------------------------------------------
-1. Update CHANGELOG with release notes, BZs in fedora.spec
+1. Update CHANGELOG with release notes, Fedora BZs in redhat.spec
 2. Tag release in git (tagged and signed using pcp-maintainers key)
-   Ex: git tag -s -u DEA2C114 -m "X.YY.Z" X.YY.Z
+   Ex: git tag -s -u DEA2C114 -m X.Y.Z X.Y.Z
    Update https://github.com/performancecopilot/pcp/releases to
    indicate the new version is now the latest (Edit Release ->
    Update Release in the web UI).
-3. Make canonical source tarball right away (./Makepkgs --source)
-   and upload it to bintray, using ./scripts/bintray-upload
-4. Upload binary pkgs to bintray using the ./scripts/bintray-upload
-   and ./scripts/bintray-version scripts from the PCP git repo.
-   For the RPM builds where gpg keys supported (modern distros, not
-   RHEL5): export RPM_SIGN_KEYID="pcp-maintainers"
-     ./Makepkgs [ --signed ]
-   For the DEB builds (export DEB_SIGN_KEYID=0xFE0842EE36DD8C0C
-   for official uploads by debian developers)
-     ./Makepkgs --signed  --with-python3=yes --with-python=no
-5. Upload pkgs for Fedora/EPEL (via fedpkg, bodhi)
-6. Upload pkgs for Debian unstable (./Makepkgs)
+3. Most packages are uploaded to bintray via github actions now.
+4. For the official Debian source uploads by debian developers
+   export DEB_SIGN_KEYID=0xFE0842EE36DD8C0C
+   ./Makepkgs --signed --with-python3=yes --with-python=no --with-systemd=yes
+5. For the official Fedora uploads by sanctioned developers,
+   use official spec (as redhat.spec) and build with fedpkg.
 
 Steps to update the webpage for the new release
 -----------------------------------------------
@@ -29,8 +23,6 @@ Steps to update the webpage for the new release
    Update the website via "make && make install" (see README).
 2. Send an email to pcp-announce@groups.io and pcp@groups.io with
    the details of the new release (include the full changelog).
-3. Tweet the release using ./scripts/tweet-new-release.py <filename>
-   Put the tweet text in filename and call the above script
+3. Tweet the release using the performancepcp account on twitter
    e.g. text "Performance Co-Pilot X.Y.Z released: https://pcp.io"
-   (if authentication fails use twitter.com web interface directly)
 
