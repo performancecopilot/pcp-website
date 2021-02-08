@@ -86,6 +86,22 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p
+                      Feb 2021
+                      %br
+                      PCP 5.2.5
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p
+                      New Linux ZFS, High Availability (Pacemaker) and
+                      detailed sockets metrics.
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmproxy.1.html'} pmproxy
+                      memory management improvements.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p
                       Dec 2020
                       %br
                       PCP 5.2.3
@@ -225,33 +241,5 @@
                       Continuous Integration impovements. New
                       %a{:href => 'https://man7.org/linux/man-pages/man1/pmdarabbitmq.1.html'} RabbitMQ
                       metrics.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      Feb 2020
-                      %br
-                      PCP 5.0.3
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      Bug-fix release -
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmproxy.1.html'} pmproxy
-                      archive discovery fixes, suspending and resuming
-                      during log rotation and compression.
-                      Monitor tool fixes and improvements to
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pcp-atop.1.html'} pcp-atop ,
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pcp-dstat.1.html'} pcp-dstat
-                      and
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmrep.1.html'} pmrep .
-                      Collection agent fixes in
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmdabpftrace.1.html'} bpftrace ,
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmdaopenmetrics.1.html'} openmetrics ,
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmdammv.1.html'} MMV ,
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmdalinux.1.html'} Linux
-                      and
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmdafreebsd.1.html'} FreeBSD .
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
