@@ -1,0 +1,192 @@
+!!! html
+%html
+  %head
+    = Haml::Engine.new(File.read("assets/haml-includes/head.haml")).render
+
+  %body
+    = Haml::Engine.new(File.read("assets/haml-includes/navigation.haml")).render
+
+    %div{:class => 'site-content'}
+      %div{:class => 'how-to is-typeset'}
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %br
+                  %h3 Ideas List
+                  %ol
+                    %li
+                      Integration projects
+                      %ul
+                        %li
+                          %a{:href => '#htop'} Extended htop functionality
+                        %li
+                          %a{:href => '#vmware'} Revamping the VMware support
+                    %li
+                      Timeseries projects
+                      %ul
+                        %li
+                          %a{:href => '#series'} Query language extensions and new functions
+                  %br
+
+              %div{:class => 'colspan12-4 colspan8-3 colspan6-2 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h2 Google
+                  %h2 Summer of Code
+                  %h2 2021
+                  %br
+                    (
+                    %a{:href => 'https://summerofcode.withgoogle.com'} Home
+                    )
+                  %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'htop'}
+            %h3 Extended htop functionality
+            %p
+              This project involves advancing the performance analysis
+              capabilities provided by the PCP version of the
+              %a{:href => 'https://htop.dev/'} htop
+              utility, pcp-htop.
+            %p
+              The student will work on:
+              %ol
+                %li
+                  implementing archive support for historical analysis
+                %li
+                  implementing support for generalized Meters, allowing
+                  any metric to be displayed using htop rather than only
+                  the hard-coded set.
+                %li
+                  implement new PCP metrics for some htop functionality
+                  not yet enabled in pcp-htop, such as systemd, battery
+                  utilization and netlink.
+            %p
+              %strong Expected results:
+              New code (C language) will be implemented and submitted
+              to be included in htop that allows the backend platform
+              for PCP to take advantage of
+              %a{:href => 'https://man7.org/linux/man-pages/man3/PMAPI.3.html'} PMAPI
+              features not yet utilized in the current pcp-htop code.
+
+            %p
+              %strong Prerequisite knowledge:
+              C programming, ncurses library knowledge a plus. 
+            %p
+              %strong Skill level:
+              Intermediate
+            %p
+              %strong Primary mentor:
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott &lt;nathans@redhat.com&gt;
+              , secondary mentor:
+              %a{:href => 'mailto:rdoyle@redhat.com'} Ryan Doyle &lt;ryan@doylenet.net&gt;
+            %p
+              %strong Interested students so far:
+              1
+            %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'vmware'}
+            %h3 Improving the VMware integration
+            %p
+              Description ...
+            %p
+              The student will work on:
+              %ol
+                %li
+                  Both X ...
+                %li
+                  and Y.
+            %p
+              %strong Expected results:
+              The student will extend their Python programming skills, ...
+            %p
+              %strong Prerequisite knowledge:
+              Python programming, operating systems.
+            %p
+              %strong Skill level:
+              Intermediate
+            %p
+              %strong Primary mentor:
+              %a{:href => 'mailto:agerstmayr@redhat.com'} Andreas Gerstmayr;agerstmayr@redhat.com&gt;
+              , secondary mentor:
+              %a{:href => 'mailto:goodwinos@gmail.com'} Mark Goodwin &lt;goodwinos@gmail.com&gt;
+            %p
+              %strong Interested students so far:
+              0
+            %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'series'}
+            %h3 Query language extension and new functions
+            %p
+              Performance Co-Pilot timeseries are series of time-stamped values
+              gathered centrally from hosts making performance data available.
+              This data could be gathered for many metrics, at high frequency,
+              and from many hosts.
+              It is potentially high volume data, and searching it efficiently
+              (querying) at speed is a non-trivial problem.
+            %p
+              The Performance Co-Pilot timeseries query language is designed to
+              allow fast querying based on metric names and labels.
+              A command line utility and a REST API are available from
+              %a{:href => 'https://man7.org/linux/man-pages/man1/pmseries.1.html'} pmseries
+              and the
+              %a{:href => 'https://man7.org/linux/man-pages/man1/pmproxy.1.html'} pmproxy
+              daemon.
+              The existing query language implementation is now maturing,
+              however there are some important new functions needed along
+              with related grammar extensions.
+            %p
+              This project will extend the existing query language with:
+              %ol
+                %li
+                  grammar extensions supporting scalar operands in
+                  expressions, either as literal constants or from
+                  functions returning a scalar result.
+                %li
+                  additional functions complementing existing functions
+                  to operate across both the time domain (with one scalar
+                  result per metric instance) and across instance domains
+                  (with a single vector result).
+                %li
+                  new statistical functions such as top_k(expr) and
+                  nth_percentile(expr, n) and rolling_avg(expr, n).
+                %li
+                  new functions for subsampling and interpolation of
+                  vector operands to match time series samples with
+                  other vector operands in an expression.
+            %p
+              %strong Expected results:
+              The student will extend their C language programming skills,
+              learn about the
+              %a{:href => 'https://en.wikipedia.org/wiki/Yacc'} yacc
+              language parsing tool,
+              performance analysis with PCP and the
+              %a{:href => 'https://redis.io/'} Redis
+              distributed data store.
+              The student will also collaborate and participate in a
+              vibrant open-source environment with very experienced
+              software engineers and performance analysts.
+            %p
+              %strong Prerequisite knowledge:
+              C programming.
+            %p
+              %strong Skill level:
+              Advanced
+            %p
+              %strong Primary mentor:
+              %a{:href => 'mailto:goodwinos@gmail.com'} Mark Goodwin &lt;goodwinos@gmail.com&gt;
+              , secondary mentor:
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott &lt;nathans@redhat.com&gt;
+            %p
+              %strong Interested students so far:
+              1
+            %br
+
+    = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
