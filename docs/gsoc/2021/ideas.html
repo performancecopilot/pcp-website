@@ -57,10 +57,15 @@ Integration projects
 </ul>
 </li>
 <li>
-Timeseries projects
+General projects
 <ul>
 <li>
 <a href='#series'>Query language extensions and new functions</a>
+</li>
+</ul>
+<ul>
+<li>
+<a href='#pmjson'>Extended JSON functionality</a>
 </li>
 </ul>
 </li>
@@ -132,7 +137,7 @@ Intermediate
 <strong>Primary mentor:</strong>
 <a href='mailto:nathans@redhat.com'>Nathan Scott &lt;nathans@redhat.com&gt;</a>
 , secondary mentor:
-<a href='mailto:rdoyle@redhat.com'>Ryan Doyle &lt;ryan@doylenet.net&gt;</a>
+<a href='mailto:ashwinnayak111@gmail.com'>Ashwin Nayaj &lt;ashwinnayak111@gmail.com&gt;</a>
 </p>
 <p>
 <strong>Interested students so far:</strong>
@@ -173,7 +178,7 @@ Intermediate
 </p>
 <p>
 <strong>Primary mentor:</strong>
-<a href='mailto:agerstmayr@redhat.com'>Andreas Gerstmayr;agerstmayr@redhat.com&gt;</a>
+<a href='mailto:agerstmayr@redhat.com'>Andreas Gerstmayr &lt;agerstmayr@redhat.com&gt;</a>
 , secondary mentor:
 <a href='mailto:goodwinos@gmail.com'>Mark Goodwin &lt;goodwinos@gmail.com&gt;</a>
 </p>
@@ -263,6 +268,72 @@ Advanced
 <p>
 <strong>Interested students so far:</strong>
 1
+</p>
+<br>
+</div>
+</div>
+<div class='colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='pmjson'></a>
+<h3>Extended JSON functionality</h3>
+<p>
+PCP provides a
+<a href='https://man7.org/linux/man-pages/man1/pmjson.1.html'>pmjson</a>
+utility for formatting and verifying JSON output
+from performance analysis tools and the PCP
+<a href='https://man7.org/linux/man-pages/man3/pmwebapi.3.html'>REST</a>
+API.
+This project involves extending the functionality provided
+by the tool so that it is more generally useful.
+</p>
+<p>
+The student will work on:
+<ol>
+<li>
+Adding support for the
+<a href='https://tools.ietf.org/html/draft-pbryan-zyp-json-pointer-02'>JSON Pointer</a>
+syntax, allowing subsets of larger JSON documents to
+be reported on.
+This is particularly useful for our regression testing.
+</li>
+<li>
+Adding support for sorting elements of JSON documents
+such that the output is presented in a deterministic
+manner; again, very useful for regression testing.
+</li>
+<li>
+Adding support for colored console output.
+This will be useful to enhance the documentation for
+the PCP REST API, and making the tool output more user
+friendly in general.
+</li>
+</ol>
+</p>
+<p>
+<strong>Expected results:</strong>
+New code (C language) will be implemented and submitted
+to be included in pmjson providing the described functionality
+using the
+<a href='https://github.com/mnunberg/jsonsl'>JSONSL</a>
+library.
+</p>
+<p>
+<strong>Prerequisite knowledge:</strong>
+C programming.
+</p>
+<p>
+<strong>Skill level:</strong>
+Intermediate
+</p>
+<p>
+<strong>Primary mentor:</strong>
+<a href='mailto:nathans@redhat.com'>Nathan Scott &lt;nathans@redhat.com&gt;</a>
+, secondary mentor:
+<a href='mailto:ashwinnayak111@gmail.com'>Ashwin Nayaj &lt;ashwinnayak111@gmail.com&gt;</a>
+</p>
+<p>
+<strong>Interested students so far:</strong>
+0
 </p>
 <br>
 </div>

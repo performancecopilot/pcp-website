@@ -25,10 +25,13 @@
                         %li
                           %a{:href => '#vmware'} Revamping the VMware support
                     %li
-                      Timeseries projects
+                      General projects
                       %ul
                         %li
                           %a{:href => '#series'} Query language extensions and new functions
+                      %ul
+                        %li
+                          %a{:href => '#pmjson'} Extended JSON functionality
                   %br
 
               %div{:class => 'colspan12-4 colspan8-3 colspan6-2 colspan2-2 as-grid with-gutter'}
@@ -82,7 +85,7 @@
               %strong Primary mentor:
               %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott &lt;nathans@redhat.com&gt;
               , secondary mentor:
-              %a{:href => 'mailto:rdoyle@redhat.com'} Ryan Doyle &lt;ryan@doylenet.net&gt;
+              %a{:href => 'mailto:ashwinnayak111@gmail.com'} Ashwin Nayaj &lt;ashwinnayak111@gmail.com&gt;
             %p
               %strong Interested students so far:
               1
@@ -112,7 +115,7 @@
               Intermediate
             %p
               %strong Primary mentor:
-              %a{:href => 'mailto:agerstmayr@redhat.com'} Andreas Gerstmayr;agerstmayr@redhat.com&gt;
+              %a{:href => 'mailto:agerstmayr@redhat.com'} Andreas Gerstmayr &lt;agerstmayr@redhat.com&gt;
               , secondary mentor:
               %a{:href => 'mailto:goodwinos@gmail.com'} Mark Goodwin &lt;goodwinos@gmail.com&gt;
             %p
@@ -187,6 +190,61 @@
             %p
               %strong Interested students so far:
               1
+            %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'pmjson'}
+            %h3 Extended JSON functionality
+            %p
+              PCP provides a
+              %a{:href => 'https://man7.org/linux/man-pages/man1/pmjson.1.html'} pmjson
+              utility for formatting and verifying JSON output
+              from performance analysis tools and the PCP
+              %a{:href => 'https://man7.org/linux/man-pages/man3/pmwebapi.3.html'} REST
+              API.
+              This project involves extending the functionality provided
+              by the tool so that it is more generally useful.
+            %p
+              The student will work on:
+              %ol
+                %li
+                  Adding support for the
+                  %a{:href => 'https://tools.ietf.org/html/draft-pbryan-zyp-json-pointer-02'} JSON Pointer
+                  syntax, allowing subsets of larger JSON documents to
+                  be reported on.
+                  This is particularly useful for our regression testing.
+                %li
+                  Adding support for sorting elements of JSON documents
+                  such that the output is presented in a deterministic
+                  manner; again, very useful for regression testing.
+                %li
+                  Adding support for colored console output.
+                  This will be useful to enhance the documentation for
+                  the PCP REST API, and making the tool output more user
+                  friendly in general.
+            %p
+              %strong Expected results:
+              New code (C language) will be implemented and submitted
+              to be included in pmjson providing the described functionality
+              using the
+              %a{:href => 'https://github.com/mnunberg/jsonsl'} JSONSL
+              library.
+
+            %p
+              %strong Prerequisite knowledge:
+              C programming.
+            %p
+              %strong Skill level:
+              Intermediate
+            %p
+              %strong Primary mentor:
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott &lt;nathans@redhat.com&gt;
+              , secondary mentor:
+              %a{:href => 'mailto:ashwinnayak111@gmail.com'} Ashwin Nayaj &lt;ashwinnayak111@gmail.com&gt;
+            %p
+              %strong Interested students so far:
+              0
             %br
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
