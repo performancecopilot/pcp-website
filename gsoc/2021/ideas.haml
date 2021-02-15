@@ -96,22 +96,26 @@
         %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
           %div{:class => 'col__module--img'}
             %a{:name => 'vmware'}
-            %h3 Improving the VMware integration
+            %h3 Create a VMware PMDA
             %p
-              Description ...
+              The goal of this project is to create a new VMware PMDA, which exports metris of the VMware hypervisor to PCP.
+              The following library will be used to gather metrics from the hypervisor:
+              %a{:href => 'https://code.vmware.com/sdk/vsphere-guest'} vSphere Guest SDK
             %p
               The student will work on:
               %ol
                 %li
-                  Both X ...
+                  creating a new Performance Metrics Domain Agent written in Python
                 %li
-                  and Y.
+                  integrating a C API in Python (based on the
+                  %a{:href => 'https://github.com/dagwieers/vmguestlib'} vmguestlib
+                  wrapper)
             %p
               %strong Expected results:
-              The student will extend their Python programming skills, ...
+              A new VMware PMDA will be implemented and submitted, including unit tests and documentation.
             %p
               %strong Prerequisite knowledge:
-              Python programming, operating systems.
+              Python programming, operating systems, basic knowledge of virtual machines.
             %p
               %strong Skill level:
               Intermediate
