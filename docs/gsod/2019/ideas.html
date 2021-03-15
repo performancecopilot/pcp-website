@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='initial-scale=1' name='viewport'>
+<title>Performance Co-Pilot</title>
+<link href='/assets/css/screen.css' media='all' rel='stylesheet' type='text/css'>
+<link href='/assets/css/main.css' media='all' rel='stylesheet' type='text/css'>
+<link href='/images/pcp.ico' rel='shortcut icon' type='image/ico'>
+
+</head>
+<body>
+<header class='global-header'>
+<div class='row'>
+<h1 class='global-logo colspan12-6 colspan8-4 colspan6-3 colspan2-1 as-grid'>
+<a href='/index.html'>Performance Co-Pilot</a>
+</h1>
+<nav class='global-header__navigation colspan12-6 colspan8-6 colspan6-4 colspan2-1 as-grid'>
+<ul>
+<li>
+<a href='/features.html'>Features</a>
+</li>
+<li>
+<a href='/documentation.html'>Documentation</a>
+</li>
+<li>
+<a href='/download.html'>Download</a>
+</li>
+<li>
+<a href='/community.html'>Get Involved</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+
+<div class='site-content'>
+<div class='how-to is-typeset'>
+<div class='row-parent'>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<br>
+<h3>Ideas List</h3>
+<ol>
+<li>
+New Content Areas
+<ul>
+<li>
+<a href='#vector'>Netflix Vector documentation</a>
+</li>
+<li>
+<a href='#grafana'>Grafana PCP datasource documentation</a>
+</li>
+</ul>
+</li>
+<li>
+Book Project Areas
+<ul>
+<li>
+<a href='#howtos'>Provide How-To style launching points</a>
+</li>
+</ul>
+<ul>
+<li>
+<a href='#readthedocs'>Convert docbook to 'readthedocs' content</a>
+</li>
+</ul>
+</li>
+</ol>
+<br>
+</div>
+</div>
+<div class='colspan12-4 colspan8-3 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module--cta'>
+<h2>Google</h2>
+<h2>Season of Docs</h2>
+<h2>2019</h2>
+<br>
+(
+<a href='https://developers.google.com/season-of-docs/'>Home</a>
+)
+</br>
+<br>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div class='colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='vector'></a>
+<h3>Netflix Vector Documentation</h3>
+<p>
+<a href='http://getvector.io/docs'>Vector</a>
+is an open source host-level performance monitoring framework
+which exposes hand-picked, high-resolution system and application
+metrics to every engineer’s browser.
+It focuses on realtime extraction and visualization of performance
+data primarily using Performance Co-Pilot (PCP) Representational State
+Transfer (REST) Application Programming Interfaces (APIs).
+</p>
+<p>
+The goal of this project is to work with mentors and developers in
+the Vector and PCP communities to extend the existing documentation to
+include many of the Vector features that are not yet documented.
+This includes flamegraph, heatmap and table visuals, extended Berkly
+Packet Format (eBPF) and Linux container instrumentation support, and
+a number of other areas.
+</p>
+<p>
+<strong>Expected results:</strong>
+This new documentation will take the form of updates to the Vector
+website, new tutorials (ideally supplemented with short explanatory
+video content), and inclusion of Vector content in
+<a href='https://readthedocs.io/'>readthedocs.io</a>
+and
+<a href='https://en.wikipedia.org/wiki/ReStructuredText'>RST</a>
+format to ease the task of community contributors editing and
+providing new content.
+</p>
+<p>
+<strong>Mentors:</strong>
+<a href='mailto:mspier@netflix.com'>Martin Spier</a>
+,
+<a href='mailto:andreas@gerstmayr.me'>Andreas Gerstmayr</a>
+</p>
+<p>
+<strong>Interested writers so far:</strong>
+0
+</p>
+<br>
+</div>
+</div>
+<div class='colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='grafana'></a>
+<h3>PCP Grafana datasource documentation</h3>
+<p>
+The Performance Co-Pilot approach to scalable, multi-host performance
+analysis builds on the
+<a href='https://redis.io'>Redis</a>
+distributed data store and its native time series support.
+The
+<a href='https://man7.org/linux/man-pages/man1/pmseries.1.html'>pmseries</a>
+utility and
+<a href='https://man7.org/linux/man-pages/man1/pmproxy.1.html'>pmproxy</a>
+daemon provide the tooling and APIs to support this.
+</p>
+<p>
+The Grafana PCP data source accesses all PCP metric data via
+<a href='https://man7.org/linux/man-pages/man1/pmproxy.1.html'>pmproxy</a>
+REST APIs, which are used to access the scalable
+<a href='https://redis.io/'>Redis</a>
+backend cache.
+Resulting Grafana charts and panels can be exported in JSON format
+with template variables and included as part of Grafana itself, or
+shipped separately as part of PCP and installed/imported using the
+Grafana provisioning mechanisms.
+</p>
+<p>
+<strong>Expected results:</strong>
+This is a significant opportunity for a technical writer to work with
+PCP developers to document new REST APIs, command line utilities, new
+language specification, and the administrative procedures required to
+setup a cloud based time series analysis system at scale, as these
+features are being put into production environments for the first time.
+The new content will need to link into existing PCP and Grafana docs.
+</p>
+<p>
+<strong>Mentors:</strong>
+<a href='mailto:nathans@redhat.com'>Nathan Scott</a>
+,
+<a href='mailto:mgoodwin@redhat.com'>Mark Goodwin</a>
+</p>
+<p>
+<strong>Interested writers so far:</strong>
+0
+</p>
+<br>
+</div>
+</div>
+<div class='colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='howtos'></a>
+<h3>Provide How-To style launching points</h3>
+<p>
+One area of need in the PCP documentation identified at this years
+<a href='/conference/2019/home.html'>conference</a>
+was for us to provide short, hands-on introductory texts and videos
+that guide people toward the in-depth documentation they need.
+The deep documentation exists and is needed, but its buried in alot
+of the detail-oriented, jargon-heavy books.
+</p>
+<p>
+<strong>Expected results:</strong>
+A series of short, introductory pieces will be created that provide
+simple introductions to complex topics.
+These topics include writing new instrumentation agents, application
+instrumentation in Java, Go, Rust, python and C languages, writing
+analysis tools, and some PCP administration tasks.
+These will each link to the detailed documentation elsewhere - such
+as in the 'Users and Administors Guide', or the 'Programmers Guide'.
+</p>
+<p>
+<strong>Mentors:</strong>
+<a href='mailto:kenj@kenj.id.au'>Ken McDonell</a>
+,
+<a href='mailto:chorn@redhat.com'>Christian Horn</a>
+,
+<a href='mailto:lberk@redhat.com'>Lukas Berk</a>
+</p>
+<p>
+<strong>Interested writers so far:</strong>
+0
+</p>
+<br>
+</div>
+</div>
+<div class='colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='readthedocs'></a>
+<h3>Convert docbook content to readthedocs and reStructuredText format</h3>
+<p>
+The Performance Co-Pilot documentation currently exists in several forms.
+These are the primary PCP
+<a href='https://pcp.io/'>website</a>
+and the two PCP books (docbook format).
+This project will focus on transfering and updating this
+<a href='https://en.wikipedia.org/wiki/DocBook'>docbook</a>
+content to
+<a href='https://en.wikipedia.org/wiki/ReStructuredText'>RST</a>
+such that it can be hosted on the modern, community
+<a href='https://readthedocs.io/'>readthedocs.io</a>
+site.
+This will allow community contributors to more easily change and
+extend this content.
+</p>
+<p>
+<strong>Expected results:</strong>
+You will work with the mentors to setup the Performance Co-Pilot
+<a href='https://readthedocs.io/'>readthedocs.io</a>
+hosting, and by the end of the project we will be able to
+edit and contribute to the books directly through github.
+</p>
+<p>
+<strong>Mentors:</strong>
+<a href='mailto:nathans@redhat.com'>Nathan Scott</a>
+,
+<a href='mailto:kenj@kenj.id.au'>Ken McDonell</a>
+</p>
+<p>
+<strong>Interested writers so far:</strong>
+0
+</p>
+<br>
+</div>
+</div>
+</div>
+</div>
+<footer class='global-footer is-typeset'>
+<div class='row-parent'>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>Main Menu</h4>
+<ul>
+<li>
+<a href='/features.html'>Features</a>
+</li>
+<li>
+<a href='/documentation.html'>Documentation</a>
+</li>
+<li>
+<a class='download' href='/download.html'>Download</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>Developers</h4>
+<ul>
+<li>
+<a href='https://github.com/performancecopilot/pcp/issues'>Report an issue</a>
+</li>
+<li>
+<a href='https://github.com/performancecopilot/pcp/projects/1'>Roadmap</a>
+</li>
+<li>
+<a href='/community.html'>Contributing</a>
+</li>
+<li>
+<a href='/team.html'>Team</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>About</h4>
+<ul>
+<li>
+<a href='/testimonials.html'>Testimonials</a>
+</li>
+<li>
+<a href='/faq.html'>FAQ</a>
+</li>
+<li>
+<a href='/website.html'>Website</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>Get Social</h4>
+<ul>
+<li>
+<a class='twitter' href='https://twitter.com/performancepcp' rel='external'>Twitter</a>
+</li>
+<li>
+<a class='github' href='https://github.com/performancecopilot' rel='external'>Github</a>
+</li>
+</ul>
+</div>
+</div>
+</section>
+</div>
+<div class='row'>
+<div class='colspan2-2'>
+<p class='legal'>
+This website is Copyright &copy; 2000-2004 Silicon Graphics Inc, 2007-2010 Aconex, 2012-2021 Red Hat
+</p>
+</div>
+</div>
+</div>
+</footer>
+
+</body>
+</html>

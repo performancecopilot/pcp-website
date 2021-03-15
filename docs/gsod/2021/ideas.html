@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='initial-scale=1' name='viewport'>
+<title>Performance Co-Pilot</title>
+<link href='/assets/css/screen.css' media='all' rel='stylesheet' type='text/css'>
+<link href='/assets/css/main.css' media='all' rel='stylesheet' type='text/css'>
+<link href='/images/pcp.ico' rel='shortcut icon' type='image/ico'>
+
+</head>
+<body>
+<header class='global-header'>
+<div class='row'>
+<h1 class='global-logo colspan12-6 colspan8-4 colspan6-3 colspan2-1 as-grid'>
+<a href='/index.html'>Performance Co-Pilot</a>
+</h1>
+<nav class='global-header__navigation colspan12-6 colspan8-6 colspan6-4 colspan2-1 as-grid'>
+<ul>
+<li>
+<a href='/features.html'>Features</a>
+</li>
+<li>
+<a href='/documentation.html'>Documentation</a>
+</li>
+<li>
+<a href='/download.html'>Download</a>
+</li>
+<li>
+<a href='/community.html'>Get Involved</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+
+<div class='site-content'>
+<div class='how-to is-typeset'>
+<div class='row-parent'>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='logo colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'></div>
+</section>
+<section class='row__colspaced'>
+<div class='colspan12-8 push12-2 colspan8-8 colspan6-6 colspan2-1 as-grid with-gutter'>
+<div class='col__module--cta'>
+<h2>Task-based Guides for Performance Co-Pilot</h2>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div class='colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'>
+<div class='features_title row'>
+<h3>About Performance Co-Pilot</h3>
+<p>
+Performance Co-Pilot (PCP) is an open-source distributed
+system performance analysis toolkit.
+It efficiently collects metrics from multiple systems and
+provides a variety of web, graphical and console tools for
+analysis of live and historical data.
+</p>
+<p>
+The suite begun production use over 20 years ago primarily
+in the High Performance Computing arena, however its
+customizable and lightweight design has proven popular on
+everything from tiny system-on-a-chip machines through to
+vast databases and number-crunching super computers.
+It is included in all Linux distributions and has an active
+base of users and developers.
+</p>
+<p>
+Writers interested in contributing to the project described
+here are encouraged to contact the volunteers listed below,
+and join the PCP
+<a href='https://pcp.io/community.html'>community</a>
+for further discussion.
+</p>
+</div>
+</div>
+<div class='features_title row'>
+<h3>Participants</h3>
+</div>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'>
+<div class='col__module--img'>
+<p>
+<strong>Volunteers:</strong>
+</p>
+<br>
+<a href='mailto:abhide@redhat.com'>Apurva Bhide</a>
+,
+<a href='mailto:chorn@redhat.com'>Christian Horn</a>
+and
+<a href='mailto:scott.nato@gmail.com'>Nathan Scott</a>
+</br>
+</div>
+</div>
+<div class='colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'>
+<div class='col__module--doc'>
+<p>
+Three volunteers have come forward to assist once again - a
+PCP maintainer, a developer and a documentation specialist -
+all of whom volunteered last year as well.
+</p>
+</div>
+</div>
+</section>
+</div>
+<div class='features_title row'>
+<h3>About Task-based Guides</h3>
+</div>
+<div class='row'>
+<p>
+In our previous Google Season of Docs project, we converted
+two freely-available books (the "Users and Administrators Guide"
+and the "Programmers Guide") into
+<a href='https://pcp.readthedocs.io/'>pcp.readthedocs.io</a>
+content.
+We also extended this documentation with a new REST API guide,
+and made many other improvements.
+</p>
+<p>
+However, due to the many available tools, daemons, integrations
+and APIs we still find a high barrier to entry for new PCP
+users.
+</p>
+<p>
+It is this we plan to tackle next with our writer - curating a
+new series of focussed, task-oriented "How To" guides that will
+assist new users in engaging immediately, by clearly showing
+how to solve specific problem scenarios that users encounter
+frequently.
+</p>
+<p>
+The goals of the project are this to assist first-time users to
+become more productive right away, while also increasing traffic
+to the more detailed books in the same location (readthedocs.io).
+We plan to undertake this project over three months.
+</p>
+<br>
+<h4>The Task-based Guides project will:</h4>
+<p>
+Pair developers with the writer to produce succinct step-by-step
+recipes showing how to perform certain tasks with PCP.
+</p>
+<p>
+Task-based topics include:
+<div class='row'>
+<div class='colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'>
+<div class='col__module--doc'>
+<p>
+<strong>How do I ...</strong>
+</p>
+<ul>
+<li>List the available performance metrics?</li>
+<li>Add new metrics to the available set?</li>
+<li>Record metrics on my local system?</li>
+<li>Record metrics from a remote system?</li>
+<li>Graph a performance metric?</li>
+<li>Automate performance problem detection?</li>
+<li>Setup automated rules to write to the system log?</li>
+<li>
+Record historical values for use with the
+<a href='https://man7.org/linux/man-pages/man1/pcp-dstat.1.html'>pcp-dstat</a>
+tool?
+</li>
+<li>Export metric values in a comma-separated format?</li>
+</ul>
+</div>
+</div>
+</div>
+</p>
+<p>
+Additionally, the writer will:
+</p>
+<ul>
+<li>
+Canvas the community for additional topics beyond the
+set above to produce an initial set of high-value guides
+</li>
+<li>
+Provide feedback to developers about potential areas of
+improvements in the tools to create more satisfying early
+user experiences.
+</li>
+<li>
+Audit existing documentation for tutorial content to add
+into the new
+<a href='https://pcp.readthedocs.io/'>readthedocs</a>
+guide format.
+This involves an assessment of the existing
+<a href='https://pcp.io/documentation.html'>Short Guides</a>
+and refactoring these into the
+<strong>"How do I..."</strong>
+form.
+</li>
+<li>
+Introduce consistency into all Tutorials and Guides
+across the project, by using a single readthedocs.io
+landing page for all guides (same location, format,
+look-and-feel).
+</li>
+<br>
+</ul>
+<p>
+<strong>Work that is out-of-scope for this project:</strong>
+</p>
+<p>
+This project will focus on core PCP functionality,
+and not on integration with (for example) 3rd party
+sources of metrics, or sending PCP metrics to other
+analysis systems.
+</p>
+</div>
+<div class='colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'>
+<div class='col__module--doc'>
+<a name='success'></a>
+<h3>Measuring Success</h3>
+<p>
+We anticipate the How To pages will provide a better suited
+entry point for both new and some existing users.
+We will measure this by first enabling
+<a href='https://docs.readthedocs.io/en/latest/guides/google-analytics.html'>Google analytics</a>
+on our readthedocs pages to begin tracking page accesses.
+</p>
+<p>
+<strong>Success will be indicated by:</strong>
+</p>
+<ul>
+<li>
+The largest number of hits to documentation pages being to the
+new Task-based Guides pages (we expect greater than double any
+other books as a measure of success).
+This success measure will be presented as a graph showing the
+spread of hits, with the most being attributed to the new
+Task-based Guides.
+</li>
+<li>
+A correlated increase in the number of hits to the existing
+PCP documentation - the
+<a href='https://pcp.readthedocs.io/UAG/AboutUAGGuide.html'>Users Guide ,</a>
+<a href='https://pcp.readthedocs.io/PG/AboutPGGuide.html'>Programmers Guide</a>
+and
+<a href='https://pcp.readthedocs.io/en/latest/api/'>REST API Guide</a>
+as a result of the new (shorter, focussed) guides.
+We aim for a 20% increase in access to the other Guides as our
+success measure.
+</li>
+<li>
+Some guides will be in different forms - video-based vs text -
+we'll also use the analytics to determine which formats are
+more successful than others.
+This will be presented as a graph also; simply having this
+breakdown will indicate success to us, we can use that
+information to decide future documentation styles to prefer.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<footer class='global-footer is-typeset'>
+<div class='row-parent'>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>Main Menu</h4>
+<ul>
+<li>
+<a href='/features.html'>Features</a>
+</li>
+<li>
+<a href='/documentation.html'>Documentation</a>
+</li>
+<li>
+<a class='download' href='/download.html'>Download</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>Developers</h4>
+<ul>
+<li>
+<a href='https://github.com/performancecopilot/pcp/issues'>Report an issue</a>
+</li>
+<li>
+<a href='https://github.com/performancecopilot/pcp/projects/1'>Roadmap</a>
+</li>
+<li>
+<a href='/community.html'>Contributing</a>
+</li>
+<li>
+<a href='/team.html'>Team</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>About</h4>
+<ul>
+<li>
+<a href='/testimonials.html'>Testimonials</a>
+</li>
+<li>
+<a href='/faq.html'>FAQ</a>
+</li>
+<li>
+<a href='/website.html'>Website</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='colspan12-3 colspan8-2 colspan6-2 colspan2-2 as-grid with-gutter'>
+<div class='col__module'>
+<h4>Get Social</h4>
+<ul>
+<li>
+<a class='twitter' href='https://twitter.com/performancepcp' rel='external'>Twitter</a>
+</li>
+<li>
+<a class='github' href='https://github.com/performancecopilot' rel='external'>Github</a>
+</li>
+</ul>
+</div>
+</div>
+</section>
+</div>
+<div class='row'>
+<div class='colspan2-2'>
+<p class='legal'>
+This website is Copyright &copy; 2000-2004 Silicon Graphics Inc, 2007-2010 Aconex, 2012-2021 Red Hat
+</p>
+</div>
+</div>
+</div>
+</footer>
+
+</body>
+</html>

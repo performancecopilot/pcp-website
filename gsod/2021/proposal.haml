@@ -1,0 +1,270 @@
+!!! html
+%html
+  %head
+    = Haml::Engine.new(File.read("assets/haml-includes/head.haml")).render
+
+  %body
+    = Haml::Engine.new(File.read("assets/haml-includes/navigation.haml")).render
+
+    %div{:class => 'site-content'}
+      %div{:class => 'how-to is-typeset'}
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'logo colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-8 push12-2 colspan8-8 colspan6-6 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h2 Task-based Guides for Performance Co-Pilot
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'features_title row'}
+            %h3 About Performance Co-Pilot
+            %p
+              Performance Co-Pilot (PCP) is an open-source distributed
+              system performance analysis toolkit.
+              It efficiently collects metrics from multiple systems and
+              provides a variety of web, graphical and console tools for
+              analysis of live and historical data.
+            %p
+              The suite begun production use over 20 years ago primarily
+              in the High Performance Computing arena, however its
+              customizable and lightweight design has proven popular on
+              everything from tiny system-on-a-chip machines through to
+              vast databases and number-crunching super computers.
+              It is included in all Linux distributions and has an active
+              base of users and developers.
+
+        %div{:class => 'features_title row'}
+          %h3 About Task-based Guides
+        %div{:class => 'row'}
+          %p
+            In our previous Google Season of Docs project, we converted
+            two freely-available books (the "Users and Administrators Guide"
+            and the "Programmers Guide") into
+            %a{:href => 'https://pcp.readthedocs.io/'} pcp.readthedocs.io
+            content.
+            We also extended this documentation with a new REST API guide,
+            and made many other improvements.
+          %p
+            However, due to the many available tools, daemons, integrations
+            and APIs we still find a high barrier to entry for new PCP
+            users.
+          %p
+            It is this we plan to tackle next with our writer - curating a
+            new series of focussed, task-oriented "How To" guides that will
+            assist new users in engaging immediately, by clearly showing
+            how to solve specific problem scenarios that users encounter
+            frequently.
+          %p
+            The goals of the project are this to assist first-time users to
+            become more productive right away, while also increasing traffic
+            to the more detailed books in the same location (readthedocs.io).
+            We plan to undertake this project over three months.
+          %br
+
+          %h4 The Task-based Guides project will:
+          %p
+            Pair developers with the writer to produce succinct step-by-step
+            recipes showing how to perform certain tasks with PCP.
+          %p
+            Task-based topics include:
+
+            %div{:class => 'row'}
+              %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--doc'}
+                  %p
+                    %strong How do I ...
+                  %ul
+                    %li List the available performance metrics?
+                    %li Add new metrics to the available set?
+                    %li Record metrics on my local system?
+                    %li Record metrics from a remote system?
+                    %li Graph a performance metric?
+                    %li Automate performance problem detection?
+                    %li Setup automated rules to write to the system log?
+                    %li
+                      Record historical values for use with the
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pcp-dstat.1.html'} pcp-dstat
+                      tool?
+                    %li Export metric values in a comma-separated format?
+
+          %p
+            Additionally, the writer will:
+          %ul
+            %li
+              Canvas the community for additional topics beyond the
+              set above to produce an initial set of high-value guides
+            %li
+              Provide feedback to developers about potential areas of
+              improvements in the tools to create more satisfying early
+              user experiences.
+            %li
+              Audit existing documentation for tutorial content to add
+              into the new
+              %a{:href => 'https://pcp.readthedocs.io/'} readthedocs
+              guide format.
+              This involves an assessment of the existing
+              %a{:href => 'https://pcp.io/documentation.html'} Short Guides
+              and refactoring these into the
+              %strong "How do I..."
+              form.
+            %li
+              Introduce consistency into all Tutorials and Guides
+              across the project, by using a single readthedocs.io
+              landing page for all guides (same location, format,
+              look-and-feel).
+            %br
+
+          %p
+            %strong Work that is out-of-scope for this project:
+          %p
+            This project will focus on core PCP functionality,
+            and not on integration with (for example) 3rd party
+            sources of metrics, or sending PCP metrics to other
+            analysis systems.
+
+        %div{:class => 'features_title row'}
+          %h3 Participants
+        %div{:class => 'row'}
+          %section{:class => 'row__colspaced'}
+            %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+              %div{:class => 'col__module--img'}
+                %p
+                  %strong Writer:
+                %br
+                  %a{:href => 'mailto:arzoo@gmail.com'} Arzoo
+                %br
+                %p
+                  %strong Volunteers:
+                %br
+                  %a{:href => 'mailto:abhide@redhat.com'} Apurva Bhide
+                  ,
+                  %a{:href => 'mailto:chorn@redhat.com'} Christian Horn
+                  and
+                  %a{:href => 'mailto:scott.nato@gmail.com'} Nathan Scott
+
+            %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+              %div{:class => 'col__module--doc'}
+                %p
+                  We have a strong technical writing candidate for the
+                  project who was our writer from Google Season of Docs
+                  last year and is interested in working on another major
+                  project.
+                  We have a proven, successful relationship that we are
+                  keen to continue to build on.
+                %p
+                  This project expands on the readthedocs documentation that
+                  was produced last year, so we anticipate rapid results as
+                  our writer is already very familiar with PCP and Grafana.
+                %p
+                  Three volunteers have come forward to assist Arzoo again - a
+                  PCP maintainer, a developer and a documentation specialist -
+                  all of whom volunteered last year as well.
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--doc'}
+            %a{:name => 'success'}
+            %h3 Measuring Success
+            %p
+              We anticipate the How To pages will provide a better suited
+              entry point for both new and some existing users.
+              We will measure this by first enabling
+              %a{:href => 'https://docs.readthedocs.io/en/latest/guides/google-analytics.html'} Google analytics
+              on our readthedocs pages to begin tracking page accesses.
+            %p
+              %strong Success will be indicated by:
+            %ul
+              %li
+                The largest number of hits to documentation pages being to the
+                new Task-based Guides pages (we expect greater than double any
+                other books as a measure of success).
+                This success measure will be presented as a graph showing the
+                spread of hits, with the most being attributed to the new
+                Task-based Guides.
+              %li
+                A correlated increase in the number of hits to the existing
+                PCP documentation - the
+                %a{:href => 'https://pcp.readthedocs.io/UAG/AboutUAGGuide.html'} Users Guide ,
+                %a{:href => 'https://pcp.readthedocs.io/PG/AboutPGGuide.html'} Programmers Guide
+                and
+                %a{:href => 'https://pcp.readthedocs.io/en/latest/api/'} REST API Guide
+                as a result of the new (shorter, focussed) guides.
+                We aim for a 20% increase in access to the other Guides as our
+                success measure.
+              %li
+                Some guides will be in different forms - video-based vs text -
+                we'll also use the analytics to determine which formats are
+                more successful than others.
+                This will be presented as a graph also; simply having this
+                breakdown will indicate success to us, we can use that
+                information to decide future documentation styles to prefer.
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--doc'}
+            %a{:name => 'budget'}
+            %h3 Project budget
+            %table{:width=>"100%",:border=>"1"}
+              %tr
+                %th
+                  %strong Budget Item
+                %th
+                  %strong Item Amount
+                %th
+                  %strong Running Total
+                %th
+                  %strong Notes
+              %tr
+                %td Technical writer stipend
+                %td $5000
+                %td $5000
+                %td
+              %tr
+                %td Volunteer stipend
+                %td $1500
+                %td $6500
+                %td x3 volunteers @$500
+              %tr
+                %td Swag
+                %td $200
+                %td $6700
+                %td
+                  x4 participants @$50
+                  %a{:href => 'https://devswag.com/search?q=pcp'} [devswag]
+              %tr
+                %td Organisation donation
+                %td $670
+                %td $7370
+                %td
+                  10% of total
+                  %a{:href => 'https://www.spi-inc.org/projects/pcp/'} [SPI]
+              %tr
+                %td
+                  %strong Total: $7370
+                %td
+                %td
+                %td
+            %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--doc'}
+            %a{:name => 'notes'}
+            %h3 Other notes
+            %p
+              PCP is a mature open source project, active now for
+              well over 20 years.
+              We have experience mentoring students and writers,
+              participating in Google Summer of Code for 5 years,
+              and in last years Google Season of Docs program.
+              We had a very successfully collaboration with our
+              writer last year which we'd love to build on further
+              this year.
+            %p
+              Thank you for running the Season of Docs program.
+              Our users have benefitted immensely from it and it
+              has allowed us to move in directions our resources
+              would not have allowed so we're extremely grateful!
+            %br
+
+    = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
