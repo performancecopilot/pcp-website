@@ -32,7 +32,7 @@ default:
 	done
 	test -d $(PCP)/images && $(RSYNC) $(PCP)/images .
 	test -d $(PCP)/man/html && $(RSYNC) $(PCP)/man/html/* docs/docs
-	$(RSYNC) CNAME images snaps assets papers docs
+	$(RSYNC) CNAME GPG-KEY-PCP images snaps assets papers docs
 	git add docs
 	git status
 
