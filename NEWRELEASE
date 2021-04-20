@@ -9,7 +9,7 @@ Steps to create the packages for a new release
    Update https://github.com/performancecopilot/pcp/releases to
    indicate the new version is now the latest (Edit Release ->
    Update Release in the web UI).
-3. Most packages are uploaded to bintray via github actions now.
+3. Packages are uploaded to artifactory via github actions now.
 4. For the official Debian source uploads by debian developers
    export DEB_SIGN_KEYID=0xFE0842EE36DD8C0C
    ./Makepkgs --signed --with-python3=yes --with-python=no --with-systemd=yes
