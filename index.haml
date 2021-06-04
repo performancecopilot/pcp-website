@@ -86,6 +86,28 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p
+                      Jun 2021
+                      %br
+                      PCP 5.3.1
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p
+                      Minor bug fix release.
+                      Major performance optimizations for the
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmproxy.1.html'} pmproxy
+                      REST APIs, archive discovery and time series queries,
+                      as well as for the Linux
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmdaproc.1.html'} proc
+                      metrics.
+                      Fixes and new configuration options for the
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmrep.1.html'} pmrep
+                      utility.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p
                       Apr 2021
                       %br
                       PCP 5.3.0
@@ -219,32 +241,5 @@
                       in favour of the
                       %a{:href => 'https://man7.org/linux/man-pages/man1/pmfind_check.1.html'} pmfind
                       service.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      May 2020
-                      %br
-                      PCP 5.1.1
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      Fixes and optimizations in systemd service management, and a new
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmfind.1.html'} pmfind
-                      discovery timer service replacing the
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pcpcompat.1.html'} pmmgr
-                      standalone daemon.
-                      Metric labels support in
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmrep.1.html'} pmrep
-                      and related tools,
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmcd.1.html'} pmcd
-                      support for optional labels.
-                      New metric collectors for
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmdaopenvswitch.1.html'} Open vSwitch
-                      and
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmdarabbitmq.1.html'} RabbitMQ
-                      servers.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
