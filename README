@@ -3,7 +3,7 @@
 1) Install the following packages (e.g. for Fedora):
 dnf install -y git ruby rubygem-haml lynx rsync linkchecker rubygems
 
-2) Install the following rubygem:
-  gem install sass-globbing
+2) Install the following rubygems:
+  gem install sass-globbing compass
 
 3) make
