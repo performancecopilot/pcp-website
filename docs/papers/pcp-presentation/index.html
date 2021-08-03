@@ -47,12 +47,8 @@
 					<h1>Performance Co-Pilot</h1>
 					<h3>A System Performance and Analysis Framework</h3>
 					<p>
-						<small><a href="http://pcp.io">pcp.io</a> / <a href="http://twitter.com/performancepcp">@performancepcp</a></small>
+						<small><a href="https://pcp.io">pcp.io</a> / <a href="https://twitter.com/performancepcp">@performancepcp</a></small>
 					</p>
-				</section>
-
-				<section>
-					<h2>Who in the audience has heard of or used Performance Co-Pilot?</h2>
 				</section>
 
 				<section>
@@ -66,10 +62,11 @@
 					</ul>
 				</section>
 				<section>
-					<h2><a href="http://pcp.io/testimonials.html">Who uses PCP?</a></h2>
-					<p><span class="fragment">Netflix, </span><span class="fragment">Aconex, </span></p>
-					<p><span class="fragment">University of Buffalo, </span><span class="fragment">XFS Developers, </span></p>
-					<p><span class="fragment">MessageMedia, </span><span class="fragment">Red Hat, </span></p>
+					<h2><a href="https://pcp.io/testimonials.html">Who uses PCP?</a></h2>
+					<p><span class="fragment">Netflix, </span><span class="fragment">Red Hat, </span></p>
+					<p><span class="fragment">Fujitsu, </span><span class="fragment">IBM, </span></p>
+					<p><span class="fragment">HPC sites, </span><span class="fragment">banks, </span></p>
+					<p><span class="fragment">telcos, </span><span class="fragment">developers, </span></p>
 					<p><span class="fragment">...</span></p>
 				</section>
 
@@ -349,42 +346,6 @@ Ratio Threshold: > 50.00 or < 0.020
 							can be used to create a formatted PDF report out of an archive</li>
 						</ul>
 					</section>
-					<section>
-						<h2>Analyze Data</h2>
-						<p class="fragment">
-						Import an archive in <em>[i]python</em> and manipulate the data via <a href="http://pandas.pydata.org/">pandas</a>.
-						</p>
-						<span class="fragment">
-							<pre><code class="bash">
-git clone https://github.com/mbaldessari/pcpinteractive.git
-cd pcpinteractive
-							</code></pre>
-						</span>
-						<span class="fragment">
-							<pre><code class="ipython">
-$ ipython qtconsole --pylab=inline
-In [1]: import pcparchive, pandas
-In [2]: p = pcparchive.PcpArchive('testfiles/monday')
-In [3]: p.parse()
-Parsing archive: [########## 100.0%]
-In [4]: metrics = p.get_metrics()
-In [5]: len(metrics)
-Out[6]: 253
-							</code></pre>
-						</span>
-					</section>
-					<section>
-						<h2>Analyze Data</h2>
-						<span class="fragment">
-							<pre><code class="ipython">
-In [9]: net_in = p.get_pandas('network.interface.in.bytes')
-In [10]: net_in.plot()
-							</code></pre>
-						</span>
-						<span class="fragment">
-							<img data-src="./images/netpcpmatplot.png" alt="plotpcp"/>
-						</span>
-					</section>
 				</section>
 
 				<section>
@@ -456,30 +417,24 @@ network.interface.up 2 "lo" "eth0"
 				</section>
 				<section>
 					<section>
-						<h2>Other</h2>
-					</section>
-					<section>
 						<h2>Grafana</h2>
-						<img data-src="./images/pcp-grafana.png" alt="grafana-pcp"/>
+						<img data-src="./images/vector-overview.png" alt="grafana-pcp"/>
 					</section>
 					<section>
-						<h2>JSON interface</h2>
-						<img data-src="./images/arduino-pcp2.png" alt="json-pcp"/>
+						<h2>PCP Vector</h2>
+						<img data-src="./images/vector-metric-autocompletion.png" alt="pcp-vector"/>
 					</section>
 					<section>
-						<h2>Blinkenlights ;)</h2>
-						<img data-src="./images/pcp-blinkenlights.png" alt="blinkenlights-pcp"/>
+						<h2>PCP Redis</h2>
+						<img data-src="./images/pcp-redis.png" alt="pcp-redis"/>
 					</section>
 					<section>
-						<h2>Vector</h2>
-						<img data-src="./images/vector.png" alt="vector-pcp"/>
+						<h2>PCP bpftrace</h2>
+						<img data-src="./images/bpftrace-disk.png" alt="pcp-bpftrace"/>
 					</section>
 					<section>
-						<img data-src="./images/screenshot.png" alt="vector-screenshot"/>
-					</section>
-					<section>
-						<h2><a href="http://cockpit-project.org/">Cockpit</a></h2>
-						<img data-src="./images/screenshot-storage.png" alt="cockpit"/>
+						<h2>PCP bpftrace flame graphs</h2>
+						<img data-src="./images/bpftrace-flame-graph.png" alt="bpftrace-flame-graph"/>
 					</section>
 				</section>
 
@@ -487,8 +442,8 @@ network.interface.up 2 "lo" "eth0"
 					<h1>Questions?</h1>
 					<p>
 						<a href="email:pcp@groups.io">pcp@groups.io</a> <br>
-						<a href="http://pcp.io">http://pcp.io</a> <br>
-						<a href="http://twitter.com/performancepcp">@performancepcp</a>
+						<a href="https://pcp.io">https://pcp.io</a> <br>
+						<a href="https://twitter.com/performancepcp">@performancepcp</a>
 					</p>
 				</section>
 
