@@ -86,6 +86,23 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p
+                      Nov 2021
+                      %br
+                      PCP 5.3.5
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p
+                      Startup latency improvements in the
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmlogger.1.html'} pmlogger
+                      utility and service separation between local loggers and
+                      remote logging &quot;farms&quot;.
+                      New MongoDB, KVM, Nvidia GPU and Linux kernel metrics.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p
                       Oct 2021
                       %br
                       PCP 5.3.4
@@ -213,29 +230,5 @@
                       detailed sockets metrics.
                       %a{:href => 'https://man7.org/linux/man-pages/man1/pmproxy.1.html'} pmproxy
                       memory management improvements.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      Dec 2020
-                      %br
-                      PCP 5.2.3
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      Performance improvements and process network statistics
-                      support in the
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pcp-atop.1.html'} pcp-atop
-                      command.
-                      Experimental
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pcp-htop.1.html'} pcp-htop
-                      command added.
-                      Improvements to the
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmproxy.1.html'} pmproxy
-                      REST API for fast, scalable
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmseries.1.html'} pmseries
-                      querying.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
