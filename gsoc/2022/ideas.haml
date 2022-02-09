@@ -1,0 +1,225 @@
+!!! html
+%html
+  %head
+    = Haml::Engine.new(File.read("assets/haml-includes/head.haml")).render
+
+  %body
+    = Haml::Engine.new(File.read("assets/haml-includes/navigation.haml")).render
+
+    %div{:class => 'site-content'}
+      %div{:class => 'how-to is-typeset'}
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-8 colspan8-5 colspan6-4 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--img'}
+                  %br
+                  %h3 Ideas List
+                  %ol
+                    %li
+                      Integration projects
+                      %ul
+                        %li
+                          %a{:href => '#htop'} Retrospective analysis in htop
+                        %li
+                          %a{:href => '#sysstat'} Native sysstat PCP tooling
+                    %li
+                      General projects
+                      %ul
+                        %li
+                          %a{:href => '#series'} Query language extensions
+                  %br
+
+              %div{:class => 'colspan12-4 colspan8-3 colspan6-2 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h2 Google
+                  %h2 Summer of Code
+                  %h2 2022
+                  %br
+                    (
+                    %a{:href => 'https://summerofcode.withgoogle.com'} Home
+                    )
+                  %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'htop'}
+            %h3 Retrospective analysis in htop
+            %p
+              This project involves advancing the performance analysis
+              capabilities provided by the PCP version of the classic
+              %a{:href => 'https://htop.dev/'} htop
+              utility,
+              %a{:href => 'https://man7.org/linux/man-pages/man1/htop.1.html'} pcp-htop .
+            %p
+              A new contributor will:
+              %ol
+                %li
+                  Implement PCP archive support for historical analysis
+                  so that htop can report not only live data (as today)
+                  but also on system activity from 5 minutes ago, or
+                  yesterday, or a week ago!
+                %li
+                  A new user interface in htop for interactively moving
+                  the sample time forward and backward will be designed
+                  and implemented
+                %li
+                  Implement support for generalized user interface Tabs,
+                  dynamic sets of metric columns to be displayed in htop
+                  rather than only the hard-coded sets of today.  Files
+                  (text) will be used to configure this feature in a way
+                  similar to the dynamic Meter and dynamic Column code
+                  in pcp-htop today.
+            %p
+              %strong Project size:
+              This is a large project (350 hours).
+            %p
+              %strong Expected results:
+              New code (C language) will be implemented and submitted
+              to be included in htop that allows the backend platform
+              for PCP to take advantage of
+              %a{:href => 'https://man7.org/linux/man-pages/man3/PMAPI.3.html'} PMAPI
+              features not yet utilized in the current pcp-htop code.
+
+            %p
+              %strong Prerequisite knowledge:
+              C programming, ncurses library knowledge a plus. 
+            %p
+              %strong Skill level:
+              Intermediate
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott &lt;nathans@redhat.com&gt;
+              ,
+              %a{:href => 'mailto:ryan@doylenet.net'} Ryan Doyle &lt;ryan@doylenet.net&gt;
+            %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'sysstat'}
+            %h3 Native sysstat PCP tooling
+            %p
+              The project will be a collaboration between PCP and
+              %a{:href => 'https://sysstat.fr'} sysstat
+              developers to improve the tooling for users of both projects.
+            %p
+              Our new contributor will:
+              %ol
+                %li
+                  Implement support in the sysstat data collector
+                  %a{:href => 'https://man7.org/linux/man-pages/man8/sadc.8.html'} sadc
+                  for (optionally) writing PCP archives.
+                  This feature will allow PCP tools like
+                  %a{:href => 'https://man7.org/linux/man-pages/man1/pmchart.1.html'} pmchart ,
+                  %a{:href => 'https://man7.org/linux/man-pages/man1/pmie.1.html'} pmie ,
+                  %a{:href => 'https://man7.org/linux/man-pages/man1/pmrep.1.html'} pmrep
+                  and many others to directly analyze data generated by sadc.
+                  sysstat users will also be able to visualize their data in
+                  %a{:href => 'https://grafana.com/'} Grafana
+                  as its being written to disk, using the
+                  %a{:href => 'https://grafana-pcp.readthedocs.io/'} grafana-pcp
+                  module.
+                %li
+                  Make use of the
+                  %a{:href => 'https://man7.org/linux/man-pages/man3/PMAPI.3.html'} PMAPI
+                  to allow the sysstat analysis utilities, namely
+                  %a{:href => 'https://man7.org/linux/man-pages/man1/cifsiostat.1.html'} cifsiostat ,
+                  %a{:href => 'https://man7.org/linux/man-pages/man1/iostat.1.html'} iostat ,
+                  %a{:href => 'https://man7.org/linux/man-pages/man1/mpstat.1.html'} mpstat ,
+                  %a{:href => 'https://man7.org/linux/man-pages/man1/pidstat.1.html'} pidstat ,
+                  and
+                  %a{:href => 'https://man7.org/linux/man-pages/man1/tapestat.1.html'} tapestat
+                  to access this historical data.
+
+            %p
+              %strong Project size:
+              This is a large project (350 hours).
+            %p
+              %strong Expected results:
+              After cross-project collaboration and design, extensions to the
+              sysstat collector and analysis utilities will be designed and
+              implemented, unit tests and documentation will be written.
+            %p
+              %strong Prerequisite knowledge:
+              C programming, operating systems
+            %p
+              %strong Skill level:
+              Intermediate
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:stevekay@gmail.com'} Steve Kay &lt;stevekay@gmail.com&gt;
+              ,
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott &lt;nathans@redhat.com&gt;
+            %br
+
+        %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+          %div{:class => 'col__module--img'}
+            %a{:name => 'series'}
+            %h3 Query language extension and new functions
+            %p
+              Performance Co-Pilot timeseries are series of time-stamped values
+              gathered centrally from hosts making performance data available.
+              This data could be gathered for many metrics, at high frequency,
+              and from many hosts.
+              It is potentially high volume data, and searching it efficiently
+              (querying) at speed is a non-trivial problem.
+            %p
+              The Performance Co-Pilot timeseries query language is designed to
+              allow fast querying based on metric names and labels.
+              A command line utility and a REST API are available from
+              %a{:href => 'https://man7.org/linux/man-pages/man1/pmseries.1.html'} pmseries
+              and the
+              %a{:href => 'https://man7.org/linux/man-pages/man1/pmproxy.1.html'} pmproxy
+              daemon.
+              The existing query language implementation is now maturing,
+              however there are some important new functions needed along
+              with related grammar extensions.
+            %p
+              This project will extend the existing query language with:
+              %ol
+                %li
+                  grammar extensions supporting scalar operands in
+                  expressions, either as literal constants or from
+                  functions returning a scalar result.
+                %li
+                  additional functions complementing existing functions
+                  to operate across both the time domain (with one scalar
+                  result per metric instance) and across instance domains
+                  (with a single vector result).
+                %li
+                  new statistical functions such as top_k(expr) and
+                  nth_percentile(expr, n) and rolling_avg(expr, n).
+                %li
+                  new functions for subsampling and interpolation of
+                  vector operands to match time series samples with
+                  other vector operands in an expression.
+            %p
+              %strong Expected results:
+              The student will extend their C language programming skills,
+              learn about the
+              %a{:href => 'https://en.wikipedia.org/wiki/Yacc'} yacc
+              language parsing tool,
+              performance analysis with PCP and the
+              %a{:href => 'https://redis.io/'} Redis
+              distributed data store.
+              The student will also collaborate and participate in a
+              vibrant open-source environment with very experienced
+              software engineers and performance analysts.
+            %p
+              %strong Project size:
+              This is a large project (350 hours).
+            %p
+              %strong Prerequisite knowledge:
+              C programming.
+            %p
+              %strong Skill level:
+              Advanced
+            %p
+              %strong Mentors:
+              %a{:href => 'mailto:kyomazhang@gmail.com'} Kyoma Zhang &lt;kyomazhang@gmail.com&gt;
+              ,
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott &lt;nathans@redhat.com&gt;
+            %br
+
+    = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render

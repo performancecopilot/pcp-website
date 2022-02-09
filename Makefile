@@ -11,7 +11,7 @@ HAMLFILES = \
 	index features documentation community team website faq \
 	presentations glider screenshots download testimonials \
 	gsoc/2015/ideas gsoc/2016/ideas gsoc/2017/ideas gsoc/2018/ideas \
-	gsoc/2019/ideas gsoc/2020/ideas gsoc/2021/ideas \
+	gsoc/2019/ideas gsoc/2020/ideas gsoc/2021/ideas gsoc/2022/ideas \
 	gsod/2019/ideas gsod/2020/ideas gsod/2021/ideas \
 	gsod/2021/proposal gsod/2021/casestudy \
 	conference/2018/home conference/2018/contact conference/2018/schedule \
