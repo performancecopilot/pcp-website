@@ -1,0 +1,162 @@
+!!! html
+%html
+  %head
+    = Haml::Engine.new(File.read("assets/haml-includes/head.haml")).render
+
+  %body
+    = Haml::Engine.new(File.read("assets/haml-includes/navigation.haml")).render
+
+    %div{:class => 'site-content'}
+      %div{:class => 'how-to is-typeset'}
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-8 push12-2 colspan8-8 colspan6-6 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h2 How to get involved with PCP for Google Summer of Code
+
+                %p
+                  %strong Welcome!
+                  We are delighted that you are interested in working with us
+                  on Performance Co-Pilot - a toolkit for system performance
+                  analysis.
+
+                %p
+                  PCP has been an active project for around 25 years now and
+                  is a part of all modern Linux distributions.
+                  It is a mature open source project used by many thousands
+                  of people on millions of production systems to diagnose and
+                  solve complex performance problems.
+
+                %p
+                  You will get alot out of working on PCP - the performance
+                  analysis skills you pick up working with us will be useful
+                  to you no matter what field of endeavour you undertake in
+                  your career.
+                  We have a number of mentors very experienced in open source
+                  software development and performance analysis, ready to
+                  help you with a successful collaboration on our project.
+
+                %p
+                  Please follow the
+                %p
+                  Please follow the
+                %p
+                  Please follow the
+                  %a{:href => 'https://pcp.readthedocs.io/en/latest/HowTos/installation/index.html'} installation instructions
+                  on how to setup the Artifactory repositories for your distribution.
+                %p 
+                  To verify signed package builds, use the PCP maintainers
+                  %a{:href => 'http://pcp.io/GPG-KEY-PCP'} public key.
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-8 push12-2 colspan8-8 colspan6-6 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h3 1. Find a project idea
+                %p 
+                  The first step towards becoming involved in our open source
+                  performance analysis toolkit is to find a project in our
+                  %a{:href => 'https://pcp.io/gsoc/2022/ideas.html'} ideas list
+                  that appeals to you.
+                %p 
+                  There is a variety of projects.
+                  There is also potential to extend and customise the project
+                  ideas a little towards your particular skill sets or desired
+                  learning areas, from discussions with your mentors.
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-8 push12-2 colspan8-8 colspan6-6 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h3 2. Learn about PCP
+                %p 
+                  PCP is a complete distributed system analysis solution,
+                  with many components, tools, services and APIs.
+
+                %p 
+                  Before contacting mentors its a good idea to install the
+                  software and do some background reading:
+                  %ul
+                    %li
+                      %a{:href => 'https://pcp.readthedocs.io/en/latest/UAG/AboutUserAdministratorsGuide.html'} PCP User's Guide
+                    %li
+                      %a{:href => 'https://grafana-pcp.readthedocs.io/en/latest/'} Grafana PCP User's Guide
+                    %li
+                      %a{:href => 'https://pcp.readthedocs.io/en/latest/HowTos/installation/index.html'} Installation instructions
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-8 push12-2 colspan8-8 colspan6-6 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h3 3. Contact project mentors
+                %p 
+                  The mentors for our projects are listed on the
+                  %a{:href => 'https://pcp.io/gsoc/2022/ideas.html'} ideas page
+                  at the end of each project description.
+                %p 
+                  Send an email with the following details to the mentors
+                  listed for the project you are interested in:
+                  %ul
+                    %li
+                      Your preferred name
+                    %li
+                      Identify the project you're interested in
+                    %li
+                      List programming language(s) you are proficient in
+                    %li
+                      Describe your programming experience, any open source experience you have already, and describe why you are interested in the project
+                    %li
+                      List any tertiary qualifications you have or are working towards
+                    %li
+                      Any other details about yourself you wish to share
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-8 push12-2 colspan8-8 colspan6-6 colspan2-1 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %h3 4. Next steps
+                %p 
+                  Within a day or two one or more of your mentors will have
+                  contacted you to begin discussing the project.
+                %p 
+                  In the meantime, follow the instructions on the PCP
+                  %a{:href => 'https://pcp.io/community.html'} community page
+                  for joining the PCP Slack.com discussion group.
+                  The #general channel is a good place to ask about Google
+                  Summer of Code and PCP in general.
+                  Mentors for each project can be directly contacted here
+                  for further (live) chat.
+
+                %p 
+                  If you have not done so already,
+                  %a{:href => 'https://pcp.readthedocs.io/en/latest/HowTos/installation/index.html'} install
+                  PCP locally and being to experiment with its capabilities.
+                %p
+                  Clone the
+                  %a{:href => 'https://github.com/performancecopilot/pcp'} PCP git repository
+                  and
+                  %a{:href => 'https://github.com/performancecopilot/pcp/blob/main/INSTALL.md'} build from source
+                %br
+
+                %p
+                  At this point you will have a good initial understanding
+                  of PCP and should have a deeper understanding of what your
+                  project of interest is all about.
+                  Continue discussing the details of project with mentors now,
+                  and start to become involved in the community.
+                  Look for opportunities to demonstrate your programming
+                  proficiency - being able to fix small problems in
+                  documentation, code and tests right away will help to
+                  convince your mentors that you are a promising candidate.
+
+                %br
+                %p
+                  Once again, thank you for your interest in the Performance
+                  Co-Pilot toolkit and welcome to our community!
+
+    = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
