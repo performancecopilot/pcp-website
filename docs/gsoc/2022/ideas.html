@@ -100,17 +100,22 @@ Our new contributor will:
 <ol>
 <li>
 Implement PCP archive support for historical analysis
-so that htop can report not only live data (as today)
-but also on system activity from 5 minutes ago, or
-yesterday, or a week ago!
+so that htop can report both live data (as today) and
+historical system activity (not yet possible) - e.g.
+from half an hour ago, yesterday, or even weeks ago.
+The PCP
+<a href='https://man7.org/linux/man-pages/man3/PMAPI.3.html'>Performance Metrics API</a>
+provides the retrospective analysis capabilities (on
+disk storage and query interfaces) we will make use of
+to provide this functionality.
 </li>
 <li>
-A new user interface in htop for interactively moving
-the sample time forward and backward will be designed
-and implemented
+A new user interface (Screen) in htop for interactively
+moving the sample time forward or backward and changing
+the sample interval will be designed and implemented.
 </li>
 <li>
-Implement support for generalized user interface Tabs,
+Improve support of generalized user interface Tabs, i.e.
 dynamic sets of metric columns to be displayed in htop
 rather than only the hard-coded sets of today.  Files
 (text) will be used to configure this feature in a way
@@ -119,9 +124,10 @@ in pcp-htop today.
 </li>
 </ol>
 </p>
+<br>
 <p>
 <strong>Project size:</strong>
-This is a large project (350 hours).
+This is a medium sized project (175 hours).
 </p>
 <p>
 <strong>Expected results:</strong>
@@ -141,9 +147,9 @@ Intermediate
 </p>
 <p>
 <strong>Mentors:</strong>
-<a href='mailto:nathans@redhat.com'>Nathan Scott &lt;nathans@redhat.com&gt;</a>
-,
 <a href='mailto:ryan@doylenet.net'>Ryan Doyle &lt;ryan@doylenet.net&gt;</a>
+,
+<a href='mailto:nathans@redhat.com'>Nathan Scott &lt;nathans@redhat.com&gt;</a>
 </p>
 <br>
 </div>
@@ -163,7 +169,8 @@ Our new contributor will:
 <li>
 Implement support in the sysstat data collector
 <a href='https://man7.org/linux/man-pages/man8/sadc.8.html'>sadc</a>
-for (optionally) writing PCP archives.
+for (optionally) writing PCP archives instead of the
+traditional sysstat on-disk format.
 This feature will allow PCP tools like
 <a href='https://man7.org/linux/man-pages/man1/pmchart.1.html'>pmchart ,</a>
 <a href='https://man7.org/linux/man-pages/man1/pmie.1.html'>pmie ,</a>
@@ -186,9 +193,13 @@ to allow the sysstat analysis utilities, namely
 and
 <a href='https://man7.org/linux/man-pages/man1/tapestat.1.html'>tapestat</a>
 to access this historical data.
+Code changes to each of these utilities will be required
+to implement the PCP archive support using the
+<a href='https://man7.org/linux/man-pages/man3/PMAPI.3.html'>PCP performance metrics API .</a>
 </li>
 </ol>
 </p>
+<br>
 <p>
 <strong>Project size:</strong>
 This is a large project (350 hours).
@@ -209,6 +220,8 @@ Intermediate
 </p>
 <p>
 <strong>Mentors:</strong>
+<a href='mailto:sysstat@orange.fr'>Sebastien Godard &lt;sysstat@orangr.fr&gt;</a>
+,
 <a href='mailto:stevekay@gmail.com'>Steve Kay &lt;stevekay@gmail.com&gt;</a>
 ,
 <a href='mailto:nathans@redhat.com'>Nathan Scott &lt;nathans@redhat.com&gt;</a>
@@ -241,7 +254,7 @@ however there are some important new functions needed along
 with related grammar extensions.
 </p>
 <p>
-This project will extend the existing query language with:
+This project will extend the time series query language with:
 <ol>
 <li>
 grammar extensions supporting scalar operands in
@@ -265,6 +278,11 @@ other vector operands in an expression.
 </li>
 </ol>
 </p>
+<br>
+<p>
+<strong>Project size:</strong>
+This is a medium sized project (175 hours).
+</p>
 <p>
 <strong>Expected results:</strong>
 Our new contributor will extend their C language programming
@@ -277,10 +295,6 @@ distributed data store.
 They will also collaborate and participate in a vibrant
 open-source environment with very experienced engineers
 and performance analysts.
-</p>
-<p>
-<strong>Project size:</strong>
-This is a large project (350 hours).
 </p>
 <p>
 <strong>Prerequisite knowledge:</strong>

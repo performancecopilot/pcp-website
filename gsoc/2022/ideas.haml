@@ -57,23 +57,29 @@
               %ol
                 %li
                   Implement PCP archive support for historical analysis
-                  so that htop can report not only live data (as today)
-                  but also on system activity from 5 minutes ago, or
-                  yesterday, or a week ago!
+                  so that htop can report both live data (as today) and
+                  historical system activity (not yet possible) - e.g.
+                  from half an hour ago, yesterday, or even weeks ago.
+                  The PCP
+                  %a{:href => 'https://man7.org/linux/man-pages/man3/PMAPI.3.html'} Performance Metrics API
+                  provides the retrospective analysis capabilities (on
+                  disk storage and query interfaces) we will make use of
+                  to provide this functionality.
                 %li
-                  A new user interface in htop for interactively moving
-                  the sample time forward and backward will be designed
-                  and implemented
+                  A new user interface (Screen) in htop for interactively
+                  moving the sample time forward or backward and changing
+                  the sample interval will be designed and implemented.
                 %li
-                  Implement support for generalized user interface Tabs,
+                  Improve support of generalized user interface Tabs, i.e.
                   dynamic sets of metric columns to be displayed in htop
                   rather than only the hard-coded sets of today.  Files
                   (text) will be used to configure this feature in a way
                   similar to the dynamic Meter and dynamic Column code
                   in pcp-htop today.
+            %br
             %p
               %strong Project size:
-              This is a large project (350 hours).
+              This is a medium sized project (175 hours).
             %p
               %strong Expected results:
               New code (C language) will be implemented and submitted
@@ -90,9 +96,9 @@
               Intermediate
             %p
               %strong Mentors:
-              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott &lt;nathans@redhat.com&gt;
-              ,
               %a{:href => 'mailto:ryan@doylenet.net'} Ryan Doyle &lt;ryan@doylenet.net&gt;
+              ,
+              %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott &lt;nathans@redhat.com&gt;
             %br
 
         %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
@@ -109,7 +115,8 @@
                 %li
                   Implement support in the sysstat data collector
                   %a{:href => 'https://man7.org/linux/man-pages/man8/sadc.8.html'} sadc
-                  for (optionally) writing PCP archives.
+                  for (optionally) writing PCP archives instead of the
+                  traditional sysstat on-disk format.
                   This feature will allow PCP tools like
                   %a{:href => 'https://man7.org/linux/man-pages/man1/pmchart.1.html'} pmchart ,
                   %a{:href => 'https://man7.org/linux/man-pages/man1/pmie.1.html'} pmie ,
@@ -131,7 +138,10 @@
                   and
                   %a{:href => 'https://man7.org/linux/man-pages/man1/tapestat.1.html'} tapestat
                   to access this historical data.
-
+                  Code changes to each of these utilities will be required
+                  to implement the PCP archive support using the
+                  %a{:href => 'https://man7.org/linux/man-pages/man3/PMAPI.3.html'} PCP performance metrics API .
+            %br
             %p
               %strong Project size:
               This is a large project (350 hours).
@@ -148,6 +158,8 @@
               Intermediate
             %p
               %strong Mentors:
+              %a{:href => 'mailto:sysstat@orange.fr'} Sebastien Godard &lt;sysstat@orangr.fr&gt;
+              ,
               %a{:href => 'mailto:stevekay@gmail.com'} Steve Kay &lt;stevekay@gmail.com&gt;
               ,
               %a{:href => 'mailto:nathans@redhat.com'} Nathan Scott &lt;nathans@redhat.com&gt;
@@ -176,7 +188,7 @@
               however there are some important new functions needed along
               with related grammar extensions.
             %p
-              This project will extend the existing query language with:
+              This project will extend the time series query language with:
               %ol
                 %li
                   grammar extensions supporting scalar operands in
@@ -194,6 +206,10 @@
                   new functions for subsampling and interpolation of
                   vector operands to match time series samples with
                   other vector operands in an expression.
+            %br
+            %p
+              %strong Project size:
+              This is a medium sized project (175 hours).
             %p
               %strong Expected results:
               Our new contributor will extend their C language programming
@@ -206,9 +222,6 @@
               They will also collaborate and participate in a vibrant
               open-source environment with very experienced engineers
               and performance analysts.
-            %p
-              %strong Project size:
-              This is a large project (350 hours).
             %p
               %strong Prerequisite knowledge:
               C programming.
