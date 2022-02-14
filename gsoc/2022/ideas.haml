@@ -18,17 +18,11 @@
                   %h3 Ideas List
                   %ol
                     %li
-                      Integration projects
-                      %ul
-                        %li
-                          %a{:href => '#htop'} Retrospective analysis in htop
-                        %li
-                          %a{:href => '#sysstat'} Native sysstat PCP tooling
+                      %a{:href => '#htop'} Retrospective analysis in htop
                     %li
-                      General projects
-                      %ul
-                        %li
-                          %a{:href => '#series'} Query language extensions
+                      %a{:href => '#sysstat'} Native sysstat PCP tooling
+                    %li
+                      %a{:href => '#series'} Query language extensions
                   %br
 
               %div{:class => 'colspan12-4 colspan8-3 colspan6-2 colspan2-2 as-grid with-gutter'}
@@ -48,7 +42,7 @@
             %h3 Retrospective analysis in htop
             %p
               This project involves advancing the performance analysis
-              capabilities provided by the PCP version of the classic
+              capabilities provided by the PCP back end in the classic
               %a{:href => 'https://htop.dev/'} htop
               utility,
               %a{:href => 'https://man7.org/linux/man-pages/man1/htop.1.html'} pcp-htop .
@@ -59,7 +53,8 @@
                   Implement PCP archive support for historical analysis
                   so that htop can report both live data (as today) and
                   historical system activity (not yet possible) - e.g.
-                  from half an hour ago, yesterday, or even weeks ago.
+                  displaying system statistics from half an hour ago,
+                  yesterday, or even weeks ago.
                   The PCP
                   %a{:href => 'https://man7.org/linux/man-pages/man3/PMAPI.3.html'} Performance Metrics API
                   provides the retrospective analysis capabilities (on
