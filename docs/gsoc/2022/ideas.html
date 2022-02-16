@@ -46,13 +46,19 @@
 <h3>Ideas List</h3>
 <ol>
 <li>
-<a href='#htop'>Retrospective analysis in htop</a>
+<a href='#htoplogs'>Retrospective analysis in htop</a>
 </li>
 <li>
 <a href='#sysstat'>Native sysstat PCP tooling</a>
 </li>
 <li>
+<a href='#htoptabs'>Generalized columns in htop</a>
+</li>
+<li>
 <a href='#series'>Query language extensions</a>
+</li>
+<li>
+<a href='#htopgraphs'>Console-based graphing in htop</a>
 </li>
 </ol>
 <br>
@@ -76,7 +82,7 @@
 </div>
 <div class='colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'>
 <div class='col__module--img'>
-<a name='htop'></a>
+<a name='htoplogs'></a>
 <h3>Retrospective analysis in htop</h3>
 <p>
 This project involves advancing the performance analysis
@@ -104,14 +110,6 @@ to provide this functionality.
 A new user interface (Screen) in htop for interactively
 moving the sample time forward or backward and changing
 the sample interval will be designed and implemented.
-</li>
-<li>
-Improve support of generalized user interface Tabs, i.e.
-dynamic sets of metric columns to be displayed in htop
-rather than only the hard-coded sets of today.  Files
-(text) will be used to configure this feature in a way
-similar to the dynamic Meter and dynamic Column code
-in pcp-htop today.
 </li>
 </ol>
 </p>
@@ -211,11 +209,79 @@ Intermediate
 </p>
 <p>
 <strong>Mentors:</strong>
-<a href='mailto:sysstat@orange.fr'>Sebastien Godard &lt;sysstat@orangr.fr&gt;</a>
+<a href='mailto:sysstat@orange.fr'>Sebastien Godard &lt;sysstat@orange.fr&gt;</a>
 ,
 <a href='mailto:stevekay@gmail.com'>Steve Kay &lt;stevekay@gmail.com&gt;</a>
 ,
 <a href='mailto:nathans@redhat.com'>Nathan Scott &lt;nathans@redhat.com&gt;</a>
+</p>
+<br>
+</div>
+</div>
+<div class='colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='htoptabs'></a>
+<h3>Generalized columns in htop</h3>
+<p>
+The
+<a href='https://htop.dev/'>htop</a>
+utility recently acquired the ability to display multiple
+<a href='https://hisham.hm/img/htop-tabs.png'>Tabs</a>
+in its user interface.
+Currently these display only process information.
+The aim of this project is to support generalized Tabs,
+where information beyond processes can be displayed in
+columns.
+</p>
+<p>
+Our new contributor will:
+<ol>
+<li>
+Extend htop Tabs to provide a more generalized Tab and
+Columns concept, such that top-most resource utilization
+for system objects other than processes can be displayed.
+</li>
+<li>
+The addition of a Tab for Linux cgroup metrics would be
+an excellent way to visually demonstrate this idea.
+</li>
+<li>
+Extend pcp-htop tabs to allow loading at runtime from
+(text-based) configuration files.  This is conceptually
+similar to the dynamic Meter and Column configuration
+available in htop today.
+</li>
+<li>
+The ability to configure a dynamic Tab for PCP eBPF
+metrics would be an excellent outcome.
+</li>
+</ol>
+</p>
+<br>
+<p>
+<strong>Project size:</strong>
+This is a medium sized project (175 hours).
+</p>
+<p>
+<strong>Expected results:</strong>
+New code (C language) will be implemented that provides
+beautiful graphs for the graph meter mode of htop.
+</p>
+<p>
+<strong>Prerequisite knowledge:</strong>
+C programming, ncurses library knowledge a plus.
+</p>
+<p>
+<strong>Skill level:</strong>
+Intermediate
+</p>
+<p>
+<strong>Mentors:</strong>
+<a href='mailto:benbe@geshi.org'>Benny Baumann &lt;benbe@geshi.org&gt;</a>
+,
+<a href='mailto:nathans@redhat.com'>Nathan Scott &lt;nathans@redhat.com&gt;</a>
+,
+<a href='mailto:agerstmayr@redhat.com'>Andreas Gerstmayr &lt;agerstmayr@redhat.com&gt;</a>
 </p>
 <br>
 </div>
@@ -272,7 +338,7 @@ other vector operands in an expression.
 <br>
 <p>
 <strong>Project size:</strong>
-This is a medium sized project (175 hours).
+This is a large project (350 hours).
 </p>
 <p>
 <strong>Expected results:</strong>
@@ -298,6 +364,61 @@ Advanced
 <p>
 <strong>Mentors:</strong>
 <a href='mailto:kyomazhang@gmail.com'>Kyoma Zhang &lt;kyomazhang@gmail.com&gt;</a>
+,
+<a href='mailto:nathans@redhat.com'>Nathan Scott &lt;nathans@redhat.com&gt;</a>
+</p>
+<br>
+</div>
+</div>
+<div class='colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'>
+<div class='col__module--img'>
+<a name='htopgraphs'></a>
+<h3>Graphing in htop</h3>
+<p>
+Using braille characters from Unicode it is possible to
+produce
+<a href='https://user-images.githubusercontent.com/2487263/127462685-9f75f527-986e-49b7-802d-95472fd2b973.png'>beautiful</a>
+<a href='https://user-images.githubusercontent.com/2487263/127462685-9f75f527-986e-49b7-802d-95472fd2b973.png'>graphs</a>
+for console tools like the classic
+<a href='https://htop.dev/'>htop</a>
+utility.
+Prototype implementations have shown this is feasible but
+substantial (re)work is needed to make this production ready.
+</p>
+<p>
+Our new contributor will:
+<ol>
+<li>
+Work with htop community developers to implement, test and
+finally merge this much sought-after feature.
+</li>
+<li>
+Following a review of the existing implementations, a new
+design will be produced and implemented pulling the best
+of the existing ideas into a robust, complete version.
+</li>
+</ol>
+</p>
+<br>
+<p>
+<strong>Project size:</strong>
+This is a medium sized project (175 hours).
+</p>
+<p>
+<strong>Expected results:</strong>
+Beautiful graphs for the graph meter mode of htop.
+</p>
+<p>
+<strong>Prerequisite knowledge:</strong>
+C programming, ncurses library knowledge a plus.
+</p>
+<p>
+<strong>Skill level:</strong>
+Intermediate
+</p>
+<p>
+<strong>Mentors:</strong>
+<a href='mailto:benbe@geshi.org'>Benny Baumann &lt;benbe@geshi.org&gt;</a>
 ,
 <a href='mailto:nathans@redhat.com'>Nathan Scott &lt;nathans@redhat.com&gt;</a>
 </p>
