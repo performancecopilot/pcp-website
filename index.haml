@@ -86,6 +86,21 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p
+                      Apr 2022
+                      %br
+                      PCP 5.3.7
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p
+                      Bug fix release.
+                      Added Linux kernel multipath, network and disk metrics.
+                      Security Enhanced Linux improvements.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p
                       Feb 2022
                       %br
                       PCP 5.3.6
@@ -93,8 +108,7 @@
                   %div{:class => 'features_left col__module--cta'}
                     %p
                       Bug fix release.
-                      Updates to the BCC, Elasticsearch and rsyslog
-                      metric agents.
+                      Updates to the BCC, Elasticsearch and rsyslog metrics.
 
             %div{:class => 'row'}
               %section{:class => 'row__colspaced'}
@@ -200,34 +214,5 @@
                       Fixes and new configuration options for the
                       %a{:href => 'https://man7.org/linux/man-pages/man1/pmrep.1.html'} pmrep
                       utility.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      Apr 2021
-                      %br
-                      PCP 5.3.0
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      %a{:href => 'https://pcp.readthedocs.io/en/latest/HowTos/scaling/index.html'} Scalability
-                      and memory footprint improvements in the
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmproxy.1.html'} pmproxy
-                      service.
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pcp-atop.1.html'} pcp-atop
-                      allows process filtering based on state, sorting threads
-                      per process and additional reporting features (kernel
-                      wait channel symbol for blocked processes, VM OOM
-                      process killing, swap-cached, KSM, ZFS and zswap memory
-                      metrics, per-process locked memory and scheduler run
-                      delay metrics).
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pcp-htop.1.html'} pcp-htop
-                      added the SysArch Meter and ZFS ARC statistics.
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmrep.1.html'} pmrep
-                      allows specifying instances with PID.
-                      New Linux kernel metrics for fibre channel HBAs, pseudo
-                      TTYs and much improved interrupts metric handling.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
