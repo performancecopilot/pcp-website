@@ -86,6 +86,46 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p
+                      Aug 2022
+                      %br
+                      PCP 6.0.0
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p
+                      Major feature and bug fix release.
+                      %a{:href => 'https://man7.org/linux/man-pages/man5/LOGARCHIVE.5.html'} Version 3 PCP archive format
+                      with Instance Domain deltas, Y2038 support,
+                      nanosecond precision, timezone improvements
+                      and more.
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmdaelasticseach.1.html'} Elasticsearch
+                      metrics authentication support.
+                      Support for top-alike plugins in
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pcp-dstat.1.html'} pcp-dstat
+                      and tab support in the
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pcp-htop.1.html'} pcp-htop
+                      user interface.
+                      New functions support in the
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmseries.1.html'} pmseries
+                      language including topk(), nth_percentile() and stdev().
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmdabpf.1.html'} BPF PMDA
+                      CO-RE metric modules, multiple battery support in the
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmdadenki.1.html'} denki
+                      metrics, additional
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmdaopenvswitch.1.html'} Open vSwitch
+                      and
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmdalinux.1.html'} Linux kernel
+                      MpTcp metrics.
+                      Numerous bug fixes and performance enhancements,
+                      particularly in
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmproxy.1.html'} pmproxy
+                      and the
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmlogger_daily.1.html'} logging infrastructure.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p
                       Apr 2022
                       %br
                       PCP 5.3.7
@@ -192,27 +232,5 @@
                       Further improvements to threading and memory handling in the
                       %a{:href => 'https://man7.org/linux/man-pages/man1/pmproxy.1.html'} pmproxy
                       archive discovery services and REST API.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      Jun 2021
-                      %br
-                      PCP 5.3.1
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      Minor bug fix release.
-                      Major performance optimizations for the
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmproxy.1.html'} pmproxy
-                      REST APIs, archive discovery and time series queries,
-                      as well as for the Linux
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmdaproc.1.html'} proc
-                      metrics.
-                      Fixes and new configuration options for the
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmrep.1.html'} pmrep
-                      utility.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
