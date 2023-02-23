@@ -88,6 +88,23 @@
                     %p
                       Feb 2023
                       %br
+                      PCP 6.0.3
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p
+                      New Linux kernel IRQ Pressure Stall Information metrics (system wide and
+                      for individual cgroups).
+                      Debian packaging and
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmlogreduce.1.html'} pmlogreduce
+                      improvements.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p
+                      Feb 2023
+                      %br
                       PCP 6.0.2
                 %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'features_left col__module--cta'}
@@ -209,26 +226,5 @@
                       utility and service separation between local loggers and
                       remote logging &quot;farms&quot;.
                       New MongoDB, KVM, Nvidia GPU and Linux kernel metrics.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      Oct 2021
-                      %br
-                      PCP 5.3.4
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      Bug fix release, especially in systemd integration for
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmlogger.1.html'} pmlogger
-                      farms.
-                      Adds new detailed processor frequency scaling metrics on Linux.
-                      Improvements to the
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pcp-atop.1.html'} pcp-atop
-                      and
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pcp-htop.1.html'} pcp-htop
-                      utilities.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
