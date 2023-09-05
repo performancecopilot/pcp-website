@@ -86,6 +86,27 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p
+                      Sep 2023
+                      %br
+                      PCP 6.1.0
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p
+                      User-defined tabs (dynamic screens) in pcp-htop.
+                      New tools - pmlogredact, pcp-buddyinfo, pcp-meminfo,
+                      pcp-netstat, pcp-slabinfo and pcp-zoneinfo.
+                      New bar graph visualisation mode in pcp-atop.
+                      Support for Qt6 in all PCP GUI tools.
+                      Improvements to
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmdaopenmetrics.1.html'} OpenMetrics PMDA
+                      metric labels and logging.
+                      Additional Linux kernel virtual memory metrics.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p
                       Jun 2023
                       %br
                       PCP 6.0.5
@@ -110,9 +131,9 @@
                     %p
                       Improved handling of hostname changes in
                       %a{:href => 'https://man7.org/linux/man-pages/man1/pmcd.1.html'} pmcd ,
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmie.1.html'} pmie ,
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmie.1.html'} pmie
                       and
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmlogger.1.html'} pmlogger .
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmlogger.1.html'} pmlogger.
                       Derived metrics help text API and instance domain similarity feature.
                       New Linux kernel metrics in networking and shared process maps.
 
@@ -215,20 +236,5 @@
                       %a{:href => 'https://man7.org/linux/man-pages/man1/pmproxy.1.html'} pmproxy
                       and the
                       %a{:href => 'https://man7.org/linux/man-pages/man1/pmlogger_daily.1.html'} logging infrastructure.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      Apr 2022
-                      %br
-                      PCP 5.3.7
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      Bug fix release.
-                      Added Linux kernel multipath, network and disk metrics.
-                      Security Enhanced Linux improvements.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
