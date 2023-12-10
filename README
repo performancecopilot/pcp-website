@@ -1,9 +1,12 @@
 # pcp.io website build
 
-1) Install the following packages (e.g. for Fedora):
-dnf install -y git ruby ruby-devel rubygem-haml lynx rsync linkchecker rubygems
+1) Install the required packages
+   for Fedora:
+   $sudo dnf install -y git ruby ruby-devel rubygem-haml lynx rsync linkchecker rubygems
+   for Debian or similar:
+   $sudo apt install apt install ruby git ruby-dev ruby-haml lynx rsync linkchecker rubygems
 
 2) Install the following rubygems:
-  gem install sass-globbing compass
+   $sudo gem install sass-globbing compass
 
 3) make
