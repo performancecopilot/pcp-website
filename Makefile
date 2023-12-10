@@ -25,7 +25,7 @@ all: clean default
 default: 
 	rm -f docs/favicon.ico
 	ln -s images/pcp.ico docs/favicon.ico
-	compass compile -c compass/config.rb -s compressed
+	PATH=/usr/local/bin:$$PATH compass compile -c compass/config.rb -s compressed
 	for h in `echo $(HAMLFILES)`; do \
 	    haml $$h.haml > docs/$$h.html; \
 	done
