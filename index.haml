@@ -86,6 +86,31 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p
+                      May 2024
+                      %br
+                      PCP 6.2.2
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p
+                      Minor bug fix release.
+                      Updates to
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmdalibvirt.1.html'} libvirt
+                      and
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmdauwsgi.1.html'} uWSGI
+                      metrics, as well as new Linux kernel VM balloon metrics.
+                      Fixes in
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmrep.1.html'} pmrep
+                      configurations and the
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pcp2openmetrics.1.html'} pcp2openmetrics
+                      utility.
+                      Improvements to derived metrics and a new logging throttle
+                      mechanism in libpcp.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p
                       Apr 2024
                       %br
                       PCP 6.2.1
@@ -249,22 +274,5 @@
                       New virtual filesystem file descriptor limit
                       %a{:href => 'https://man7.org/linux/man-pages/man1/pmie.1.html'} pmie
                       rule.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      Oct 2022
-                      %br
-                      PCP 6.0.1
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      Bug fix release.
-                      Windows and Mac build improvements.
-                      New process statistics utility -
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pcp-ps.1.html'} pcp-ss .
-                      Switched to an independent Security Enhanced Linux policy.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
