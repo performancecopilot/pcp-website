@@ -3,7 +3,7 @@ Process to make a new PCP release
 
 Steps to create the packages for a new release
 ----------------------------------------------
-1. Update CHANGELOG with release notes, Fedora BZs in redhat.spec
+1. Update CHANGELOG with release notes
 2. Tag release in git (tagged and signed using pcp-maintainers key)
    Ex: git tag -s -u DEA2C114 -m X.Y.Z X.Y.Z
    Update https://github.com/performancecopilot/pcp/releases to

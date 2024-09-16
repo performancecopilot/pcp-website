@@ -86,6 +86,23 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p
+                      Sep 2024
+                      %br
+                      PCP 6.3.1
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p
+                      Bug fix, security hardening release.
+                      Adds vLLM metrics support by default.
+                      Fixes to the
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmdahacluster.1.html'} hacluster 
+                      metrics for new versions of Pacemaker.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p
                       Jul 2024
                       %br
                       PCP 6.3.0
@@ -255,22 +272,5 @@
                       %a{:href => 'https://man7.org/linux/man-pages/man1/pmlogger.1.html'} pmlogger.
                       Derived metrics help text API and instance domain similarity feature.
                       New Linux kernel metrics in networking and shared process maps.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      Feb 2023
-                      %br
-                      PCP 6.0.3
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      New Linux kernel IRQ Pressure Stall Information metrics (system wide and
-                      for individual cgroups).
-                      Debian packaging and
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmlogreduce.1.html'} pmlogreduce
-                      improvements.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
