@@ -86,6 +86,23 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p
+                      Nov 2024
+                      %br
+                      PCP 6.3.2
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p
+                      Minor bug fix release.
+                      Optional support for zstd archive compression.
+                      New per-process I/O metrics access control mechanism in the
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmdaproc.1.html'} proc
+                      PMDA.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p
                       Sep 2024
                       %br
                       PCP 6.3.1
@@ -253,24 +270,5 @@
                       Updates to SMART, NVME and hacluster metrics.
                       %a{:href => 'https://man7.org/linux/man-pages/man1/pcp2json.1.html'} pcp2json
                       extended with new HTTP POST functionality.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      May 2023
-                      %br
-                      PCP 6.0.4
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      Improved handling of hostname changes in
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmcd.1.html'} pmcd ,
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmie.1.html'} pmie
-                      and
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmlogger.1.html'} pmlogger.
-                      Derived metrics help text API and instance domain similarity feature.
-                      New Linux kernel metrics in networking and shared process maps.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
