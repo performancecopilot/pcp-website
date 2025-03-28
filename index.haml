@@ -88,6 +88,23 @@
                     %p
                       Mar 2025
                       %br
+                      PCP 6.3.7
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p
+                      Bug fix release.
+                      Bind2 metrics updates.
+                      Denki (power) agent RAPL metrics support.
+                      %a{:href => 'https://pcp.readthedocs.io/en/latest/api/'} PMWEBAPI
+                      extended with metric scrape filtering functionality.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p
+                      Mar 2025
+                      %br
                       PCP 6.3.4
                 %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'features_left col__module--cta'}
@@ -275,21 +292,5 @@
                       %a{:href => 'https://man7.org/linux/man-pages/man1/pmdaopenmetrics.1.html'} OpenMetrics PMDA
                       metric labels and logging.
                       Additional Linux kernel virtual memory metrics.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      Jun 2023
-                      %br
-                      PCP 6.0.5
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      Bug fix release.
-                      Updates to SMART, NVME and hacluster metrics.
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pcp2json.1.html'} pcp2json
-                      extended with new HTTP POST functionality.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
