@@ -122,13 +122,83 @@
                     Java instrumentation:
                     %a{:href => 'https://github.com/performancecopilot/parfait'} git://github.com/performancecopilot/parfait.git
                   %p
-                    C++ PMDA interface:
-                    %a{:href => 'https://github.com/pcolby/pcp-pmda-cpp.git'} git://github.com/pcolby/pcp-pmda-cpp.git
-                  %p
-                    Apache Qpid metrics:
-                    %a{:href => 'https://github.com/pcolby/pcp-pmda-qpid.git'} git://github.com/pcolby/pcp-pmda-qpid.git
-                  %p
                     PDF graph converter:
                     %a{:href => 'https://github.com/performancecopilot/pcp2pdf'} git://github.com/performancecopilot/pcp2pdf.git
+
+        %div{:class => 'row-parent'}
+          %div{:class => 'row'}
+            %section{:class => 'row__colspaced'}
+              %div{:class => 'colspan12-12 colspan8-8 colspan6-6 colspan2-2 as-grid with-gutter'}
+                %div{:class => 'col__module--cta'}
+                  %a{:name => "source"}
+                  %h2 GPG signatures
+                  %p 
+                    GPG public key for the PCP maintainers:
+                  %pre
+                    :preserve
+                      -----BEGIN PGP PUBLIC KEY BLOCK-----
+
+                      mQINBFWKIf0BEADGSktV5wIGfZQ7W5nCnMFEEVhmC9P+UdsvhIQTwhnJzyqlWFlx
+                      Q17piwqC78dZU4POrrS7kdTjAE1zzw54s/fTNuCOPOnWmLLhB02wPxqjh7slw6DX
+                      tYi7wXEmby3xokVrc7hGl8FRRHbF5cKUYA8vf/R/mquvh6oafeGXHkzItdx9gfQ0
+                      iBT0sdjeaOSq1ETo0MYkzjK61n7wimbBlo+GOhzJzjvgNoe1qqcM92GD5IH/k/TD
+                      pG+0v1xDceOCxSVpm7WLAEwBF1loKFzHpqjnXH+UfYX7wYF04fi55Lw7zP0RvTw8
+                      xFY40Fsg5SLtGXEgXuYzxej11ajZiE4v/0RgcSKxE4KexdCxJ83Ja+NNkeXn7xET
+                      iW2SPUdNj56ieQA/CdhVyHHfbvi5aaFmEXki+nLTQN0E2AxinWIlmKRp2NaLcILG
+                      8tTQFRTv7OS0UtrLOi9hMcSP9K/zn7fxqvuj/CbYZzAzPXMQTQu+koEVFeSVqipX
+                      avaP3RDmcfPaB1gXogIkQaQDmD7H7E6wMzY3JL+usEWSMlRypFG8/gptvHBtr+UJ
+                      k0WK7rfGGjWGAoBROGeIZzq7goryC1dRAUOz5C/FuHU27iVDCNlrLJ74+n+eDiX1
+                      2/OnXYPanzP8YcRDD/rkNU3Jemx+lxq3/0YjfppttImci0Rr0zYoC42SPQARAQAB
+                      tEBQZXJmb3JtYW5jZSBDby1QaWxvdCAoUENQKSBNYWludGFpbmVycyA8cGNwLW1h
+                      c3RlcnNAb3NzLnNnaS5jb20+iQI3BBMBCAAhBQJViiH9AhsDBQsJCAcDBRUKCQgL
+                      BRYCAwEAAh4BAheAAAoJEKUdOtzeosEU5fUP/2tv4JhTiULUmgKaGTaZa9Anmn+l
+                      pjbkqUUUlIJazqSN/8Ktdq6nAHbguxmVH8uH5nTNaYrLs0Tt6oVhROSgtNMQLyot
+                      TZJ5FqwRPX61aijkXlU2YOanBkFvL/vrNU1CQeofyCIzsquVuYSg7RYzNtnfaw5/
+                      s5N82llEZhyM4/BglKZVfMDXCXwKyXJF2MPNAyv3VXQNlhei6wDMHsBztPh4BX85
+                      X3YdbWX7wnN/JlltAzezRbLDp2JdN4vycPSGvNHDY83EuL5PFLIjracOCAbDtsMV
+                      pRnXlhANuzCqr71hNI6sirOLxXLvTz58qFkKUD7CREHinXpSALb79aX3vV2cVdAl
+                      IS6C1eicagjTZOB0Sqk/a5MhdUpEOyXeQUfYK8QgDjlnK9WlTDOh9H6KVLyhmzl5
+                      CZf9S4979PrTBxQy9GIRiiawKeg6Osa/ChdwkVpZSHV2tmgUQtdaWiexiOuVLAEO
+                      XWFjfYUqM3FG53vHDwvwygu1QmcFtrzxSGSG7fV+6axwOU7Rzq0NWE21ASpOnJ2X
+                      99Oim3idlIRvnO8DK+vg7Ub5B3HsXEm3qHFWTwE+shCEvmP1NR4LWGDvtlvWeCS2
+                      niUykbQY0jl7oaOaSqfvWAi6gtAD5tVQrZIeVXZHA5iNyDpRNH0TQBubm83qtSvb
+                      dR9SA3Ze7iXap6IftD5QZXJmb3JtYW5jZSBDby1QaWxvdCAoUENQKSBNYWludGFp
+                      bmVycyA8cGNwLW1hc3RlcnNAZ3JvdXBzLmlvPokCNwQTAQgAIQUCV/sosgIbAwUL
+                      CQgHAwUVCgkICwUWAgMBAAIeAQIXgAAKCRClHTrc3qLBFHvbEACfbgCGugZSyxcT
+                      Hdz+U3fX1zmQwqFK9+WoTwnJq+8t72PNFtn24L7oVZ02XfNARtKy1bmewFImUYSy
+                      EbLxKF4D1ZYN2RgfZ5g9jmcjM5VYluH1XpEln+2Y7oVUWb9dUy2eEbkFWiIAojj5
+                      HN+1N3jwr/uXRalrlDGwAIJw+Y38PeopgfUq/ZYYS2TVxMO0KjTAMiqCtTmNJxo/
+                      zodWRWR8ubFwU/V++oEtZXS0mUdN0UJN7zLk/QIFksS7tjTnN+luaCA+SzzyMmb6
+                      yUWG1CWzmKyQxFVNRohP57R6mgfY4Aau1oPdupw023ROM3soN0fOwjvk3342jyBk
+                      qcDWQYOAtNhx63rkBKkFu0FTHCuUjHQioYyfBhDRnHsz/yaGRuIXkPkcCie0rEaT
+                      wJdr8OiC/H4JiBFimPZM0K9EtnaK9aOuQw46QZ7fv+I9w32JupQ1UJL1esfaiETC
+                      eT5QPq36KgQFD9T0Jfb/k/R6ENI09Ct2YitUsclbkVEUH6cC91T5PKB4nByBi5Wh
+                      SwiCVxR2Qm/S3mw0Ydq85fa9rdB9Kgr+ZRFrKS6NPt68J6DHor7neU0NN8XkWsWm
+                      USsUnGd68lCqlTSdRRTyZHvr72yrU4g/wIYRlaVKL/RKUptAr5CjRzH2WIY980Is
+                      B3Pffo5gqCTm3KG6OcSLUR8vVAJcebkCDQRViiH9ARAA0LzcVZs17j9dSCZcNcyt
+                      e/Ee4rSRQYuB4yVkYKRTHvty0AxdSdNqAv0/WAOyUvRV7OdWibpBD25AWyE8g1Iq
+                      uHB+MHa9tF8WPqoB9hU0IOwxMsQvDoQdhzl3sQEhpBqT1Hql7nXkgI1dVvFVtJ08
+                      I4a3g6CSbxNrdgPWjDo6uCgP45K1F2FYLBis5uL7BF7UvzwdbZbx6y3FlJYgielo
+                      ypf9IcTxhbqDHLKE77vDZNQvXLraIs6GqsxjRzdP53t2QdC0exgm4pVc1ygpjD/2
+                      37t4bmvdpBPUGITLKYT3IUvldolAOrtu0Y3J4dRxDoiAD84wTYC99iDyx5Jk4sLC
+                      UXf/PFO/fsi/4kNjzC7vOVea1WaE27aqjXag7y8qHrwJ3mXOurDm0KAsS2qFZJtq
+                      8e3V94xFS3i+J9Jsc2lPZuRL3SxbXmDgPdkt/yLkGBV36zvPypJjvMF+dXpryYfb
+                      iFSVqDggI0T7shJvbdW3H2ofU/jWe9ZI39RM2OYez95ddVFtvp4zcP8i4s/PzT++
+                      9hTDvb/JeOKxFHrsZGapxrhIEduWscotEJhbNQhiiQPFKAr02xu9b0E5o50Gy5xx
+                      WgOxM+OgatEW1LyTD2l+hKYIRb1islEDAJ0NDsc1bhuBjNcfGzEpdksCTubZwC/K
+                      7D0OC5wT9pSms3i1PrC0TK0AEQEAAYkCHwQYAQgACQUCVYoh/QIbDAAKCRClHTrc
+                      3qLBFBSaD/4sKuTRvY508J9JS1nLdkMejjWDK1TE/TzzucXitO8ClsBuHXu58EIe
+                      oMOWIEVFlajIZcvieOMXpqFdFzHicSVggssHpZnALIZEBUFX30SDezFYRQynWClQ
+                      oBihYzrchw1Kx0d5K7rX1yts62IAqN3iCgbbtGLpSNK6rzOrnLNdGAtJmdEHAuYY
+                      DOdcWjEtNHHNtGxciitxuDdrCjw5hjb33tJm900G8m2VsctM8La0f870lUzSfNYi
+                      ADDWeY7mmyv+nPSm8XdzBfwhBkKP29e/Bd1PRXx+TJTICEEURUETl7IE0aUiMY6+
+                      pIoTCsc+iUo7TzVuBd6ppnzrG8D2Vu8MR/xGbExT7ZqErJjQHVHOfZc7VaLPjoJT
+                      tJnaoz5mLtIFAqN5Vx9nf3pYQdu08EyLjWYQmquZAbmzlCiZdPDmqcDbJJwb9i2D
+                      vSkdXjMMWQevJpp6PDIABtXnSzSrWNpfcWJQJpQRGq51ApZNOYBy4s0GOESfsNsC
+                      CqmFAMdC6vX6ni00cGWLB0imIZkgQ9xRJ3RBnNlU5We0rhK3+rECr9JxNbi9vLci
+                      YCxIDAU25UlRGoODgdvb7CXGb4fni4sxtByjrcmbWTrSHdMxxTH4cxXlzUUncaEC
+                      DBSp+EYcyuBNzx4l1BsI3vvYnPdvtcDVUVMzrwdSqEJHwZplpzGhlg==
+                      =TB22
+                      -----END PGP PUBLIC KEY BLOCK-----
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
