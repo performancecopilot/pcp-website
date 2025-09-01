@@ -12,7 +12,7 @@ Steps to create the packages for a new release
 3. Packages are uploaded to artifactory via github actions now.
 4. For the official Debian source uploads by debian developers
    export DEB_SIGN_KEYID=0xFE0842EE36DD8C0C
-   ./Makepkgs --signed --with-python3=yes --with-python=no --with-systemd=yes --with-bcc=no
+   ./Makepkgs --signed --with-python3=yes --with-systemd=yes --with-bcc=no
 5. For the official Fedora uploads by sanctioned developers,
    use official spec (as redhat.spec) and build with fedpkg.
 

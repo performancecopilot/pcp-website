@@ -141,6 +141,54 @@ make use of performance metrics from your own application.
 <div class='colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'>
 <div class='col__module--cta'>
 <p>
+Sep 2025
+<br>
+PCP 7.0.0
+</p>
+</div>
+</div>
+<div class='colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'>
+<div class='features_left col__module--cta'>
+<p>
+The
+<a href='https://github.com/performancecopilot/pcp/releases/download/7.0.0/pcp-7.0.0-1.dmg'>macOS DMG</a>
+packaging format is back!
+New PCP metrics for
+<a href='https://man7.org/linux/man-pages/man1/pmdahdb.1.html'>SAP HANA</a>
+databases,
+<a href='https://man7.org/linux/man-pages/man1/pmdarocestat.1.html'>RDMA over Converged Ethernet</a>
+(RoCE),
+<a href='https://man7.org/linux/man-pages/man1/pmdaopentelemetry.1.html'>OpenTelemetry,</a>
+as well as a native
+<a href='https://man7.org/linux/man-pages/man1/pcp2opentelemetry.1.html'>PCP-to-OpenTelemetry</a>
+exporter utility.
+Additional REST API providing a remote logger webhook, which
+allows decentralised configuration of centralised logging.
+Allow the /metrics scrape REST API to produce
+<a href='https://man7.org/linux/man-pages/man3/pmwebapi.3.html'>Open Telemetry JSON format</a>
+as an optional alternative to the existing Open Metrics text form.
+Nanosecond timestamp precision is the default throughout the
+PMAPI now, including through the core
+<a href='https://man7.org/linux/man-pages/man3/pmfetch.3.html'>pmFetch</a>
+sampling API, when linking with the latest PCP library.
+Additional Linux kernel virtual memory, SMART drive, HugeTLB,
+networking and PaceMaker node metrics.
+Numerous updates to both the main PCP container, as well as the
+archive-analysis container providing fully integrated PCP,
+<a href='https://grafana.com/grafana/plugins/performancecopilot-pcp-app/'>Grafana</a>
+and
+<a href='https://valkey.io/'>Valkey</a>
+functionality for retrospective systems analysis.
+</p>
+</div>
+</div>
+</section>
+</div>
+<div class='row'>
+<section class='row__colspaced'>
+<div class='colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'>
+<div class='col__module--cta'>
+<p>
 Mar 2025
 <br>
 PCP 6.3.7
@@ -385,34 +433,6 @@ Significant performance improvements in the
 <a href='https://man7.org/linux/man-pages/man1/pmlogcheck.1.html'>pmlogcheck</a>
 utility with compressed archives within the
 <a href='https://man7.org/linux/man-pages/man1/pmlogger_daily.1.html'>logging infrastructure.</a>
-</p>
-</div>
-</div>
-</section>
-</div>
-<div class='row'>
-<section class='row__colspaced'>
-<div class='colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'>
-<div class='col__module--cta'>
-<p>
-Sep 2023
-<br>
-PCP 6.1.0
-</p>
-</div>
-</div>
-<div class='colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'>
-<div class='features_left col__module--cta'>
-<p>
-User-defined tabs (dynamic screens) in pcp-htop.
-New tools - pmlogredact, pcp-buddyinfo, pcp-meminfo,
-pcp-netstat, pcp-slabinfo and pcp-zoneinfo.
-New bar graph visualisation mode in pcp-atop.
-Support for Qt6 in all PCP GUI tools.
-Improvements to
-<a href='https://man7.org/linux/man-pages/man1/pmdaopenmetrics.1.html'>OpenMetrics PMDA</a>
-metric labels and logging.
-Additional Linux kernel virtual memory metrics.
 </p>
 </div>
 </div>
