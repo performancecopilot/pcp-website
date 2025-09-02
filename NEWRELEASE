@@ -23,6 +23,4 @@ Steps to update the webpage for the new release
    Update the website via "make && make install" (see README).
 2. Send an email to pcp-announce@groups.io and pcp@groups.io with
    the details of the new release (include the full changelog).
-3. Tweet the release using the performancepcp account on twitter
-   e.g. text "Performance Co-Pilot X.Y.Z released: https://pcp.io"
 
