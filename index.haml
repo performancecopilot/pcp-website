@@ -86,6 +86,30 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p
+                      Sep 2023
+                      %br
+                      PCP 7.0.1
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p
+                      Minor feature and bug fix release.
+                      Support for per-process metrics on macOS, additional NFSv4 metrics on Linux.
+                      Bug fixes in 
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmproxy.1.html'} pmproxy
+                      and
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pcp-mpstat.1.html'} pcp-mpstat
+                      as well as the python API.
+                      New
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/guidellm2pcp.1.html'} guidellm2pcp
+                      utility for importing
+                      %a{:href => 'https://github.com/vllm-project/guidellm'} GuideLLM
+                      benchmark results into PCP archives.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p
                       Sep 2025
                       %br
                       PCP 7.0.0
@@ -287,30 +311,5 @@
                       Automatically configured PCP metrics (live and recorded) from the
                       %a{:href => 'https://github.com/sustainable-computing-io/kepler'} Kepler 
                       project.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      Nov 2023
-                      %br
-                      PCP 6.1.1
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      Minor feature and bug fix release.
-                      Support for optional geolocation metric labels,
-                      additional archive mode mode printing options in
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmie.1.html'} pmie
-                      and new metrics (Linux resctrl, Seagate FARM, networking and memory).
-                      Mac OS port updatd and added into continuous integration.
-                      HTTP compression in the REST APIs provided by the
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmproxy.1.html'} pmproxy
-                      daemon.
-                      Significant performance improvements in the
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmlogcheck.1.html'} pmlogcheck
-                      utility with compressed archives within the
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmlogger_daily.1.html'} logging infrastructure.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
