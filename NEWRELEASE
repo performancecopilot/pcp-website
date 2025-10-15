@@ -6,14 +6,10 @@ Steps to create the packages for a new release
 1. Update CHANGELOG with release notes
 2. Tag release in git (tagged and signed using pcp-maintainers key)
    Ex: git tag -s -u DEA2C114 -m X.Y.Z X.Y.Z
-   Update https://github.com/performancecopilot/pcp/releases to
-   indicate the new version is now the latest (Edit Release ->
-   Update Release in the web UI).
-3. Packages are uploaded to artifactory via github actions now.
-4. For the official Debian source uploads by debian developers
+3. For the official Debian uploads by Debian developers
    export DEB_SIGN_KEYID=0xFE0842EE36DD8C0C
    ./Makepkgs --signed --with-python3=yes --with-systemd=yes --with-bcc=no
-5. For the official Fedora uploads by sanctioned developers,
+4. For the official Fedora uploads by Fedora developers,
    use official spec (as redhat.spec) and build with fedpkg.
 
 Steps to update the webpage for the new release

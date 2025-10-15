@@ -86,7 +86,20 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p
-                      Sep 2023
+                      Oct 2025
+                      %br
+                      PCP 7.0.2
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p
+                      Minor bugfix release.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p
+                      Sep 2025
                       %br
                       PCP 7.0.1
                 %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
@@ -289,27 +302,5 @@
                       New management utility
                       %a{:href => 'https://man7.org/linux/man-pages/man1/pmcheck.1.html'} pmcheck
                       to scan an installation and check for missing packages and metrics.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      Feb 2024
-                      %br
-                      PCP 6.2.0
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      Security hardening changes for the PCP daemon startup processes.
-                      New
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pcp2arrow.1.html'} pcp2arrow
-                      utility to export metrics in Parquet format (ideal for Pandas).
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmlogger.1.html'} pmlogger
-                      now creates version 3 archives by default.
-                      New Linux kernel virtual memory and network metrics.
-                      Automatically configured PCP metrics (live and recorded) from the
-                      %a{:href => 'https://github.com/sustainable-computing-io/kepler'} Kepler 
-                      project.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
