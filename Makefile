@@ -33,7 +33,7 @@ default:
 	    $(RSYNC) $$r/index.html docs/$$r; \
 	done
 	test -d $(PCP)/images && $(RSYNC) $(PCP)/images .
-	test -d $(PCP)/man/html && $(RSYNC) $(PCP)/man/html/* docs/docs
+	test -d $(PCP)/html && $(RSYNC) $(PCP)/html/* docs/docs
 	$(RSYNC) CNAME GPG-KEY-PCP images snaps assets papers docs
 	git add docs
 	git status
