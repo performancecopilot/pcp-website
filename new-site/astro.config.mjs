@@ -7,6 +7,9 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   outDir: '../docs',
   publicDir: './public',
+  build: {
+    format: 'file' // Generate features.html instead of features/index.html
+  },
   vite: {
     plugins: [tailwindcss()]
   }

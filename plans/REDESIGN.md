@@ -118,19 +118,30 @@ The good news? That fighter jet logo with the red contrail is genuinely iconic. 
 - [x] Create `plans/` directory in project root for tracking
 - [x] Copy this plan to `plans/REDESIGN.md`
 
-### Phase 1: Foundation (IN PROGRESS)
+### Phase 1: Foundation ✅ COMPLETE
 **Goal:** New build system working, browsable locally
 
-- [ ] Initialize Astro project with Tailwind CSS
-- [ ] Create base layout (Header, Footer, Navigation)
-- [ ] Define CSS custom properties (colors, typography)
-- [ ] Migrate homepage content to Astro
-- [ ] Set up content collections for news/releases
-- [ ] Configure build to output to `docs/` (for eventual GitHub Pages)
-- [ ] Create noob-friendly `README.md` and `CONTRIBUTING.md`
-- [ ] Verify `npm run dev` works and site is browsable at localhost
+- [x] Initialize Astro project with Tailwind CSS
+- [x] Create base layout (Header, Footer, Navigation)
+- [x] Define CSS custom properties (colors, typography)
+- [x] Migrate homepage content to Astro
+- [ ] Set up content collections for news/releases (deferred to Phase 3)
+- [x] Configure build to output to `docs/` (for eventual GitHub Pages)
+- [x] Create noob-friendly `README.md` and `CONTRIBUTING.md`
+- [x] Verify `npm run dev` works and site is browsable at localhost
+- [x] Preserve CNAME and GPG-KEY-PCP for deployment
 
-**Deliverable:** Working local dev server, maintainers can `git checkout`, `npm install`, `npm run dev`
+**Deliverable:** ✅ Working local dev server at http://localhost:4321/
+
+**Commit:** fbbcec0 "Phase 1: Astro + Tailwind foundation with Cockpit Control aesthetic"
+
+**Results:**
+- Build works: `npm run build` outputs to `docs/`
+- Dev server works: `npm run dev` serves at localhost:4321
+- CSS reduced from ~200KB to 20KB (10x improvement)
+- Zero JavaScript on homepage (was loading jQuery + Modernizr)
+- Dark mode "Cockpit Control" aesthetic implemented
+- Homepage fully migrated with feature cards, CTA, news section
 
 ### Phase 2: Visual Redesign (PENDING)
 **Goal:** Apply the "Cockpit Control" dark-mode aesthetic
