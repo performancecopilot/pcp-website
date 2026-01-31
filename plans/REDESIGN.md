@@ -215,24 +215,33 @@ These are the main navigation pages that need immediate migration:
   - **⚠️ PARTIAL:** Structure complete with 4 sample Q&As. Remaining ~20 Q&A entries (from 1000-line faq.haml) to be bulk-migrated in Phase 3.5
   - **Commit:** e8300c7
 
-#### 3.3: Supporting Pages (Priority 2)
+#### 3.3: Supporting Pages (Priority 2) ✅ COMPLETE
 
-- [ ] **Team** (`team.haml` → `team.astro`)
-  - Grid of team members with photos/bios
-  - May need new `TeamCard.astro` component
+- [x] **Team** (`team.haml` → `team.astro`)
+  - Grid of 8 maintainers with GitHub profile links
+  - Instrument panel cards with HUD-style hover effects
+  - Link to contributor graph
+  - **Commit:** 348d697
 
-- [ ] **Testimonials** (`testimonials.haml` → `testimonials.astro`)
-  - User quotes from enterprise deployments
-  - Could use Card component with quote styling
+- [x] **Testimonials** (`testimonials.haml` → `testimonials.astro`)
+  - New `Testimonial.astro` component for quote cards
+  - 9 enterprise testimonials (Netflix, Red Hat, Aconex, Buffalo, etc.)
+  - Company logo integration where available
+  - **Commit:** 348d697
 
-- [ ] **Gallery** (consolidate `glider.haml` + `screenshots.haml`)
-  - Screenshot showcase with lightbox/modal
-  - Organize by feature area (pmchart, grafana, bpftrace, etc.)
-  - May need new `LightboxGallery.astro` component
+- [x] **Gallery** (consolidate `glider.haml` + `screenshots.haml`)
+  - Consolidated two separate pages into unified gallery
+  - PCP Glider section with Windows installation details
+  - 13 screenshot grid with client-side lightbox
+  - Keyboard navigation (Esc, arrows) for image viewer
+  - **Commit:** 348d697
 
-- [ ] **Presentations** (`presentations.haml` → `presentations.astro`)
-  - List of papers/slides with download links
-  - Link to `/papers/` static files
+- [x] **Presentations** (`presentations.haml` → `presentations.astro`)
+  - Chronological archive from 2020 back to 1999
+  - Two-column year-based layout with sticky headers
+  - Multi-format links (PDF, ODP, Video, HTML)
+  - Icon differentiation for media types
+  - **Commit:** 348d697
 
 #### 3.4: Content Collection Pages (Priority 3)
 Migrate structured multi-year content using collections:
@@ -269,9 +278,9 @@ Migrate structured multi-year content using collections:
 #### 3.6: Components to Build
 
 - [x] ~~`Accordion.astro` or `Collapsible.astro` (for FAQ)~~ - **SKIPPED:** Anchor links work fine
-- [ ] `TeamCard.astro` (for team members)
-- [ ] `Quote.astro` or `Testimonial.astro` (for testimonials)
-- [ ] `LightboxGallery.astro` or just use external library
+- [x] ~~`TeamCard.astro` (for team members)~~ - **INLINE:** Used inline card design with instrument panel aesthetic
+- [x] `Testimonial.astro` (for testimonials) - **BUILT:** Quote card component with logo support
+- [x] ~~`LightboxGallery.astro`~~ - **INLINE:** Vanilla JS lightbox with keyboard navigation
 - [ ] `Breadcrumb.astro` (for deep content like /gsoc/2022/ideas)
 
 **Deliverable:** All 20+ pages migrated to Astro with consistent styling
@@ -283,11 +292,12 @@ Migrate structured multi-year content using collections:
 
 **Phase 3 Progress Summary:**
 - Date: 2026-02-01
-- Commits: d8db7a4, d65199d, 6232b06, e8300c7
-- Pages migrated: 6 total (index, features, download, documentation, community, faq)
-- Build: ✅ All pages compile successfully
+- Commits: d8db7a4, d65199d, 6232b06, e8300c7, 348d697
+- Pages migrated: 10 total (index, features, download, documentation, community, faq, team, testimonials, gallery, presentations)
+- Build: ✅ All pages compile successfully (10 pages built in 1.24s)
 - Content collections: ✅ Infrastructure ready for GSoC/GSoD/conference/news
-- Next: Phase 3.3 - Supporting pages (team, testimonials, gallery, presentations)
+- Components: ✅ Testimonial.astro component, inline lightbox, instrument panel cards
+- Next: Phase 3.4 - Content collection pages (GSoC, GSoD, Conference, News) OR Phase 3.5 - Miscellaneous cleanup
 
 ---
 
