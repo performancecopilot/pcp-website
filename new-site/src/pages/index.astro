@@ -1,0 +1,149 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import Card from '../components/ui/Card.astro';
+import Button from '../components/ui/Button.astro';
+---
+
+<Base title="Performance Co-Pilot - System Performance Analysis Toolkit">
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="relative py-20 px-6 overflow-hidden">
+      <!-- Grid overlay effect -->
+      <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(var(--color-data) 1px, transparent 1px), linear-gradient(90deg, var(--color-data) 1px, transparent 1px); background-size: 50px 50px;"></div>
+
+      <div class="container mx-auto relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[var(--color-text-primary)] to-[var(--color-data)] bg-clip-text text-transparent">
+            Performance Co-Pilot
+          </h1>
+          <p class="text-xl text-[var(--color-text-secondary)] mb-8">
+            System performance analysis toolkit
+          </p>
+          <div class="flex flex-wrap gap-4 justify-center">
+            <Button href="/docs/guide.html" variant="primary">Quick Start</Button>
+            <Button href="/download.html" variant="secondary">Download</Button>
+            <Button href="/documentation.html" variant="ghost">Documentation</Button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="py-16 px-6">
+      <div class="container mx-auto">
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Collect -->
+          <Card>
+            <div class="flex flex-col items-center text-center">
+              <img src="/images/collect.png" alt="Collect" class="w-20 h-20 mb-4" />
+              <h3 class="text-xl font-semibold mb-4 text-[var(--color-data)]">Collect</h3>
+              <ul class="space-y-3 text-[var(--color-text-secondary)] text-left">
+                <li>
+                  <strong class="text-[var(--color-text-primary)]">Lightweight:</strong>
+                  <a href="/features.html#collect" class="text-[var(--color-data)] hover:underline">Collect</a>
+                  performance metrics efficiently
+                </li>
+                <li>
+                  <strong class="text-[var(--color-text-primary)]">Distributed:</strong>
+                  Collate metrics from
+                  <a href="/features.html#distributed" class="text-[var(--color-data)] hover:underline">multiple hosts</a>
+                  and operating systems
+                </li>
+                <li>
+                  <strong class="text-[var(--color-text-primary)]">Included:</strong>
+                  Available in Fedora, RHEL, Debian, SUSE, Ubuntu, Gentoo
+                </li>
+              </ul>
+            </div>
+          </Card>
+
+          <!-- Analyze -->
+          <Card>
+            <div class="flex flex-col items-center text-center">
+              <img src="/images/analyze.png" alt="Analyze" class="w-20 h-20 mb-4" />
+              <h3 class="text-xl font-semibold mb-4 text-[var(--color-data)]">Analyze</h3>
+              <div class="space-y-3 text-[var(--color-text-secondary)] text-left">
+                <p>
+                  <a href="/features.html#analyze" class="text-[var(--color-data)] hover:underline">Analyze</a>
+                  system performance in real-time or using historical data
+                </p>
+                <p>
+                  Compare metrics between hosts and intervals. Observe trends and identify abnormal patterns.
+                </p>
+              </div>
+            </div>
+          </Card>
+
+          <!-- Extend -->
+          <Card>
+            <div class="flex flex-col items-center text-center">
+              <img src="/images/extend.png" alt="Extend" class="w-20 h-20 mb-4" />
+              <h3 class="text-xl font-semibold mb-4 text-[var(--color-data)]">Extend</h3>
+              <div class="space-y-3 text-[var(--color-text-secondary)] text-left">
+                <p>
+                  <a href="/features.html#extend" class="text-[var(--color-data)] hover:underline">Extend</a>
+                  collected metrics simply
+                </p>
+                <p>
+                  PCP offers APIs and libraries to extract and utilize performance metrics from your applications.
+                </p>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 px-6 bg-[var(--color-panel)]">
+      <div class="container mx-auto">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-8 text-[var(--color-text-primary)]">
+            Use Performance Co-Pilot Now
+          </h2>
+          <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <Button href="/docs/guide.html" variant="primary" class="w-full">Quickstart</Button>
+            <Button href="/download.html" variant="secondary" class="w-full">Download</Button>
+            <Button href="/testimonials.html" variant="ghost" class="w-full">Who's Using It?</Button>
+            <Button href="/documentation.html" variant="ghost" class="w-full">Learn More</Button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="py-16 px-6">
+      <div class="container mx-auto">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-8 text-center text-[var(--color-text-primary)]">News</h2>
+
+          <Card>
+            <div class="flex flex-col md:flex-row gap-6">
+              <div class="md:w-32 flex-shrink-0">
+                <div class="text-[var(--color-data)] font-mono">
+                  <div class="text-sm">Jan 2026</div>
+                  <div class="text-xl font-bold">PCP 7.1.0</div>
+                </div>
+              </div>
+              <div class="flex-1 text-[var(--color-text-secondary)]">
+                <p>
+                  Major update to the macOS port - swap, ICMP, UDP, TCP, socket, VFS,
+                  memory compression and process I/O metrics. Major internal transition
+                  to libvalkey for the
+                  <a href="https://man7.org/linux/man-pages/man1/pmproxy.1.html" class="text-[var(--color-data)] hover:underline">pmproxy</a>
+                  daemon and web applications.
+                </p>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Base>

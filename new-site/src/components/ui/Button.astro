@@ -1,0 +1,22 @@
+---
+interface Props {
+  href: string;
+  variant?: 'primary' | 'secondary' | 'ghost';
+  class?: string;
+}
+
+const { href, variant = 'primary', class: className = '' } = Astro.props;
+
+const variants = {
+  primary: 'bg-[var(--color-contrail)] text-white hover:bg-[var(--color-contrail)]/90',
+  secondary: 'bg-[var(--color-data)] text-[var(--color-space)] hover:bg-[var(--color-data)]/90',
+  ghost: 'border border-[var(--color-instrument)] text-[var(--color-text-primary)] hover:border-[var(--color-data)] hover:text-[var(--color-data)]',
+};
+---
+
+<a
+  href={href}
+  class={`inline-block px-6 py-3 rounded-lg font-medium transition-all duration-200 ${variants[variant]} ${className}`}
+>
+  <slot />
+</a>

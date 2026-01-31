@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+/* Cockpit Control Design System */
+@layer base {
+  :root {
+    /* Core - Dark Mode */
+    --color-void: #030712;
+    --color-space: #0a1628;
+    --color-panel: #111827;
+    --color-instrument: #1f2937;
+
+    /* HUD Accents */
+    --color-contrail: #ff4444;
+    --color-data: #00d4ff;
+    --color-status-ok: #22c55e;
+    --color-status-warn: #f59e0b;
+
+    /* Text */
+    --color-text-primary: #f9fafb;
+    --color-text-secondary: #9ca3af;
+    --color-text-tertiary: #6b7280;
+
+    /* Typography */
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Menlo', 'Monaco', monospace;
+  }
+
+  body {
+    background-color: var(--color-space);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}

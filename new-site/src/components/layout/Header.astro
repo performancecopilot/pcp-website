@@ -1,0 +1,47 @@
+---
+// Navigation items - these will match existing URLs
+const navItems = [
+  { label: 'Features', href: '/features.html' },
+  { label: 'Documentation', href: '/documentation.html' },
+  { label: 'Download', href: '/download.html' },
+  { label: 'Community', href: '/community.html' },
+];
+---
+
+<header class="sticky top-0 z-50 bg-[var(--color-space)]/95 backdrop-blur-sm border-b border-[var(--color-instrument)]">
+  <nav class="container mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+        <img src="/images/pcp-logo.png" alt="PCP Logo" class="h-10 w-auto" />
+        <span class="text-xl font-semibold text-[var(--color-text-primary)]">
+          Performance Co-Pilot
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <ul class="hidden md:flex items-center gap-8">
+        {navItems.map(item => (
+          <li>
+            <a
+              href={item.href}
+              class="text-[var(--color-text-secondary)] hover:text-[var(--color-data)] transition-colors duration-200"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <!-- Mobile menu button (TODO: add dropdown functionality) -->
+      <button
+        class="md:hidden text-[var(--color-text-primary)]"
+        aria-label="Toggle menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+</header>
