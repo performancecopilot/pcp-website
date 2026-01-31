@@ -1,0 +1,84 @@
+---
+interface Props {
+  logo?: string;
+  author: string;
+  company?: string;
+  quote: string;
+}
+
+const { logo, author, company, quote } = Astro.props;
+---
+
+<div class="group relative bg-gradient-to-br from-instrument to-space border border-gray-700 hover:border-data/50 transition-all duration-500 overflow-hidden">
+  <!-- Scanline overlay on hover -->
+  <div class="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none" style="background: repeating-linear-gradient(0deg, transparent, transparent 2px, var(--color-data) 2px, var(--color-data) 3px); background-size: 100% 4px;"></div>
+
+  <!-- Content -->
+  <div class="relative p-8 flex flex-col md:flex-row gap-6">
+    <!-- Logo/Author Section -->
+    <div class="flex-shrink-0 md:w-48 flex flex-col items-center md:items-start justify-center text-center md:text-left">
+      {logo ? (
+        <div class="mb-4 p-4 bg-space/50 border border-gray-600 group-hover:border-data/30 transition-colors duration-500">
+          <img
+            src={logo}
+            alt={company || author}
+            class="max-w-full h-auto max-h-16 opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+            loading="lazy"
+          />
+        </div>
+      ) : (
+        <div class="mb-4 w-16 h-16 rounded-full bg-space border border-gray-600 group-hover:border-data flex items-center justify-center transition-all duration-500">
+          <svg class="w-8 h-8 text-gray-500 group-hover:text-data transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          </svg>
+        </div>
+      )}
+      <p class="text-sm text-gray-400 font-medium">{author}</p>
+      {company && <p class="text-xs text-gray-500 mt-1">{company}</p>}
+    </div>
+
+    <!-- Quote Section -->
+    <div class="flex-1 flex flex-col justify-center">
+      <!-- Opening quote mark -->
+      <div class="text-6xl text-contrail/30 leading-none mb-2 font-serif">"</div>
+
+      <!-- Quote text with HTML support -->
+      <div class="text-gray-300 leading-relaxed space-y-4 -mt-8 pl-8">
+        <Fragment set:html={quote} />
+      </div>
+
+      <!-- Closing quote mark -->
+      <div class="text-6xl text-contrail/30 leading-none text-right -mt-4 font-serif">"</div>
+    </div>
+  </div>
+
+  <!-- Corner accents -->
+  <div class="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-data/0 group-hover:border-data/40 transition-all duration-500"></div>
+  <div class="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-data/0 group-hover:border-data/40 transition-all duration-500"></div>
+
+  <!-- HUD-style data readout line -->
+  <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-contrail/20 to-transparent group-hover:via-contrail/50 transition-all duration-500"></div>
+</div>
+
+<style>
+  /* Ensure HTML content within quotes styles properly */
+  div :global(a) {
+    color: var(--color-data);
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 212, 255, 0.3);
+    transition: color 0.3s, text-decoration-color 0.3s;
+  }
+
+  div :global(a:hover) {
+    color: white;
+    text-decoration-color: rgba(255, 255, 255, 0.5);
+  }
+
+  div :global(p) {
+    margin-bottom: 1rem;
+  }
+
+  div :global(p:last-child) {
+    margin-bottom: 0;
+  }
+</style>
