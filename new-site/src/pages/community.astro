@@ -1,0 +1,151 @@
+---
+import Base from '../layouts/Base.astro';
+import Card from '../components/ui/Card.astro';
+
+const pageTitle = "Community - Performance Co-Pilot";
+---
+
+<Base title={pageTitle}>
+  <!-- Hero Section -->
+  <section class="py-20 px-4 bg-gradient-to-b from-void to-space">
+    <div class="container mx-auto max-w-4xl text-center">
+      <h1 class="text-5xl md:text-6xl font-bold text-white">
+        Community
+      </h1>
+    </div>
+  </section>
+
+  <!-- Welcome Section -->
+  <section class="py-16 px-4">
+    <div class="container mx-auto max-w-4xl">
+      <div class="prose prose-invert max-w-none">
+        <p class="text-lg text-gray-300 leading-relaxed">
+          We welcome your involvement in the Performance Co-Pilot project!
+          If you have discovered a bug, or wish to see a specific new feature,
+          please report that in one of the{' '}
+          <a href="https://github.com/performancecopilot/pcp/issues" class="text-data hover:underline">
+            github issue
+          </a>{' '}
+          trackers associated with the PCP{' '}
+          <a href="https://github.com/performancecopilot" class="text-data hover:underline">
+            organization
+          </a>{' '}
+          sub-projects.
+        </p>
+
+        <p class="text-lg text-gray-300 leading-relaxed mt-6">
+          We are greatly interested in any efforts to expand the scope
+          of the available performance metrics with new agents, to port existing
+          performance tools to the PCP APIs, and to develop new clients to
+          consume and display performance data delivered over the PCP APIs.
+        </p>
+
+        <p class="text-lg text-gray-300 leading-relaxed mt-6">
+          It is highly recommended to join the{' '}
+          <a href="https://groups.io/g/pcp/" class="text-data hover:underline">
+            mailing list
+          </a>{' '}
+          and{' '}
+          <a href="https://h7zo83mvt1.execute-api.us-west-2.amazonaws.com/Express/" class="text-data hover:underline">
+            Slack
+          </a>{' '}
+          or{' '}
+          <a href="irc://irc.libera.chat:6667" class="text-data hover:underline">
+            Libera Chat
+          </a>{' '}
+          IRC #pcp channel.
+        </p>
+
+        <p class="text-lg text-gray-300 leading-relaxed mt-6">
+          Please refer to the{' '}
+          <a href="https://github.com/performancecopilot/pcp/blob/main/CONTRIBUTING.md" class="text-data hover:underline">
+            CONTRIBUTING.md
+          </a>{' '}
+          file in the PCP source tree for further information.
+          You are also encouraged to read the{' '}
+          <a href="/faq.html" class="text-data hover:underline">
+            FAQ
+          </a>{' '}
+          before posting on the mailing list.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mailing Lists Section -->
+  <section class="py-16 px-4 bg-panel">
+    <div class="container mx-auto max-w-4xl">
+      <h2 id="mail" class="text-4xl font-bold mb-8 text-white">
+        Mailing lists
+      </h2>
+
+      <div class="space-y-6 text-gray-300">
+        <p>
+          General user and developer discussion:<br />
+          <a href="https://groups.io/g/pcp" class="text-data hover:underline text-lg">
+            pcp@groups.io
+          </a>
+        </p>
+
+        <p>
+          Announcements of new releases and similar information:<br />
+          <a href="https://groups.io/g/pcp-announce" class="text-data hover:underline text-lg">
+            pcp-announce@groups.io
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chat Section -->
+  <section class="py-16 px-4">
+    <div class="container mx-auto max-w-4xl">
+      <h2 id="chat" class="text-4xl font-bold mb-8 text-white">
+        Chat
+      </h2>
+
+      <p class="text-lg text-gray-300 leading-relaxed">
+        You can chat directly with the PCP developers on the #pcp IRC channel on the{' '}
+        <a href="irc://irc.libera.chat:6667" class="text-data hover:underline">
+          Libera Chat
+        </a>{' '}
+        network, or via our{' '}
+        <a href="https://h7zo83mvt1.execute-api.us-west-2.amazonaws.com/Express/" class="text-data hover:underline">
+          Slack
+        </a>{' '}
+        team.
+      </p>
+    </div>
+  </section>
+
+  <!-- Funding Section -->
+  <section class="py-16 px-4 bg-panel">
+    <div class="container mx-auto max-w-4xl">
+      <h2 id="funds" class="text-4xl font-bold mb-8 text-white">
+        Funding
+      </h2>
+
+      <ul class="space-y-6 text-gray-300">
+        <li>
+          <a href="https://www.redbubble.com/people/pcp-maintainers/shop" class="text-data hover:underline text-lg font-semibold">
+            Swag
+          </a>
+          <span class="block mt-2">
+            T-shirts, caps, stickers, ...<br />
+            All artist profits from the sale of PCP merchandise
+            are used to fund continued development and support.
+          </span>
+        </li>
+        <li>
+          <span class="text-lg">
+            You can also{' '}
+            <a href="https://opencollective.com/pcp" class="text-data hover:underline font-semibold">
+              donate
+            </a>{' '}
+            directly via our not-for-profit OpenCollective.
+          </span>
+        </li>
+      </ul>
+    </div>
+  </section>
+</Base>
