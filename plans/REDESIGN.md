@@ -212,7 +212,7 @@ These are the main navigation pages that need immediate migration:
   - 4-column question index (General, Philosophical, Technical, Troubleshooting)
   - Anchor-linked Q&A sections with smooth scroll
   - Skipped accordion component - anchor links work fine, zero-JS philosophy
-  - **Note:** Structure complete with sample Q&As, ~20 remaining entries need bulk migration
+  - **⚠️ PARTIAL:** Structure complete with 4 sample Q&As. Remaining ~20 Q&A entries (from 1000-line faq.haml) to be bulk-migrated in Phase 3.5
   - **Commit:** e8300c7
 
 #### 3.3: Supporting Pages (Priority 2)
@@ -260,6 +260,7 @@ Migrate structured multi-year content using collections:
 
 #### 3.5: Miscellaneous
 
+- [ ] **Complete FAQ bulk content migration** - Migrate remaining ~20 Q&A entries from faq.haml (1000+ lines). Structure is done, needs content copy.
 - [ ] Check what `website.haml` is (may be meta/about page)
 - [ ] Ensure all static assets migrated (images, papers, GPG keys)
 - [ ] Update internal links to use `.html` extensions for backward compat
