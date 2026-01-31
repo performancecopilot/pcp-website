@@ -1,10 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
 
 const pageTitle = "FAQ - Performance Co-Pilot";
 ---
 
 <Base title={pageTitle}>
+  <Header />
   <!-- Hero -->
   <section class="py-20 px-4 bg-gradient-to-b from-void to-space">
     <div class="container mx-auto max-w-4xl text-center">
@@ -171,4 +174,6 @@ const pageTitle = "FAQ - Performance Co-Pilot";
       </div>
     </div>
   </section>
+
+  <Footer />
 </Base>
