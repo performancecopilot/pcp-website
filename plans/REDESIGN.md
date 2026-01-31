@@ -172,11 +172,123 @@ The good news? That fighter jet logo with the red contrail is genuinely iconic. 
 - Mobile: Full-screen slide-in menu with backdrop blur
 - Logo: Optimized from 174KB bloat down to <5KB SVG
 
-### Phase 3: Content Migration (PENDING)
+### Phase 3: Content Migration (IN PROGRESS)
 **Goal:** All pages migrated with new styling
+
+#### 3.1: Content Collections Setup
+Set up Astro content collections for structured content that repeats across years:
+
+- [ ] Create `src/content/config.ts` with schema definitions
+- [ ] Set up `news/` collection for release announcements
+- [ ] Set up `gsoc/` collection for GSoC project years (2015-2022)
+- [ ] Set up `gsod/` collection for GSoD years (2019-2021)
+- [ ] Set up `conference/` collection for conference pages (2018-2019)
+- [ ] Create dynamic routes for collection pages (`[...slug].astro`)
+
+**Strategy:** Use Markdown frontmatter for metadata (year, title, status) and keep existing content structure. This gives us:
+- Type-safe content validation
+- Auto-generated routes
+- Easy filtering/sorting by year
+- Future-proof for adding new years
+
+#### 3.2: Core Pages Migration (Priority 1)
+These are the main navigation pages that need immediate migration:
+
+- [ ] **Documentation** (`documentation.haml` → `documentation.astro`)
+  - Hero with Installation + Quick Reference CTAs
+  - Grid of documentation resources (man pages, guides, slides, papers)
+  - Links to external ReadTheDocs and man7.org
+
+- [ ] **Community** (`community.haml` → `community.astro`)
+  - Welcome text + contribution guidelines
+  - Links to GitHub issues, mailing list, Slack, IRC
+  - GSoC/GSoD participation info
+  - Team/contributors section
+
+- [ ] **FAQ** (`faq.haml` → `faq.astro`)
+  - Two-column question index (General + Philosophical)
+  - Anchor-linked Q&A sections
+  - Consider accordion component for better UX
+
+#### 3.3: Supporting Pages (Priority 2)
+
+- [ ] **Team** (`team.haml` → `team.astro`)
+  - Grid of team members with photos/bios
+  - May need new `TeamCard.astro` component
+
+- [ ] **Testimonials** (`testimonials.haml` → `testimonials.astro`)
+  - User quotes from enterprise deployments
+  - Could use Card component with quote styling
+
+- [ ] **Gallery** (consolidate `glider.haml` + `screenshots.haml`)
+  - Screenshot showcase with lightbox/modal
+  - Organize by feature area (pmchart, grafana, bpftrace, etc.)
+  - May need new `LightboxGallery.astro` component
+
+- [ ] **Presentations** (`presentations.haml` → `presentations.astro`)
+  - List of papers/slides with download links
+  - Link to `/papers/` static files
+
+#### 3.4: Content Collection Pages (Priority 3)
+Migrate structured multi-year content using collections:
+
+- [ ] **GSoC Archive**
+  - Create `/gsoc/[year].astro` dynamic route
+  - Migrate 8 years of ideas pages (2015-2022)
+  - Add `/gsoc/index.astro` landing page with year listing
+  - Migrate `contributors.haml` → `/gsoc/contributors.astro`
+
+- [ ] **GSoD Archive**
+  - Create `/gsod/[year].astro` dynamic route
+  - Migrate 2019-2021 content
+  - Handle case study and proposal pages
+
+- [ ] **Conference Archive**
+  - Create `/conference/[year].astro` dynamic route
+  - Migrate 2018-2019 conference sites
+  - Each has home, schedule, contact pages
+
+- [ ] **News/Releases**
+  - Create `/news/[slug].astro` for individual releases
+  - Create `/news/index.astro` archive page
+  - Extract news items from homepage into markdown files
+
+#### 3.5: Miscellaneous
+
+- [ ] Check what `website.haml` is (may be meta/about page)
+- [ ] Ensure all static assets migrated (images, papers, GPG keys)
+- [ ] Update internal links to use `.html` extensions for backward compat
+- [ ] Create 404 page
+
+#### 3.6: Components to Build
+
+- [ ] `Accordion.astro` or `Collapsible.astro` (for FAQ)
+- [ ] `TeamCard.astro` (for team members)
+- [ ] `Quote.astro` or `Testimonial.astro` (for testimonials)
+- [ ] `LightboxGallery.astro` or just use external library
+- [ ] `Breadcrumb.astro` (for deep content like /gsoc/2022/ideas)
+
+**Deliverable:** All 20+ pages migrated to Astro with consistent styling
+
+**Commits Strategy:**
+- One commit per major page migration (e.g., "Migrate documentation page")
+- One commit for content collections setup
+- Incremental, reviewable changes
+
+---
 
 ### Phase 4: Polish & Review (PENDING)
 **Goal:** Working local site for maintainer review
+
+- [ ] Cross-browser testing (Chrome, Firefox, Safari)
+- [ ] Mobile responsiveness testing (iOS Safari, Chrome Mobile)
+- [ ] Link validation (all internal/external links work)
+- [ ] Image optimization (verify all images load correctly)
+- [ ] Performance audit (Lighthouse scores)
+- [ ] Accessibility audit (a11y compliance)
+- [ ] Maintainer review and feedback
+- [ ] Final fixes based on feedback
+- [ ] Update deployment documentation
 
 ---
 
