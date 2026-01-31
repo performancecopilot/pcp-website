@@ -1,0 +1,95 @@
+---
+interface NavSection {
+  label: string;
+  items: Array<{ label: string; href: string }>;
+}
+
+interface Props {
+  sections: Record<string, Array<{ label: string; href: string }>>;
+}
+
+const { sections } = Astro.props;
+---
+
+<!-- Mobile menu overlay -->
+<div
+  id="mobile-menu"
+  class="fixed inset-0 z-50 transform translate-x-full transition-transform duration-300 md:hidden"
+  aria-hidden="true"
+>
+  <!-- Backdrop -->
+  <div
+    id="mobile-menu-backdrop"
+    class="absolute inset-0 bg-[var(--color-space)]/80 backdrop-blur-md"
+  ></div>
+
+  <!-- Menu panel -->
+  <div class="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-[var(--color-void)] border-l border-[var(--color-instrument)] overflow-y-auto">
+    <!-- Header -->
+    <div class="flex items-center justify-between p-6 border-b border-[var(--color-instrument)]">
+      <span class="text-lg font-semibold text-[var(--color-text-primary)]">Menu</span>
+      <button
+        id="mobile-menu-close"
+        class="text-[var(--color-text-primary)] hover:text-[var(--color-data)] transition-colors"
+        aria-label="Close menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Navigation sections -->
+    <nav class="p-6 space-y-8">
+      {Object.entries(sections).map(([section, items]) => (
+        <div>
+          <h3 class="text-sm font-semibold text-[var(--color-text-primary)] mb-3 uppercase tracking-wider">
+            {section}
+          </h3>
+          <ul class="space-y-2">
+            {items.map(item => (
+              <li>
+                <a
+                  href={item.href}
+                  class="block py-2 text-[var(--color-text-secondary)] hover:text-[var(--color-data)] transition-colors duration-200"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </nav>
+  </div>
+</div>
+
+<script>
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const close = document.getElementById('mobile-menu-close');
+  const backdrop = document.getElementById('mobile-menu-backdrop');
+
+  function openMenu() {
+    menu?.classList.remove('translate-x-full');
+    menu?.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('overflow-hidden');
+  }
+
+  function closeMenu() {
+    menu?.classList.add('translate-x-full');
+    menu?.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('overflow-hidden');
+  }
+
+  toggle?.addEventListener('click', openMenu);
+  close?.addEventListener('click', closeMenu);
+  backdrop?.addEventListener('click', closeMenu);
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !menu?.classList.contains('translate-x-full')) {
+      closeMenu();
+    }
+  });
+</script>

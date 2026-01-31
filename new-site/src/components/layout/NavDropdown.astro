@@ -1,0 +1,55 @@
+---
+interface Props {
+  label: string;
+  items: Array<{ label: string; href: string }>;
+}
+
+const { label, items } = Astro.props;
+---
+
+<div class="relative group">
+  <button
+    class="flex items-center gap-1 text-[var(--color-text-secondary)] hover:text-[var(--color-data)] transition-colors duration-200"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    {label}
+    <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+
+  <div
+    class="dropdown-menu absolute top-full left-0 mt-2 min-w-[200px] bg-[var(--color-void)] border border-[var(--color-instrument)] rounded shadow-lg opacity-0 invisible transform translate-y-[-10px] transition-all duration-200"
+  >
+    <ul class="py-2">
+      {items.map(item => (
+        <li>
+          <a
+            href={item.href}
+            class="block px-4 py-2 text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-data)] hover:bg-[var(--color-space)] transition-colors duration-200"
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>
+
+<style>
+  .group:hover .dropdown-menu,
+  .group:focus-within .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .dropdown-menu {
+    box-shadow: 0 0 20px rgba(0, 230, 255, 0.1);
+  }
+
+  .group:hover .dropdown-menu {
+    border-color: var(--color-data);
+  }
+</style>
