@@ -1,0 +1,174 @@
+---
+import Base from '../layouts/Base.astro';
+
+const pageTitle = "FAQ - Performance Co-Pilot";
+---
+
+<Base title={pageTitle}>
+  <!-- Hero -->
+  <section class="py-20 px-4 bg-gradient-to-b from-void to-space">
+    <div class="container mx-auto max-w-4xl text-center">
+      <h1 class="text-5xl md:text-6xl font-bold text-white">
+        FAQ
+      </h1>
+    </div>
+  </section>
+
+  <!-- Question Index -->
+  <section class="py-16 px-4">
+    <div class="container mx-auto max-w-6xl">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- General Questions -->
+        <div>
+          <h3 class="text-2xl font-bold mb-4 text-white">General Questions</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#Q1" class="text-data hover:underline">What is Performance Co-Pilot?</a></li>
+            <li><a href="#Q1a" class="text-data hover:underline">What is the overall PCP architecture?</a></li>
+            <li><a href="#Q1b" class="text-data hover:underline">What licensing scheme does PCP use?</a></li>
+            <li><a href="#Q2" class="text-data hover:underline">How is PCP different from tools like vmstat, ps, top, etc.?</a></li>
+            <li><a href="#Q2a" class="text-data hover:underline">Metrics, names, instances and values, ... eh?</a></li>
+            <li><a href="#Q3" class="text-data hover:underline">Where is Performance Metrics Application Programming Interface (PMAPI) documented?</a></li>
+            <li><a href="#Q4" class="text-data hover:underline">Which application development languages are supported?</a></li>
+            <li><a href="#Q5" class="text-data hover:underline">Are there any sample screenshots of tools in action?</a></li>
+            <li><a href="#Q6" class="text-data hover:underline">Are there any papers or presentations about PCP?</a></li>
+          </ul>
+        </div>
+
+        <!-- Philosophical Questions -->
+        <div>
+          <h3 class="text-2xl font-bold mb-4 text-white">Philosophical Questions</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#Q7" class="text-data hover:underline">Why the name "Co-Pilot"?</a></li>
+            <li><a href="#Q8" class="text-data hover:underline">Why the name "Glider"?</a></li>
+          </ul>
+        </div>
+
+        <!-- Technical Questions -->
+        <div>
+          <h3 class="text-2xl font-bold mb-4 text-white">Technical Questions</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#Q10" class="text-data hover:underline">What is the nature of the communication between processes?</a></li>
+            <li><a href="#Q11" class="text-data hover:underline">What is involved in fetching metrics from PMCD?</a></li>
+            <li><a href="#Q11a" class="text-data hover:underline">Data aggregation and averaging in a PMDA?</a></li>
+            <li><a href="#Q13" class="text-data hover:underline">Can a monitor ask for qualitative events (e.g. threshold passing), instead of regular samples?</a></li>
+            <li><a href="#Q13a" class="text-data hover:underline">How are triggers and alarms integrated to provide external notification?</a></li>
+            <li><a href="#Q14" class="text-data hover:underline">Synchronous versus asynchronous notification?</a></li>
+            <li><a href="#Q15" class="text-data hover:underline">Do you try to synchronize clocks?</a></li>
+            <li><a href="#Q16" class="text-data hover:underline">Is there an optimized mechanism for local monitoring?</a></li>
+            <li><a href="#Q20" class="text-data hover:underline">What about security?</a></li>
+          </ul>
+        </div>
+
+        <!-- Trouble-shooting -->
+        <div>
+          <h3 class="text-2xl font-bold mb-4 text-white">Trouble-shooting</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#T10" class="text-data hover:underline">PMNS appears to be empty</a></li>
+            <li><a href="#T11" class="text-data hover:underline">Resource utilization greater than 100%?</a></li>
+            <li><a href="#T12" class="text-data hover:underline">PMDA appears to have died</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Answers Section -->
+  <section class="py-16 px-4 bg-panel">
+    <div class="container mx-auto max-w-4xl">
+      <h2 class="text-4xl font-bold mb-12 text-center text-white">Answers</h2>
+
+      <div class="space-y-12">
+        <!-- Q1: What is Performance Co-Pilot? -->
+        <div id="Q1" class="scroll-mt-20">
+          <h3 class="text-2xl font-bold mb-4 text-white">What is Performance Co-Pilot?</h3>
+          <div class="prose prose-invert max-w-none">
+            <p class="text-gray-300 leading-relaxed">
+              Performance Co-Pilot (PCP) is a framework and services to support
+              system-level performance monitoring and performance management.
+            </p>
+            <p class="text-gray-300 leading-relaxed mt-4">
+              The architecture and services are most attractive for those
+              seeking centralized monitoring of distributed processing
+              (e.g. in a cluster or webserver farm environment), or on
+              large systems with lots of moving parts. However some of
+              the features of PCP are also useful for hard performance
+              problems on smaller system configurations.
+            </p>
+            <p class="text-gray-300 leading-relaxed mt-4">
+              More details are available on the main{' '}
+              <a href="/index.html" class="text-data hover:underline">project page</a>.
+            </p>
+          </div>
+        </div>
+
+        <!-- Q1a: PCP Architecture -->
+        <div id="Q1a" class="scroll-mt-20">
+          <h3 class="text-2xl font-bold mb-4 text-white">What is the overall PCP Architecture?</h3>
+          <div class="prose prose-invert max-w-none">
+            <p class="text-gray-300 leading-relaxed">
+              As shown below, performance data is exported from a host by
+              the PMCD (Performance Metrics Co-ordinating Daemon). PMCD
+              sits between monitoring clients and PMDAs (Performance
+              Metric Domain Agents). The PMDAs know how to collect
+              performance data. PMCD knows how to multiplex messages
+              between the monitoring clients and the PMDAs.
+            </p>
+            <p class="mt-6">
+              <img
+                src="/images/architecture.png"
+                alt="PCP Architecture Diagram"
+                class="rounded border border-instrument"
+              />
+            </p>
+          </div>
+        </div>
+
+        <!-- Q1b: Licensing -->
+        <div id="Q1b" class="scroll-mt-20">
+          <h3 class="text-2xl font-bold mb-4 text-white">What licensing scheme does PCP use?</h3>
+          <div class="prose prose-invert max-w-none">
+            <p class="text-gray-300 leading-relaxed">
+              All of the libraries in the Performance Co-Pilot (PCP)
+              toolkit are licensed under Version 2.1 of the{' '}
+              <a href="https://www.gnu.org/copyleft/lesser.html" class="text-data hover:underline">
+                GNU Lesser General Public License
+              </a>.
+            </p>
+            <p class="text-gray-300 leading-relaxed mt-4">
+              All other PCP components are licensed under Version 2 or later of the{' '}
+              <a href="https://www.gnu.org/copyleft/gpl.html" class="text-data hover:underline">
+                GNU General Public License
+              </a>.
+            </p>
+          </div>
+        </div>
+
+        <!-- Q7: Why Co-Pilot? -->
+        <div id="Q7" class="scroll-mt-20">
+          <h3 class="text-2xl font-bold mb-4 text-white">Why the name "Co-Pilot"?</h3>
+          <div class="prose prose-invert max-w-none">
+            <p class="text-gray-300 leading-relaxed">
+              The name "Performance Co-Pilot" reflects the original intent to
+              create performance monitoring tools that work alongside the system
+              administrator or performance analyst, providing the instrumentation
+              and data needed to understand system behavior without getting in the way.
+            </p>
+            <p class="text-gray-300 leading-relaxed mt-4">
+              Like a co-pilot in aviation, PCP is there to assist, monitor critical
+              systems, and help navigate performance issues - but you remain in control.
+            </p>
+          </div>
+        </div>
+
+        <!-- TODO: Remaining Q&A entries to be migrated from faq.haml -->
+        <div class="bg-instrument border border-contrail/30 rounded p-6 mt-12">
+          <p class="text-yellow-400 font-mono text-sm">
+            <strong>NOTE:</strong> This is a structural migration. The remaining 20+ Q&A entries
+            need to be migrated from faq.haml following this pattern. Each question gets
+            its own div with an id anchor for linking.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
