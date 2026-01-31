@@ -2,7 +2,7 @@
 
 **Branch:** `website-redesign`
 **Last Updated:** 2026-01-31
-**Phase:** 1 (Foundation) - COMPLETE
+**Phase:** 2 (Visual Redesign) - IN PROGRESS
 
 ## What's Working
 
@@ -29,14 +29,26 @@
 - `Footer.astro` - 4-column grid + "system operational" indicator
 - `Card.astro` - Instrument panel style cards
 - `Button.astro` - Primary/secondary/ghost variants
+- `CodeBlock.astro` - Terminal-style code blocks with copy button
 
-### ✅ Homepage
-Fully migrated with:
+### ✅ Pages
+**Homepage** (index.html)
 - Hero section with gradient text and grid overlay
 - 3 feature cards (Collect, Analyze, Extend)
 - CTA section with action buttons
 - News section (latest release)
-- All images preserved from original site
+
+**Features** (features.html)
+- 4 detailed sections: Collect, Analyze, Distributed, Extend
+- Alternating backgrounds for visual rhythm
+- Feature cards in 2-column grid
+- Screenshot integration (bpftrace-cpu.png)
+
+**Download** (download.html)
+- 6 platform-specific install cards (Debian, Fedora, macOS, openSUSE, Solaris, Windows)
+- CodeBlock components with copy functionality
+- Source code repositories section
+- GPG signature download
 
 ### ✅ Documentation
 - `README.md` - Quick start for maintainers (assumes no Node.js knowledge)
@@ -45,21 +57,20 @@ Fully migrated with:
 
 ## What's NOT Done Yet
 
-### Phase 2: Visual Redesign
+### Phase 2: Visual Redesign (Remaining)
 - Dropdown navigation menus
 - Mobile hamburger menu (currently just shows button)
 - Page transitions/animations
 - Logo redesign (using existing logo for now)
 
-### Phase 3: Content Migration
-- Features page
+### Phase 3: Content Migration (Remaining)
 - Documentation hub
-- Download page
 - Community page
 - FAQ, Team, Testimonials
+- Screenshots/Gallery
 - GSoC/GSoD archives (will use content collections)
 - Conference pages
-- All 23+ pages from original site
+- ~18 remaining pages from original site
 
 ### Phase 4: Polish
 - Cross-browser testing
