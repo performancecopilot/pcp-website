@@ -1,0 +1,109 @@
+---
+interface YearLink {
+  year: string;
+  url: string;
+  status?: 'active' | 'completed' | 'upcoming';
+}
+
+interface Props {
+  years: YearLink[];
+  title?: string;
+}
+
+const { years, title = 'Select Year' } = Astro.props;
+---
+
+<div class="year-navigation">
+  {title && <h3 class="text-lg font-bold text-gray-300 mb-4 font-mono">{title}</h3>}
+
+  <div class="flex flex-wrap gap-3">
+    {years.map((yearLink) => (
+      <a
+        href={yearLink.url}
+        class={`year-pill ${yearLink.status || 'completed'}`}
+      >
+        <span class="year-label">{yearLink.year}</span>
+        {yearLink.status === 'upcoming' && (
+          <span class="status-badge">Soon</span>
+        )}
+      </a>
+    ))}
+  </div>
+</div>
+
+<style>
+  .year-navigation {
+    padding: 1.5rem 0;
+  }
+
+  .year-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--color-instrument) 0%, var(--color-space) 100%);
+    border: 1px solid #374151;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 600;
+    color: #9ca3af;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .year-pill::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .year-pill:hover {
+    border-color: var(--color-data);
+    color: var(--color-data);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.2);
+  }
+
+  .year-pill:hover::before {
+    left: 100%;
+  }
+
+  .year-pill.active {
+    background: linear-gradient(135deg, var(--color-data) 0%, #0099cc 100%);
+    border-color: var(--color-data);
+    color: var(--color-void);
+  }
+
+  .year-pill.upcoming {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .year-pill.upcoming:hover {
+    transform: none;
+    border-color: #374151;
+    color: #9ca3af;
+    box-shadow: none;
+  }
+
+  .year-label {
+    position: relative;
+    z-index: 1;
+  }
+
+  .status-badge {
+    padding: 0.125rem 0.5rem;
+    background-color: var(--color-status-warn);
+    color: var(--color-void);
+    font-size: 0.75rem;
+    border-radius: 0.25rem;
+    position: relative;
+    z-index: 1;
+  }
+</style>

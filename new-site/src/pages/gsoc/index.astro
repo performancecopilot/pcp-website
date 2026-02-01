@@ -1,0 +1,91 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import YearNavigation from '../../components/ui/YearNavigation.astro';
+
+const years = [
+  { year: '2022', url: '/gsoc/2022/ideas.html', status: 'completed' as const },
+  { year: '2021', url: '/gsoc/2021/ideas.html', status: 'completed' as const },
+  { year: '2020', url: '/gsoc/2020/ideas.html', status: 'completed' as const },
+  { year: '2019', url: '/gsoc/2019/ideas.html', status: 'completed' as const },
+  { year: '2018', url: '/gsoc/2018/ideas.html', status: 'completed' as const },
+  { year: '2017', url: '/gsoc/2017/ideas.html', status: 'completed' as const },
+  { year: '2016', url: '/gsoc/2016/ideas.html', status: 'completed' as const },
+  { year: '2015', url: '/gsoc/2015/ideas.html', status: 'completed' as const },
+];
+---
+
+<Base title="Google Summer of Code - Performance Co-Pilot">
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="relative py-20 overflow-hidden bg-gradient-to-b from-void via-space to-panel">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, var(--color-data) 2px, var(--color-data) 3px); background-size: 100% 60px;"></div>
+    </div>
+
+    <div class="container relative z-10 px-6 mx-auto max-w-5xl">
+      <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+        Google <span class="text-contrail">Summer of Code</span>
+      </h1>
+      <p class="text-xl text-gray-300 max-w-2xl leading-relaxed">
+        Performance Co-Pilot has participated in Google Summer of Code since 2015,
+        mentoring students to contribute to performance analysis and monitoring tools.
+      </p>
+    </div>
+  </section>
+
+  <!-- Year Selection -->
+  <section class="py-20 bg-panel">
+    <div class="container px-6 mx-auto max-w-5xl">
+      <div class="bg-gradient-to-br from-instrument to-space border border-gray-700 p-8">
+        <!-- Corner accent -->
+        <div class="relative">
+          <div class="absolute top-0 right-0 w-12 h-12 border-t-2 border-r-2 border-data/40"></div>
+
+          <h2 class="text-3xl font-bold text-white mb-6">Select a Year</h2>
+          <p class="text-gray-300 mb-8 leading-relaxed">
+            Browse project ideas from past Google Summer of Code programs.
+            Each year features projects focused on extending PCP capabilities,
+            improving tooling, and integrating with other open source projects.
+          </p>
+
+          <YearNavigation years={years} title="" />
+
+          <div class="mt-8 pt-8 border-t border-gray-700">
+            <h3 class="text-xl font-bold text-white mb-4">Additional Resources</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="/gsoc/contributors.html"
+                  class="text-data hover:text-contrail transition-colors duration-200 flex items-center gap-2"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+                  </svg>
+                  <span>GSoC Contributors</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://summerofcode.withgoogle.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-data hover:text-contrail transition-colors duration-200 flex items-center gap-2"
+                >
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                  <span>Google Summer of Code Homepage</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Base>

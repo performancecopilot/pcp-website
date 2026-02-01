@@ -1,0 +1,105 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Header from '../../../components/layout/Header.astro';
+import Footer from '../../../components/layout/Footer.astro';
+import Breadcrumb from '../../../components/ui/Breadcrumb.astro';
+import ProjectIdea from '../../../components/gsoc/ProjectIdea.astro';
+
+import { gsoc2015 } from '../../../data/gsoc/2015';
+import { gsoc2016 } from '../../../data/gsoc/2016';
+import { gsoc2017 } from '../../../data/gsoc/2017';
+import { gsoc2018 } from '../../../data/gsoc/2018';
+import { gsoc2019 } from '../../../data/gsoc/2019';
+import { gsoc2020 } from '../../../data/gsoc/2020';
+import { gsoc2021 } from '../../../data/gsoc/2021';
+import { gsoc2022 } from '../../../data/gsoc/2022';
+
+export function getStaticPaths() {
+  const allYears = [
+    gsoc2015,
+    gsoc2016,
+    gsoc2017,
+    gsoc2018,
+    gsoc2019,
+    gsoc2020,
+    gsoc2021,
+    gsoc2022,
+  ];
+
+  return allYears.map((yearData) => ({
+    params: { year: yearData.year.toString() },
+    props: { yearData },
+  }));
+}
+
+const { yearData } = Astro.props;
+const { year, projects } = yearData;
+
+const breadcrumbItems = [
+  { label: 'Home', url: '/' },
+  { label: 'GSoC', url: '/gsoc/' },
+  { label: year.toString() },
+];
+---
+
+<Base title={`GSoC ${year} Ideas - Performance Co-Pilot`}>
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="relative py-16 overflow-hidden bg-gradient-to-b from-void via-space to-panel">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, var(--color-contrail) 2px, var(--color-contrail) 3px); background-size: 100% 60px;"></div>
+    </div>
+
+    <div class="container relative z-10 px-6 mx-auto max-w-5xl">
+      <Breadcrumb items={breadcrumbItems} />
+
+      <div class="grid md:grid-cols-3 gap-8 mt-8">
+        <!-- Ideas List TOC -->
+        <div class="md:col-span-2">
+          <h3 class="text-xl font-bold text-white mb-4">Ideas List</h3>
+          <ol class="list-decimal list-inside space-y-2 text-gray-300">
+            {projects.map((project) => (
+              <li>
+                <a
+                  href={`#${project.id}`}
+                  class="text-data hover:text-contrail transition-colors duration-200"
+                >
+                  {project.title}
+                </a>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <!-- Year Badge -->
+        <div class="bg-gradient-to-br from-contrail to-data p-6 border-l-4 border-contrail">
+          <h2 class="text-2xl font-bold text-white">Google</h2>
+          <h2 class="text-2xl font-bold text-white">Summer of Code</h2>
+          <h2 class="text-3xl font-bold text-white mt-2">{year}</h2>
+          <p class="mt-4">
+            <a
+              href="https://summerofcode.withgoogle.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-white hover:text-void transition-colors duration-200"
+            >
+              (Home)
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="py-20 bg-panel">
+    <div class="container px-6 mx-auto max-w-5xl">
+      {projects.map((project) => (
+        <ProjectIdea project={project} />
+      ))}
+    </div>
+  </section>
+
+  <Footer />
+</Base>

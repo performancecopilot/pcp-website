@@ -3,3 +3,4 @@
 *.swp
 favicon.ico
 links.out
+.DS_Store
