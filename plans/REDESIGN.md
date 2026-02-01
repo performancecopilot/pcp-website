@@ -243,29 +243,36 @@ These are the main navigation pages that need immediate migration:
   - Icon differentiation for media types
   - **Commit:** 348d697
 
-#### 3.4: Content Collection Pages (Priority 3)
-Migrate structured multi-year content using collections:
+#### 3.4: Content Collection Pages (Priority 3) - IN PROGRESS
+Migrate structured multi-year content. **Note:** Using TypeScript data files instead of Markdown collections for heavily structured HTML content (GSoC/GSoD/Conference). Only News uses actual content collections.
 
-- [ ] **GSoC Archive**
-  - Create `/gsoc/[year].astro` dynamic route
-  - Migrate 8 years of ideas pages (2015-2022)
-  - Add `/gsoc/index.astro` landing page with year listing
-  - Migrate `contributors.haml` → `/gsoc/contributors.astro`
+- [x] **GSoC Archive** ✅ COMPLETE
+  - [x] Create TypeScript data files for all 8 years (2015-2022) in `src/data/gsoc/`
+  - [x] Create `/gsoc/[year]/ideas.astro` dynamic route with `getStaticPaths()`
+  - [x] Add `/gsoc/index.astro` landing page with `YearNavigation` component
+  - [x] Migrate `contributors.haml` → `/gsoc/contributors.astro`
+  - [x] Build `ProjectIdea.astro` component for reusable project cards
+  - **Pages:** 10 total (index, contributors, 8 year-based ideas pages)
+  - **Build:** ✅ All compile successfully (`/gsoc/2015/ideas.html` through `/gsoc/2022/ideas.html`)
+  - **Approach:** Inline TypeScript interfaces with HTML in description fields preserves link semantics from HAML
 
 - [ ] **GSoD Archive**
-  - Create `/gsod/[year].astro` dynamic route
-  - Migrate 2019-2021 content
-  - Handle case study and proposal pages
+  - [ ] Create TypeScript data files for 2019-2021 in `src/data/gsod/`
+  - [ ] Create `/gsod/[year]/ideas.astro` dynamic route
+  - [ ] Create `/gsod/index.astro` landing page
+  - [ ] Handle special 2021 pages: `proposal.astro` and `casestudy.astro`
 
 - [ ] **Conference Archive**
-  - Create `/conference/[year].astro` dynamic route
-  - Migrate 2018-2019 conference sites
-  - Each has home, schedule, contact pages
+  - [ ] Build `ConferenceSession.astro`, `ConferenceBreak.astro`, `ConferenceHero.astro` components
+  - [ ] Create TypeScript data files for 2018-2019 in `src/data/conference/`
+  - [ ] Create `/conference/[year]/home.astro`, `schedule.astro`, `contact.astro` routes
+  - [ ] Create `/conference/index.astro` landing page
+  - [ ] Handle city background images (tokyo.png, melbourne.png)
 
 - [ ] **News/Releases**
-  - Create `/news/[slug].astro` for individual releases
-  - Create `/news/index.astro` archive page
-  - Extract news items from homepage into markdown files
+  - [ ] Extract news items from `index.haml` to markdown files in `src/content/news/`
+  - [ ] Create `/news/index.astro` archive page using `getCollection('news')`
+  - [ ] Update homepage to use `getCollection('news')` for recent items
 
 #### 3.5: Miscellaneous
 
@@ -281,7 +288,10 @@ Migrate structured multi-year content using collections:
 - [x] ~~`TeamCard.astro` (for team members)~~ - **INLINE:** Used inline card design with instrument panel aesthetic
 - [x] `Testimonial.astro` (for testimonials) - **BUILT:** Quote card component with logo support
 - [x] ~~`LightboxGallery.astro`~~ - **INLINE:** Vanilla JS lightbox with keyboard navigation
-- [ ] `Breadcrumb.astro` (for deep content like /gsoc/2022/ideas)
+- [x] `Breadcrumb.astro` (for deep content like /gsoc/2022/ideas) - **BUILT:** Hierarchical navigation with chevron separators
+- [x] `YearNavigation.astro` - **BUILT:** Horizontal year picker with HUD-style hover effects
+- [x] `ProjectIdea.astro` - **BUILT:** GSoC/GSoD project card with metadata grid, task lists, mentor links
+- [x] `NewsItem.astro` - **BUILT:** News entry component for archive and homepage integration
 
 **Deliverable:** All 20+ pages migrated to Astro with consistent styling
 
@@ -292,12 +302,15 @@ Migrate structured multi-year content using collections:
 
 **Phase 3 Progress Summary:**
 - Date: 2026-02-01
-- Commits: d8db7a4, d65199d, 6232b06, e8300c7, 348d697
-- Pages migrated: 10 total (index, features, download, documentation, community, faq, team, testimonials, gallery, presentations)
-- Build: ✅ All pages compile successfully (10 pages built in 1.24s)
-- Content collections: ✅ Infrastructure ready for GSoC/GSoD/conference/news
-- Components: ✅ Testimonial.astro component, inline lightbox, instrument panel cards
-- Next: Phase 3.4 - Content collection pages (GSoC, GSoD, Conference, News) OR Phase 3.5 - Miscellaneous cleanup
+- Commits: d8db7a4, d65199d, 6232b06, e8300c7, 348d697, [pending GSoC]
+- Pages migrated: 20 total
+  - Core: index, features, download, documentation, community, faq, team, testimonials, gallery, presentations (10)
+  - GSoC: index, contributors, 2015-2022 ideas pages (10)
+- Build: ✅ All pages compile successfully (20 pages built)
+- Content approach: TypeScript data files for structured HTML (GSoC/GSoD/Conference), Markdown for simple content (News)
+- Components: ✅ Testimonial, Breadcrumb, YearNavigation, ProjectIdea, NewsItem + inline lightbox & instrument cards
+- Foundation complete: 4 shared components built (Breadcrumb, YearNavigation, ProjectIdea, NewsItem)
+- Next: Phase 3.4 continues - GSoD Archive (6 pages), Conference Archive (7 pages), News (2 pages)
 
 ---
 
