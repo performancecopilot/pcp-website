@@ -106,3 +106,52 @@ rbenv rehash
 - `to_hash` error → Using haml 6.x, downgrade to 5.2.2
 - `compass: command not found` → Run `rbenv rehash` after gem install
 - Compass deprecation warnings about interpolation → Safe to ignore
+
+## Astro Redesign (website-redesign branch)
+
+**NEW:** A modern Astro-based redesign is being built in `new-site/` directory alongside the legacy HAML site.
+
+### Build Commands
+
+- `cd new-site && npm run dev` - Start dev server at http://localhost:4321
+- `cd new-site && npm run build` - Build to `../docs/` for GitHub Pages
+- Output location: `docs/*.html` (same as legacy build for deployment compatibility)
+
+### Astro Page Structure (CRITICAL)
+
+**Every page in `new-site/src/pages/*.astro` MUST include:**
+
+```astro
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+---
+
+<Base title="Page Title - Performance Co-Pilot">
+  <Header />
+
+  <!-- page content -->
+
+  <Footer />
+</Base>
+```
+
+**Validation before commit:**
+```bash
+grep -L "import Header" new-site/src/pages/*.astro
+# Should return nothing. If files are listed, they're missing Header/Footer.
+```
+
+### Styling Notes
+
+- Uses CSS custom properties (e.g., `var(--color-data)`, `var(--color-contrail)`)
+- **Cannot use Tailwind utilities in scoped `<style>` blocks** - use CSS properties directly
+- Color palette defined in `new-site/src/styles/global.css`
+- "Cockpit Control" design system: dark navy backgrounds, HUD-inspired UI, aviation instrument panels
+
+### Component Locations
+
+- Layout: `new-site/src/components/layout/` (Header, Footer, MobileMenu, NavDropdown)
+- UI: `new-site/src/components/ui/` (Button, Card, CodeBlock, Testimonial)
+- Pages: `new-site/src/pages/*.astro` (outputs to `docs/*.html`)
