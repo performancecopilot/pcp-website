@@ -1,0 +1,68 @@
+---
+import NavDropdown from './NavDropdown.astro';
+import MobileMenu from './MobileMenu.astro';
+
+// Navigation structure matching the footer
+const navSections = {
+  'About': [
+    { label: 'Features', href: '/features.html' },
+    { label: 'FAQ', href: '/faq.html' },
+    { label: 'Team', href: '/team.html' },
+    { label: 'Testimonials', href: '/testimonials.html' },
+  ],
+  'Resources': [
+    { label: 'Documentation', href: '/documentation.html' },
+    { label: 'Screenshots', href: '/screenshots.html' },
+    { label: 'Presentations', href: '/presentations.html' },
+    { label: 'Papers', href: '/papers.html' },
+  ],
+  'Community': [
+    { label: 'Mailing Lists', href: '/community.html' },
+    { label: 'Google Summer of Code', href: '/gsoc.html' },
+    { label: 'Google Season of Docs', href: '/gsod/2020/ideas.html' },
+  ],
+};
+---
+
+<header class="sticky top-0 z-50 bg-[var(--color-space)]/95 backdrop-blur-sm border-b border-[var(--color-instrument)]">
+  <nav class="container mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+        <img src="/images/pcp-logo.svg" alt="PCP Logo" class="h-10 w-auto" />
+        <span class="text-xl font-semibold text-[var(--color-text-primary)]">
+          Performance Co-Pilot
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center gap-8">
+        {Object.entries(navSections).map(([label, items]) => (
+          <NavDropdown label={label} items={items} />
+        ))}
+
+        <!-- Download CTA button -->
+        <a
+          href="/download.html"
+          class="px-4 py-2 bg-[var(--color-data)] text-[var(--color-space)] rounded hover:bg-[var(--color-data)]/80 transition-colors duration-200 font-semibold"
+        >
+          Download
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button
+        id="mobile-menu-toggle"
+        class="md:hidden text-[var(--color-text-primary)]"
+        aria-label="Toggle menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- Mobile menu component -->
+<MobileMenu sections={{...navSections, 'Download': [{ label: 'Get PCP', href: '/download.html' }]}} />

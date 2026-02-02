@@ -1,0 +1,230 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import Card from '../components/ui/Card.astro';
+import CodeBlock from '../components/ui/CodeBlock.astro';
+
+const platforms = [
+  {
+    name: 'Debian / Ubuntu',
+    logo: '/images/debian.png',
+    commands: `apt-get install pcp
+invoke-rc.d pmcd start
+invoke-rc.d pmie start
+invoke-rc.d pmlogger start`
+  },
+  {
+    name: 'Fedora / RHEL',
+    logo: '/images/fedora.png',
+    commands: `yum install pcp
+# RHEL 6
+service pmcd start
+service pmlogger start
+service pmie start
+# RHEL 7 and later / Fedora
+systemctl start pmcd
+systemctl start pmie
+systemctl start pmlogger`
+  },
+  {
+    name: 'macOS',
+    logo: '/images/macosx.png',
+    commands: `brew tap performancecopilot/performancecopilot
+brew install --cask pcp-perf`,
+    note: 'Alternatively, download the <a href="https://github.com/performancecopilot/pcp/releases" class="text-[var(--color-data)] hover:underline">DMG installer</a> from GitHub releases.'
+  },
+  {
+    name: 'openSUSE',
+    logo: '/images/opensuse.png',
+    note: '<a href="https://software.opensuse.org/package/pcp" class="text-[var(--color-data)] hover:underline">Direct Install</a> link'
+  },
+  {
+    name: 'Solaris',
+    logo: '/images/solaris.png',
+    note: 'No pre-built packages. Build from source (see below).'
+  },
+  {
+    name: 'Windows',
+    logo: '/images/windows.png',
+    note: 'No pre-built packages. Build from source (see below).'
+  }
+];
+
+const sourceRepos = [
+  {
+    name: 'PCP Core',
+    url: 'https://github.com/performancecopilot/pcp',
+    git: 'git://github.com/performancecopilot/pcp.git',
+    description: 'Main PCP repository'
+  },
+  {
+    name: 'Grafana Plugin',
+    url: 'https://github.com/performancecopilot/grafana-pcp',
+    git: 'git://github.com/performancecopilot/grafana-pcp.git',
+    description: 'PCP data source for Grafana'
+  },
+  {
+    name: 'Ansible Roles',
+    url: 'https://github.com/performancecopilot/ansible-pcp',
+    git: 'git://github.com/performancecopilot/ansible-pcp.git',
+    description: 'Ansible automation for PCP'
+  },
+  {
+    name: 'Parfait (Java)',
+    url: 'https://github.com/performancecopilot/parfait',
+    git: 'git://github.com/performancecopilot/parfait.git',
+    description: 'Java instrumentation library'
+  },
+  {
+    name: 'pcp2pdf',
+    url: 'https://github.com/performancecopilot/pcp2pdf',
+    git: 'git://github.com/performancecopilot/pcp2pdf.git',
+    description: 'PDF graph converter'
+  }
+];
+---
+
+<Base title="Download - Performance Co-Pilot" description="Download PCP packages for Linux, macOS, and other platforms">
+  <Header />
+
+  <main>
+    <!-- Page Header -->
+    <section class="py-16 px-6 bg-[var(--color-void)]">
+      <div class="container mx-auto">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-5xl font-bold mb-6 text-[var(--color-text-primary)]">Download</h1>
+          <p class="text-xl text-[var(--color-text-secondary)] mb-8">
+            Pre-built Performance Co-Pilot packages and containers can be installed from
+            <a href="https://packagecloud.io/performancecopilot/pcp" class="text-[var(--color-data)] hover:underline">Packagecloud</a>.
+          </p>
+          <p class="text-[var(--color-text-secondary)]">
+            Please follow the
+            <a href="https://pcp.readthedocs.io/en/latest/HowTos/installation/index.html" class="text-[var(--color-data)] hover:underline">installation instructions</a>
+            on how to setup the repositories for your distribution.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Distribution Note -->
+    <section class="py-12 px-6 bg-[var(--color-space)]">
+      <div class="container mx-auto">
+        <div class="max-w-4xl mx-auto">
+          <Card>
+            <div class="flex items-start gap-4">
+              <svg class="w-6 h-6 text-[var(--color-status-ok)] flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <div>
+                <h3 class="text-xl font-semibold text-[var(--color-text-primary)] mb-2">Already Included</h3>
+                <p class="text-[var(--color-text-secondary)]">
+                  Performance Co-Pilot is already included in all popular distributions
+                  (RHEL, Debian, Fedora, SUSE, Ubuntu). Use the commands below to install from your distribution.
+                </p>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platform Installation -->
+    <section class="py-16 px-6 bg-[var(--color-void)]">
+      <div class="container mx-auto">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-center text-[var(--color-text-primary)]">
+            Installation by Platform
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            {platforms.map(platform => (
+              <Card class="h-full">
+                <div class="flex flex-col h-full">
+                  <div class="flex items-center gap-4 mb-4">
+                    <img src={platform.logo} alt={platform.name} class="w-12 h-12" />
+                    <h3 class="text-xl font-semibold text-[var(--color-text-primary)]">{platform.name}</h3>
+                  </div>
+
+                  {platform.commands ? (
+                    <CodeBlock code={platform.commands} />
+                  ) : null}
+
+                  {platform.note ? (
+                    <p class="text-[var(--color-text-secondary)] mt-4" set:html={platform.note} />
+                  ) : null}
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Source Code -->
+    <section id="source" class="py-16 px-6 bg-[var(--color-space)]">
+      <div class="container mx-auto">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-center text-[var(--color-text-primary)]">
+            Source Code
+          </h2>
+
+          <div class="mb-8">
+            <Card>
+              <p class="text-[var(--color-text-secondary)]">
+                Source .tar.gz files can be found at:
+                <a href="https://github.com/performancecopilot/pcp/releases" class="text-[var(--color-data)] hover:underline">
+                  PCP Releases on GitHub
+                </a>
+              </p>
+            </Card>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            {sourceRepos.map(repo => (
+              <Card>
+                <h3 class="text-lg font-semibold text-[var(--color-text-primary)] mb-2">
+                  <a href={repo.url} class="hover:text-[var(--color-data)] transition-colors">
+                    {repo.name}
+                  </a>
+                </h3>
+                <p class="text-sm text-[var(--color-text-secondary)] mb-3">{repo.description}</p>
+                <CodeBlock code={`git clone ${repo.git}`} />
+              </Card>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GPG Signature -->
+    <section class="py-16 px-6 bg-[var(--color-void)]">
+      <div class="container mx-auto">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-8 text-center text-[var(--color-text-primary)]">
+            GPG Signature
+          </h2>
+
+          <Card>
+            <p class="text-[var(--color-text-secondary)] mb-4">
+              GPG public key for the PCP maintainers:
+            </p>
+            <div class="flex items-center gap-3">
+              <a
+                href="/GPG-KEY-PCP"
+                class="inline-block px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-[var(--color-data)] text-[var(--color-space)] hover:bg-[var(--color-data)]/90"
+              >
+                Download GPG Key
+              </a>
+              <span class="text-sm text-[var(--color-text-tertiary)] font-mono">
+                Performance Co-Pilot (PCP) Maintainers &lt;pcp-masters@oss.sgi.com&gt;
+              </span>
+            </div>
+          </Card>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Base>

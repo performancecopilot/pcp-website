@@ -1,0 +1,168 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import Breadcrumb from '../../components/ui/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', url: '/' },
+  { label: 'GSoC', url: '/gsoc/' },
+  { label: 'Contributors' },
+];
+---
+
+<Base title="GSoC Contributors Guide - Performance Co-Pilot">
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="relative py-16 overflow-hidden bg-gradient-to-b from-void via-space to-panel">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, var(--color-contrail) 2px, var(--color-contrail) 3px); background-size: 100% 60px;"></div>
+    </div>
+
+    <div class="container relative z-10 px-6 mx-auto max-w-4xl">
+      <Breadcrumb items={breadcrumbItems} />
+
+      <h1 class="text-4xl md:text-5xl font-bold text-white mt-6 mb-6">
+        How to get involved with PCP for <span class="text-contrail">Google Summer of Code</span>
+      </h1>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-20 bg-panel">
+    <div class="container px-6 mx-auto max-w-4xl space-y-12">
+      <!-- Welcome -->
+      <div class="bg-gradient-to-br from-instrument to-space border border-gray-700 border-l-4 border-l-data p-8">
+        <p class="text-xl font-bold text-white mb-4">Welcome!</p>
+        <div class="space-y-4 text-gray-300 leading-relaxed">
+          <p>
+            We are delighted that you are interested in working with us on Performance Co-Pilot - a toolkit for system performance analysis.
+          </p>
+          <p>
+            PCP has been an active project for around 25 years now and is a part of all modern Linux distributions. It is a mature open source project used by thousands of people on millions of production systems to solve complex performance problems.
+          </p>
+          <p>
+            You will get alot out of working on PCP - the performance analysis skills you pick up working with us will be useful to you no matter what field of endeavour you undertake.
+          </p>
+          <p>
+            We have a number of mentors very experienced in open source software development and performance analysis, ready to help you with a successful collaboration on our project.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="bg-gradient-to-br from-instrument to-space border border-gray-700 p-8">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-contrail flex items-center justify-center font-mono font-bold text-2xl text-white">
+            1
+          </div>
+          <div class="flex-1">
+            <h3 class="text-2xl font-bold text-white mb-4">Find a project idea</h3>
+            <div class="space-y-4 text-gray-300 leading-relaxed">
+              <p>
+                The first step towards becoming involved in our open source performance analysis toolkit is to find a project in our <a href="/gsoc/" class="text-data hover:text-contrail transition-colors">ideas list</a> that appeals to you.
+              </p>
+              <p>
+                There is a variety of projects. There is also potential to extend and customise the project ideas a little towards your particular skill sets or desired learning areas, from discussions with your mentors.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="bg-gradient-to-br from-instrument to-space border border-gray-700 p-8">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-contrail flex items-center justify-center font-mono font-bold text-2xl text-white">
+            2
+          </div>
+          <div class="flex-1">
+            <h3 class="text-2xl font-bold text-white mb-4">Learn about PCP</h3>
+            <div class="space-y-4 text-gray-300 leading-relaxed">
+              <p>
+                PCP is a complete distributed system analysis solution, with many components, tools, services and APIs.
+              </p>
+              <p>
+                Before contacting mentors its a good idea to install the software and do some background reading:
+              </p>
+              <ol class="list-decimal list-inside space-y-2 ml-4">
+                <li>
+                  <a href="https://pcp.readthedocs.io/en/latest/UAG/AboutUserAdministratorsGuide.html" target="_blank" rel="noopener noreferrer" class="text-data hover:text-contrail transition-colors">PCP User's Guide</a>
+                </li>
+                <li>
+                  <a href="https://grafana-pcp.readthedocs.io/en/latest/" target="_blank" rel="noopener noreferrer" class="text-data hover:text-contrail transition-colors">Grafana PCP User's Guide</a>
+                </li>
+                <li>
+                  <a href="https://pcp.readthedocs.io/en/latest/HowTos/installation/index.html" target="_blank" rel="noopener noreferrer" class="text-data hover:text-contrail transition-colors">Installation instructions</a>
+                </li>
+              </ol>
+              <p>
+                If the project idea you're interested in involves use of another utility or toolkit as well as PCP, such as <a href="https://htop.dev/" target="_blank" rel="noopener noreferrer" class="text-data hover:text-contrail transition-colors">htop</a> or <a href="https://sysstat.fr/" target="_blank" rel="noopener noreferrer" class="text-data hover:text-contrail transition-colors">sysstat</a> take some time to install those too, and become familiar with them in order to have more meaningful initial discussion with your project mentors.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="bg-gradient-to-br from-instrument to-space border border-gray-700 p-8">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-contrail flex items-center justify-center font-mono font-bold text-2xl text-white">
+            3
+          </div>
+          <div class="flex-1">
+            <h3 class="text-2xl font-bold text-white mb-4">Contact project mentors</h3>
+            <div class="space-y-4 text-gray-300 leading-relaxed">
+              <p>
+                The mentors for our projects are listed on the <a href="/gsoc/" class="text-data hover:text-contrail transition-colors">ideas page</a> at the end of each project description. Send an email with the following details to the mentors listed for the project you are interested in:
+              </p>
+              <ol class="list-decimal list-inside space-y-2 ml-4">
+                <li>Your preferred name</li>
+                <li>Identify the project you're interested in</li>
+                <li>List programming language(s) you are proficient in</li>
+                <li>Describe your programming experience, any open source experience you have already, and describe why you are interested in the project</li>
+                <li>List any tertiary qualifications you have or are working towards</li>
+                <li>Any other details about yourself you wish to share</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="bg-gradient-to-br from-instrument to-space border border-gray-700 p-8">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-contrail flex items-center justify-center font-mono font-bold text-2xl text-white">
+            4
+          </div>
+          <div class="flex-1">
+            <h3 class="text-2xl font-bold text-white mb-4">Next steps</h3>
+            <div class="space-y-4 text-gray-300 leading-relaxed">
+              <p>
+                Within a day or two one or more of your mentors will have contacted you to begin discussing the project.
+              </p>
+              <p>
+                In the meantime, follow the instructions on the PCP <a href="/community.html" class="text-data hover:text-contrail transition-colors">community page</a> for joining the PCP Slack.com discussion group. The #general channel is a good place to ask about Google Summer of Code and PCP in general. Mentors for each project can be directly contacted here for further (live) chat.
+              </p>
+              <p>
+                If you have not done so already, <a href="https://pcp.readthedocs.io/en/latest/HowTos/installation/index.html" target="_blank" rel="noopener noreferrer" class="text-data hover:text-contrail transition-colors">install</a> PCP locally and being to experiment with its capabilities.
+              </p>
+              <p>
+                Clone the <a href="https://github.com/performancecopilot/pcp" target="_blank" rel="noopener noreferrer" class="text-data hover:text-contrail transition-colors">PCP git repository</a> and <a href="https://github.com/performancecopilot/pcp/blob/main/INSTALL.md" target="_blank" rel="noopener noreferrer" class="text-data hover:text-contrail transition-colors">build from source</a>.
+              </p>
+              <p class="pt-4">
+                At this point you will have a good initial understanding of PCP and should have a deeper understanding of what your project of interest is all about. Continue discussing details of your project with the mentors now and start to become involved in the community. Look for opportunities to demonstrate your programming proficiency - being able to fix small problems in documentation, code and tests right away will help to convince your mentors that you are a promising candidate.
+              </p>
+              <p class="pt-4 font-semibold text-white">
+                Once again, thank you for your interest in the Performance Co-Pilot toolkit and welcome to our community!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Base>

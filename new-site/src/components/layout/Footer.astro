@@ -1,0 +1,64 @@
+---
+const currentYear = new Date().getFullYear();
+
+const footerLinks = {
+  'About': [
+    { label: 'Features', href: '/features.html' },
+    { label: 'FAQ', href: '/faq.html' },
+    { label: 'Team', href: '/team.html' },
+    { label: 'Testimonials', href: '/testimonials.html' },
+  ],
+  'Resources': [
+    { label: 'Documentation', href: '/documentation.html' },
+    { label: 'Screenshots', href: '/screenshots.html' },
+    { label: 'Presentations', href: '/presentations.html' },
+    { label: 'Papers', href: '/papers.html' },
+  ],
+  'Community': [
+    { label: 'Mailing Lists', href: '/community.html' },
+    { label: 'Google Summer of Code', href: '/gsoc/2024/ideas.html' },
+    { label: 'Google Season of Docs', href: '/gsod/2020/ideas.html' },
+  ],
+  'Download': [
+    { label: 'Linux', href: '/download.html' },
+    { label: 'macOS', href: '/download.html' },
+    { label: 'Windows', href: '/download.html' },
+  ],
+};
+---
+
+<footer class="border-t border-[var(--color-instrument)] bg-[var(--color-void)]">
+  <div class="container mx-auto px-6 py-12">
+    <!-- Footer grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+      {Object.entries(footerLinks).map(([section, links]) => (
+        <div>
+          <h3 class="text-[var(--color-text-primary)] font-semibold mb-4">{section}</h3>
+          <ul class="space-y-2">
+            {links.map(link => (
+              <li>
+                <a
+                  href={link.href}
+                  class="text-[var(--color-text-tertiary)] hover:text-[var(--color-data)] transition-colors duration-200 text-sm"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="pt-8 border-t border-[var(--color-instrument)] flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[var(--color-text-tertiary)]">
+      <p>
+        © {currentYear} Performance Co-Pilot
+      </p>
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-[var(--color-status-ok)] animate-pulse"></span>
+        <span>System operational</span>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,40 @@
+{
+  "$ref": "#/definitions/conference",
+  "definitions": {
+    "conference": {
+      "type": "object",
+      "properties": {
+        "year": {
+          "type": "number"
+        },
+        "title": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "home",
+            "schedule",
+            "contact"
+          ],
+          "default": "home"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "year",
+        "title"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

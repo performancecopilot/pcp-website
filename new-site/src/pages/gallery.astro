@@ -1,0 +1,274 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+
+const screenshots = [
+  { src: '/snaps/dkvis.png', alt: 'Disk Visualizer' },
+  { src: '/snaps/dxbapp.png', alt: 'DXB Application' },
+  { src: '/snaps/kvm.png', alt: 'KVM Monitoring' },
+  { src: '/snaps/macosxlive.png', alt: 'macOS Live View' },
+  { src: '/snaps/mpvis.png', alt: 'Multi-Processor Visualizer' },
+  { src: '/snaps/newchart0.png', alt: 'PCP Chart View' },
+  { src: '/snaps/newchart1.png', alt: 'PCP Chart Configuration' },
+  { src: '/snaps/newchart2.png', alt: 'PCP Chart Analysis' },
+  { src: '/snaps/oview512p.png', alt: 'Overview Dashboard' },
+  { src: '/snaps/pmstat.png', alt: 'pmstat Terminal Output' },
+  { src: '/snaps/pmval.png', alt: 'pmval Terminal Output' },
+  { src: '/snaps/win2k8.png', alt: 'Windows Server 2008' },
+  { src: '/snaps/nasmel.png', alt: 'NAS Monitoring' },
+];
+---
+
+<Base title="Gallery - Performance Co-Pilot">
+  <Header />
+  <!-- Hero Section -->
+  <section class="relative py-20 overflow-hidden bg-gradient-to-b from-void via-space to-panel">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, var(--color-data) 2px, var(--color-data) 3px); background-size: 100% 60px;"></div>
+    </div>
+
+    <div class="container relative z-10 px-6 mx-auto max-w-5xl">
+      <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+        Visual <span class="text-contrail">Intelligence</span>
+      </h1>
+      <p class="text-xl text-gray-300 max-w-2xl leading-relaxed">
+        Screenshots and visualizations from PCP in action across platforms
+      </p>
+    </div>
+  </section>
+
+  <!-- Glider Section -->
+  <section class="py-20 bg-gradient-to-b from-panel to-space">
+    <div class="container px-6 mx-auto max-w-6xl">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Content -->
+        <div class="space-y-6">
+          <h2 class="text-4xl font-bold text-white">
+            PCP <span class="text-data">Glider</span>
+          </h2>
+          <p class="text-gray-300 leading-relaxed">
+            PCP Glider is a binary distribution of PCP for the Windows operating system. It includes a bundled compiler, Perl runtime (and pre-installed modules that offer the ability to install XS CPAN modules directly from CPAN), a POSIX shell environment and the Performance Co-Pilot toolkit.
+          </p>
+          <p class="text-gray-300 leading-relaxed">
+            The purpose of the Glider package is to provide a practical Win32 environment for performance engineers experienced with either the POSIX platform or the Win32 environment to run the Performance Co-Pilot toolkit on Windows. It provides both the PCP monitor and collector components.
+          </p>
+
+          <!-- Installation -->
+          <div class="mt-8">
+            <h3 class="text-lg font-semibold text-white mb-4">Installation</h3>
+            <div class="bg-void border border-gray-700 p-6 font-mono text-sm overflow-x-auto">
+              <div class="text-gray-400">
+                <span class="text-data">C:></span> msiexec /i pcp-glider-*.msi<br/>
+                <span class="text-data">C:></span> cd \Glider\scripts<br/>
+                <span class="text-data">C:></span> .\postinst.bat
+              </div>
+            </div>
+          </div>
+
+          <!-- Includes -->
+          <div class="mt-8">
+            <h3 class="text-lg font-semibold text-white mb-4">PCP Glider includes:</h3>
+            <ul class="space-y-2 text-gray-300">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-contrail mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+                <a href="http://www.mingw.org" class="text-data hover:text-white transition-colors duration-300">Mingw</a> GCC C/C++ compiler
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-contrail mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+                <a href="http://www.mingw.org/wiki/msys" class="text-data hover:text-white transition-colors duration-300">MSYS</a> Core System
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-contrail mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+                <a href="http://www.qtsoftware.com" class="text-data hover:text-white transition-colors duration-300">Qt</a> toolkit runtime
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-contrail mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+                Performance Co-Pilot with GUI
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Image -->
+        <div class="relative group">
+          <div class="absolute inset-0 bg-gradient-to-br from-data/20 to-contrail/20 blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
+          <div class="relative bg-instrument border border-gray-700 group-hover:border-data/50 p-4 transition-all duration-300">
+            <img
+              src="/snaps/win2k8.png"
+              alt="PCP Glider on Windows Server 2008"
+              class="w-full h-auto"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots Gallery -->
+  <section class="py-20 bg-panel">
+    <div class="container px-6 mx-auto max-w-7xl">
+      <h2 class="text-3xl font-bold text-white mb-12 text-center">
+        <span class="text-data">Screenshots</span> Gallery
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {screenshots.map((screenshot, index) => (
+          <a
+            href={screenshot.src}
+            class="gallery-item group relative bg-instrument border border-gray-700 hover:border-data/50 transition-all duration-300 overflow-hidden aspect-video"
+            data-index={index}
+          >
+            <!-- Image -->
+            <img
+              src={screenshot.src}
+              alt={screenshot.alt}
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              loading="lazy"
+            />
+
+            <!-- Overlay on hover -->
+            <div class="absolute inset-0 bg-gradient-to-t from-void/90 via-void/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <p class="text-white text-sm font-medium">{screenshot.alt}</p>
+            </div>
+
+            <!-- HUD corner markers -->
+            <div class="absolute top-2 left-2 w-8 h-8 border-t-2 border-l-2 border-data opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute bottom-2 right-2 w-8 h-8 border-b-2 border-r-2 border-data opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+            <!-- Scanline effect -->
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none" style="background: repeating-linear-gradient(0deg, transparent, transparent 2px, var(--color-data) 2px, var(--color-data) 3px); background-size: 100% 4px;"></div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="fixed inset-0 bg-void/95 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <button
+      id="lightbox-close"
+      class="absolute top-4 right-4 w-12 h-12 bg-instrument border border-gray-700 hover:border-contrail text-white flex items-center justify-center transition-all duration-300 group z-10"
+      aria-label="Close lightbox"
+    >
+      <svg class="w-6 h-6 group-hover:rotate-90 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <button
+      id="lightbox-prev"
+      class="absolute left-4 w-12 h-12 bg-instrument border border-gray-700 hover:border-data text-white flex items-center justify-center transition-all duration-300 group"
+      aria-label="Previous image"
+    >
+      <svg class="w-6 h-6 group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+
+    <button
+      id="lightbox-next"
+      class="absolute right-4 w-12 h-12 bg-instrument border border-gray-700 hover:border-data text-white flex items-center justify-center transition-all duration-300 group"
+      aria-label="Next image"
+    >
+      <svg class="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+
+    <div class="relative max-w-6xl w-full">
+      <img
+        id="lightbox-img"
+        src=""
+        alt=""
+        class="w-full h-auto max-h-[85vh] object-contain border-2 border-gray-700"
+      />
+      <p id="lightbox-caption" class="text-center text-gray-300 mt-4 text-lg"></p>
+    </div>
+  </div>
+
+  <Footer />
+</Base>
+
+<script>
+  // Lightbox functionality
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const closeBtn = document.getElementById('lightbox-close');
+  const prevBtn = document.getElementById('lightbox-prev');
+  const nextBtn = document.getElementById('lightbox-next');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+
+  let currentIndex = 0;
+
+  function openLightbox(index: number) {
+    currentIndex = index;
+    updateLightbox();
+    lightbox?.classList.remove('hidden');
+    lightbox?.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox?.classList.add('hidden');
+    lightbox?.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  function updateLightbox() {
+    const item = galleryItems[currentIndex] as HTMLAnchorElement;
+    if (lightboxImg && lightboxCaption) {
+      lightboxImg.src = item.href;
+      lightboxImg.alt = item.querySelector('img')?.alt || '';
+      lightboxCaption.textContent = item.querySelector('img')?.alt || '';
+    }
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % galleryItems.length;
+    updateLightbox();
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+    updateLightbox();
+  }
+
+  // Event listeners
+  galleryItems.forEach((item, index) => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      openLightbox(index);
+    });
+  });
+
+  closeBtn?.addEventListener('click', closeLightbox);
+  nextBtn?.addEventListener('click', nextImage);
+  prevBtn?.addEventListener('click', prevImage);
+
+  // Close on background click
+  lightbox?.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox?.classList.contains('hidden')) {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') prevImage();
+      if (e.key === 'ArrowRight') nextImage();
+    }
+  });
+</script>

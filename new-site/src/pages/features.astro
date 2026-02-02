@@ -1,0 +1,182 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import Card from '../components/ui/Card.astro';
+
+const features = [
+  {
+    id: 'collect',
+    title: 'Collect',
+    icon: '/images/collect.png',
+    sections: [
+      {
+        title: 'Kernel agents',
+        description: 'for each supported platform. The Linux agent exports a broad range of performance data from kernels since 2.0.36 or later. This includes coverage of activity in the areas of: CPU, disk, memory, swapping, network, NFS, RPC, filesystems, and per-process statistics.'
+      },
+      {
+        title: 'Other agents',
+        description: 'export performance data from: Databases, Log files, Web servers, Mail systems, Cisco routers, Search engines, Cluster infrastructure, Application instrumentation (including the JVM) and the PCP infrastructure itself.'
+      },
+      {
+        title: 'Monitoring tools',
+        description: 'Assorted simple monitoring tools that use the PCP APIs to retrieve and display either arbitrary performance metrics, or specific groups of metrics (as in pmstat, a cluster-aware vmstat lookalike).'
+      }
+    ]
+  },
+  {
+    id: 'analyze',
+    title: 'Analyze',
+    icon: '/images/analyze.png',
+    screenshot: '/images/bpftrace-cpu.png',
+    sections: [
+      {
+        title: 'Single API',
+        description: 'A single API for accessing the performance data that hides details of where the data comes from and how it was captured and imported into the PCP framework.'
+      },
+      {
+        title: 'Archive logging',
+        description: 'Integrated archive logging and replay so a client application can use the same API to process real-time data from a host or historical data from an archive.'
+      },
+      {
+        title: 'Extensible framework',
+        description: 'The framework supports APIs and configuration file formats that enable the scope of performance monitoring to be extended at all levels.'
+      },
+      {
+        title: 'Inference engine',
+        description: 'The PCP inference engine supports automated monitoring through a rule-based language and interpreter that performs user-defined actions when rule predicates are found to be true.'
+      },
+      {
+        title: 'Web interface',
+        description: 'Access the graph data through a web interface or a GUI'
+      }
+    ]
+  },
+  {
+    id: 'distributed',
+    title: 'Distributed',
+    icon: '/images/distributed.png',
+    sections: [
+      {
+        title: 'Client-server architecture',
+        description: 'A client-server architecture allows multiple clients to monitor the same host, and a single client to monitor multiple hosts (e.g. in a cluster). This enables centralized monitoring of distributed processing.'
+      },
+      {
+        title: 'Cross-platform transport',
+        description: 'An endian-safe transport layer for moving performance metrics between the collector and the monitoring applications over TCP/IP. This means a desktop with PCP can monitor remote server systems with different architectures and operating systems.'
+      }
+    ]
+  },
+  {
+    id: 'extend',
+    title: 'Extend',
+    icon: '/images/extend.png',
+    sections: [
+      {
+        title: 'Plugin framework',
+        description: 'A "plugin" framework (libraries, APIs, agents and daemon) to collect performance data from multiple sources on a single host, e.g. from the hardware, the kernel, the service layers, the application libraries, and the applications themselves.'
+      },
+      {
+        title: 'Development libraries',
+        description: 'Libraries and sample implementations encourage the development of new "plugins" (or agents) to capture and export the performance data that matters in your application environment, along side the other generic performance data.'
+      }
+    ]
+  }
+];
+---
+
+<Base title="Features - Performance Co-Pilot" description="PCP features: collect, analyze, distribute, and extend system performance metrics">
+  <Header />
+
+  <main>
+    <!-- Page Header -->
+    <section class="py-16 px-6 bg-[var(--color-void)]">
+      <div class="container mx-auto">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-5xl font-bold mb-4 text-[var(--color-text-primary)]">Features</h1>
+          <p class="text-xl text-[var(--color-text-secondary)]">
+            Comprehensive system performance analysis capabilities
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Sections -->
+    {features.map((feature, index) => (
+      <section id={feature.id} class={`py-20 px-6 ${index % 2 === 0 ? 'bg-[var(--color-space)]' : 'bg-[var(--color-void)]'}`}>
+        <div class="container mx-auto">
+          <div class="max-w-6xl mx-auto">
+            <!-- Section Header -->
+            <div class="flex items-center gap-6 mb-12">
+              <img src={feature.icon} alt={feature.title} class="w-20 h-20" />
+              <h2 class="text-4xl font-bold text-[var(--color-data)]">{feature.title}</h2>
+            </div>
+
+            <!-- Feature Cards Grid -->
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+              {feature.sections.map(section => (
+                <Card>
+                  <h3 class="text-xl font-semibold text-[var(--color-text-primary)] mb-3">
+                    {section.title}
+                  </h3>
+                  <p class="text-[var(--color-text-secondary)] leading-relaxed">
+                    {section.description}
+                  </p>
+                </Card>
+              ))}
+            </div>
+
+            <!-- Screenshot if available -->
+            {feature.screenshot && (
+              <div class="mt-8">
+                <Card>
+                  <img
+                    src={feature.screenshot}
+                    alt={`${feature.title} screenshot`}
+                    class="w-full rounded-lg"
+                  />
+                </Card>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+    ))}
+
+    <!-- CTA Section -->
+    <section class="py-20 px-6 bg-[var(--color-panel)] border-t border-[var(--color-instrument)]">
+      <div class="container mx-auto">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-6 text-[var(--color-text-primary)]">
+            Ready to get started?
+          </h2>
+          <p class="text-xl text-[var(--color-text-secondary)] mb-8">
+            Download PCP and start monitoring your systems today
+          </p>
+          <div class="flex flex-wrap gap-4 justify-center">
+            <a
+              href="/docs/guide.html"
+              class="inline-block px-8 py-4 rounded-lg font-medium transition-all duration-200 bg-[var(--color-contrail)] text-white hover:bg-[var(--color-contrail)]/90"
+            >
+              Quick Start Guide
+            </a>
+            <a
+              href="/download.html"
+              class="inline-block px-8 py-4 rounded-lg font-medium transition-all duration-200 bg-[var(--color-data)] text-[var(--color-space)] hover:bg-[var(--color-data)]/90"
+            >
+              Download Now
+            </a>
+            <a
+              href="/documentation.html"
+              class="inline-block px-8 py-4 rounded-lg font-medium transition-all duration-200 border border-[var(--color-instrument)] text-[var(--color-text-primary)] hover:border-[var(--color-data)] hover:text-[var(--color-data)]"
+            >
+              Documentation
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Base>

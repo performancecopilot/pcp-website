@@ -1,5 +1,0 @@
-- Add mention about the high-resolution timestamping of metrics and the general time support (timezones, high-res, etc.)
-- Screenshot of pcp2pdf
-- More complex pandas example with a concrete real-world example
-- Explain PAPI
-- Cover pevent as well? With example

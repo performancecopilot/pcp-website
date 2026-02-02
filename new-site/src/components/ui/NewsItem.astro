@@ -1,0 +1,108 @@
+---
+interface Props {
+  date: string;
+  version?: string;
+  content: string;
+  compact?: boolean;
+}
+
+const { date, version, content, compact = false } = Astro.props;
+---
+
+<div class={`news-item ${compact ? 'compact' : ''}`}>
+  <div class="news-date">
+    <p class="date-text">{date}</p>
+    {version && (
+      <>
+        <br />
+        <p class="version-text">{version}</p>
+      </>
+    )}
+  </div>
+
+  <div class="news-content">
+    <div set:html={content} />
+  </div>
+</div>
+
+<style>
+  .news-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--color-instrument) 0%, var(--color-space) 100%);
+    border: 1px solid #374151;
+    border-left: 3px solid var(--color-contrail);
+    transition: all 0.3s ease;
+  }
+
+  @media (min-width: 768px) {
+    .news-item {
+      grid-template-columns: 200px 1fr;
+      gap: 2rem;
+    }
+  }
+
+  .news-item:hover {
+    border-left-color: var(--color-data);
+    border-color: var(--color-data);
+    box-shadow: 0 4px 20px rgba(0, 212, 255, 0.1);
+  }
+
+  .news-item.compact {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .news-date {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .date-text {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: #9ca3af;
+    font-weight: 600;
+  }
+
+  .version-text {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--color-data);
+    font-weight: 700;
+  }
+
+  .news-content {
+    color: #d1d5db;
+    line-height: 1.7;
+  }
+
+  .news-content :global(p) {
+    margin-bottom: 0.75rem;
+  }
+
+  .news-content :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  .news-content :global(a) {
+    color: var(--color-data);
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 212, 255, 0.3);
+    transition: text-decoration-color 0.2s ease;
+  }
+
+  .news-content :global(a:hover) {
+    text-decoration-color: var(--color-data);
+    color: #00ffff;
+  }
+
+  .news-content :global(strong) {
+    color: white;
+    font-weight: 600;
+  }
+</style>

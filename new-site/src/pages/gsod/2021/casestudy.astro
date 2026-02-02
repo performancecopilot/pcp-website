@@ -1,0 +1,309 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Header from '../../../components/layout/Header.astro';
+import Footer from '../../../components/layout/Footer.astro';
+import Breadcrumb from '../../../components/ui/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', url: '/' },
+  { label: 'GSoD', url: '/gsod/' },
+  { label: '2021', url: '/gsod/2021/ideas.html' },
+  { label: 'Case Study' },
+];
+---
+
+<Base title="GSoD 2021 Case Study: Task-based Guides - Performance Co-Pilot">
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="relative py-16 overflow-hidden bg-gradient-to-b from-void via-space to-panel">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, var(--color-contrail) 2px, var(--color-contrail) 3px); background-size: 100% 60px;"></div>
+    </div>
+
+    <div class="container relative z-10 px-6 mx-auto max-w-5xl">
+      <Breadcrumb items={breadcrumbItems} />
+
+      <h1 class="text-4xl md:text-5xl font-bold text-white mt-8 mb-4">
+        Task-based Guides for Performance Co-Pilot
+      </h1>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-20 bg-panel">
+    <div class="container px-6 mx-auto max-w-5xl space-y-12">
+      <!-- About PCP -->
+      <div class="bg-gradient-to-br from-instrument to-space border border-gray-700 p-8">
+        <h2 class="text-3xl font-bold text-white mb-6">About Performance Co-Pilot</h2>
+        <div class="space-y-4 text-gray-300 leading-relaxed">
+          <p>
+            Performance Co-Pilot (PCP) is an open-source distributed system performance analysis toolkit.
+            It efficiently collects metrics from multiple systems and provides a variety of web, graphical
+            and console tools for analysis of live and historical data.
+          </p>
+          <p>
+            The suite begun production use over 20 years ago primarily in the High Performance Computing arena,
+            however its customizable and lightweight design has proven popular on everything from tiny
+            system-on-a-chip machines through to vast databases and number-crunching super computers.
+            It is included in all Linux distributions and has an active base of users and developers.
+          </p>
+        </div>
+      </div>
+
+      <!-- About Task-based Guides -->
+      <div class="bg-gradient-to-br from-instrument to-space border border-gray-700 p-8">
+        <h2 class="text-3xl font-bold text-white mb-6">About Task-based Guides</h2>
+        <div class="space-y-4 text-gray-300 leading-relaxed">
+          <p>
+            In our
+            <a href="https://pcp.io/gsod/2020/ideas.html#readthedocs-pcp" class="text-data hover:text-contrail transition-colors duration-200">previous</a>
+            Google Season of Docs project, we converted two freely-available books (the "Users and
+            Administrators Guide" and the "Programmers Guide"), the REST API documentation, and other
+            content into
+            <a href="https://pcp.readthedocs.io/" class="text-data hover:text-contrail transition-colors duration-200">pcp.readthedocs.io</a>.
+          </p>
+          <p>
+            It is this
+            <a href="https://pcp.io/gsod/2021/proposal.html" class="text-data hover:text-contrail transition-colors duration-200">latest</a>
+            project we tackled the curation of a new, consistent series of focussed, task-oriented
+            "How To" guides that assist new users in engaging immediately, by clearly showing how to
+            solve small specific problem scenarios users encounter frequently.
+          </p>
+        </div>
+      </div>
+
+      <!-- Proposal Abstract -->
+      <div class="bg-gradient-to-br from-instrument to-space border border-gray-700 p-8">
+        <h2 class="text-3xl font-bold text-white mb-6">Proposal Abstract</h2>
+        <div class="space-y-4 text-gray-300 leading-relaxed">
+          <p>
+            The primary goal of this
+            <a href="https://pcp.io/gsod/2021/proposal.html" class="text-data hover:text-contrail transition-colors duration-200">project</a>
+            was to assist first-time users to become more productive right away, while also directing
+            traffic toward the more detailed books in
+            <a href="https://pcp.readthedocs.io/" class="text-data hover:text-contrail transition-colors duration-200">close proximity</a>
+            to the new guides.
+          </p>
+        </div>
+      </div>
+
+      <!-- Project Description -->
+      <div class="bg-gradient-to-br from-instrument to-space border border-gray-700 p-8">
+        <h2 class="text-3xl font-bold text-white mb-6">Project Description</h2>
+
+        <!-- Creating the proposal -->
+        <div class="mb-8">
+          <h3 class="text-2xl font-bold text-white mb-4">Creating the proposal</h3>
+          <div class="space-y-4 text-gray-300 leading-relaxed">
+            <p>
+              Initial work creating a proposal was done by the team in collaboration with Arzoo,
+              based on guides we had in the form of email exchanges, known areas of need, as well
+              as pre-existing guides in different formats from the main PCP website.
+            </p>
+            <p>
+              Once all involved agreed on the initial project content, we moved into establishing
+              the project budget plan.
+            </p>
+          </div>
+        </div>
+
+        <!-- Budget -->
+        <div class="mb-8">
+          <h3 class="text-2xl font-bold text-white mb-4">Budget</h3>
+          <div class="space-y-4 text-gray-300 leading-relaxed">
+            <p>
+              We primarily based our initial budget on funding our writer, based on previous years
+              activities and the recommended reasonable ranges of funding from Google.
+            </p>
+            <p>
+              One unexpected area of difficulty was interacting with financing and shipping companies
+              in India. After a relatively trouble-free initial payment to our writer early on, the
+              environment around OpenCollective seemed to change for payments in India and we continue
+              to work with them to ensure subsequent payments arrive.
+            </p>
+            <p>
+              Similarly, we budgeted for some swag, but trouble with shipments into India by our
+              provider company
+              <a href="https://www.redbubble.com/i/hat/Performance-Co-Pilot-classic-logo-by-pcp-maintainers/89364453.FACOX" class="text-data hover:text-contrail transition-colors duration-200">Red Bubble</a>
+              meant some contributors ended up unable to receive the swag. As a result, they kindly
+              donated their funding to the PCP project for other uses, with a plan for anyone who
+              travels internationally for a meetup in-person to bring in swag for them, in the future
+              when possible.
+            </p>
+            <p>
+              Other than these problems, the budget overall was quite appropriate and worked out well.
+            </p>
+          </div>
+        </div>
+
+        <!-- Participants -->
+        <div class="mb-8">
+          <h3 class="text-2xl font-bold text-white mb-4">Participants</h3>
+          <div class="space-y-4 text-gray-300 leading-relaxed">
+            <ul class="list-disc list-inside space-y-2">
+              <li>
+                <a href="https://github.com/arzoo14" class="text-data hover:text-contrail transition-colors duration-200">Arzoo</a>
+                (Technical Writer)
+              </li>
+              <li>
+                <a href="https://github.com/apurvabhide" class="text-data hover:text-contrail transition-colors duration-200">Apurva Bhide</a>
+                (Editing)
+              </li>
+              <li>
+                <a href="mailto:chorn@redhat.com" class="text-data hover:text-contrail transition-colors duration-200">Christian Horn</a>
+                (Editing and Technical Content)
+              </li>
+              <li>
+                <a href="https://github.com/kmcdonell" class="text-data hover:text-contrail transition-colors duration-200">Ken McDonell</a>
+                (Editing and Final Project Review)
+              </li>
+              <li>
+                <a href="https://github.com/natoscott" class="text-data hover:text-contrail transition-colors duration-200">Nathan Scott</a>
+                (Editing and Project Administration)
+              </li>
+            </ul>
+            <p class="mt-4">
+              Several experienced community members volunteered to assist - PCP maintainers, developer
+              and a documentation specialist. Our wonderful writer Arzoo from last years Google Season
+              of Docs program agreed to work with us once more.
+            </p>
+            <p>
+              With contributors spanning only APAC countries (Australia, Japan and India), we found we
+              were able to communicate well once more, with quick responses being in similar timezones.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="mb-8">
+          <h3 class="text-2xl font-bold text-white mb-4">Timeline</h3>
+          <div class="space-y-4 text-gray-300 leading-relaxed">
+            <p>
+              Arzoo maintained an excellent
+              <a href="https://github.com/arzoo14/Google-Season-of-Docs-2021/blob/main/timeline_deliverables.md" class="text-data hover:text-contrail transition-colors duration-200">timeline of deliverable items</a>
+              and the status of each item, throughout the project.
+            </p>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="mb-8">
+          <h3 class="text-2xl font-bold text-white mb-4">Results</h3>
+          <div class="space-y-4 text-gray-300 leading-relaxed">
+            <p>
+              As observed in the time line we completed the bulk of the work we set out to achieve.
+              The landing page for Performance Co-Pilot
+              <a href="https://pcp.readthedocs.io/en/latest/QG/QuickGuides.html" class="text-data hover:text-contrail transition-colors duration-200">Quick Guides</a>
+              is now available and features prominently in the PCP documentation.
+            </p>
+            <p>
+              There were a couple of disruptions during the length of the project - laptop hardware
+              failure and a short period of recuperation after illness. However, Arzoo was able to
+              recover from these setbacks to complete most of the planned work - mainly we did not
+              get into the stretch goals of the video tutorials and animated console examples).
+            </p>
+          </div>
+        </div>
+
+        <!-- Measuring Success -->
+        <div class="mb-8">
+          <h3 class="text-2xl font-bold text-white mb-4">Measuring Success</h3>
+          <div class="space-y-4 text-gray-300 leading-relaxed">
+            <p>
+              We anticipated the new guides would provide a better suited entry point for new and
+              inexperienced users.
+            </p>
+            <p>
+              Arzoo enabled
+              <a href="https://docs.readthedocs.io/en/latest/guides/google-analytics.html" class="text-data hover:text-contrail transition-colors duration-200">Google analytics</a>
+              early on in the project. Since there were very few guides to start with, and with
+              disrupted progress in the middle of the project, this is a summary of our observed
+              traffic statistics at the end:
+            </p>
+            <div class="bg-space/50 border border-gray-700 p-6 my-4">
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2">
+                  <span class="text-data mt-1">→</span>
+                  <span>46% of views (out of 1040) involved the Quick Guides</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-data mt-1">→</span>
+                  <span>37% of users (out of 244) opened the Quick Guides</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-data mt-1">→</span>
+                  <span>6% (out of 223) were new users</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analysis -->
+        <div class="mb-8">
+          <h3 class="text-2xl font-bold text-white mb-4">Analysis</h3>
+          <div class="space-y-4 text-gray-300 leading-relaxed">
+            <p>
+              The project was certainly overall a success.
+            </p>
+            <p>
+              Going forward we need to keep an eye on the web analytics to ensure the guides are
+              serving their purpose, as well as to help identify other possible areas needing short guides.
+            </p>
+            <p>
+              As we didn't complete any video or animated style tutorials we were unable to use that
+              metric as originally planned (in order to assess if such mediums are preferred by users
+              and whether they provde more popular than text and diagrams).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Summary -->
+      <div class="bg-gradient-to-br from-instrument to-space border border-gray-700 p-8">
+        <h2 class="text-3xl font-bold text-white mb-6">Summary</h2>
+        <div class="space-y-4 text-gray-300 leading-relaxed">
+          <p>
+            A good result for the Performance Co-Pilot project. We have a baseline set of short
+            guides getting new users of the software able to solve problems immediately, and to
+            learn more quickly about the wider set of PCP tools.
+          </p>
+          <p>
+            We introduced consistency into all Tutorials and Guides across the project, by using
+            a single readthedocs.io landing page for all PCP guides (same location, format,
+            look-and-feel). Each new guide we add now will be incorporated into the set we've
+            established during this project.
+          </p>
+          <p>
+            In terms of what we'd do differently next time, perhaps a focus on getting video
+            tutorials and animated console examples integrated earlier on would have helped us
+            to get content suited to that medium using it more, instead of running out of time
+            to explore that at the end.
+          </p>
+          <p>
+            We've really enjoyed working with Arzoo further improving the PCP documentation -
+            a big thanks again to Google for running this program!
+          </p>
+        </div>
+      </div>
+
+      <!-- Appendix -->
+      <div class="bg-gradient-to-br from-instrument to-space border border-gray-700 p-8">
+        <h2 class="text-3xl font-bold text-white mb-6">Appendix</h2>
+        <div class="space-y-4 text-gray-300 leading-relaxed">
+          <p>
+            Arzoo's notes on the project from the
+            <a href="https://arzoo14.github.io/Google-Season-of-Docs-2021/" class="text-data hover:text-contrail transition-colors duration-200">writer's perspective</a>.
+          </p>
+          <p>
+            Landing page for the new and improved
+            <a href="https://pcp.readthedocs.io/en/latest/QG/QuickGuides.html" class="text-data hover:text-contrail transition-colors duration-200">PCP Quick Guides</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Base>

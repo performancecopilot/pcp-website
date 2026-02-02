@@ -1,0 +1,308 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Header from '../../../components/layout/Header.astro';
+import Footer from '../../../components/layout/Footer.astro';
+import Breadcrumb from '../../../components/ui/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', url: '/' },
+  { label: 'GSoD', url: '/gsod/' },
+  { label: '2021', url: '/gsod/2021/ideas.html' },
+  { label: 'Proposal' },
+];
+---
+
+<Base title="GSoD 2021 Proposal: Task-based Guides - Performance Co-Pilot">
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="relative py-16 overflow-hidden bg-gradient-to-b from-void via-space to-panel">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, var(--color-contrail) 2px, var(--color-contrail) 3px); background-size: 100% 60px;"></div>
+    </div>
+
+    <div class="container relative z-10 px-6 mx-auto max-w-5xl">
+      <Breadcrumb items={breadcrumbItems} />
+
+      <h1 class="text-4xl md:text-5xl font-bold text-white mt-8 mb-4">
+        Task-based Guides for Performance Co-Pilot
+      </h1>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-20 bg-panel">
+    <div class="container px-6 mx-auto max-w-5xl space-y-12">
+      <!-- About PCP -->
+      <div class="bg-gradient-to-br from-instrument to-space border border-gray-700 p-8">
+        <h2 class="text-3xl font-bold text-white mb-6">About Performance Co-Pilot</h2>
+        <div class="space-y-4 text-gray-300 leading-relaxed">
+          <p>
+            Performance Co-Pilot (PCP) is an open-source distributed system performance analysis toolkit.
+            It efficiently collects metrics from multiple systems and provides a variety of web, graphical
+            and console tools for analysis of live and historical data.
+          </p>
+          <p>
+            The suite begun production use over 20 years ago primarily in the High Performance Computing arena,
+            however its customizable and lightweight design has proven popular on everything from tiny
+            system-on-a-chip machines through to vast databases and number-crunching super computers.
+            It is included in all Linux distributions and has an active base of users and developers.
+          </p>
+        </div>
+      </div>
+
+      <!-- About Task-based Guides -->
+      <div class="bg-gradient-to-br from-instrument to-space border border-gray-700 p-8">
+        <h2 class="text-3xl font-bold text-white mb-6">About Task-based Guides</h2>
+        <div class="space-y-4 text-gray-300 leading-relaxed">
+          <p>
+            In our previous Google Season of Docs project, we converted two freely-available books
+            (the "Users and Administrators Guide" and the "Programmers Guide") into
+            <a href="https://pcp.readthedocs.io/" class="text-data hover:text-contrail transition-colors duration-200">pcp.readthedocs.io</a>
+            content. We also extended this documentation with a new REST API guide, and made many other improvements.
+          </p>
+          <p>
+            However, due to the many available tools, daemons, integrations and APIs we still find
+            a high barrier to entry for new PCP users.
+          </p>
+          <p>
+            It is this we plan to tackle next with our writer - curating a new series of focussed,
+            task-oriented "How To" guides that will assist new users in engaging immediately, by
+            clearly showing how to solve specific problem scenarios that users encounter frequently.
+          </p>
+          <p>
+            The goals of the project are this to assist first-time users to become more productive
+            right away, while also increasing traffic to the more detailed books in the same location
+            (readthedocs.io). We plan to undertake this project over three months.
+          </p>
+        </div>
+
+        <h3 class="text-2xl font-bold text-white mt-8 mb-4">The Task-based Guides project will:</h3>
+        <p class="text-gray-300 mb-4">
+          Pair developers with the writer to produce succinct step-by-step recipes showing how to
+          perform certain tasks with PCP.
+        </p>
+
+        <!-- How do I... List -->
+        <div class="bg-space/50 border border-gray-700 p-6 my-6">
+          <h4 class="text-xl font-bold text-white mb-4">How do I ...</h4>
+          <ul class="space-y-2 text-gray-300">
+            <li class="flex items-start gap-2">
+              <span class="text-data mt-1">→</span>
+              <span>List the available performance metrics?</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-data mt-1">→</span>
+              <span>Add new metrics to the available set?</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-data mt-1">→</span>
+              <span>Record metrics on my local system?</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-data mt-1">→</span>
+              <span>Record metrics from a remote system?</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-data mt-1">→</span>
+              <span>Graph a performance metric?</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-data mt-1">→</span>
+              <span>Automate performance problem detection?</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-data mt-1">→</span>
+              <span>Setup automated rules to write to the system log?</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-data mt-1">→</span>
+              <span>Record historical values for use with the
+                <a href="https://man7.org/linux/man-pages/man1/pcp-dstat.1.html" class="text-data hover:text-contrail transition-colors duration-200">pcp-dstat</a>
+                tool?</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-data mt-1">→</span>
+              <span>Export metric values in a comma-separated format?</span>
+            </li>
+          </ul>
+        </div>
+
+        <p class="text-gray-300 mb-2">Additionally, the writer will:</p>
+        <ul class="space-y-2 text-gray-300 list-disc list-inside ml-4">
+          <li>
+            Canvas the community for additional topics beyond the set above to produce
+            an initial set of high-value guides
+          </li>
+          <li>
+            Provide feedback to developers about potential areas of improvements in the
+            tools to create more satisfying early user experiences.
+          </li>
+          <li>
+            Audit existing documentation for tutorial content to add into the new
+            <a href="https://pcp.readthedocs.io/" class="text-data hover:text-contrail transition-colors duration-200">readthedocs</a>
+            guide format. This involves an assessment of the existing
+            <a href="https://pcp.io/documentation.html" class="text-data hover:text-contrail transition-colors duration-200">Short Guides</a>
+            and refactoring these into the <strong>"How do I..."</strong> form.
+          </li>
+          <li>
+            Introduce consistency into all Tutorials and Guides across the project, by using
+            a single readthedocs.io landing page for all guides (same location, format, look-and-feel).
+          </li>
+        </ul>
+
+        <div class="mt-6 p-4 bg-space/50 border-l-4 border-contrail">
+          <p class="text-white font-bold mb-2">Work that is out-of-scope for this project:</p>
+          <p class="text-gray-300">
+            This project will focus on core PCP functionality, and not on integration with
+            (for example) 3rd party sources of metrics, or sending PCP metrics to other analysis systems.
+          </p>
+        </div>
+      </div>
+
+      <!-- Participants -->
+      <div class="bg-gradient-to-br from-instrument to-space border border-gray-700 p-8">
+        <h2 class="text-3xl font-bold text-white mb-6">Participants</h2>
+        <div class="space-y-4 text-gray-300 leading-relaxed">
+          <p>
+            <strong class="text-white">Writer:</strong>
+            <a href="mailto:arzoo@gmail.com" class="text-data hover:text-contrail transition-colors duration-200">Arzoo</a>
+          </p>
+          <p>
+            <strong class="text-white">Volunteers:</strong>
+            <a href="mailto:abhide@redhat.com" class="text-data hover:text-contrail transition-colors duration-200">Apurva Bhide</a>,
+            <a href="mailto:chorn@redhat.com" class="text-data hover:text-contrail transition-colors duration-200">Christian Horn</a>
+            and
+            <a href="mailto:scott.nato@gmail.com" class="text-data hover:text-contrail transition-colors duration-200">Nathan Scott</a>
+          </p>
+          <p>
+            We have a strong technical writing candidate for the project who was our writer from
+            Google Season of Docs last year and is interested in working on another major project.
+            We have a proven, successful relationship that we are keen to continue to build on.
+          </p>
+          <p>
+            This project expands on the readthedocs documentation that was produced last year,
+            so we anticipate rapid results as our writer is already very familiar with PCP and Grafana.
+          </p>
+          <p>
+            Three volunteers have come forward to assist Arzoo again - a PCP maintainer, a developer
+            and a documentation specialist - all of whom volunteered last year as well.
+          </p>
+        </div>
+      </div>
+
+      <!-- Measuring Success -->
+      <div class="bg-gradient-to-br from-instrument to-space border border-gray-700 p-8" id="success">
+        <h2 class="text-3xl font-bold text-white mb-6">Measuring Success</h2>
+        <div class="space-y-4 text-gray-300 leading-relaxed">
+          <p>
+            We anticipate the How To pages will provide a better suited entry point for both
+            new and some existing users. We will measure this by first enabling
+            <a href="https://docs.readthedocs.io/en/latest/guides/google-analytics.html" class="text-data hover:text-contrail transition-colors duration-200">Google analytics</a>
+            on our readthedocs pages to begin tracking page accesses.
+          </p>
+          <p class="text-white font-bold">Success will be indicated by:</p>
+          <ul class="space-y-2 list-disc list-inside ml-4">
+            <li>
+              The largest number of hits to documentation pages being to the new Task-based Guides
+              pages (we expect greater than double any other books as a measure of success).
+              This success measure will be presented as a graph showing the spread of hits,
+              with the most being attributed to the new Task-based Guides.
+            </li>
+            <li>
+              A correlated increase in the number of hits to the existing PCP documentation - the
+              <a href="https://pcp.readthedocs.io/UAG/AboutUserAdministratorsGuide.html" class="text-data hover:text-contrail transition-colors duration-200">Users Guide</a>,
+              <a href="https://pcp.readthedocs.io/PG/AboutProgrammersGuide.html" class="text-data hover:text-contrail transition-colors duration-200">Programmers Guide</a>
+              and
+              <a href="https://pcp.readthedocs.io/en/latest/api/" class="text-data hover:text-contrail transition-colors duration-200">REST API Guide</a>
+              as a result of the new (shorter, focussed) guides.
+              We aim for a 20% increase in access to the other Guides as our success measure.
+            </li>
+            <li>
+              Some guides will be in different forms - video-based vs text - we'll also use the
+              analytics to determine which formats are more successful than others. This will be
+              presented as a graph also; simply having this breakdown will indicate success to us,
+              we can use that information to decide future documentation styles to prefer.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Budget -->
+      <div class="bg-gradient-to-br from-instrument to-space border border-gray-700 p-8" id="budget">
+        <h2 class="text-3xl font-bold text-white mb-6">Project Budget</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full border-collapse">
+            <thead>
+              <tr class="bg-space border-b border-gray-600">
+                <th class="text-left p-4 text-white font-bold">Budget Item</th>
+                <th class="text-left p-4 text-white font-bold">Item Amount</th>
+                <th class="text-left p-4 text-white font-bold">Running Total</th>
+                <th class="text-left p-4 text-white font-bold">Notes</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-300">
+              <tr class="border-b border-gray-700">
+                <td class="p-4">Technical writer stipend</td>
+                <td class="p-4">$5000</td>
+                <td class="p-4">$5000</td>
+                <td class="p-4"></td>
+              </tr>
+              <tr class="border-b border-gray-700">
+                <td class="p-4">Volunteer stipend</td>
+                <td class="p-4">$1500</td>
+                <td class="p-4">$6500</td>
+                <td class="p-4">x3 volunteers @$500</td>
+              </tr>
+              <tr class="border-b border-gray-700">
+                <td class="p-4">Swag</td>
+                <td class="p-4">$200</td>
+                <td class="p-4">$6700</td>
+                <td class="p-4">
+                  x4 participants @$50
+                  <a href="https://www.redbubble.com/people/pcp-maintainers/shop" class="text-data hover:text-contrail transition-colors duration-200">[redbubble]</a>
+                </td>
+              </tr>
+              <tr class="border-b border-gray-700">
+                <td class="p-4">Organisation donation</td>
+                <td class="p-4">$670</td>
+                <td class="p-4">$7370</td>
+                <td class="p-4">
+                  10% of total
+                  <a href="https://opencollective.com/pcp" class="text-data hover:text-contrail transition-colors duration-200">[OpenCollective]</a>
+                </td>
+              </tr>
+              <tr class="bg-space/50">
+                <td class="p-4 font-bold text-white">Total: $7370</td>
+                <td class="p-4"></td>
+                <td class="p-4"></td>
+                <td class="p-4"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Other Notes -->
+      <div class="bg-gradient-to-br from-instrument to-space border border-gray-700 p-8" id="notes">
+        <h2 class="text-3xl font-bold text-white mb-6">Other Notes</h2>
+        <div class="space-y-4 text-gray-300 leading-relaxed">
+          <p>
+            PCP is a mature open source project, active now for well over 20 years.
+            We have experience mentoring students and writers, participating in Google
+            Summer of Code for 5 years, and in last years Google Season of Docs program.
+            We had a very successfully collaboration with our writer last year which we'd
+            love to build on further this year.
+          </p>
+          <p>
+            Thank you for running the Season of Docs program. Our users have benefitted
+            immensely from it and it has allowed us to move in directions our resources
+            would not have allowed so we're extremely grateful!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Base>

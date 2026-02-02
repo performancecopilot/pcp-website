@@ -1,0 +1,307 @@
+---
+interface Mentor {
+  name: string;
+  email: string;
+}
+
+interface ProjectIdea {
+  id: string;
+  title: string;
+  description: string | string[];
+  tasks?: string[];
+  size?: 'small' | 'medium' | 'large';
+  expectedResults?: string;
+  prerequisites?: string;
+  skillLevel?: 'beginner' | 'intermediate' | 'advanced';
+  mentors: Mentor[];
+}
+
+interface Props {
+  project: ProjectIdea;
+}
+
+const { project } = Astro.props;
+
+const sizeLabels = {
+  small: '90 hours',
+  medium: '175 hours',
+  large: '350 hours',
+};
+
+const description = Array.isArray(project.description)
+  ? project.description
+  : [project.description];
+---
+
+<div id={project.id} class="project-idea">
+  <!-- Anchor for jump links -->
+  <a class="anchor" name={project.id}></a>
+
+  <!-- Corner accent -->
+  <div class="corner-accent"></div>
+
+  <!-- Scanline overlay -->
+  <div class="scanline"></div>
+
+  <div class="project-content">
+    <!-- Title -->
+    <h3 class="project-title">{project.title}</h3>
+
+    <!-- Description -->
+    {description.map((paragraph) => (
+      <p class="project-description" set:html={paragraph} />
+    ))}
+
+    <!-- Task List -->
+    {project.tasks && project.tasks.length > 0 && (
+      <div class="task-list">
+        <p class="task-intro">Our new contributor will:</p>
+        <ol>
+          {project.tasks.map((task) => (
+            <li set:html={task} />
+          ))}
+        </ol>
+      </div>
+    )}
+
+    <!-- Metadata Grid -->
+    <div class="metadata-grid">
+      {project.size && (
+        <div class="metadata-item">
+          <span class="metadata-label">Project size:</span>
+          <span class="metadata-value">
+            {project.size.charAt(0).toUpperCase() + project.size.slice(1)}
+            ({sizeLabels[project.size]})
+          </span>
+        </div>
+      )}
+
+      {project.expectedResults && (
+        <div class="metadata-item">
+          <span class="metadata-label">Expected results:</span>
+          <span class="metadata-value" set:html={project.expectedResults} />
+        </div>
+      )}
+
+      {project.prerequisites && (
+        <div class="metadata-item">
+          <span class="metadata-label">Prerequisite knowledge:</span>
+          <span class="metadata-value">{project.prerequisites}</span>
+        </div>
+      )}
+
+      {project.skillLevel && (
+        <div class="metadata-item">
+          <span class="metadata-label">Skill level:</span>
+          <span class="metadata-value skill-badge">
+            {project.skillLevel.charAt(0).toUpperCase() + project.skillLevel.slice(1)}
+          </span>
+        </div>
+      )}
+
+      <div class="metadata-item">
+        <span class="metadata-label">Mentors:</span>
+        <span class="metadata-value">
+          {project.mentors.map((mentor, index) => (
+            <span>
+              <a href={`mailto:${mentor.email}`} class="mentor-link">
+                {mentor.name} &lt;{mentor.email}&gt;
+              </a>
+              {index < project.mentors.length - 1 && ', '}
+            </span>
+          ))}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .project-idea {
+    position: relative;
+    background: linear-gradient(135deg, var(--color-instrument) 0%, var(--color-space) 100%);
+    border: 1px solid #374151;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .project-idea:hover {
+    border-color: var(--color-data);
+    box-shadow: 0 4px 20px rgba(0, 212, 255, 0.15);
+  }
+
+  .anchor {
+    display: block;
+    position: relative;
+    top: -80px;
+    visibility: hidden;
+  }
+
+  .corner-accent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3rem;
+    height: 3rem;
+    border-top: 2px solid transparent;
+    border-right: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  .project-idea:hover .corner-accent {
+    border-color: var(--color-data);
+    opacity: 0.6;
+  }
+
+  .scanline {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      var(--color-data) 2px,
+      var(--color-data) 3px
+    );
+    background-size: 100% 4px;
+  }
+
+  .project-idea:hover .scanline {
+    opacity: 0.05;
+  }
+
+  .project-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+  }
+
+  .project-idea:hover .project-title {
+    color: var(--color-data);
+  }
+
+  .project-description {
+    color: #d1d5db;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .project-description :global(a) {
+    color: var(--color-data);
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 212, 255, 0.3);
+    transition: text-decoration-color 0.2s ease;
+  }
+
+  .project-description :global(a:hover) {
+    text-decoration-color: var(--color-data);
+  }
+
+  .task-list {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-left: 3px solid var(--color-contrail);
+  }
+
+  .task-intro {
+    color: #d1d5db;
+    margin-bottom: 0.5rem;
+  }
+
+  .task-list ol {
+    margin-left: 1.5rem;
+    color: #d1d5db;
+  }
+
+  .task-list li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+  }
+
+  .task-list li :global(a) {
+    color: var(--color-data);
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 212, 255, 0.3);
+  }
+
+  .task-list li :global(a:hover) {
+    text-decoration-color: var(--color-data);
+  }
+
+  .metadata-grid {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .metadata-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .metadata-item {
+      flex-direction: row;
+      gap: 0.5rem;
+    }
+  }
+
+  .metadata-label {
+    font-weight: 700;
+    color: #9ca3af;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    min-width: 180px;
+  }
+
+  .metadata-value {
+    color: #d1d5db;
+    line-height: 1.6;
+  }
+
+  .metadata-value :global(a) {
+    color: var(--color-data);
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 212, 255, 0.3);
+  }
+
+  .metadata-value :global(a:hover) {
+    text-decoration-color: var(--color-data);
+  }
+
+  .skill-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: var(--color-contrail);
+    color: white;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .mentor-link {
+    color: var(--color-data);
+    transition: color 0.2s ease;
+  }
+
+  .mentor-link:hover {
+    color: #00ffff;
+  }
+</style>

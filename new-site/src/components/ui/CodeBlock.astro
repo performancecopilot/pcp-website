@@ -1,0 +1,27 @@
+---
+interface Props {
+  code: string;
+  language?: string;
+  title?: string;
+  class?: string;
+}
+
+const { code, language = 'bash', title, class: className = '' } = Astro.props;
+---
+
+<div class={`bg-[var(--color-void)] border border-[var(--color-instrument)] rounded-lg overflow-hidden ${className}`}>
+  {title && (
+    <div class="px-4 py-2 border-b border-[var(--color-instrument)] bg-[var(--color-panel)]">
+      <span class="text-sm text-[var(--color-text-secondary)] font-mono">{title}</span>
+    </div>
+  )}
+  <div class="relative">
+    <pre class="p-4 overflow-x-auto"><code class="font-mono text-sm text-[var(--color-text-primary)]">{code.trim()}</code></pre>
+    <button
+      class="absolute top-2 right-2 px-3 py-1 text-xs bg-[var(--color-instrument)] hover:bg-[var(--color-data)] text-[var(--color-text-secondary)] hover:text-[var(--color-space)] rounded transition-colors duration-200"
+      onclick={`navigator.clipboard.writeText(\`${code.trim().replace(/`/g, '\\`')}\`)`}
+    >
+      Copy
+    </button>
+  </div>
+</div>
