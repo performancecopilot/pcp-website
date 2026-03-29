@@ -86,6 +86,39 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p
+                      Mar 2026
+                      %br
+                      PCP 7.1.1
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p
+                      New metric providers for
+                      %a{:href => 'https://valkey.io/'} Valkey
+                      and the Linux
+                      %a{:href => 'https://en.wikipedia.org/wiki/Reliable_Datagram_Sockets'} RDS
+                      kernel subsystem.
+                      Substantial additions to the macOS metrics
+                      landscape, including GPU, aggregate networking,
+                      SMC thermal monitor, IPC, Socket pool, memory
+                      compressor, extended disk I/O, system limit and
+                      per-process socket, logical I/O and memory metrics.
+                      New support for the Nix packaging ecosystem.
+                      Updates to macOS packaging, especially for long-running
+                      PCP services.
+                      Fixes and improvements to the
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pcp2opentelemetry.1.html'} pcp2opentelemetry,
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pcp2arrow.1.html'} pcp2arrow,
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pcp-ps.1.html'} pcp-ps,
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmrep.1.html'} pmrep
+                      and
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pmseries.1.html'} pmseries
+                      tools.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p
                       Jan 2026
                       %br
                       PCP 7.1.0
@@ -282,29 +315,5 @@
                       Fixes to the
                       %a{:href => 'https://man7.org/linux/man-pages/man1/pmdahacluster.1.html'} hacluster 
                       metrics for new versions of Pacemaker.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      Jul 2024
-                      %br
-                      PCP 6.3.0
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      AMD GPU metrics.
-                      On 32 bit platforms, support for 64-bit time_t (Y2038).
-                      Improvements to OpenMetrics specification conformance in
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pcp2openmetrics.1.html'} pcp2openmetrics.
-                      Merged latest code (including GPU support) from the
-                      %a{:href => 'https://htop.dev/'} htop
-                      project into the PCP variant,
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pcp-htop.1.html'} pcp-htop.
-                      New Linux virtual machine balloon metrics.
-                      New 
-                      %a{:href => 'https://man7.org/linux/man-pages/man1/pcp-xsos.1.html'} pcp-xsos
-                      utility for fast system summaries.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
