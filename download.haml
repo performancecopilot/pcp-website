@@ -88,9 +88,14 @@
                 %div{:class => 'col__module--img'}
                   %img{:src => '/images/macosx.png'}
                   %h3 macOS
-                  %p 
+                  %pre
+                    :preserve
+                      brew tap performancecopilot/performancecopilot
+                      brew install --cask pcp-perf
+                  %p
+                    Alternatively, download the
                     %a{:href => 'https://github.com/performancecopilot/pcp/releases'} DMG installer
-                    links
+                    from GitHub releases.
 
               %div{:class => 'colspan12-6 colspan8-4 colspan6-3 colspan2-2 as-grid with-gutter'}
                 %div{:class => 'col__module--img'}
