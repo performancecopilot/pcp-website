@@ -86,6 +86,38 @@
                 %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
                   %div{:class => 'col__module--cta'}
                     %p
+                      Jul 2026
+                      %br
+                      PCP 7.2.0
+                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'features_left col__module--cta'}
+                    %p
+                      An important security, feature and bug fix release.
+                      New metrics from: NIXL, IBM DB2, btrfs and chronyd.
+                      Added metrics metadata for power, enery and temperature.
+                      Updates to many tools, including
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pcp-atop.1.html'} pcp-atop,
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pcp-htop.1.html'} pcp-htop,
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/pcp2openmetrics.1.html'} pcp2openmetrics,
+                      %a{:href => 'https://man7.org/linux/man-pages/man1/collectl2pcp.1.html'} collectl2pcp
+                      and others.
+                      PCP libraries now support append-only archive writing and
+                      standalone operation for kernel metrics (only libraries,
+                      no running PCP services required), providing for minimal,
+                      small-footprint installations of PCP-enabled versions of
+                      %a{:href => 'https://github.com/Atoptool/atop'} atop
+                      and the
+                      %a{:href => 'https://github.com/sysstat/sysstat'} sysstat
+                      toolkit.
+                      A new guide on using
+                      %a{:href => 'https://pcp.readthedocs.io/en/latest/QG/OpenTelemetry.html#pcp-with-opentelemetry'} PCP with OpenTelemetry
+                      has been added.
+
+            %div{:class => 'row'}
+              %section{:class => 'row__colspaced'}
+                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
+                  %div{:class => 'col__module--cta'}
+                    %p
                       May 2026
                       %br
                       PCP 7.1.5
@@ -272,22 +304,5 @@
                       and
                       %a{:href => 'https://valkey.io/'} Valkey
                       functionality for retrospective systems analysis.
-
-            %div{:class => 'row'}
-              %section{:class => 'row__colspaced'}
-                %div{:class => 'colspan12-2 colspan8-2 colspan6-1 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'col__module--cta'}
-                    %p
-                      Mar 2025
-                      %br
-                      PCP 6.3.7
-                %div{:class => 'colspan12-8 colspan8-6 colspan6-5 colspan2-1 as-grid with-gutter'}
-                  %div{:class => 'features_left col__module--cta'}
-                    %p
-                      Bug fix release.
-                      Bind2 metrics updates.
-                      Denki (power) agent RAPL metrics support.
-                      %a{:href => 'https://pcp.readthedocs.io/en/latest/api/'} PMWEBAPI
-                      extended with metric scrape filtering functionality.
 
     = Haml::Engine.new(File.read("assets/haml-includes/footer.haml")).render
